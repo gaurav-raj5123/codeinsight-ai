@@ -1,0 +1,374 @@
+{
+  "experiment_metadata": {
+    "version": "V0",
+    "run_id": "v0_baseline_20261124_144712",
+    "timestamp_utc": "2026-11-24T14:47:12.145283+00:00",
+    "system": "Original Codebase AI Assistant (Dense Retrieval Baseline)",
+    "status": "VALID_COMPLETED",
+    "failed_queries_count": 0,
+    "total_queries_evaluated": 60,
+    "answerable_queries_count": 54,
+    "unanswerable_queries_count": 6,
+    "top_k": 5,
+    "embedding_model": "DefaultEmbeddingFunction (all-MiniLM-L6-v2)",
+    "embedding_dimension": 384,
+    "distance_metric": "l2 (squared Euclidean distance)",
+    "chunker_configuration": {
+      "max_lines": 100,
+      "sliding_window_size": 50,
+      "sliding_window_overlap": 10,
+      "parsers": "Python AST with regex and sliding-window fallback"
+    },
+    "package_versions": {
+      "python": "3.14.7",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "chromadb": "1.5.9",
+      "onnxruntime": "1.29.0",
+      "streamlit": "1.61.1"
+    },
+    "dataset_fingerprints": {
+      "repositories.json_sha256": "b330bb45f3bec445d09834861d5831d045c5c154f6889744591db6d0b3baea56",
+      "evaluation_questions.json_sha256": "4667d86d27d216db0ad969c943ffc59e91914e792e0f51e8f499c33c383ec1f6",
+      "ground_truth.json_sha256": "8ef0f357905eaa43eb68b8fc35793581061dfa109d85c937e23b2e06aaba5b00"
+    },
+    "dedicated_collections": {
+      "pallets/flask": "v0_eval_pallets_flask",
+      "expressjs/express": "v0_eval_expressjs_express",
+      "fmtlib/fmt": "v0_eval_fmtlib_fmt"
+    },
+    "pinned_commit_verifications": {
+      "pallets/flask": {
+        "verified": true,
+        "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\flask\\.commit_sha"
+      },
+      "expressjs/express": {
+        "verified": true,
+        "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\express\\.commit_sha"
+      },
+      "fmtlib/fmt": {
+        "verified": true,
+        "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\fmt\\.commit_sha"
+      }
+    }
+  },
+  "indexing_summary": {
+    "pallets/flask": {
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "collection_name": "v0_eval_pallets_flask",
+      "source_files_count": 83,
+      "chunks_count": 1785,
+      "load_files_duration_seconds": 0.0172,
+      "chunking_duration_seconds": 0.1372,
+      "collection_add_duration_seconds": 124.7905,
+      "total_index_function_duration_seconds": 124.9654,
+      "embedding_model": "DefaultEmbeddingFunction (all-MiniLM-L6-v2)",
+      "embedding_dimension": 384,
+      "distance_metric": "l2"
+    },
+    "expressjs/express": {
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "collection_name": "v0_eval_expressjs_express",
+      "source_files_count": 142,
+      "chunks_count": 2066,
+      "load_files_duration_seconds": 0.0436,
+      "chunking_duration_seconds": 0.0269,
+      "collection_add_duration_seconds": 139.2077,
+      "total_index_function_duration_seconds": 139.2353,
+      "embedding_model": "DefaultEmbeddingFunction (all-MiniLM-L6-v2)",
+      "embedding_dimension": 384,
+      "distance_metric": "l2"
+    },
+    "fmtlib/fmt": {
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "collection_name": "v0_eval_fmtlib_fmt",
+      "source_files_count": 28,
+      "chunks_count": 421,
+      "load_files_duration_seconds": 0.0118,
+      "chunking_duration_seconds": 0.069,
+      "collection_add_duration_seconds": 25.3969,
+      "total_index_function_duration_seconds": 25.416,
+      "embedding_model": "DefaultEmbeddingFunction (all-MiniLM-L6-v2)",
+      "embedding_dimension": 384,
+      "distance_metric": "l2"
+    }
+  },
+  "overall_retrieval_metrics": {
+    "query_count": 54,
+    "hit_rate_at_1": 0.3148,
+    "hit_rate_at_3": 0.5741,
+    "hit_rate_at_5": 0.6667,
+    "precision_at_5": 0.1815,
+    "mrr_at_5": 0.4534,
+    "span_recall_at_5": 0.5556,
+    "ndcg_at_5": 0.3339,
+    "latency_ms": {
+      "mean": 187.62,
+      "median_p50": 187.2,
+      "p95": 212.5,
+      "max": 230.5
+    }
+  },
+  "latency_summary": {
+    "p95_convention": "nearest rank index floor(0.95 * N)",
+    "answerable_queries_latency_ms": {
+      "count": 54,
+      "mean": 187.62,
+      "median_p50": 187.2,
+      "p95": 212.5,
+      "max": 230.5,
+      "p95_rank_index": 51,
+      "p95_convention": "nearest rank index floor(0.95 * N)"
+    },
+    "all_queries_latency_ms": {
+      "count": 60,
+      "mean": 187.8,
+      "median_p50": 187.6,
+      "p95": 212.5,
+      "max": 230.5,
+      "p95_rank_index": 57,
+      "p95_convention": "nearest rank index floor(0.95 * N)"
+    }
+  },
+  "breakdowns": {
+    "by_repository": {
+      "pallets/flask": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.2778,
+        "hit_rate_at_3": 0.5556,
+        "hit_rate_at_5": 0.6667,
+        "precision_at_5": 0.2222,
+        "mrr_at_5": 0.4204,
+        "span_recall_at_5": 0.5556,
+        "ndcg_at_5": 0.3323,
+        "latency_ms": {
+          "mean": 189.29,
+          "median_p50": 186.7,
+          "p95": 230.5,
+          "max": 230.5
+        }
+      },
+      "expressjs/express": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.2778,
+        "hit_rate_at_3": 0.5,
+        "hit_rate_at_5": 0.6111,
+        "precision_at_5": 0.1444,
+        "mrr_at_5": 0.3981,
+        "span_recall_at_5": 0.4722,
+        "ndcg_at_5": 0.208,
+        "latency_ms": {
+          "mean": 188.38,
+          "median_p50": 189.25,
+          "p95": 212.5,
+          "max": 212.5
+        }
+      },
+      "fmtlib/fmt": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.3889,
+        "hit_rate_at_3": 0.6667,
+        "hit_rate_at_5": 0.7222,
+        "precision_at_5": 0.1778,
+        "mrr_at_5": 0.5417,
+        "span_recall_at_5": 0.6389,
+        "ndcg_at_5": 0.4615,
+        "latency_ms": {
+          "mean": 185.19,
+          "median_p50": 186.85,
+          "p95": 205.7,
+          "max": 205.7
+        }
+      }
+    },
+    "by_category": {
+      "architecture_flow": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.3,
+        "hit_rate_at_3": 0.7,
+        "hit_rate_at_5": 0.9,
+        "precision_at_5": 0.2,
+        "mrr_at_5": 0.5283,
+        "span_recall_at_5": 0.7,
+        "ndcg_at_5": 0.3165,
+        "latency_ms": {
+          "mean": 184.68,
+          "median_p50": 185.1,
+          "p95": 192.9,
+          "max": 192.9
+        }
+      },
+      "cross_file_dependencies": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.4,
+        "hit_rate_at_3": 1.0,
+        "hit_rate_at_5": 1.0,
+        "precision_at_5": 0.36,
+        "mrr_at_5": 0.6667,
+        "span_recall_at_5": 0.65,
+        "ndcg_at_5": 0.465,
+        "latency_ms": {
+          "mean": 189.55,
+          "median_p50": 190.45,
+          "p95": 205.7,
+          "max": 205.7
+        }
+      },
+      "debugging_configuration": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.4,
+        "hit_rate_at_3": 0.4,
+        "hit_rate_at_5": 0.5,
+        "precision_at_5": 0.16,
+        "mrr_at_5": 0.425,
+        "span_recall_at_5": 0.45,
+        "ndcg_at_5": 0.2882,
+        "latency_ms": {
+          "mean": 181.43,
+          "median_p50": 181.55,
+          "p95": 187.9,
+          "max": 187.9
+        }
+      },
+      "function_identification": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.25,
+        "hit_rate_at_3": 0.4167,
+        "hit_rate_at_5": 0.5,
+        "precision_at_5": 0.1,
+        "mrr_at_5": 0.3361,
+        "span_recall_at_5": 0.5,
+        "ndcg_at_5": 0.3765,
+        "latency_ms": {
+          "mean": 192.61,
+          "median_p50": 188.3,
+          "p95": 230.5,
+          "max": 230.5
+        }
+      },
+      "implementation_understanding": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.25,
+        "hit_rate_at_3": 0.4167,
+        "hit_rate_at_5": 0.5,
+        "precision_at_5": 0.1167,
+        "mrr_at_5": 0.3542,
+        "span_recall_at_5": 0.5,
+        "ndcg_at_5": 0.2348,
+        "latency_ms": {
+          "mean": 188.63,
+          "median_p50": 190.4,
+          "p95": 212.5,
+          "max": 212.5
+        }
+      }
+    },
+    "by_query_style": {
+      "conceptual": {
+        "query_count": 20,
+        "hit_rate_at_1": 0.3,
+        "hit_rate_at_3": 0.6,
+        "hit_rate_at_5": 0.65,
+        "precision_at_5": 0.18,
+        "mrr_at_5": 0.4517,
+        "span_recall_at_5": 0.575,
+        "ndcg_at_5": 0.2758,
+        "latency_ms": {
+          "mean": 185.3,
+          "median_p50": 185.0,
+          "p95": 212.5,
+          "max": 212.5
+        }
+      },
+      "conversational": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.3333,
+        "hit_rate_at_3": 0.6667,
+        "hit_rate_at_5": 0.8333,
+        "precision_at_5": 0.2333,
+        "mrr_at_5": 0.5278,
+        "span_recall_at_5": 0.5417,
+        "ndcg_at_5": 0.319,
+        "latency_ms": {
+          "mean": 187.78,
+          "median_p50": 189.0,
+          "p95": 205.7,
+          "max": 205.7
+        }
+      },
+      "identifier": {
+        "query_count": 22,
+        "hit_rate_at_1": 0.3182,
+        "hit_rate_at_3": 0.5,
+        "hit_rate_at_5": 0.5909,
+        "precision_at_5": 0.1545,
+        "mrr_at_5": 0.4144,
+        "span_recall_at_5": 0.5455,
+        "ndcg_at_5": 0.3949,
+        "latency_ms": {
+          "mean": 189.64,
+          "median_p50": 188.0,
+          "p95": 225.9,
+          "max": 230.5
+        }
+      }
+    },
+    "by_evidence_spans": {
+      "single_evidence_queries": {
+        "query_count": 37,
+        "hit_rate_at_1": 0.2703,
+        "hit_rate_at_3": 0.4054,
+        "hit_rate_at_5": 0.5405,
+        "precision_at_5": 0.1297,
+        "mrr_at_5": 0.3644,
+        "span_recall_at_5": 0.5405,
+        "ndcg_at_5": 0.2992,
+        "latency_ms": {
+          "mean": 187.25,
+          "median_p50": 186.1,
+          "p95": 225.9,
+          "max": 230.5
+        }
+      },
+      "multi_evidence_queries": {
+        "query_count": 17,
+        "hit_rate_at_1": 0.4118,
+        "hit_rate_at_3": 0.9412,
+        "hit_rate_at_5": 0.9412,
+        "precision_at_5": 0.2941,
+        "mrr_at_5": 0.6471,
+        "span_recall_at_5": 0.5882,
+        "ndcg_at_5": 0.4095,
+        "latency_ms": {
+          "mean": 188.44,
+          "median_p50": 188.9,
+          "p95": 205.7,
+          "max": 205.7
+        }
+      }
+    }
+  },
+  "top1_l2_distance_analysis": {
+    "distance_metric": "l2 (squared Euclidean distance)",
+    "interpretation": "Lower distance denotes closer embedding vectors under DefaultEmbeddingFunction (all-MiniLM-L6-v2)",
+    "answerable_questions_top1_l2": {
+      "count": 54,
+      "min": 0.394869,
+      "median": 0.862551,
+      "mean": 0.849554,
+      "max": 1.537793
+    },
+    "unanswerable_questions_top1_l2": {
+      "count": 6,
+      "min": 0.831388,
+      "median": 1.068492,
+      "mean": 1.033176,
+      "max": 1.286783
+    }
+  }
+}

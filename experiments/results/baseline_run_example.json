@@ -1,0 +1,67 @@
+[
+  {
+    "run_id": "run_20261124_113729_96630f",
+    "timestamp": "2026-11-24T11:37:29.896667+00:00",
+    "repository": {
+      "url": "https://github.com/pallets/click",
+      "owner": "pallets",
+      "name": "click",
+      "commit_sha": "7fd1a60",
+      "files_indexed": 10,
+      "chunks_indexed": 45,
+      "loading_time_seconds": {
+        "download": 0.55,
+        "extraction": 0.3,
+        "total_loading": 0.85
+      },
+      "indexing_time_seconds": {
+        "repo_download": 0.55,
+        "repo_extraction": 0.3,
+        "repo_total_loading": 0.85,
+        "chunking": 0.15,
+        "chromadb_add_combined": 1.2,
+        "total_index_function": 1.45,
+        "total_indexing": 2.45
+      },
+      "embedding": {
+        "model": "DefaultEmbeddingFunction (all-MiniLM-L6-v2)",
+        "dimensions": 384,
+        "distance_metric": "l2"
+      }
+    },
+    "queries": [
+      {
+        "query_id": "query_113729_fbe4",
+        "timestamp": "2026-11-24T11:37:29.896782+00:00",
+        "query_text": "Where is cli defined?",
+        "repository": "click",
+        "retrieval": {
+          "top_k_requested": 5,
+          "actual_results_returned": 1,
+          "total_retrieval_latency_seconds": 0.024,
+          "distance_metric": "l2",
+          "retrieved_chunks": [
+            {
+              "id": "chunk_0",
+              "distance": 0.3214,
+              "file_path": "click/core.py",
+              "start_line": 1,
+              "end_line": 10,
+              "chunk_type": "FunctionDef",
+              "content": "def cli(): pass"
+            }
+          ]
+        },
+        "generation": {
+          "model": "gemini-3.5-flash",
+          "latency_seconds": 1.1,
+          "success": true,
+          "error": null,
+          "prompt_length_chars": 250,
+          "response_length_chars": 120
+        },
+        "total_turn_latency_seconds": 1.124
+      }
+    ]
+  }
+]

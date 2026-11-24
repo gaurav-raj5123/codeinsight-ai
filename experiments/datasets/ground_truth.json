@@ -1,0 +1,919 @@
+[
+  {
+    "question_id": "flask_001",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/app.py",
+        "symbol": "class Flask",
+        "start_line": 108,
+        "end_line": 140,
+        "relevance_reason": "Defines the core Flask application class subclassing App and documents its initialization parameters."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_002",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/sansio/app.py",
+        "symbol": "make_config",
+        "start_line": 480,
+        "end_line": 505,
+        "relevance_reason": "Implements make_config which creates a Config object and loads default_config into it."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_003",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/wrappers.py",
+        "symbol": "class Request",
+        "start_line": 18,
+        "end_line": 45,
+        "relevance_reason": "Defines Flask's Request class subclassing Werkzeug RequestBase and setting json module attributes."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_004",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/helpers.py",
+        "symbol": "url_for",
+        "start_line": 200,
+        "end_line": 245,
+        "relevance_reason": "Implements the public url_for function that queries the active RequestContext and URL adapter."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_005",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/sansio/scaffold.py",
+        "symbol": "def route",
+        "start_line": 344,
+        "end_line": 370,
+        "relevance_reason": "Defines Scaffold.route decorator that returns a wrapper calling add_url_rule."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_006",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/sansio/scaffold.py",
+        "symbol": "add_url_rule",
+        "start_line": 376,
+        "end_line": 425,
+        "relevance_reason": "Shows how add_url_rule constructs Rule instances, validates endpoints, and registers view functions."
+      },
+      {
+        "file_path": "src/flask/app.py",
+        "symbol": "create_url_adapter",
+        "start_line": 507,
+        "end_line": 530,
+        "relevance_reason": "Shows how the Flask application creates the URL adapter from url_map to bind rules to the request."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_007",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/app.py",
+        "symbol": "dispatch_request",
+        "start_line": 993,
+        "end_line": 1025,
+        "relevance_reason": "Shows fetching the view function from view_functions for req.endpoint and invoking it with view_args."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_008",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/ctx.py",
+        "symbol": "class AppContext",
+        "start_line": 260,
+        "end_line": 305,
+        "relevance_reason": "Defines AppContext class, associating it with the Flask app, and managing the _cv_app context variable."
+      },
+      {
+        "file_path": "src/flask/app.py",
+        "symbol": "def app_context",
+        "start_line": 1542,
+        "end_line": 1575,
+        "relevance_reason": "Implements app_context and request_context factory methods on the Flask application instance."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_009",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/app.py",
+        "symbol": "wsgi_app",
+        "start_line": 1627,
+        "end_line": 1670,
+        "relevance_reason": "Implements the core WSGI entrypoint that creates request_context, pushes it, dispatches the request, and handles errors."
+      },
+      {
+        "file_path": "src/flask/ctx.py",
+        "symbol": "def push(",
+        "start_line": 416,
+        "end_line": 445,
+        "relevance_reason": "Implements AppContext.push binding the context to the active context variable token."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_010",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/sansio/blueprints.py",
+        "symbol": "class Blueprint",
+        "start_line": 119,
+        "end_line": 155,
+        "relevance_reason": "Defines the Blueprint class subclassing Scaffold, taking name and import_name parameters."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_011",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/sansio/blueprints.py",
+        "symbol": "register",
+        "start_line": 273,
+        "end_line": 315,
+        "relevance_reason": "Implements Blueprint.register which executes recorded deferred functions using BlueprintSetupState."
+      },
+      {
+        "file_path": "src/flask/sansio/app.py",
+        "symbol": "def register_blueprint",
+        "start_line": 571,
+        "end_line": 605,
+        "relevance_reason": "Implements register_blueprint on the application, checking for existing blueprints and calling blueprint.register."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_012",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/app.py",
+        "symbol": "handle_exception",
+        "start_line": 916,
+        "end_line": 955,
+        "relevance_reason": "Shows how exceptions trigger got_request_exception signal, error handler lookup, and fallback 500 responses."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_013",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/sessions.py",
+        "symbol": "class SecureCookieSessionInterface",
+        "start_line": 284,
+        "end_line": 340,
+        "relevance_reason": "Defines SecureCookieSessionInterface with its itsdangerous serializer, open_session, and save_session implementations."
+      },
+      {
+        "file_path": "src/flask/app.py",
+        "symbol": "session_interface",
+        "start_line": 245,
+        "end_line": 260,
+        "relevance_reason": "Attaches SecureCookieSessionInterface as the default session_interface on the Flask application class."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_014",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/sessions.py",
+        "symbol": "get_cookie_httponly",
+        "start_line": 195,
+        "end_line": 225,
+        "relevance_reason": "Shows getter methods on SessionInterface reading SESSION_COOKIE_HTTPONLY, SESSION_COOKIE_SECURE, and SESSION_COOKIE_SAMESITE."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_015",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/app.py",
+        "symbol": "make_response",
+        "start_line": 1267,
+        "end_line": 1315,
+        "relevance_reason": "Implements Flask.make_response unpackaging status, headers, and converting strings/dicts to Response instances."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_016",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/config.py",
+        "symbol": "from_object",
+        "start_line": 218,
+        "end_line": 250,
+        "relevance_reason": "Shows how from_object inspects uppercase attributes on an object or imports string module paths."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_017",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/cli.py",
+        "symbol": "with_appcontext",
+        "start_line": 380,
+        "end_line": 410,
+        "relevance_reason": "Shows how with_appcontext wraps click commands and calls ensure_sync inside an app.app_context() block."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_018",
+    "repository": "pallets/flask",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "src/flask/helpers.py",
+        "symbol": "flash",
+        "start_line": 326,
+        "end_line": 365,
+        "relevance_reason": "Shows flash appending message tuples to session['_flashes'] and get_flashed_messages popping them."
+      }
+    ]
+  },
+  {
+    "question_id": "flask_019",
+    "repository": "pallets/flask",
+    "answerable": false,
+    "evidence": [],
+    "justification": "Flask does not include a built-in database connection pool or ORM. Database connectivity is handled by third-party extensions such as Flask-SQLAlchemy or external drivers (e.g. psycopg2)."
+  },
+  {
+    "question_id": "flask_020",
+    "repository": "pallets/flask",
+    "answerable": false,
+    "evidence": [],
+    "justification": "Core Flask is a WSGI synchronous web framework and does not provide native WebSocket protocol handlers or pub/sub channels. Real-time WebSocket capabilities require extensions such as Flask-SocketIO or ASGI frameworks like Quart."
+  },
+  {
+    "question_id": "express_001",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/express.js",
+        "symbol": "createApplication",
+        "start_line": 36,
+        "end_line": 57,
+        "relevance_reason": "Defines createApplication factory function mixing in EventEmitter, application proto, and request/response prototypes."
+      },
+      {
+        "file_path": "lib/application.js",
+        "symbol": "app.init",
+        "start_line": 59,
+        "end_line": 83,
+        "relevance_reason": "Implements app.init called by createApplication to initialize caches, engines, settings, and defaultConfiguration."
+      }
+    ]
+  },
+  {
+    "question_id": "express_002",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/application.js",
+        "symbol": "app.defaultConfiguration",
+        "start_line": 90,
+        "end_line": 141,
+        "relevance_reason": "Sets default environment, etag, query parser, trust proxy, and view settings in app.defaultConfiguration."
+      }
+    ]
+  },
+  {
+    "question_id": "express_003",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/view.js",
+        "symbol": "function View",
+        "start_line": 52,
+        "end_line": 80,
+        "relevance_reason": "Defines the View constructor responsible for template engine lookup, default engine assignment, and root resolution."
+      }
+    ]
+  },
+  {
+    "question_id": "express_004",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/request.js",
+        "symbol": "req.header",
+        "start_line": 63,
+        "end_line": 85,
+        "relevance_reason": "Implements case-insensitive request header retrieval with special handling for Referer / Referrer."
+      }
+    ]
+  },
+  {
+    "question_id": "express_005",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/application.js",
+        "symbol": "app.use",
+        "start_line": 190,
+        "end_line": 244,
+        "relevance_reason": "Handles flattening of middleware arguments, sub-application mounting with mountpath, and delegating to router.use."
+      }
+    ]
+  },
+  {
+    "question_id": "express_006",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/application.js",
+        "symbol": "app.init",
+        "start_line": 59,
+        "end_line": 83,
+        "relevance_reason": "Defines the lazy router property getter with caseSensitive and strict routing settings inside app.init."
+      },
+      {
+        "file_path": "lib/express.js",
+        "symbol": "exports.Router = Router",
+        "start_line": 68,
+        "end_line": 73,
+        "relevance_reason": "Exposes the Router constructor on the Express exports object."
+      }
+    ]
+  },
+  {
+    "question_id": "express_007",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/response.js",
+        "symbol": "res.json",
+        "start_line": 236,
+        "end_line": 260,
+        "relevance_reason": "Implements res.json applying json replacer, json spaces settings, Content-Type, and calling res.send."
+      }
+    ]
+  },
+  {
+    "question_id": "express_008",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/response.js",
+        "symbol": "res.sendFile",
+        "start_line": 375,
+        "end_line": 425,
+        "relevance_reason": "Implements res.sendFile delegating to send-stream with callback and event handling."
+      }
+    ]
+  },
+  {
+    "question_id": "express_009",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/response.js",
+        "symbol": "res.send",
+        "start_line": 126,
+        "end_line": 190,
+        "relevance_reason": "Shows response body conversion, Content-Type setting, and calling app.get('etag fn') to generate ETag headers."
+      },
+      {
+        "file_path": "lib/utils.js",
+        "symbol": "exports.compileETag",
+        "start_line": 130,
+        "end_line": 152,
+        "relevance_reason": "Compiles the etag setting to an etag generator function (weak or strong)."
+      }
+    ]
+  },
+  {
+    "question_id": "express_010",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/application.js",
+        "symbol": "app.handle",
+        "start_line": 152,
+        "end_line": 179,
+        "relevance_reason": "Shows finalhandler setup, prototype assignment for req and res, and calling this.router.handle."
+      },
+      {
+        "file_path": "lib/express.js",
+        "symbol": "function createApplication",
+        "start_line": 36,
+        "end_line": 45,
+        "relevance_reason": "Shows how createApplication sets up app(req, res, next) calling app.handle(req, res, next)."
+      }
+    ]
+  },
+  {
+    "question_id": "express_011",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/application.js",
+        "symbol": "app.render",
+        "start_line": 522,
+        "end_line": 575,
+        "relevance_reason": "Shows view lookup from cache, instantiating new View, and invoking view.render with options and callback."
+      },
+      {
+        "file_path": "lib/view.js",
+        "symbol": "View.prototype.render",
+        "start_line": 133,
+        "end_line": 165,
+        "relevance_reason": "Implements View.prototype.render invoking the registered template engine on the resolved file path."
+      }
+    ]
+  },
+  {
+    "question_id": "express_012",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/response.js",
+        "symbol": "res.render",
+        "start_line": 897,
+        "end_line": 935,
+        "relevance_reason": "Shows merging options with res.locals, delegating to app.render, and sending the rendered string."
+      }
+    ]
+  },
+  {
+    "question_id": "express_013",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/application.js",
+        "symbol": "app.all",
+        "start_line": 470,
+        "end_line": 505,
+        "relevance_reason": "Shows loop iterating over HTTP methods and delegating route handler calls to this.route(path)."
+      }
+    ]
+  },
+  {
+    "question_id": "express_014",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/utils.js",
+        "symbol": "exports.compileTrust",
+        "start_line": 194,
+        "end_line": 215,
+        "relevance_reason": "Compiles boolean, number, string, or function trust proxy configurations using proxy-addr."
+      },
+      {
+        "file_path": "lib/request.js",
+        "symbol": "defineGetter(req, 'ip'",
+        "start_line": 340,
+        "end_line": 355,
+        "relevance_reason": "Defines the getter for req.ip calling proxyaddr with the application's trust proxy function."
+      }
+    ]
+  },
+  {
+    "question_id": "express_015",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/utils.js",
+        "symbol": "exports.compileETag",
+        "start_line": 130,
+        "end_line": 152,
+        "relevance_reason": "Shows mapping string/boolean ETag settings to weak or strong ETag generator functions."
+      }
+    ]
+  },
+  {
+    "question_id": "express_016",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/request.js",
+        "symbol": "defineGetter(req, 'ip'",
+        "start_line": 340,
+        "end_line": 355,
+        "relevance_reason": "Defines the getter for req.ip calling proxyaddr with the application's trust proxy function."
+      },
+      {
+        "file_path": "lib/application.js",
+        "symbol": "trust proxy",
+        "start_line": 99,
+        "end_line": 115,
+        "relevance_reason": "Sets default trust proxy configuration and handles inheritance on sub-application mount."
+      }
+    ]
+  },
+  {
+    "question_id": "express_017",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/response.js",
+        "symbol": "res.cookie",
+        "start_line": 748,
+        "end_line": 785,
+        "relevance_reason": "Shows cookie serialization, maxAge calculation into expires, and appending Set-Cookie headers."
+      }
+    ]
+  },
+  {
+    "question_id": "express_018",
+    "repository": "expressjs/express",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "lib/application.js",
+        "symbol": "app.engine",
+        "start_line": 294,
+        "end_line": 309,
+        "relevance_reason": "Validates engine callback and registers it in this.engines dictionary keyed by file extension."
+      }
+    ]
+  },
+  {
+    "question_id": "express_019",
+    "repository": "expressjs/express",
+    "answerable": false,
+    "evidence": [],
+    "justification": "Express does not provide built-in JWT verification or authentication middleware. Token-based authentication in Express is handled by external npm packages such as jsonwebtoken or express-jwt."
+  },
+  {
+    "question_id": "express_020",
+    "repository": "expressjs/express",
+    "answerable": false,
+    "evidence": [],
+    "justification": "Express is strictly an HTTP routing and middleware framework and does not include database drivers, ORMs, or database migration utilities. MongoDB persistence and migrations are managed via external ODM libraries like Mongoose."
+  },
+  {
+    "question_id": "fmt_001",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/color.h",
+        "symbol": "class text_style",
+        "start_line": 236,
+        "end_line": 275,
+        "relevance_reason": "Defines the text_style class representing foreground/background colors and text emphasis (bold, italic, etc.)."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_002",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/color.h",
+        "symbol": "styled",
+        "start_line": 660,
+        "end_line": 673,
+        "relevance_reason": "Defines the styled template function wrapping an argument value and a text_style into a styled_arg."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_003",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/os.h",
+        "symbol": "class buffered_file",
+        "start_line": 167,
+        "end_line": 205,
+        "relevance_reason": "Defines buffered_file RAII class wrapping FILE* with move semantics and automated closure."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_004",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/args.h",
+        "symbol": "class dynamic_format_arg_store",
+        "start_line": 74,
+        "end_line": 110,
+        "relevance_reason": "Defines dynamic_format_arg_store for storing dynamically sized lists of formatting arguments at runtime."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_005",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/ranges.h",
+        "symbol": "struct is_range",
+        "start_line": 370,
+        "end_line": 410,
+        "relevance_reason": "Implements compile-time detection of begin() and end() iterators to determine range support."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_006",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/ranges.h",
+        "symbol": "join",
+        "start_line": 865,
+        "end_line": 890,
+        "relevance_reason": "Defines the join function returning a join_view over the range and separator."
+      },
+      {
+        "file_path": "include/fmt/ranges.h",
+        "symbol": "struct join_view",
+        "start_line": 670,
+        "end_line": 705,
+        "relevance_reason": "Defines join_view struct that iterates elements and formats custom delimiters."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_007",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/args.h",
+        "symbol": "push_back",
+        "start_line": 153,
+        "end_line": 195,
+        "relevance_reason": "Shows storing regular values and named arguments into dynamic_arg_list."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_008",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/os.h",
+        "symbol": "class ostream",
+        "start_line": 361,
+        "end_line": 400,
+        "relevance_reason": "Implements buffered write operations on file descriptors extending detail::buffer<char>."
+      },
+      {
+        "file_path": "include/fmt/os.h",
+        "symbol": "class buffered_file",
+        "start_line": 167,
+        "end_line": 205,
+        "relevance_reason": "Manages file descriptor attachment and lifecycle via fdopen and buffered_file."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_009",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/color.h",
+        "symbol": "vprint",
+        "start_line": 497,
+        "end_line": 520,
+        "relevance_reason": "Shows buffer creation, applying ANSI escape sequences for text_style, formatting arguments, and writing to FILE*."
+      },
+      {
+        "file_path": "include/fmt/color.h",
+        "symbol": "class text_style",
+        "start_line": 236,
+        "end_line": 275,
+        "relevance_reason": "Supplies color specifications and emphasis flags evaluated during vprint."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_010",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/printf.h",
+        "symbol": "class printf_arg_formatter",
+        "start_line": 232,
+        "end_line": 270,
+        "relevance_reason": "Defines printf_arg_formatter subclassing arg_formatter to handle POSIX printf specifications."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_011",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/printf.h",
+        "symbol": "sprintf",
+        "start_line": 604,
+        "end_line": 625,
+        "relevance_reason": "Shows construction of memory_buffer and dispatch to vprintf with printf arguments."
+      },
+      {
+        "file_path": "include/fmt/printf.h",
+        "symbol": "class printf_arg_formatter",
+        "start_line": 232,
+        "end_line": 270,
+        "relevance_reason": "Provides the argument formatter visitor used during vprintf formatting."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_012",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/ranges.h",
+        "symbol": "tuple_join_view",
+        "start_line": 722,
+        "end_line": 765,
+        "relevance_reason": "Implements tuple unpacking and formatting with custom delimiters."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_013",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/chrono.h",
+        "symbol": "formatter<std::chrono::duration",
+        "start_line": 2088,
+        "end_line": 2130,
+        "relevance_reason": "Defines formatter for std::chrono::duration handling unit suffixes and precision."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_014",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/compile.h",
+        "symbol": "FMT_COMPILE",
+        "start_line": 35,
+        "end_line": 55,
+        "relevance_reason": "Defines FMT_COMPILE macro wrapping string literals in compiled_string for static analysis."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_015",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/os.h",
+        "symbol": "windows_error",
+        "start_line": 140,
+        "end_line": 165,
+        "relevance_reason": "Implements windows_error constructing std::system_error from GetLastError() codes."
+      },
+      {
+        "file_path": "include/fmt/os.h",
+        "symbol": "report_windows_error",
+        "start_line": 157,
+        "end_line": 165,
+        "relevance_reason": "Reports Windows errors safely without throwing exceptions for destructor contexts."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_016",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/enum.h",
+        "symbol": "format_as",
+        "start_line": 245,
+        "end_line": 267,
+        "relevance_reason": "Defines format_as returning static_cast<underlying_t<E>>(value) for enum formatting."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_017",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/enum.h",
+        "symbol": "as_underlying",
+        "start_line": 50,
+        "end_line": 75,
+        "relevance_reason": "Defines as_underlying marker struct and constant for explicit integer representation."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_018",
+    "repository": "fmtlib/fmt",
+    "answerable": true,
+    "evidence": [
+      {
+        "file_path": "include/fmt/color.h",
+        "symbol": "terminal_color",
+        "start_line": 160,
+        "end_line": 200,
+        "relevance_reason": "Defines standard 16-color ANSI terminal color codes (black, red, green, etc.)."
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_019",
+    "repository": "fmtlib/fmt",
+    "answerable": false,
+    "evidence": [],
+    "justification": "fmt is a text formatting library, not an asynchronous logging framework. Thread-pooled asynchronous logging sinks are provided by libraries built on top of fmt (such as spdlog or quill), not by fmtlib itself."
+  },
+  {
+    "question_id": "fmt_020",
+    "repository": "fmtlib/fmt",
+    "answerable": false,
+    "evidence": [],
+    "justification": "fmt is strictly a format string interpolation and rendering library; it does not contain a JSON parser or serializer (such as nlohmann/json or rapidjson)."
+  }
+]

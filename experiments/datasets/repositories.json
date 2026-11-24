@@ -1,0 +1,32 @@
+[
+  {
+    "name": "pallets/flask",
+    "github_url": "https://github.com/pallets/flask",
+    "primary_language": "Python",
+    "additional_languages": [],
+    "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+    "source_files_count": 83,
+    "selection_reason": "Pallets/flask is the canonical WSGI web framework in Python. It features a rich, modular architecture with request context management, blueprint routing, signals, CLI integration, and configuration handling across interconnected modules (e.g., app.py, ctx.py, blueprints.py, config.py, wrappers.py). It tests the RAG system's ability to handle decorators (@app.route), class inheritance (Flask inherits from Scaffold), context-local proxies (current_app, request, g), and multi-file control flows in clean idiomatic Python. With 83 source files, it indexes rapidly on CPU without overwhelming ChromaDB."
+  },
+  {
+    "name": "expressjs/express",
+    "github_url": "https://github.com/expressjs/express",
+    "primary_language": "JavaScript",
+    "additional_languages": [],
+    "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+    "source_files_count": 142,
+    "selection_reason": "Express is the benchmark Node.js web application framework. It relies on prototypical inheritance, middleware pipelines, event-driven architecture, and deeply nested callbacks/closures across core modules (e.g., lib/express.js, lib/application.js, lib/request.js, lib/response.js, lib/router/index.js, lib/router/layer.js, lib/router/route.js). It exercises the RAG retrieval engine on CommonJS module exports (module.exports), prototype method attachments (app.use, proto.handle), and functional middleware chains. With 142 source files, it represents a standard enterprise JavaScript codebase."
+  },
+  {
+    "name": "fmtlib/fmt",
+    "github_url": "https://github.com/fmtlib/fmt",
+    "primary_language": "C++",
+    "additional_languages": [
+      "C",
+      "Python"
+    ],
+    "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+    "source_files_count": 28,
+    "selection_reason": "fmtlib/fmt is the modern C++ formatting library that forms the basis of C++20 std::format. It stresses the chunker and retriever with template metaprogramming, C++ macro definitions (FMT_API, FMT_CONSTEXPR), namespace nesting (fmt::v11), compile-time string inspection, and OS-level I/O abstractions (include/fmt/os.h, ranges.h, chrono.h, args.h, color.h, compile.h). Under the existing repo_loader (which enforces a 100KB file ceiling and skips .cc), 28 modular header and utility files are indexed, testing retrieval on specialized header-only C++ modular abstractions without exceeding memory limits."
+  }
+]

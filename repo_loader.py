@@ -27,12 +27,20 @@ import tempfile      # 📚 CONCEPT: OS-managed temporary workspaces that keep o
 import urllib.request # For making HTTP requests to GitHub
 import zipfile       # For extracting downloaded repository archives
 import re            # For parsing GitHub URLs using Regular Expressions
+import time          # For baseline telemetry timing (Day 1 instrumentation)
+
+# Global telemetry cache for last cloned repository metadata
+_LAST_REPO_METADATA: dict | None = None
 
 # ══════════════════════════════════════════════════════════════════
 # 1. REPOSITORY CLONER
 # ══════════════════════════════════════════════════════════════════
-def clone_repo(github_url: str) -> str:
-    """Downloads repo as a ZIP and extracts to temp folder, returns path."""
+def clone_repo(github_url: str, return_metadata: bool = False):
+    """Downloads repo as a ZIP and extracts to temp folder, returns path.
+    Preserves backward compatibility: returns str by default.
+    If return_metadata=True, returns (repo_path, metadata_dict)."""
+    global _LAST_REPO_METADATA
+    t_total_start = time.perf_counter()
     
     # [1] Parse the URL to get the owner and repo name
     match = re.search(r'github\.com/([^/]+)/([^/]+)', github_url)
@@ -51,30 +59,59 @@ def clone_repo(github_url: str) -> str:
     zip_path = os.path.join(temp_dir, "repo.zip")
     
     try:
-        # [2] Download the ZIP file
-        # 💡 WHY: We add a User-Agent header because GitHub's API blocks automated scripts without one.
+        # [2] Download the ZIP file with timing
+        t_download_start = time.perf_counter()
         req = urllib.request.Request(zip_url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req) as response, open(zip_path, 'wb') as out_file:
             shutil.copyfileobj(response, out_file)
+        download_duration = time.perf_counter() - t_download_start
             
-        # [3] Extract the ZIP
+        # [3] Extract the ZIP with timing
+        t_extract_start = time.perf_counter()
         with zipfile.ZipFile(zip_path, 'r') as zip_ref:
             zip_ref.extractall(temp_dir)
+        extract_duration = time.perf_counter() - t_extract_start
             
         os.remove(zip_path) # Clean up the zip file itself
         
-        # [4] Find the actual repository folder
+        # [4] Find the actual repository folder and resolve commit SHA
         # GitHub ZIPs extract into a subfolder with a commit hash (e.g., owner-repo-1a2b3c4). 
         # We return that subfolder path so the file tree looks normal to our pipeline.
         extracted_dirs = [d for d in os.listdir(temp_dir) if os.path.isdir(os.path.join(temp_dir, d))]
+        commit_sha = "unknown"
         if extracted_dirs:
-            return os.path.join(temp_dir, extracted_dirs[0])
+            dir_name = extracted_dirs[0]
+            sha_match = re.search(r'-([a-f0-9]{7,40})$', dir_name)
+            if sha_match:
+                commit_sha = sha_match.group(1)
+            final_path = os.path.join(temp_dir, dir_name)
+        else:
+            final_path = temp_dir
             
-        return temp_dir
+        total_duration = time.perf_counter() - t_total_start
+        
+        metadata = {
+            "url": github_url,
+            "owner": owner,
+            "repo": repo,
+            "commit_sha": commit_sha,
+            "download_duration_seconds": round(download_duration, 4),
+            "extraction_duration_seconds": round(extract_duration, 4),
+            "total_loading_duration_seconds": round(total_duration, 4)
+        }
+        _LAST_REPO_METADATA = metadata
+        
+        if return_metadata:
+            return final_path, metadata
+        return final_path
     except Exception as e:
         # If anything fails, clean up the temp folder so we don't leak disk space
         cleanup_repo(temp_dir)
         raise Exception(f"Failed to download repository. Make sure the URL is public. Error: {e}")
+
+def get_last_repo_metadata() -> dict | None:
+    """Returns the metadata dictionary captured during the most recent clone_repo call."""
+    return _LAST_REPO_METADATA
 
 # ══════════════════════════════════════════════════════════════════
 # 2. SOURCE FILE EXTRACTOR

@@ -15,6 +15,7 @@
 
 import streamlit as st
 import os
+import time
 from dotenv import load_dotenv
 
 # ══════════════════
@@ -25,6 +26,7 @@ import repo_loader
 import chunker
 import embedder
 import llm
+import telemetry
 
 # Load environment variables (like API keys) from the .env file
 load_dotenv()
@@ -50,6 +52,10 @@ if "repo_name" not in st.session_state:
     st.session_state.repo_name = None
 if "directory_tree" not in st.session_state:
     st.session_state.directory_tree = ""
+if "baseline_run" not in st.session_state:
+    st.session_state.baseline_run = None
+if "indexing_diagnostics" not in st.session_state:
+    st.session_state.indexing_diagnostics = None
 
 # ══════════════════
 # PHASE 1: INDEXING (Sidebar)
@@ -76,10 +82,12 @@ with st.sidebar:
                 
             try:
                 repo_path = None
+                t_index_all_start = time.perf_counter()
+                
                 # [1] Data Ingestion (repo_loader)
                 # st.spinner gives visual feedback to the user while long tasks run
                 with st.spinner("📥 Cloning repository... (Shallow clone)"):
-                    repo_path = repo_loader.clone_repo(github_url)
+                    repo_path, repo_meta = repo_loader.clone_repo(github_url, return_metadata=True)
                     
                 with st.spinner("🧹 Extracting source files..."):
                     files = repo_loader.get_source_files(repo_path)
@@ -93,18 +101,55 @@ with st.sidebar:
                 else:
                     # [2] Data Processing / Chunking (chunker)
                     with st.spinner(f"✂️ Chunking {len(files)} files..."):
+                        t_chunk_start = time.perf_counter()
                         all_chunks = []
                         for file_data in files:
                             chunks = chunker.chunk_code(file_data)
                             all_chunks.extend(chunks)
+                        chunking_duration = time.perf_counter() - t_chunk_start
                             
                     # [3] Embedding & Storage (embedder)
                     with st.spinner(f"💾 Indexing {len(all_chunks)} chunks into ChromaDB..."):
-                        count = embedder.index_chunks(all_chunks, repo_name)
+                        count, index_meta = embedder.index_chunks(all_chunks, repo_name, return_metadata=True)
                         
                     if repo_path:
                         repo_loader.cleanup_repo(repo_path)
                         
+                    total_indexing_duration = time.perf_counter() - t_index_all_start
+                    
+                    # Record baseline telemetry
+                    run_record = telemetry.create_baseline_run_record(
+                        repo_url=github_url,
+                        owner=repo_meta.get("owner", ""),
+                        repo_name=repo_name,
+                        commit_sha=repo_meta.get("commit_sha", "unknown"),
+                        files_indexed=len(files),
+                        chunks_indexed=count,
+                        repo_download_duration=repo_meta.get("download_duration_seconds", 0.0),
+                        repo_extraction_duration=repo_meta.get("extraction_duration_seconds", 0.0),
+                        repo_total_loading_duration=repo_meta.get("total_loading_duration_seconds", 0.0),
+                        chunking_duration=chunking_duration,
+                        chromadb_add_duration=index_meta.get("collection_add_duration_seconds", 0.0),
+                        total_index_function_duration=index_meta.get("total_index_function_duration_seconds", 0.0),
+                        total_indexing_duration=total_indexing_duration,
+                        embedding_model=index_meta.get("embedding_model", "DefaultEmbeddingFunction (all-MiniLM-L6-v2)"),
+                        embedding_dimensions=index_meta.get("embedding_dimension", 384),
+                        distance_metric=index_meta.get("distance_metric", "l2")
+                    )
+                    telemetry.save_baseline_run(run_record)
+                    st.session_state.baseline_run = run_record
+                    st.session_state.indexing_diagnostics = {
+                        "commit_sha": repo_meta.get("commit_sha", "unknown"),
+                        "files": len(files),
+                        "chunks": count,
+                        "download_sec": repo_meta.get("download_duration_seconds", 0.0),
+                        "extraction_sec": repo_meta.get("extraction_duration_seconds", 0.0),
+                        "total_loading_sec": repo_meta.get("total_loading_duration_seconds", 0.0),
+                        "chunking_sec": round(chunking_duration, 4),
+                        "chromadb_add_sec": index_meta.get("collection_add_duration_seconds", 0.0),
+                        "index_function_sec": index_meta.get("total_index_function_duration_seconds", 0.0),
+                        "total_indexing_sec": round(total_indexing_duration, 4)
+                    }
                     st.success(f"✅ Successfully indexed {len(files)} files into {count} chunks!")
             except Exception as e:
                 # 💡 WHY catch exceptions? So the app doesn't crash completely. 
@@ -116,6 +161,20 @@ with st.sidebar:
     # Display current state to the user
     if st.session_state.repo_name:
         st.success(f"Currently indexed: **{st.session_state.repo_name}**")
+        
+    if st.session_state.indexing_diagnostics:
+        with st.expander("📊 Indexing Diagnostics", expanded=False):
+            diag = st.session_state.indexing_diagnostics
+            st.write(f"**Commit SHA:** `{diag['commit_sha']}`")
+            st.write(f"**Files Indexed:** {diag['files']}")
+            st.write(f"**Chunks Indexed:** {diag['chunks']}")
+            st.write(f"**Download Time:** {diag['download_sec']:.2f}s")
+            st.write(f"**Extraction Time:** {diag['extraction_sec']:.2f}s")
+            st.write(f"**Total Repo Load Time:** {diag['total_loading_sec']:.2f}s")
+            st.write(f"**Chunking Time:** {diag['chunking_sec']:.2f}s")
+            st.write(f"**ChromaDB Add (Embed+Insert):** {diag['chromadb_add_sec']:.2f}s")
+            st.write(f"**Index Function Total:** {diag['index_function_sec']:.2f}s")
+            st.write(f"**Total Indexing Time:** {diag['total_indexing_sec']:.2f}s")
         
     if st.session_state.directory_tree:
         with st.expander("📂 Repository Structure", expanded=False):
@@ -149,7 +208,23 @@ for message in st.session_state.messages:
                     elif meta.get('file_path', '').endswith('.java'): lang = "java"
                     elif meta.get('file_path', '').endswith(('.cpp', '.c', '.h')): lang = "cpp"
                         
-                    st.code(f"// {meta.get('file_path')} | Lines {meta.get('start_line')}-{meta.get('end_line')}\n" + chunk['content'], language=lang)
+                    id_str = f" | ID: {chunk.get('id')}" if chunk.get('id') else ""
+                    dist_str = f" | Distance: {chunk.get('distance'):.4f}" if chunk.get('distance') is not None else ""
+                    st.code(f"// {meta.get('file_path')} | Lines {meta.get('start_line')}-{meta.get('end_line')}{id_str}{dist_str}\n" + chunk['content'], language=lang)
+                    
+        if "diagnostics" in message and message["diagnostics"]:
+            with st.expander("📊 Baseline Diagnostics", expanded=False):
+                diag = message["diagnostics"]
+                r = diag.get("retrieval", {})
+                g = diag.get("generation", {})
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    st.metric("Retrieval Latency", f"{r.get('total_retrieval_latency_seconds', 0.0):.3f}s")
+                with col2:
+                    st.metric("Generation Latency", f"{g.get('latency_seconds', 0.0):.3f}s")
+                with col3:
+                    st.metric("Total Turn Latency", f"{diag.get('total_turn_latency_seconds', 0.0):.3f}s")
+                st.write(f"**Chunks:** {r.get('actual_results_returned', 0)} / {r.get('top_k_requested', 5)} | **Metric:** {r.get('distance_metric', 'l2')} | **Model:** {g.get('model', 'gemini-3.5-flash')}")
 
 # Wait for user to enter a new prompt
 # `st.chat_input` pauses execution here until the user submits text
@@ -168,10 +243,12 @@ if prompt := st.chat_input("Ask a question about the code..."):
         # Display assistant response area
         with st.chat_message("assistant"):
             retrieved_chunks = []
+            t_turn_start = time.perf_counter()
+            
             # [4] Retrieval (embedder)
             # Find the chunks of code most relevant to the user's question
             with st.spinner("Searching codebase..."):
-                retrieved_chunks = embedder.search_similar(prompt, st.session_state.repo_name)
+                retrieved_chunks, retrieval_meta = embedder.search_similar(prompt, st.session_state.repo_name, return_metadata=True)
             
             # [5] Generation (llm)
             # Combine the user's question, the retrieved code chunks, repo context,
@@ -184,10 +261,12 @@ if prompt := st.chat_input("Ask a question about the code..."):
                     prompt, 
                     retrieved_chunks, 
                     st.session_state.directory_tree,
-                    chat_history=st.session_state.messages  # ← THIS IS THE KEY CHANGE
+                    chat_history=st.session_state.messages[:-1]  # Exclude current prompt so it appears only in QUESTION
                 )
-                response = llm.ask_gemini(llm_prompt)
+                response, gen_meta = llm.ask_gemini(llm_prompt, return_metadata=True)
                 
+            total_turn_duration = time.perf_counter() - t_turn_start
+            
             # Render the final AI answer to the screen
             st.markdown(response)
             
@@ -201,12 +280,55 @@ if prompt := st.chat_input("Ask a question about the code..."):
                         if meta.get('file_path', '').endswith(('.js', '.ts')): lang = "javascript"
                         elif meta.get('file_path', '').endswith('.java'): lang = "java"
                         elif meta.get('file_path', '').endswith(('.cpp', '.c', '.h')): lang = "cpp"
-                        
-                        st.code(f"// {meta.get('file_path')} | Lines {meta.get('start_line')}-{meta.get('end_line')}\n" + chunk['content'], language=lang)
+                            
+                        id_str = f" | ID: {chunk.get('id')}" if chunk.get('id') else ""
+                        dist_str = f" | Distance: {chunk.get('distance'):.4f}" if chunk.get('distance') is not None else ""
+                        st.code(f"// {meta.get('file_path')} | Lines {meta.get('start_line')}-{meta.get('end_line')}{id_str}{dist_str}\n" + chunk['content'], language=lang)
+            
+            # Show diagnostic metrics in expander
+            with st.expander("📊 Baseline Diagnostics", expanded=False):
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    st.metric("Retrieval Latency", f"{retrieval_meta.get('retrieval_latency_seconds', 0.0):.3f}s")
+                with col2:
+                    st.metric("Generation Latency", f"{gen_meta.get('latency_seconds', 0.0):.3f}s")
+                with col3:
+                    st.metric("Total Turn Latency", f"{total_turn_duration:.3f}s")
+                st.write(f"**Chunks:** {len(retrieved_chunks)} / {retrieval_meta.get('n_results_requested', 5)} | **Metric:** {retrieval_meta.get('distance_metric', 'l2')} | **Model:** {gen_meta.get('model', 'gemini-3.5-flash')}")
+            
+            # Record query event into baseline run if active
+            query_event = telemetry.create_query_record(
+                query_text=prompt,
+                repo_name=st.session_state.repo_name,
+                top_k_requested=retrieval_meta.get("n_results_requested", 5),
+                actual_results_returned=len(retrieved_chunks),
+                retrieval_latency_seconds=retrieval_meta.get("retrieval_latency_seconds", 0.0),
+                retrieved_chunks=retrieved_chunks,
+                distance_metric=retrieval_meta.get("distance_metric", "l2"),
+                generation_model=gen_meta.get("model", "gemini-3.5-flash"),
+                generation_latency_seconds=gen_meta.get("latency_seconds", 0.0),
+                generation_success=gen_meta.get("success", True),
+                generation_error=gen_meta.get("error"),
+                prompt_length_chars=gen_meta.get("prompt_length_chars", 0),
+                response_length_chars=gen_meta.get("response_length_chars", 0),
+                total_turn_latency_seconds=total_turn_duration
+            )
+            
+            if st.session_state.baseline_run:
+                st.session_state.baseline_run["queries"].append(query_event)
+                telemetry.save_baseline_run(st.session_state.baseline_run)
+            else:
+                run_record = telemetry.create_baseline_run_record(
+                    repo_name=st.session_state.repo_name
+                )
+                run_record["queries"].append(query_event)
+                telemetry.save_baseline_run(run_record)
+                st.session_state.baseline_run = run_record
             
         # Add the assistant's complete response to the session history
         st.session_state.messages.append({
             "role": "assistant", 
             "content": response,
-            "chunks": retrieved_chunks
+            "chunks": retrieved_chunks,
+            "diagnostics": query_event
         })

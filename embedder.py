@@ -13,47 +13,31 @@
 # ══════════════════════════════════════════════════════════════════════════════
 """
 import streamlit as st
-from sentence_transformers import SentenceTransformer
 import chromadb
+from chromadb.utils import embedding_functions
+import time
+
+# Global telemetry caches for last indexing and retrieval operations
+_LAST_INDEX_METADATA: dict | None = None
+_LAST_RETRIEVAL_METADATA: dict | None = None
 
 # ══════════════════════════════════════════════════════════════════════════════
 # MODEL LOADING & CACHING
 # ══════════════════════════════════════════════════════════════════════════════
 
 # 💡 WHY: Streamlit re-runs the entire script on every user interaction. 
-# Loading a machine learning model is slow (can take several seconds).
+# Loading an embedding model can take time.
 # @st.cache_resource keeps the model in memory across all these re-runs.
 @st.cache_resource
 def load_embedding_model():
-    """Loads SentenceTransformer ONCE and caches it across all Streamlit reruns."""
+    """Loads ChromaDB's built-in ONNX-based all-MiniLM-L6-v2 embedding model.
+    Runs locally on CPU using onnxruntime (fast, lightweight, and avoids
+    heavy PyTorch DLL dependencies that Windows Security policies block)."""
     # 📚 CONCEPT: Vector Embeddings
-    # Embeddings are a way to represent text as arrays of numbers (vectors) in a 
-    # high-dimensional space. Texts with similar meanings will have vectors that 
-    # are physically close to each other in this mathematical space.
-    
-    # 📚 CONCEPT: SentenceTransformer ('all-MiniLM-L6-v2')
-    # We use 'all-MiniLM-L6-v2', a small, fast transformer model that converts 
-    # sentences into 384-dimensional embeddings. It's highly optimized for 
-    # semantic search and creates vectors where cosine similarity works well.
-    return SentenceTransformer('all-MiniLM-L6-v2')
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ADAPTER PATTERN FOR CHROMA
-# ══════════════════════════════════════════════════════════════════════════════
-
-# 📚 CONCEPT: Custom Embedding Function (Adapter Pattern)
-# ChromaDB needs to know HOW to turn text into embeddings. By default, it might
-# download its own model. We want it to use OUR pre-loaded, cached model to save
-# time and memory. This class acts as a bridge (adapter) between Chroma and our model.
-class CustomSentenceTransformerEF(chromadb.EmbeddingFunction):
-    def __init__(self, model):
-        self.model = model
-
-    def __call__(self, input: chromadb.Documents) -> chromadb.Embeddings:
-        # [1] Convert the list of texts (input) into vectors
-        embeddings = self.model.encode(input)
-        # [2] Convert numpy arrays back to standard Python lists for ChromaDB
-        return embeddings.tolist()
+    # Embeddings represent text as arrays of numbers (vectors) in high-dimensional space.
+    # Texts with similar meanings will have vectors that are mathematically close.
+    # We use all-MiniLM-L6-v2 (384-dimensional vectors) via ONNX Runtime.
+    return embedding_functions.DefaultEmbeddingFunction()
 
 # ══════════════════════════════════════════════════════════════════════════════
 # DATABASE SETUP
@@ -74,14 +58,17 @@ def get_chroma_client():
 # INDEXING / STORING DATA
 # ══════════════════════════════════════════════════════════════════════════════
 
-def index_chunks(chunks: list[dict], repo_name: str) -> int:
+def index_chunks(chunks: list[dict], repo_name: str, return_metadata: bool = False):
     """Stores all chunks in ChromaDB. Returns count of chunks indexed.
     Uses repo_name as collection name.
-    Deletes old collection if re-indexing same repo."""
+    Deletes old collection if re-indexing same repo.
+    Preserves backward compatibility: returns int by default.
+    If return_metadata=True, returns (total_indexed, index_metadata)."""
+    global _LAST_INDEX_METADATA
+    t_index_start = time.perf_counter()
     client = get_chroma_client()
     
-    model = load_embedding_model()
-    custom_ef = CustomSentenceTransformerEF(model)#create Chroma-compatible embedding function
+    embedding_fn = load_embedding_model()
     
     # [1] Make sure repo name is safe for ChromaDB (no weird characters)
     # 💡 WHY: ChromaDB throws errors if collection names contain invalid characters.
@@ -101,9 +88,7 @@ def index_chunks(chunks: list[dict], repo_name: str) -> int:
     # A "collection" in Chroma is like a table in a relational database
     collection = client.get_or_create_collection(
         name=safe_repo_name,
-        embedding_function=custom_ef#You're telling Chroma:
-        # Whenever you need embeddings for text in this collection, use my CustomSentenceTransformerEF."
-
+        embedding_function=embedding_fn
     )
     
     # [4] Prepare batch insertion
@@ -111,6 +96,7 @@ def index_chunks(chunks: list[dict], repo_name: str) -> int:
     # Batching (processing multiple chunks at once) is much more efficient. 100 is a safe chunk size.
     batch_size = 100
     total_indexed = 0
+    total_collection_add_duration = 0.0
     
     for i in range(0, len(chunks), batch_size):
         batch = chunks[i:i + batch_size]
@@ -124,26 +110,50 @@ def index_chunks(chunks: list[dict], repo_name: str) -> int:
         # [5] Add vectors to the database
         # Under the hood, ChromaDB calls our CustomSentenceTransformerEF to convert
         # the 'documents' into embeddings before saving them.
+        t_add_start = time.perf_counter()
         collection.add(
             documents=documents,
             metadatas=metadatas,
             ids=ids
         )
+        total_collection_add_duration += (time.perf_counter() - t_add_start)
         total_indexed += len(batch)
         
+    total_index_function_duration = time.perf_counter() - t_index_start
+    index_metadata = {
+        "repo_name": repo_name,
+        "safe_collection_name": safe_repo_name,
+        "chunks_count": total_indexed,
+        "collection_add_duration_seconds": round(total_collection_add_duration, 4),
+        "total_index_function_duration_seconds": round(total_index_function_duration, 4),
+        "indexing_duration_seconds": round(total_collection_add_duration, 4), # Preserved for backward compatibility
+        "embedding_model": "DefaultEmbeddingFunction (all-MiniLM-L6-v2)",
+        "embedding_dimension": 384,
+        "distance_metric": "l2"
+    }
+    _LAST_INDEX_METADATA = index_metadata
+
+    if return_metadata:
+        return total_indexed, index_metadata
     return total_indexed
+
+def get_last_index_metadata() -> dict | None:
+    """Returns metadata from the most recent index_chunks call."""
+    return _LAST_INDEX_METADATA
 
 # ══════════════════════════════════════════════════════════════════════════════
 # RETRIEVAL / SEARCH
 # ══════════════════════════════════════════════════════════════════════════════
 
-def search_similar(query: str, repo_name: str, n_results: int = 5) -> list[dict]:
+def search_similar(query: str, repo_name: str, n_results: int = 5, return_metadata: bool = False):
     """Finds top N most similar code chunks to the query.
-    Returns [{content, metadata: {file_path, start_line, end_line, chunk_type}}]"""
+    Preserves backward compatibility: returns list[dict] by default.
+    Adds 'id' and 'distance' to each returned chunk dictionary.
+    If return_metadata=True, returns (retrieved_chunks, retrieval_metadata)."""
+    global _LAST_RETRIEVAL_METADATA
     client = get_chroma_client()
     
-    model = load_embedding_model()
-    custom_ef = CustomSentenceTransformerEF(model)
+    embedding_fn = load_embedding_model()
     
     # Sanitize the repo name exactly like we did during indexing
     safe_repo_name = "".join(c if c.isalnum() or c in ('_', '-') else "_" for c in repo_name)
@@ -155,31 +165,65 @@ def search_similar(query: str, repo_name: str, n_results: int = 5) -> list[dict]
         # Connect to the specific repository's data
         collection = client.get_collection(
             name=safe_repo_name,
-            embedding_function=custom_ef
+            embedding_function=embedding_fn
         )
-    except Exception:
+    except Exception as e:
+        empty_meta = {
+            "query": query,
+            "repo_name": repo_name,
+            "safe_collection_name": safe_repo_name,
+            "n_results_requested": n_results,
+            "n_results_returned": 0,
+            "retrieval_latency_seconds": 0.0,
+            "distance_metric": "l2",
+            "error": str(e)
+        }
+        _LAST_RETRIEVAL_METADATA = empty_meta
+        if return_metadata:
+            return [], empty_meta
         return [] # Collection not found, meaning repo wasn't indexed
         
-    # 📚 CONCEPT: Similarity Search (Cosine Similarity)
+    # 📚 CONCEPT: Similarity Search (ChromaDB default L2 squared Euclidean distance)
     # 1. First, the query string is converted into a vector using the same model.
-    # 2. Then, ChromaDB calculates the "distance" (typically cosine similarity) 
-    #    between the query vector and all chunk vectors in the database.
+    # 2. Then, ChromaDB calculates the distance between the query vector and all chunk vectors.
     # 3. It returns the top N chunks that are closest mathematically.
+    t_query_start = time.perf_counter()
     results = collection.query(
         query_texts=[query],
         n_results=n_results
     )
+    retrieval_latency = time.perf_counter() - t_query_start
     
-    # Reconstruct the results into our standard dictionary format
+    # Reconstruct the results into our standard dictionary format with IDs and distances preserved
     retrieved_chunks = []
     if results['documents'] and len(results['documents'][0]) > 0:
         for i in range(len(results['documents'][0])):
-            retrieved_chunks.append({
+            chunk_entry = {
                 'content': results['documents'][0][i],
-                'metadata': results['metadatas'][0][i]
-            })
+                'metadata': results['metadatas'][0][i],
+                'id': results['ids'][0][i] if ('ids' in results and results['ids']) else f"chunk_{i}",
+                'distance': results['distances'][0][i] if ('distances' in results and results['distances']) else None
+            }
+            retrieved_chunks.append(chunk_entry)
             
+    retrieval_metadata = {
+        "query": query,
+        "repo_name": repo_name,
+        "safe_collection_name": safe_repo_name,
+        "n_results_requested": n_results,
+        "n_results_returned": len(retrieved_chunks),
+        "retrieval_latency_seconds": round(retrieval_latency, 4),
+        "distance_metric": "l2"
+    }
+    _LAST_RETRIEVAL_METADATA = retrieval_metadata
+    
+    if return_metadata:
+        return retrieved_chunks, retrieval_metadata
     return retrieved_chunks
+
+def get_last_retrieval_metadata() -> dict | None:
+    """Returns metadata from the most recent search_similar call."""
+    return _LAST_RETRIEVAL_METADATA
 
 # ══════════════════════════════════════════════════════════════════════════════
 # HELPER FUNCTIONS

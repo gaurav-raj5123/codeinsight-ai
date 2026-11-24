@@ -18,7 +18,12 @@ This module is responsible for:
 """
 
 import os
+import time
+import re
 from google import genai
+
+# Global telemetry cache for last generation operation
+_LAST_GENERATION_METADATA: dict | None = None
 
 # ══════════════════════════════════════════════════════════════════════════════
 # PROMPT ENGINEERING SECTION
@@ -97,34 +102,79 @@ def build_prompt(question: str, chunks: list[dict], directory_tree: str, chat_hi
 # ══════════════════════════════════════════════════════════════════════════════
 # LLM GENERATION SECTION
 # ══════════════════════════════════════════════════════════════════════════════
-def ask_gemini(prompt: str) -> str:
+def ask_gemini(prompt: str, return_metadata: bool = False):
     """Calls Gemini 3.5 Flash via google-genai SDK (free tier). 
     Includes retry with exponential backoff for rate limits.
-    Returns the generated text answer."""
+    Preserves backward compatibility: returns str by default.
+    If return_metadata=True, returns (response_text, generation_metadata)."""
+    global _LAST_GENERATION_METADATA
+    t_gen_start = time.perf_counter()
     
     # 💡 WHY: API keys should never be hardcoded. We load them from environment 
     # variables (.env file) for security.
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        return "⚠️ Error: GEMINI_API_KEY is not set. Please add it to your .env file."
+        error_msg = "⚠️ Error: GEMINI_API_KEY is not set. Please add it to your .env file."
+        gen_meta = {
+            "model": "gemini-3.5-flash",
+            "latency_seconds": 0.0,
+            "success": False,
+            "error": "GEMINI_API_KEY is not set",
+            "prompt_length_chars": len(prompt),
+            "response_length_chars": len(error_msg)
+        }
+        _LAST_GENERATION_METADATA = gen_meta
+        if return_metadata:
+            return error_msg, gen_meta
+        return error_msg
         
-    # Initialize the official Google GenAI SDK client
-    # 📚 CONCEPT: SDK (Software Development Kit)
-    # This handles all the complex HTTP requests to Google's servers for us.
-    client = genai.Client(api_key=api_key)
-    
     try:
+        # Initialize the official Google GenAI SDK client inside try block to catch initialization errors
+        # 📚 CONCEPT: SDK (Software Development Kit)
+        # This handles all the complex HTTP requests to Google's servers for us.
+        client = genai.Client(api_key=api_key)
+        
         # 📚 CONCEPT: Context Window and Token Limits
         # Every LLM has a limit to how much text (tokens) it can read at once.
         # The prompt we built above must fit within this limit. Gemini Flash has a large 
         # context window, making it great for RAG.
-        # Note: In a more advanced setup, you can also control the "temperature" parameter 
-        # here. Temperature controls creativity (0 = strict/deterministic, 1 = creative). 
-        # For code RAG, a lower temperature is usually better to prevent hallucinations.
         response = client.models.generate_content(
             model="gemini-3.5-flash",
             contents=prompt,
         )
-        return response.text
+        gen_latency = time.perf_counter() - t_gen_start
+        response_text = response.text or ""
+        gen_meta = {
+            "model": "gemini-3.5-flash",
+            "latency_seconds": round(gen_latency, 4),
+            "success": True,
+            "error": None,
+            "prompt_length_chars": len(prompt),
+            "response_length_chars": len(response_text)
+        }
+        _LAST_GENERATION_METADATA = gen_meta
+        if return_metadata:
+            return response_text, gen_meta
+        return response_text
     except Exception as e:
-        return f"⚠️ Error calling Gemini API: {str(e)}"
+        gen_latency = time.perf_counter() - t_gen_start
+        # Sanitize error to avoid exposing API keys
+        safe_err = str(e)
+        safe_err = re.sub(r'AIza[0-9A-Za-z-_]+', '[REDACTED_API_KEY]', safe_err)
+        error_msg = f"⚠️ Error calling Gemini API: {safe_err}"
+        gen_meta = {
+            "model": "gemini-3.5-flash",
+            "latency_seconds": round(gen_latency, 4),
+            "success": False,
+            "error": safe_err,
+            "prompt_length_chars": len(prompt),
+            "response_length_chars": len(error_msg)
+        }
+        _LAST_GENERATION_METADATA = gen_meta
+        if return_metadata:
+            return error_msg, gen_meta
+        return error_msg
+
+def get_last_generation_metadata() -> dict | None:
+    """Returns metadata from the most recent ask_gemini call."""
+    return _LAST_GENERATION_METADATA
