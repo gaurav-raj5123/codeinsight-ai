@@ -1,0 +1,106 @@
+{
+  "strategy_id": "existing_chunker_v0",
+  "total_chunks": 4272,
+  "chunks_per_repository": {
+    "pallets/flask": 1785,
+    "expressjs/express": 2066,
+    "fmtlib/fmt": 421
+  },
+  "chunks_per_language": {
+    ".c": 7,
+    ".h": 296,
+    ".js": 2067,
+    ".py": 1902
+  },
+  "source_files_total": 253,
+  "source_files_with_non_empty_chunks": 250,
+  "source_file_coverage_pct": 98.81,
+  "line_coverage_pct": 94.93,
+  "non_empty_line_coverage_pct": 97.47,
+  "chunk_line_length_stats": {
+    "count": 4272,
+    "mean": 14.06,
+    "median": 8.0,
+    "min": 1,
+    "max": 100
+  },
+  "chunk_char_length_stats": {
+    "count": 4272,
+    "mean": 445.38,
+    "median": 258.0,
+    "min": 0,
+    "max": 4730
+  },
+  "chunk_token_length_stats": {
+    "count": 4272,
+    "mean": 139.34,
+    "median": 84.0,
+    "min": 2,
+    "max": 1844,
+    "p95": 525
+  },
+  "empty_chunk_count": 3,
+  "single_line_chunk_count": 473,
+  "single_line_chunk_pct": 11.07,
+  "short_lt_5_lines_count": 1404,
+  "short_lt_5_lines_pct": 32.87,
+  "tiny_lt_15_tokens_count": 235,
+  "tiny_lt_15_tokens_pct": 5.5,
+  "over_256_tokens_count": 624,
+  "over_256_tokens_pct": 14.61,
+  "over_512_tokens_count": 233,
+  "over_512_tokens_pct": 5.45,
+  "runtime_truncation_count": 624,
+  "runtime_truncation_rate_pct": 14.61,
+  "exact_duplicate_chunks_excess": 255,
+  "exact_duplicate_groups": 126,
+  "exact_duplicate_rate_pct": 5.97,
+  "syntax_parsed_count": 1884,
+  "syntax_parsed_pct": 44.1,
+  "fallback_chunk_count": 18,
+  "fallback_chunk_pct": 0.42,
+  "chunk_type_distribution": {
+    "regex_split": 2234,
+    "FunctionDef": 1528,
+    "ClassDef": 165,
+    "ClassDef_split": 147,
+    "regex_split_split": 136,
+    "FunctionDef_split": 26,
+    "sliding_window": 18,
+    "AsyncFunctionDef": 18
+  },
+  "avg_relevant_chunks_per_answerable_query": 3.65,
+  "ground_truth_span_coverage": {
+    "total_spans": 71,
+    "covered_spans": 71,
+    "covered_pct": 100.0,
+    "untruncated_spans_le_256_tokens": 30,
+    "untruncated_spans_pct": 42.25
+  },
+  "peak_rss_mb": 620.55,
+  "timings_seconds": {
+    "total_chunking_seconds": 0.3979,
+    "mean_chunking_per_repo_seconds": 0.1326,
+    "total_doc_embed_seconds": 342.1312,
+    "embedding_throughput_chunks_per_sec": 12.49,
+    "total_chroma_insert_seconds": 8.9597,
+    "total_indexing_end_to_end_seconds": 351.4888,
+    "by_repository": {
+      "pallets/flask": {
+        "chunking_seconds": 0.2105,
+        "doc_embed_seconds": 161.6276,
+        "chroma_insert_seconds": 4.764
+      },
+      "expressjs/express": {
+        "chunking_seconds": 0.0598,
+        "doc_embed_seconds": 150.7704,
+        "chroma_insert_seconds": 3.3222
+      },
+      "fmtlib/fmt": {
+        "chunking_seconds": 0.1277,
+        "doc_embed_seconds": 29.7332,
+        "chroma_insert_seconds": 0.8735
+      }
+    }
+  }
+}

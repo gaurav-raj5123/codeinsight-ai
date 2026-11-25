@@ -104,8 +104,11 @@ def index_chunks(chunks: list[dict], repo_name: str, return_metadata: bool = Fal
         # Split our chunk dictionaries into parallel lists expected by ChromaDB
         documents = [c['content'] for c in batch]
         metadatas = [c['metadata'] for c in batch]
-        # Generate unique IDs for each chunk (e.g., chunk_0, chunk_1)
-        ids = [f"chunk_{total_indexed + j}" for j in range(len(batch))]
+        # Prefer deterministic chunk_id when provided (e.g., code_aware_v1), otherwise fall back cleanly to V0 IDs
+        ids = [
+            str(c['metadata'].get('chunk_id')) if c['metadata'].get('chunk_id') else f"chunk_{total_indexed + j}"
+            for j, c in enumerate(batch)
+        ]
         
         # [5] Add vectors to the database
         # Under the hood, ChromaDB calls our CustomSentenceTransformerEF to convert

@@ -1,0 +1,99 @@
+{
+  "strategy_id": "fixed_window_v0",
+  "total_chunks": 1366,
+  "chunks_per_repository": {
+    "pallets/flask": 494,
+    "expressjs/express": 592,
+    "fmtlib/fmt": 280
+  },
+  "chunks_per_language": {
+    ".c": 3,
+    ".h": 234,
+    ".js": 593,
+    ".py": 536
+  },
+  "source_files_total": 253,
+  "source_files_with_non_empty_chunks": 250,
+  "source_file_coverage_pct": 98.81,
+  "line_coverage_pct": 100.0,
+  "non_empty_line_coverage_pct": 100.0,
+  "chunk_line_length_stats": {
+    "count": 1366,
+    "mean": 45.95,
+    "median": 50.0,
+    "min": 1,
+    "max": 50
+  },
+  "chunk_char_length_stats": {
+    "count": 1366,
+    "mean": 1365.6,
+    "median": 1370.5,
+    "min": 0,
+    "max": 2908
+  },
+  "chunk_token_length_stats": {
+    "count": 1366,
+    "mean": 433.8,
+    "median": 433.0,
+    "min": 2,
+    "max": 1444,
+    "p95": 681
+  },
+  "empty_chunk_count": 3,
+  "single_line_chunk_count": 3,
+  "single_line_chunk_pct": 0.22,
+  "short_lt_5_lines_count": 11,
+  "short_lt_5_lines_pct": 0.81,
+  "tiny_lt_15_tokens_count": 6,
+  "tiny_lt_15_tokens_pct": 0.44,
+  "over_256_tokens_count": 1219,
+  "over_256_tokens_pct": 89.24,
+  "over_512_tokens_count": 354,
+  "over_512_tokens_pct": 25.92,
+  "runtime_truncation_count": 1219,
+  "runtime_truncation_rate_pct": 89.24,
+  "exact_duplicate_chunks_excess": 2,
+  "exact_duplicate_groups": 1,
+  "exact_duplicate_rate_pct": 0.15,
+  "syntax_parsed_count": 0,
+  "syntax_parsed_pct": 0.0,
+  "fallback_chunk_count": 1366,
+  "fallback_chunk_pct": 100.0,
+  "chunk_type_distribution": {
+    "sliding_window": 1366
+  },
+  "avg_relevant_chunks_per_answerable_query": 2.67,
+  "ground_truth_span_coverage": {
+    "total_spans": 71,
+    "covered_spans": 71,
+    "covered_pct": 100.0,
+    "untruncated_spans_le_256_tokens": 3,
+    "untruncated_spans_pct": 4.23
+  },
+  "peak_rss_mb": 607.59,
+  "timings_seconds": {
+    "total_chunking_seconds": 0.0116,
+    "mean_chunking_per_repo_seconds": 0.0039,
+    "total_doc_embed_seconds": 110.6261,
+    "embedding_throughput_chunks_per_sec": 12.35,
+    "total_chroma_insert_seconds": 2.8445,
+    "total_indexing_end_to_end_seconds": 113.4822,
+    "by_repository": {
+      "pallets/flask": {
+        "chunking_seconds": 0.0032,
+        "doc_embed_seconds": 42.6268,
+        "chroma_insert_seconds": 1.2308
+      },
+      "expressjs/express": {
+        "chunking_seconds": 0.0051,
+        "doc_embed_seconds": 44.4529,
+        "chroma_insert_seconds": 1.0213
+      },
+      "fmtlib/fmt": {
+        "chunking_seconds": 0.0033,
+        "doc_embed_seconds": 23.5464,
+        "chroma_insert_seconds": 0.5924
+      }
+    }
+  }
+}

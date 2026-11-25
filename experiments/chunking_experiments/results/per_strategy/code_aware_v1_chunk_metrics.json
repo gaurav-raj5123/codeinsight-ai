@@ -1,0 +1,121 @@
+{
+  "strategy_id": "code_aware_v1",
+  "total_chunks": 3721,
+  "chunks_per_repository": {
+    "pallets/flask": 1352,
+    "expressjs/express": 1297,
+    "fmtlib/fmt": 1072
+  },
+  "chunks_per_language": {
+    "c": 10,
+    "cpp": 920,
+    "javascript": 1298,
+    "python": 1493
+  },
+  "source_files_total": 253,
+  "source_files_with_non_empty_chunks": 250,
+  "source_file_coverage_pct": 98.81,
+  "line_coverage_pct": 97.48,
+  "non_empty_line_coverage_pct": 100.0,
+  "chunk_line_length_stats": {
+    "count": 3721,
+    "mean": 14.23,
+    "median": 13.0,
+    "min": 1,
+    "max": 39
+  },
+  "chunk_char_length_stats": {
+    "count": 3721,
+    "mean": 551.85,
+    "median": 565.0,
+    "min": 101,
+    "max": 1308
+  },
+  "chunk_token_length_stats": {
+    "count": 3721,
+    "mean": 178.27,
+    "median": 190.0,
+    "min": 29,
+    "max": 256,
+    "p95": 253
+  },
+  "empty_chunk_count": 0,
+  "single_line_chunk_count": 4,
+  "single_line_chunk_pct": 0.11,
+  "short_lt_5_lines_count": 230,
+  "short_lt_5_lines_pct": 6.18,
+  "tiny_lt_15_tokens_count": 0,
+  "tiny_lt_15_tokens_pct": 0.0,
+  "over_256_tokens_count": 0,
+  "over_256_tokens_pct": 0.0,
+  "over_512_tokens_count": 0,
+  "over_512_tokens_pct": 0.0,
+  "runtime_truncation_count": 0,
+  "runtime_truncation_rate_pct": 0.0,
+  "exact_duplicate_chunks_excess": 7,
+  "exact_duplicate_groups": 3,
+  "exact_duplicate_rate_pct": 0.19,
+  "syntax_parsed_count": 3721,
+  "syntax_parsed_pct": 100.0,
+  "fallback_chunk_count": 0,
+  "fallback_chunk_pct": 0.0,
+  "chunk_type_distribution": {
+    "method_split": 999,
+    "function": 841,
+    "function_split": 625,
+    "method": 610,
+    "module_context": 125,
+    "module_context_split": 98,
+    "class_overview": 70,
+    "struct": 69,
+    "file_header_split": 56,
+    "class_overview_split": 54,
+    "export": 39,
+    "class": 24,
+    "enum_split": 22,
+    "class_split": 20,
+    "file_header": 15,
+    "module_imports": 13,
+    "getter": 10,
+    "struct_split": 10,
+    "export_split": 6,
+    "enum": 5,
+    "module_imports_split": 4,
+    "getter_split": 4,
+    "class_attributes": 2
+  },
+  "avg_relevant_chunks_per_answerable_query": 3.61,
+  "ground_truth_span_coverage": {
+    "total_spans": 71,
+    "covered_spans": 71,
+    "covered_pct": 100.0,
+    "untruncated_spans_le_256_tokens": 71,
+    "untruncated_spans_pct": 100.0
+  },
+  "peak_rss_mb": 622.84,
+  "timings_seconds": {
+    "total_chunking_seconds": 8.9153,
+    "mean_chunking_per_repo_seconds": 2.9718,
+    "total_doc_embed_seconds": 248.3552,
+    "embedding_throughput_chunks_per_sec": 14.98,
+    "total_chroma_insert_seconds": 8.0951,
+    "total_indexing_end_to_end_seconds": 265.3657,
+    "by_repository": {
+      "pallets/flask": {
+        "chunking_seconds": 3.329,
+        "doc_embed_seconds": 92.2189,
+        "chroma_insert_seconds": 2.7832
+      },
+      "expressjs/express": {
+        "chunking_seconds": 3.8192,
+        "doc_embed_seconds": 89.6589,
+        "chroma_insert_seconds": 2.9424
+      },
+      "fmtlib/fmt": {
+        "chunking_seconds": 1.7671,
+        "doc_embed_seconds": 66.4774,
+        "chroma_insert_seconds": 2.3696
+      }
+    }
+  }
+}

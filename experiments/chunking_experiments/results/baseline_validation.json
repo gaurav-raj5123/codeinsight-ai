@@ -1,0 +1,110 @@
+{
+  "validation_metadata": {
+    "timestamp_utc": "2026-11-25T12:55:03.518600+00:00",
+    "status": "VALID_EXACT_MATCH",
+    "exact_metric_reproduction": true,
+    "failed_queries": 0,
+    "warmup_duration_seconds": 0.289,
+    "preflight_stats": {
+      "total_questions": 60,
+      "answerable_questions": 54,
+      "unanswerable_questions": 6,
+      "total_evidence_spans": 71,
+      "multi_evidence_questions": 17
+    },
+    "commit_verifications": {
+      "pallets/flask": {
+        "verified": true,
+        "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\flask\\.commit_sha"
+      },
+      "expressjs/express": {
+        "verified": true,
+        "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\express\\.commit_sha"
+      },
+      "fmtlib/fmt": {
+        "verified": true,
+        "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\fmt\\.commit_sha"
+      }
+    }
+  },
+  "indexing_stats_by_repo": {
+    "pallets/flask": {
+      "files": 83,
+      "chunks": 1785,
+      "extract_s": 0.7342,
+      "chunk_s": 0.1455,
+      "embed_s": 112.4922,
+      "insert_s": 1.7451
+    },
+    "expressjs/express": {
+      "files": 142,
+      "chunks": 2066,
+      "extract_s": 2.3212,
+      "chunk_s": 0.0233,
+      "embed_s": 123.9253,
+      "insert_s": 1967.7541
+    },
+    "fmtlib/fmt": {
+      "files": 28,
+      "chunks": 421,
+      "extract_s": 0.5381,
+      "chunk_s": 0.1351,
+      "embed_s": 42.2983,
+      "insert_s": 0.6165
+    }
+  },
+  "reproduced_metrics": {
+    "query_count": 54,
+    "hit_rate_at_1": 0.3148,
+    "hit_rate_at_3": 0.5741,
+    "hit_rate_at_5": 0.6667,
+    "precision_at_5": 0.1815,
+    "mrr_at_5": 0.4534,
+    "span_recall_at_5": 0.5556,
+    "ndcg_at_5": 0.3339,
+    "latency_ms": {
+      "mean": 30.97,
+      "median_p50": 29.57,
+      "p95": 48.34,
+      "max": 66.41
+    }
+  },
+  "historical_day1_metrics": {
+    "query_count": 54,
+    "hit_rate_at_1": 0.3148,
+    "hit_rate_at_3": 0.5741,
+    "hit_rate_at_5": 0.6667,
+    "precision_at_5": 0.1815,
+    "mrr_at_5": 0.4534,
+    "span_recall_at_5": 0.5556,
+    "ndcg_at_5": 0.3339,
+    "latency_ms": {
+      "mean": 187.62,
+      "median_p50": 187.2,
+      "p95": 212.5,
+      "max": 230.5
+    }
+  },
+  "deltas_vs_historical": {
+    "hit_rate_at_1": 0.0,
+    "hit_rate_at_3": 0.0,
+    "hit_rate_at_5": 0.0,
+    "precision_at_5": 0.0,
+    "span_recall_at_5": 0.0,
+    "mrr_at_5": 0.0,
+    "ndcg_at_5": 0.0
+  },
+  "all_queries_latency_ms": {
+    "count": 60,
+    "mean": 30.82,
+    "median_p50": 29.76,
+    "p95": 43.21,
+    "min": 20.28,
+    "max": 66.41,
+    "p95_rank_index": 56,
+    "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+  }
+}

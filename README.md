@@ -37,8 +37,9 @@ flowchart TD
 ## 📁 Repository Organization
 
 ```text
-├── app.py                         # Streamlit UI & conversation session state
-├── chunker.py                     # Python AST, regex, and sliding-window chunker
+├── app.py                         # Streamlit UI, chunking strategy selector & session state
+├── chunker.py                     # Strategy dispatcher + V0 AST/regex/sliding-window chunker
+├── chunker_v1.py                  # Day 3 code-aware, <=256-token hierarchical AST + brace chunker
 ├── embedder.py                    # ChromaDB client, indexing, and vector similarity search
 ├── llm.py                         # Gemini API client, secret sanitization & prompt construction
 ├── repo_loader.py                 # GitHub repository ZIP downloader & source file extractor
@@ -59,6 +60,9 @@ flowchart TD
 │   │   └── DAY1_FINAL_REPORT.md            # Final V0 baseline benchmark results & failure analysis
 │   └── day2/                      # Day 2: Embedding Optimization & Controlled Retrieval Experiment
 │       └── DAY2_TASK1_REPORT.md            # Controlled ONNX comparison across E0, E1a, E1b, E2, E3
+│   └── day3/                      # Day 3: Code-Aware Chunking Optimization
+│       ├── DAY3_CHUNKING_AUDIT.md          # Pre-modification V0 chunker & tokenizer audit
+│       └── DAY3_CHUNKING_ANALYSIS.md       # Controlled Day 3 comparison & Day 4 recommendation
 │
 ├── experiments/                   # 🔬 Evaluation harness & experimental artifacts
 │   ├── run_baseline_evaluation.py # Reproducible V0 offline evaluation runner
@@ -66,6 +70,10 @@ flowchart TD
 │   │   ├── configs/embedding_models.json    # Model registry & preprocessing configs
 │   │   ├── run_embedding_comparison.py      # Controlled benchmark & timing-decoupled runner
 │   │   └── results/                         # embedding_summary.json, embedding_comparison.json, per_model/
+│   ├── chunking_experiments/      # Day 3 controlled chunking comparison harness
+│   │   ├── validate_baseline_v0.py          # Pre-modification V0 Day 1 parity validator
+│   │   ├── run_chunking_comparison.py       # Controlled 3-strategy benchmark (C0/C1/C2)
+│   │   └── results/                         # chunking_summary.json, chunking_comparison.json, per_strategy/
 │   ├── datasets/                  # Ground truth annotations and evaluation questions
 │   │   ├── repositories.json      # Pinned repository metadata & commit SHAs
 │   │   ├── evaluation_questions.json # 60 evaluation questions (conceptual, identifier, conversational)
@@ -83,7 +91,9 @@ flowchart TD
     ├── test_baseline_instrumentation.py # Smoke tests for chunker, embedder, loader, LLM & telemetry
     ├── test_task4_corrections.py        # NDCG mathematical validity, failure accounting & latency tests
     ├── test_retrieval_metrics.py        # Metric module unit & Day 1 parity tests
-    └── test_embedding_runner.py         # Embedding runner ONNX smoke & failure accounting tests
+    ├── test_embedding_runner.py         # Embedding runner ONNX smoke & failure accounting tests
+    ├── test_chunker_v1.py               # Code-aware V1 chunker, tokenizer budget & Chroma tests
+    └── test_chunking_comparison.py      # Day 3 chunking harness & 24-metric validation tests
 ```
 
 ---
@@ -150,8 +160,8 @@ Open your browser at `http://localhost:8501`, paste a GitHub repository URL in t
 ## 🧪 Running Tests & Benchmark Evaluation
 
 ```bash
-# 1. Run full pytest verification suite (metrics, runner, Day 1 checks)
-python -m pytest tests/test_retrieval_metrics.py tests/test_embedding_runner.py tests/test_task4_corrections.py -v
+# 1. Run full pytest verification suite (metrics, Day 1/2/3 runners & chunker V1)
+python -m pytest tests/ -v
 
 # 2. Run baseline instrumentation smoke tests
 python tests/test_baseline_instrumentation.py
@@ -161,6 +171,9 @@ python experiments/datasets/validate_dataset.py
 
 # 4. Execute the Day 2 controlled ONNX embedding comparison benchmark
 python experiments/embedding_experiments/run_embedding_comparison.py
+
+# 5. Execute the Day 3 controlled chunking comparison benchmark
+python experiments/chunking_experiments/run_chunking_comparison.py
 ```
 
 ---

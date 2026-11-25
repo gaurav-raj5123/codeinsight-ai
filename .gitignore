@@ -7,4 +7,5 @@ venv/
 temp_repos/
 experiments/datasets/cache/
 experiments/embedding_experiments/chroma_exp_db/
+experiments/chunking_experiments/chroma_day3_db/
 .pytest_cache/

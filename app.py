@@ -56,6 +56,8 @@ if "baseline_run" not in st.session_state:
     st.session_state.baseline_run = None
 if "indexing_diagnostics" not in st.session_state:
     st.session_state.indexing_diagnostics = None
+if "chunking_strategy" not in st.session_state:
+    st.session_state.chunking_strategy = "code_aware_v1"
 
 # ══════════════════
 # PHASE 1: INDEXING (Sidebar)
@@ -66,6 +68,20 @@ if "indexing_diagnostics" not in st.session_state:
 with st.sidebar:
     st.header("1️⃣ Index Repository")
     github_url = st.text_input("GitHub URL", placeholder="https://github.com/pallets/click")
+    strategy_labels = {
+        "code_aware_v1": "code_aware_v1 (Recommended — <=256 tok AST/Brace)",
+        "existing_chunker_v0": "existing_chunker_v0 (Original V0 Baseline)",
+        "fixed_window_v0": "fixed_window_v0 (Fixed 50-line Window)",
+    }
+    selected_strategy = st.selectbox(
+        "Chunking Strategy",
+        options=list(chunker.SUPPORTED_CHUNKING_STRATEGIES),
+        index=list(chunker.SUPPORTED_CHUNKING_STRATEGIES).index(st.session_state.chunking_strategy)
+        if st.session_state.chunking_strategy in chunker.SUPPORTED_CHUNKING_STRATEGIES
+        else 2,
+        format_func=lambda s: strategy_labels.get(s, s),
+    )
+    st.session_state.chunking_strategy = selected_strategy
     
     # When the user clicks the index button, start the pipeline
     if st.button("Index Repository", type="primary"):
@@ -100,11 +116,21 @@ with st.sidebar:
                         repo_loader.cleanup_repo(repo_path)
                 else:
                     # [2] Data Processing / Chunking (chunker)
-                    with st.spinner(f"✂️ Chunking {len(files)} files..."):
+                    with st.spinner(f"✂️ Chunking {len(files)} files ({selected_strategy})..."):
                         t_chunk_start = time.perf_counter()
+                        v1_tokenizer = None
+                        if selected_strategy == "code_aware_v1":
+                            import chunker_v1
+
+                            v1_tokenizer, _ = chunker_v1.get_embedding_tokenizer()
                         all_chunks = []
                         for file_data in files:
-                            chunks = chunker.chunk_code(file_data)
+                            chunks = chunker.chunk_code(
+                                file_data,
+                                strategy=selected_strategy,
+                                repository=repo_name,
+                                tokenizer=v1_tokenizer,
+                            )
                             all_chunks.extend(chunks)
                         chunking_duration = time.perf_counter() - t_chunk_start
                             
@@ -140,6 +166,7 @@ with st.sidebar:
                     st.session_state.baseline_run = run_record
                     st.session_state.indexing_diagnostics = {
                         "commit_sha": repo_meta.get("commit_sha", "unknown"),
+                        "chunking_strategy": selected_strategy,
                         "files": len(files),
                         "chunks": count,
                         "download_sec": repo_meta.get("download_duration_seconds", 0.0),
@@ -166,6 +193,7 @@ with st.sidebar:
         with st.expander("📊 Indexing Diagnostics", expanded=False):
             diag = st.session_state.indexing_diagnostics
             st.write(f"**Commit SHA:** `{diag['commit_sha']}`")
+            st.write(f"**Chunking Strategy:** `{diag.get('chunking_strategy', chunker.DEFAULT_CHUNKING_STRATEGY)}`")
             st.write(f"**Files Indexed:** {diag['files']}")
             st.write(f"**Chunks Indexed:** {diag['chunks']}")
             st.write(f"**Download Time:** {diag['download_sec']:.2f}s")

@@ -18,11 +18,14 @@ This directory houses the structured, day-by-day engineering audits, benchmark r
   - **Runner-Up Candidate**: `BAAI/bge-small-en-v1.5` + query instruction led `NDCG@5` (`0.3661`) and `identifier` queries (`Hit@5=0.7727`), staged for re-evaluation after Day 3 code-aware chunking removes noisy JS test fragments and C++ license preambles.
 - **[day2_embedding_analysis.md](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/experiments/results/day2_embedding_analysis.md)**: Concise tradeoff digest and empirical summary.
 
+### [Day 3: Code-Aware Chunking Optimization](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day3/)
+- **[DAY3_CHUNKING_AUDIT.md](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day3/DAY3_CHUNKING_AUDIT.md)**: Pre-modification audit identifying Python `ast.walk` self-duplication (`436` nested chunks), dropped Python module globals (`66/83` Flask files), Express JS regex control-flow fragmentation (`473` 1-line chunks), and `624` (`14.61%`) >256-token truncations.
+- **[DAY3_CHUNKING_ANALYSIS.md](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day3/DAY3_CHUNKING_ANALYSIS.md)**: Controlled Day 3 benchmark (`fixed_window_v0` vs `existing_chunker_v0` vs `code_aware_v1`) establishing `code_aware_v1` as the clear winner (`Hit@1`: `0.3148 -> 0.3704`, `Hit@5`: `0.6667 -> 0.7037`, `Precision@5`: `0.1815 -> 0.2185`, `MRR@5`: `0.4534 -> 0.5052`, `SpanRec@5`: `0.5556 -> 0.6111`, `0.00%` runtime truncation, `-24.5%` faster indexing).
+
 ---
 
 ### Upcoming Milestones
-- **Day 3**: Code-Aware Syntax & Semantic Chunking (AST & Tree-sitter parsers)
-- **Day 4**: Hybrid Retrieval (Lexical BM25 + Dense Vectors) & Cross-Encoder Reranking
-- **Day 5**: Conversational Anaphora Resolution & Context-Aware Query Rewriting
-- **Day 6**: Grounding, Hallucination Detection & Abstention Thresholding
-- **Day 7**: End-to-End System Integration, Streamlit Polish & Final Verification
+- **Day 4**: Hybrid Retrieval (Lexical BM25 + Dense `code_aware_v1` Vectors via RRF)
+- **Day 5**: Cross-Encoder Reranking & Test/Implementation Path Calibration
+- **Day 6**: Conversational Anaphora Resolution & Context-Aware Query Rewriting
+- **Day 7**: End-to-End System Integration, Grounding & Final Verification

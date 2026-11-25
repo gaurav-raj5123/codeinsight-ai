@@ -23,15 +23,51 @@
 
 import ast
 import re
+from typing import Any
+
+SUPPORTED_CHUNKING_STRATEGIES = (
+    "existing_chunker_v0",
+    "fixed_window_v0",
+    "code_aware_v1",
+)
+DEFAULT_CHUNKING_STRATEGY = "existing_chunker_v0"
 
 # ════════════════════════════════════════════════════════════════════════════
 # 🛠️ MAIN ROUTER FUNCTION
 # ════════════════════════════════════════════════════════════════════════════
-def chunk_code(file_data: dict) -> list[dict]:
-    """Main entry point. Routes to language-specific chunker.
+def chunk_code(
+    file_data: dict,
+    strategy: str = DEFAULT_CHUNKING_STRATEGY,
+    repository: str = "",
+    tokenizer: Any = None,
+    max_tokens: int = 256,
+) -> list[dict]:
+    """Main entry point. Dispatches across chunking strategies (defaults to V0).
     file_data format: {"file_path": str, "content": str, "extension": str}
-    Returns [{content, metadata: {file_path, start_line, end_line, chunk_type}}]
+    Returns [{content, metadata: {file_path, start_line, end_line, chunk_type, ...}}]
     """
+    if strategy == "fixed_window_v0":
+        return chunk_by_sliding_window(
+            file_data["content"],
+            file_data["file_path"],
+            window_size=50,
+            overlap=10,
+        )
+    if strategy == "code_aware_v1":
+        from chunker_v1 import chunk_code_v1
+
+        return chunk_code_v1(
+            file_data,
+            repository=repository,
+            tokenizer=tokenizer,
+            max_tokens=max_tokens,
+        )
+    if strategy != "existing_chunker_v0":
+        raise ValueError(
+            f"Unsupported chunking strategy {strategy!r}. "
+            f"Supported: {SUPPORTED_CHUNKING_STRATEGIES}"
+        )
+
     content = file_data['content']
     file_path = file_data['file_path']
     ext = file_data['extension']

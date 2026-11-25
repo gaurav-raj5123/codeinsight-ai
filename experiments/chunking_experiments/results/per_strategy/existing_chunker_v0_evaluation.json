@@ -1,0 +1,4988 @@
+[
+  {
+    "question_id": "flask_001",
+    "repository": "pallets/flask",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the Flask application class defined and what parameters does its __init__ constructor accept?",
+    "query_embed_ms": 42.59,
+    "vector_search_ms": 46.19,
+    "retrieval_latency_ms": 88.78,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 5,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.2,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.3869
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1206",
+        "file_path": "tests/test_cli.py",
+        "start_line": 53,
+        "end_line": 54,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.474717
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1205",
+        "file_path": "tests/test_cli.py",
+        "start_line": 48,
+        "end_line": 49,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.500419
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1277",
+        "file_path": "tests/test_config.py",
+        "start_line": 202,
+        "end_line": 203,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.511171
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_1207",
+        "file_path": "tests/test_cli.py",
+        "start_line": 58,
+        "end_line": 59,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.525945
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_73",
+        "file_path": "src/flask/app.py",
+        "start_line": 108,
+        "end_line": 157,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.544322
+      }
+    ]
+  },
+  {
+    "question_id": "flask_002",
+    "repository": "pallets/flask",
+    "category": "implementation_understanding",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does it configure default configuration settings during that initialization process?",
+    "query_embed_ms": 29.74,
+    "vector_search_ms": 5.73,
+    "retrieval_latency_ms": 35.46,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_462",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 679,
+        "end_line": 692,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.218052
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_224",
+        "file_path": "src/flask/config.py",
+        "start_line": 46,
+        "end_line": 47,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.229861
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_554",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 591,
+        "end_line": 603,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.236579
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_219",
+        "file_path": "src/flask/config.py",
+        "start_line": 330,
+        "end_line": 367,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.258393
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_494",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 684,
+        "end_line": 692,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.260614
+      }
+    ]
+  },
+  {
+    "question_id": "flask_003",
+    "repository": "pallets/flask",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the Request wrapper class defined in Flask and what base class does it inherit from?",
+    "query_embed_ms": 30.92,
+    "vector_search_ms": 4.3,
+    "retrieval_latency_ms": 35.22,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 1.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_642",
+        "file_path": "src/flask/wrappers.py",
+        "start_line": 18,
+        "end_line": 67,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.589405
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_283",
+        "file_path": "src/flask/globals.py",
+        "start_line": 22,
+        "end_line": 22,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.677557
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_258",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 339,
+        "end_line": 348,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.691076
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_1205",
+        "file_path": "tests/test_cli.py",
+        "start_line": 48,
+        "end_line": 49,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.716531
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1743",
+        "file_path": "tests/test_views.py",
+        "start_line": 154,
+        "end_line": 155,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.723438
+      }
+    ]
+  },
+  {
+    "question_id": "flask_004",
+    "repository": "pallets/flask",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the url_for helper function defined and how does it generate URLs from endpoints?",
+    "query_embed_ms": 30.26,
+    "vector_search_ms": 4.39,
+    "retrieval_latency_ms": 34.65,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 3,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "per_chunk_relevance": [
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.3333,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.5
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_141",
+        "file_path": "src/flask/app.py",
+        "start_line": 1145,
+        "end_line": 1194,
+        "chunk_type": "FunctionDef_split",
+        "symbol_name": "",
+        "distance": 0.750225
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_406",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 980,
+        "end_line": 1014,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.816551
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_295",
+        "file_path": "src/flask/helpers.py",
+        "start_line": 200,
+        "end_line": 251,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.834147
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_99",
+        "file_path": "src/flask/app.py",
+        "start_line": 1148,
+        "end_line": 1197,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.834593
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_442",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 961,
+        "end_line": 980,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.854038
+      }
+    ]
+  },
+  {
+    "question_id": "flask_005",
+    "repository": "pallets/flask",
+    "category": "implementation_understanding",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does Flask's route decorator register an endpoint and view function onto the application?",
+    "query_embed_ms": 30.98,
+    "vector_search_ms": 3.82,
+    "retrieval_latency_ms": 34.81,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_99",
+        "file_path": "src/flask/app.py",
+        "start_line": 1148,
+        "end_line": 1197,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.573424
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_987",
+        "file_path": "tests/test_basic.py",
+        "start_line": 1745,
+        "end_line": 1747,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.588341
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1019",
+        "file_path": "tests/test_blueprints.py",
+        "start_line": 283,
+        "end_line": 312,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.596787
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_826",
+        "file_path": "tests/test_basic.py",
+        "start_line": 1742,
+        "end_line": 1764,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.619545
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_141",
+        "file_path": "src/flask/app.py",
+        "start_line": 1145,
+        "end_line": 1194,
+        "chunk_type": "FunctionDef_split",
+        "symbol_name": "",
+        "distance": 0.640765
+      }
+    ]
+  },
+  {
+    "question_id": "flask_006",
+    "repository": "pallets/flask",
+    "category": "cross_file_dependencies",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does that method configure those routing rules and delegate to the underlying routing Map?",
+    "query_embed_ms": 32.2,
+    "vector_search_ms": 3.97,
+    "retrieval_latency_ms": 36.17,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 7,
+    "per_chunk_relevance": [
+      false,
+      true,
+      true,
+      false,
+      true
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.6,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.5148
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_546",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 343,
+        "end_line": 373,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.924016
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_547",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 375,
+        "end_line": 441,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.953172
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_514",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 372,
+        "end_line": 421,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.974888
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_455",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 399,
+        "end_line": 448,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.075063
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_515",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 412,
+        "end_line": 461,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.075429
+      }
+    ]
+  },
+  {
+    "question_id": "flask_007",
+    "repository": "pallets/flask",
+    "category": "implementation_understanding",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does dispatch_request in Flask execute the endpoint matched from the active request URL?",
+    "query_embed_ms": 30.3,
+    "vector_search_ms": 3.11,
+    "retrieval_latency_ms": 33.42,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1728",
+        "file_path": "tests/test_views.py",
+        "start_line": 21,
+        "end_line": 22,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.53741
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1746",
+        "file_path": "tests/test_views.py",
+        "start_line": 188,
+        "end_line": 189,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.53741
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_141",
+        "file_path": "src/flask/app.py",
+        "start_line": 1145,
+        "end_line": 1194,
+        "chunk_type": "FunctionDef_split",
+        "symbol_name": "",
+        "distance": 0.652904
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_99",
+        "file_path": "src/flask/app.py",
+        "start_line": 1148,
+        "end_line": 1197,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.65562
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_100",
+        "file_path": "src/flask/app.py",
+        "start_line": 1188,
+        "end_line": 1237,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.743283
+      }
+    ]
+  },
+  {
+    "question_id": "flask_008",
+    "repository": "pallets/flask",
+    "category": "cross_file_dependencies",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does the framework isolate request and application state across threads and push contexts onto the active stack?",
+    "query_embed_ms": 30.61,
+    "vector_search_ms": 3.86,
+    "retrieval_latency_ms": 34.47,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 2,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 7,
+    "per_chunk_relevance": [
+      true,
+      true,
+      true,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.6,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.7227
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_152",
+        "file_path": "src/flask/app.py",
+        "start_line": 1542,
+        "end_line": 1560,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.095804
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_239",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 260,
+        "end_line": 309,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.096952
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_109",
+        "file_path": "src/flask/app.py",
+        "start_line": 1548,
+        "end_line": 1597,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.111936
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_617",
+        "file_path": "src/flask/testing.py",
+        "start_line": 229,
+        "end_line": 262,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.13299
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_243",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 420,
+        "end_line": 469,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.140514
+      }
+    ]
+  },
+  {
+    "question_id": "flask_009",
+    "repository": "pallets/flask",
+    "category": "architecture_flow",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "Walk through what happens inside the application entrypoint when an incoming request is pushed through those contexts.",
+    "query_embed_ms": 29.78,
+    "vector_search_ms": 2.57,
+    "retrieval_latency_ms": 32.35,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 7,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.3392
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_243",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 420,
+        "end_line": 469,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.030855
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_617",
+        "file_path": "src/flask/testing.py",
+        "start_line": 229,
+        "end_line": 262,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.04421
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_245",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 500,
+        "end_line": 525,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.075583
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_152",
+        "file_path": "src/flask/app.py",
+        "start_line": 1542,
+        "end_line": 1560,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.097694
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_239",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 260,
+        "end_line": 309,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.102546
+      }
+    ]
+  },
+  {
+    "question_id": "flask_010",
+    "repository": "pallets/flask",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the Blueprint class defined and what are its initialization parameters?",
+    "query_embed_ms": 30.49,
+    "vector_search_ms": 3.56,
+    "retrieval_latency_ms": 34.05,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6309
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_728",
+        "file_path": "tests/test_async.py",
+        "start_line": 18,
+        "end_line": 19,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.779127
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_448",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 119,
+        "end_line": 168,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.877096
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_504",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 664,
+        "end_line": 665,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.907051
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_422",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 570,
+        "end_line": 596,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.948824
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_502",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 608,
+        "end_line": 609,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.955316
+      }
+    ]
+  },
+  {
+    "question_id": "flask_011",
+    "repository": "pallets/flask",
+    "category": "cross_file_dependencies",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How do modular blueprints record deferred route handlers and apply them to the main application during registration?",
+    "query_embed_ms": 31.83,
+    "vector_search_ms": 3.24,
+    "retrieval_latency_ms": 35.07,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 9,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      true
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.4704
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_422",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 570,
+        "end_line": 596,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.862761
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_448",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 119,
+        "end_line": 168,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.946499
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_492",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 655,
+        "end_line": 670,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.960068
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_467",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 223,
+        "end_line": 230,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.964665
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_396",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 580,
+        "end_line": 629,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.965796
+      }
+    ]
+  },
+  {
+    "question_id": "flask_012",
+    "repository": "pallets/flask",
+    "category": "architecture_flow",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Flask handle unhandled server exceptions and transform them into HTTP 500 error responses?",
+    "query_embed_ms": 30.49,
+    "vector_search_ms": 4.12,
+    "retrieval_latency_ms": 34.62,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.2463
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_131",
+        "file_path": "src/flask/app.py",
+        "start_line": 841,
+        "end_line": 878,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.523175
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_92",
+        "file_path": "src/flask/app.py",
+        "start_line": 868,
+        "end_line": 917,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.58567
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_785",
+        "file_path": "tests/test_basic.py",
+        "start_line": 890,
+        "end_line": 925,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.606429
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_927",
+        "file_path": "tests/test_basic.py",
+        "start_line": 965,
+        "end_line": 967,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.622903
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_132",
+        "file_path": "src/flask/app.py",
+        "start_line": 880,
+        "end_line": 914,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.653736
+      }
+    ]
+  },
+  {
+    "question_id": "flask_013",
+    "repository": "pallets/flask",
+    "category": "architecture_flow",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the session interface implemented and how does SecureCookieSessionInterface open and save sessions?",
+    "query_embed_ms": 31.58,
+    "vector_search_ms": 3.86,
+    "retrieval_latency_ms": 35.44,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 3,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 7,
+    "per_chunk_relevance": [
+      false,
+      false,
+      true,
+      true,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 0.3333,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.3156
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_562",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 57,
+        "end_line": 80,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.960871
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1468",
+        "file_path": "tests/test_session_interface.py",
+        "start_line": 12,
+        "end_line": 18,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.982818
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_592",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 337,
+        "end_line": 385,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.994106
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_591",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 323,
+        "end_line": 335,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.002378
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_564",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 100,
+        "end_line": 149,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.027706
+      }
+    ]
+  },
+  {
+    "question_id": "flask_014",
+    "repository": "pallets/flask",
+    "category": "debugging_configuration",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does it configure security flags like HttpOnly and Secure on those session cookies?",
+    "query_embed_ms": 29.95,
+    "vector_search_ms": 2.82,
+    "retrieval_latency_ms": 32.77,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 7,
+    "per_chunk_relevance": [
+      true,
+      true,
+      true,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.6,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.7227
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_583",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 202,
+        "end_line": 206,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.91175
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_566",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 180,
+        "end_line": 229,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.001732
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_582",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 195,
+        "end_line": 200,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.003207
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_592",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 337,
+        "end_line": 385,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.033184
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_587",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 233,
+        "end_line": 247,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.034587
+      }
+    ]
+  },
+  {
+    "question_id": "flask_015",
+    "repository": "pallets/flask",
+    "category": "architecture_flow",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Flask coerce different controller return types such as strings, dictionaries, and tuples into WSGI responses?",
+    "query_embed_ms": 29.78,
+    "vector_search_ms": 4.1,
+    "retrieval_latency_ms": 33.88,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 5,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 5,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.2,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.1312
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_332",
+        "file_path": "src/flask/json/provider.py",
+        "start_line": 189,
+        "end_line": 215,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.688644
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_319",
+        "file_path": "src/flask/json/__init__.py",
+        "start_line": 138,
+        "end_line": 170,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.702101
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_329",
+        "file_path": "src/flask/json/provider.py",
+        "start_line": 89,
+        "end_line": 105,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.71163
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_149",
+        "file_path": "src/flask/app.py",
+        "start_line": 1441,
+        "end_line": 1469,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.727212
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_145",
+        "file_path": "src/flask/app.py",
+        "start_line": 1307,
+        "end_line": 1356,
+        "chunk_type": "FunctionDef_split",
+        "symbol_name": "",
+        "distance": 0.761618
+      }
+    ]
+  },
+  {
+    "question_id": "flask_016",
+    "repository": "pallets/flask",
+    "category": "implementation_understanding",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does Config.from_object in Flask inspect and load configuration values from a Python module or class?",
+    "query_embed_ms": 30.75,
+    "vector_search_ms": 3.55,
+    "retrieval_latency_ms": 34.3,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1258",
+        "file_path": "tests/test_config.py",
+        "start_line": 26,
+        "end_line": 29,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.394869
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1277",
+        "file_path": "tests/test_config.py",
+        "start_line": 202,
+        "end_line": 203,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.467927
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1265",
+        "file_path": "tests/test_config.py",
+        "start_line": 132,
+        "end_line": 141,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.474397
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_1276",
+        "file_path": "tests/test_config.py",
+        "start_line": 199,
+        "end_line": 200,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.500805
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1270",
+        "file_path": "tests/test_config.py",
+        "start_line": 198,
+        "end_line": 208,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.524692
+      }
+    ]
+  },
+  {
+    "question_id": "flask_017",
+    "repository": "pallets/flask",
+    "category": "debugging_configuration",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Flask bind Click command-line interface commands to an active application environment?",
+    "query_embed_ms": 31.91,
+    "vector_search_ms": 3.66,
+    "retrieval_latency_ms": 35.58,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_173",
+        "file_path": "src/flask/cli.py",
+        "start_line": 293,
+        "end_line": 372,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 0.661057
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_192",
+        "file_path": "src/flask/cli.py",
+        "start_line": 998,
+        "end_line": 1044,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.677593
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_179",
+        "file_path": "src/flask/cli.py",
+        "start_line": 531,
+        "end_line": 580,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.787588
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_1233",
+        "file_path": "tests/test_cli.py",
+        "start_line": 389,
+        "end_line": 391,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.812054
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_152",
+        "file_path": "src/flask/app.py",
+        "start_line": 1542,
+        "end_line": 1560,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.826554
+      }
+    ]
+  },
+  {
+    "question_id": "flask_018",
+    "repository": "pallets/flask",
+    "category": "debugging_configuration",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Flask pass temporary one-off notification messages between redirected requests?",
+    "query_embed_ms": 29.62,
+    "vector_search_ms": 3.71,
+    "retrieval_latency_ms": 33.33,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_441",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 940,
+        "end_line": 959,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.744854
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1477",
+        "file_path": "tests/test_signals.py",
+        "start_line": 139,
+        "end_line": 160,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.766496
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_296",
+        "file_path": "src/flask/helpers.py",
+        "start_line": 254,
+        "end_line": 278,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.772425
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_405",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 940,
+        "end_line": 989,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.773719
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1474",
+        "file_path": "tests/test_signals.py",
+        "start_line": 50,
+        "end_line": 92,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.825432
+      }
+    ]
+  },
+  {
+    "question_id": "flask_019",
+    "repository": "pallets/flask",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "Where is the built-in database connection pool for PostgreSQL configured in Flask?",
+    "query_embed_ms": 29.28,
+    "vector_search_ms": 3.93,
+    "retrieval_latency_ms": 33.2,
+    "failed": false,
+    "error": null,
+    "top1_l2_distance": 0.8430051207542419,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_40",
+        "file_path": "examples/tutorial/flaskr/db.py",
+        "start_line": 51,
+        "end_line": 56,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 0.843005
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_74",
+        "file_path": "src/flask/app.py",
+        "start_line": 148,
+        "end_line": 197,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.952521
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_384",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 100,
+        "end_line": 149,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 0.952521
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_23",
+        "file_path": "examples/tutorial/flaskr/__init__.py",
+        "start_line": 6,
+        "end_line": 48,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.022555
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_152",
+        "file_path": "src/flask/app.py",
+        "start_line": 1542,
+        "end_line": 1560,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.064623
+      }
+    ]
+  },
+  {
+    "question_id": "flask_020",
+    "repository": "pallets/flask",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "How does Flask configure native WebSocket subscriptions and publish-subscribe channels?",
+    "query_embed_ms": 30.28,
+    "vector_search_ms": 4.05,
+    "retrieval_latency_ms": 34.33,
+    "failed": false,
+    "error": null,
+    "top1_l2_distance": 1.0495855808258057,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_408",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 320,
+        "end_line": 369,
+        "chunk_type": "FunctionDef_split",
+        "symbol_name": "",
+        "distance": 1.049586
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1370",
+        "file_path": "tests/test_json.py",
+        "start_line": 176,
+        "end_line": 188,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.062181
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_387",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 220,
+        "end_line": 269,
+        "chunk_type": "ClassDef_split",
+        "symbol_name": "",
+        "distance": 1.085785
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_320",
+        "file_path": "src/flask/json/provider.py",
+        "start_line": 19,
+        "end_line": 105,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 1.109374
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_283",
+        "file_path": "src/flask/globals.py",
+        "start_line": 22,
+        "end_line": 22,
+        "chunk_type": "ClassDef",
+        "symbol_name": "",
+        "distance": 1.138714
+      }
+    ]
+  },
+  {
+    "question_id": "express_001",
+    "repository": "expressjs/express",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is createApplication defined in Express and how does it mix in EventEmitter and the application prototype?",
+    "query_embed_ms": 30.8,
+    "vector_search_ms": 21.91,
+    "retrieval_latency_ms": 52.7,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1482",
+        "file_path": "test/req.query.js",
+        "start_line": 94,
+        "end_line": 96,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.733171
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_626",
+        "file_path": "test/app.render.js",
+        "start_line": 574,
+        "end_line": 581,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.845614
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1818",
+        "file_path": "test/res.render.js",
+        "start_line": 385,
+        "end_line": 392,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.845614
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_530",
+        "file_path": "test/app.js",
+        "start_line": 8,
+        "end_line": 13,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.881951
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1973",
+        "file_path": "test/res.sendFile.js",
+        "start_line": 1011,
+        "end_line": 1020,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.929138
+      }
+    ]
+  },
+  {
+    "question_id": "express_002",
+    "repository": "expressjs/express",
+    "category": "implementation_understanding",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does that created application set up its default configuration settings like etag, env, and query parser?",
+    "query_embed_ms": 30.63,
+    "vector_search_ms": 2.63,
+    "retrieval_latency_ms": 33.26,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 4,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.25,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.2641
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1857",
+        "file_path": "test/res.send.js",
+        "start_line": 387,
+        "end_line": 387,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.995605
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_100",
+        "file_path": "lib/application.js",
+        "start_line": 363,
+        "end_line": 412,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.143507
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1478",
+        "file_path": "test/req.query.js",
+        "start_line": 75,
+        "end_line": 75,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.205777
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_87",
+        "file_path": "lib/application.js",
+        "start_line": 73,
+        "end_line": 137,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.230853
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1864",
+        "file_path": "test/res.send.js",
+        "start_line": 455,
+        "end_line": 470,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.242124
+      }
+    ]
+  },
+  {
+    "question_id": "express_003",
+    "repository": "expressjs/express",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the View constructor defined in Express and what properties does it store?",
+    "query_embed_ms": 30.58,
+    "vector_search_ms": 2.86,
+    "retrieval_latency_ms": 33.44,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_608",
+        "file_path": "test/app.render.js",
+        "start_line": 277,
+        "end_line": 277,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.566476
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_600",
+        "file_path": "test/app.render.js",
+        "start_line": 179,
+        "end_line": 179,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.879216
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1799",
+        "file_path": "test/res.render.js",
+        "start_line": 173,
+        "end_line": 173,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.879216
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_598",
+        "file_path": "test/app.render.js",
+        "start_line": 164,
+        "end_line": 164,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.921439
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1797",
+        "file_path": "test/res.render.js",
+        "start_line": 156,
+        "end_line": 156,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.921439
+      }
+    ]
+  },
+  {
+    "question_id": "express_004",
+    "repository": "expressjs/express",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the req.get (or req.header) method defined and how does it retrieve HTTP request headers?",
+    "query_embed_ms": 30.45,
+    "vector_search_ms": 3.34,
+    "retrieval_latency_ms": 33.78,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1098",
+        "file_path": "test/express.static.js",
+        "start_line": 593,
+        "end_line": 593,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.886355
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1772",
+        "file_path": "test/res.redirect.js",
+        "start_line": 64,
+        "end_line": 64,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.916224
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1844",
+        "file_path": "test/res.send.js",
+        "start_line": 249,
+        "end_line": 249,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.916224
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_527",
+        "file_path": "test/app.head.js",
+        "start_line": 21,
+        "end_line": 47,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.958321
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1668",
+        "file_path": "test/res.get.js",
+        "start_line": 8,
+        "end_line": 22,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.000482
+      }
+    ]
+  },
+  {
+    "question_id": "express_005",
+    "repository": "expressjs/express",
+    "category": "implementation_understanding",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Express register middleware and mount nested sub-applications under a specific route prefix?",
+    "query_embed_ms": 29.43,
+    "vector_search_ms": 2.78,
+    "retrieval_latency_ms": 32.21,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 6,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.3392
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_90",
+        "file_path": "lib/application.js",
+        "start_line": 173,
+        "end_line": 195,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.704713
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_631",
+        "file_path": "test/app.request.js",
+        "start_line": 51,
+        "end_line": 78,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.849525
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1353",
+        "file_path": "test/req.baseUrl.js",
+        "start_line": 52,
+        "end_line": 89,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.85027
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_693",
+        "file_path": "test/app.router.js",
+        "start_line": 471,
+        "end_line": 490,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.862128
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1351",
+        "file_path": "test/req.baseUrl.js",
+        "start_line": 20,
+        "end_line": 33,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.867923
+      }
+    ]
+  },
+  {
+    "question_id": "express_006",
+    "repository": "expressjs/express",
+    "category": "cross_file_dependencies",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does that instance lazily initialize its underlying router with case-sensitive and strict routing settings?",
+    "query_embed_ms": 29.72,
+    "vector_search_ms": 2.61,
+    "retrieval_latency_ms": 32.33,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 3,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.3333,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.2346
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_675",
+        "file_path": "test/app.router.js",
+        "start_line": 256,
+        "end_line": 256,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.900899
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_690",
+        "file_path": "test/app.router.js",
+        "start_line": 436,
+        "end_line": 436,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.11187
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_87",
+        "file_path": "lib/application.js",
+        "start_line": 73,
+        "end_line": 137,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.160706
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_239",
+        "file_path": "test/Router.js",
+        "start_line": 31,
+        "end_line": 43,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.218066
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_229",
+        "file_path": "test/Route.js",
+        "start_line": 143,
+        "end_line": 169,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.25424
+      }
+    ]
+  },
+  {
+    "question_id": "express_007",
+    "repository": "expressjs/express",
+    "category": "implementation_understanding",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does the framework serialize objects, apply indentation settings, and send formatted JSON responses?",
+    "query_embed_ms": 38.17,
+    "vector_search_ms": 2.73,
+    "retrieval_latency_ms": 40.91,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6131
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_147",
+        "file_path": "lib/response.js",
+        "start_line": 213,
+        "end_line": 244,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.148942
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1687",
+        "file_path": "test/res.json.js",
+        "start_line": 164,
+        "end_line": 164,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.251557
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1725",
+        "file_path": "test/res.jsonp.js",
+        "start_line": 367,
+        "end_line": 367,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.251557
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_1646",
+        "file_path": "test/res.format.js",
+        "start_line": 88,
+        "end_line": 88,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.263142
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1712",
+        "file_path": "test/res.jsonp.js",
+        "start_line": 221,
+        "end_line": 237,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.265059
+      }
+    ]
+  },
+  {
+    "question_id": "express_008",
+    "repository": "expressjs/express",
+    "category": "implementation_understanding",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Express stream static files from disk to the client while handling range headers and transmission errors?",
+    "query_embed_ms": 31.16,
+    "vector_search_ms": 2.62,
+    "retrieval_latency_ms": 33.78,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 7,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.214
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1620",
+        "file_path": "test/res.download.js",
+        "start_line": 152,
+        "end_line": 170,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.017446
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_157",
+        "file_path": "lib/response.js",
+        "start_line": 408,
+        "end_line": 412,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.028656
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1638",
+        "file_path": "test/res.download.js",
+        "start_line": 393,
+        "end_line": 411,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.029982
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_1923",
+        "file_path": "test/res.sendFile.js",
+        "start_line": 471,
+        "end_line": 486,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.030349
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1926",
+        "file_path": "test/res.sendFile.js",
+        "start_line": 504,
+        "end_line": 520,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.044747
+      }
+    ]
+  },
+  {
+    "question_id": "express_009",
+    "repository": "expressjs/express",
+    "category": "cross_file_dependencies",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does the response transmission mechanism calculate and set entity tags using utility hashing generators?",
+    "query_embed_ms": 28.87,
+    "vector_search_ms": 3.1,
+    "retrieval_latency_ms": 31.97,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 13,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.214
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_203",
+        "file_path": "lib/utils.js",
+        "start_line": 226,
+        "end_line": 248,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.537793
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_141",
+        "file_path": "lib/response.js",
+        "start_line": 167,
+        "end_line": 181,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.574093
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1876",
+        "file_path": "test/res.send.js",
+        "start_line": 596,
+        "end_line": 604,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.577253
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_167",
+        "file_path": "lib/response.js",
+        "start_line": 639,
+        "end_line": 671,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.610132
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1197",
+        "file_path": "test/express.text.js",
+        "start_line": 495,
+        "end_line": 495,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.629225
+      }
+    ]
+  },
+  {
+    "question_id": "express_010",
+    "repository": "expressjs/express",
+    "category": "architecture_flow",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "Walk through the dispatch lifecycle when a request first enters that application handler before response generation.",
+    "query_embed_ms": 30.22,
+    "vector_search_ms": 2.82,
+    "retrieval_latency_ms": 33.04,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 4,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.3904
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_88",
+        "file_path": "lib/application.js",
+        "start_line": 138,
+        "end_line": 159,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.064075
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_223",
+        "file_path": "test/Route.js",
+        "start_line": 48,
+        "end_line": 63,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.077845
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_233",
+        "file_path": "test/Route.js",
+        "start_line": 223,
+        "end_line": 246,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.16202
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_371",
+        "file_path": "test/acceptance/error.js",
+        "start_line": 15,
+        "end_line": 21,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.16822
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_386",
+        "file_path": "test/acceptance/multi-router.js",
+        "start_line": 6,
+        "end_line": 12,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.178112
+      }
+    ]
+  },
+  {
+    "question_id": "express_011",
+    "repository": "expressjs/express",
+    "category": "cross_file_dependencies",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does the template rendering coordinator locate view files on disk and invoke the underlying view renderer?",
+    "query_embed_ms": 39.51,
+    "vector_search_ms": 3.61,
+    "retrieval_latency_ms": 43.12,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 2,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 10,
+    "per_chunk_relevance": [
+      true,
+      true,
+      false,
+      true,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.6,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6992
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_107",
+        "file_path": "lib/application.js",
+        "start_line": 544,
+        "end_line": 548,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.166516
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_106",
+        "file_path": "lib/application.js",
+        "start_line": 539,
+        "end_line": 543,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.248287
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_610",
+        "file_path": "test/app.render.js",
+        "start_line": 299,
+        "end_line": 319,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.259116
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_212",
+        "file_path": "lib/view.js",
+        "start_line": 110,
+        "end_line": 139,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.300891
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_620",
+        "file_path": "test/app.render.js",
+        "start_line": 481,
+        "end_line": 494,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.302006
+      }
+    ]
+  },
+  {
+    "question_id": "express_012",
+    "repository": "expressjs/express",
+    "category": "architecture_flow",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does res.render render a view and send the rendered HTML response back to the client?",
+    "query_embed_ms": 41.69,
+    "vector_search_ms": 3.1,
+    "retrieval_latency_ms": 44.79,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 4,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.25,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.2021
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1809",
+        "file_path": "test/res.render.js",
+        "start_line": 291,
+        "end_line": 306,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.04974
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1810",
+        "file_path": "test/res.render.js",
+        "start_line": 307,
+        "end_line": 323,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.068261
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1786",
+        "file_path": "test/res.render.js",
+        "start_line": 9,
+        "end_line": 9,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.084431
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_181",
+        "file_path": "lib/response.js",
+        "start_line": 862,
+        "end_line": 904,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.098285
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1816",
+        "file_path": "test/res.render.js",
+        "start_line": 364,
+        "end_line": 370,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.100401
+      }
+    ]
+  },
+  {
+    "question_id": "express_013",
+    "repository": "expressjs/express",
+    "category": "architecture_flow",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does Express handle HTTP method routing when methods like app.get, app.post, and app.all are invoked?",
+    "query_embed_ms": 36.84,
+    "vector_search_ms": 3.58,
+    "retrieval_latency_ms": 40.42,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_642",
+        "file_path": "test/app.route.js",
+        "start_line": 7,
+        "end_line": 22,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.713107
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_574",
+        "file_path": "test/app.param.js",
+        "start_line": 136,
+        "end_line": 160,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.718998
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1350",
+        "file_path": "test/req.baseUrl.js",
+        "start_line": 8,
+        "end_line": 19,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.745164
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_644",
+        "file_path": "test/app.route.js",
+        "start_line": 42,
+        "end_line": 54,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.773404
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_643",
+        "file_path": "test/app.route.js",
+        "start_line": 23,
+        "end_line": 41,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.790435
+      }
+    ]
+  },
+  {
+    "question_id": "express_014",
+    "repository": "expressjs/express",
+    "category": "debugging_configuration",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does it compile and apply proxy settings to resolve client IP addresses for those routes?",
+    "query_embed_ms": 36.62,
+    "vector_search_ms": 3.41,
+    "retrieval_latency_ms": 40.03,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 6,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.3392
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_127",
+        "file_path": "lib/request.js",
+        "start_line": 343,
+        "end_line": 392,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.953305
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_264",
+        "file_path": "test/Router.js",
+        "start_line": 328,
+        "end_line": 344,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.066593
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_690",
+        "file_path": "test/app.router.js",
+        "start_line": 436,
+        "end_line": 436,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.08475
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_1419",
+        "file_path": "test/req.ips.js",
+        "start_line": 10,
+        "end_line": 24,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.091298
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_87",
+        "file_path": "lib/application.js",
+        "start_line": 73,
+        "end_line": 137,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.091759
+      }
+    ]
+  },
+  {
+    "question_id": "express_015",
+    "repository": "expressjs/express",
+    "category": "debugging_configuration",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Express calculate weak and strong entity tags for caching HTTP responses?",
+    "query_embed_ms": 37.44,
+    "vector_search_ms": 3.53,
+    "retrieval_latency_ms": 40.97,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1516",
+        "file_path": "test/req.stale.js",
+        "start_line": 8,
+        "end_line": 22,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.122318
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_191",
+        "file_path": "lib/utils.js",
+        "start_line": 1,
+        "end_line": 88,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.122948
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_615",
+        "file_path": "test/app.render.js",
+        "start_line": 397,
+        "end_line": 397,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.139419
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_624",
+        "file_path": "test/app.render.js",
+        "start_line": 540,
+        "end_line": 540,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.139419
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1356",
+        "file_path": "test/req.fresh.js",
+        "start_line": 9,
+        "end_line": 23,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.142711
+      }
+    ]
+  },
+  {
+    "question_id": "express_016",
+    "repository": "expressjs/express",
+    "category": "cross_file_dependencies",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Express determine client IP addresses through proxy hops based on default configuration settings?",
+    "query_embed_ms": 35.82,
+    "vector_search_ms": 2.38,
+    "retrieval_latency_ms": 38.2,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 3,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.3333,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.2346
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1413",
+        "file_path": "test/req.ip.js",
+        "start_line": 89,
+        "end_line": 108,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.826985
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1419",
+        "file_path": "test/req.ips.js",
+        "start_line": 10,
+        "end_line": 24,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.859263
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_127",
+        "file_path": "lib/request.js",
+        "start_line": 343,
+        "end_line": 392,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.874343
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_1406",
+        "file_path": "test/req.ip.js",
+        "start_line": 10,
+        "end_line": 24,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.911461
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_1408",
+        "file_path": "test/req.ip.js",
+        "start_line": 40,
+        "end_line": 54,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.924638
+      }
+    ]
+  },
+  {
+    "question_id": "express_017",
+    "repository": "expressjs/express",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is res.cookie defined and how does it serialize cookies and apply options like maxAge and signed?",
+    "query_embed_ms": 30.06,
+    "vector_search_ms": 2.56,
+    "retrieval_latency_ms": 32.61,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 6,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1576",
+        "file_path": "test/res.cookie.js",
+        "start_line": 1,
+        "end_line": 7,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.85556
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1579",
+        "file_path": "test/res.cookie.js",
+        "start_line": 23,
+        "end_line": 23,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.893721
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1582",
+        "file_path": "test/res.cookie.js",
+        "start_line": 54,
+        "end_line": 54,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.907356
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_1577",
+        "file_path": "test/res.cookie.js",
+        "start_line": 8,
+        "end_line": 8,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.917079
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_288",
+        "file_path": "test/acceptance/auth.js",
+        "start_line": 4,
+        "end_line": 8,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.923075
+      }
+    ]
+  },
+  {
+    "question_id": "express_018",
+    "repository": "expressjs/express",
+    "category": "debugging_configuration",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Express register custom template engines to render non-standard file extensions?",
+    "query_embed_ms": 29.23,
+    "vector_search_ms": 3.34,
+    "retrieval_latency_ms": 32.57,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_586",
+        "file_path": "test/app.render.js",
+        "start_line": 36,
+        "end_line": 45,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.957152
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_2019",
+        "file_path": "test/res.type.js",
+        "start_line": 73,
+        "end_line": 85,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.982228
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_16",
+        "file_path": "examples/ejs/index.js",
+        "start_line": 1,
+        "end_line": 58,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.049668
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_520",
+        "file_path": "test/app.engine.js",
+        "start_line": 18,
+        "end_line": 31,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.074845
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_23",
+        "file_path": "examples/markdown/index.js",
+        "start_line": 1,
+        "end_line": 45,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.097242
+      }
+    ]
+  },
+  {
+    "question_id": "express_019",
+    "repository": "expressjs/express",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "Where is the built-in JWT (JSON Web Token) authentication verification middleware implemented in Express?",
+    "query_embed_ms": 30.06,
+    "vector_search_ms": 2.68,
+    "retrieval_latency_ms": 32.74,
+    "failed": false,
+    "error": null,
+    "top1_l2_distance": 1.0873981714248657,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_824",
+        "file_path": "test/exports.js",
+        "start_line": 32,
+        "end_line": 36,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.087398
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_766",
+        "file_path": "test/app.use.js",
+        "start_line": 259,
+        "end_line": 263,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.095193
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_692",
+        "file_path": "test/app.router.js",
+        "start_line": 451,
+        "end_line": 470,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.116269
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_696",
+        "file_path": "test/app.router.js",
+        "start_line": 519,
+        "end_line": 532,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.119495
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_12",
+        "file_path": "examples/cookies/index.js",
+        "start_line": 1,
+        "end_line": 24,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.12114
+      }
+    ]
+  },
+  {
+    "question_id": "express_020",
+    "repository": "expressjs/express",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "How does Express configure automatic database migration and schema synchronization for MongoDB?",
+    "query_embed_ms": 33.12,
+    "vector_search_ms": 3.17,
+    "retrieval_latency_ms": 36.3,
+    "failed": false,
+    "error": null,
+    "top1_l2_distance": 1.1008939743041992,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1916",
+        "file_path": "test/res.sendFile.js",
+        "start_line": 414,
+        "end_line": 426,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.100894
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_1617",
+        "file_path": "test/res.download.js",
+        "start_line": 120,
+        "end_line": 132,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.124728
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_1915",
+        "file_path": "test/res.sendFile.js",
+        "start_line": 387,
+        "end_line": 413,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.221337
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_969",
+        "file_path": "test/express.raw.js",
+        "start_line": 329,
+        "end_line": 342,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.239049
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_896",
+        "file_path": "test/express.json.js",
+        "start_line": 504,
+        "end_line": 517,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.25895
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_001",
+    "repository": "fmtlib/fmt",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the text_style class defined in fmt and what style attributes does it store?",
+    "query_embed_ms": 29.92,
+    "vector_search_ms": 30.8,
+    "retrieval_latency_ms": 60.72,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 1.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_82",
+        "file_path": "include/fmt/color.h",
+        "start_line": 236,
+        "end_line": 285,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.104588
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_84",
+        "file_path": "include/fmt/color.h",
+        "start_line": 316,
+        "end_line": 365,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.115296
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_93",
+        "file_path": "include/fmt/color.h",
+        "start_line": 563,
+        "end_line": 619,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.115622
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_95",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 1,
+        "end_line": 20,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.12837
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_245",
+        "file_path": "include/fmt/xchar.h",
+        "start_line": 355,
+        "end_line": 371,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.181978
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_002",
+    "repository": "fmtlib/fmt",
+    "category": "implementation_understanding",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does the styled helper function apply that style to an argument value for formatted output?",
+    "query_embed_ms": 28.31,
+    "vector_search_ms": 2.38,
+    "retrieval_latency_ms": 30.69,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_93",
+        "file_path": "include/fmt/color.h",
+        "start_line": 563,
+        "end_line": 619,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.075727
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_82",
+        "file_path": "include/fmt/color.h",
+        "start_line": 236,
+        "end_line": 285,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.14119
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_332",
+        "file_path": "support/python/mkdocstrings_handlers/cxx/__init__.py",
+        "start_line": 175,
+        "end_line": 178,
+        "chunk_type": "FunctionDef",
+        "symbol_name": "",
+        "distance": 1.145077
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_88",
+        "file_path": "include/fmt/color.h",
+        "start_line": 466,
+        "end_line": 496,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.152362
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_237",
+        "file_path": "include/fmt/xchar.h",
+        "start_line": 238,
+        "end_line": 287,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.177596
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_003",
+    "repository": "fmtlib/fmt",
+    "category": "function_identification",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does the format library provide RAII management for C-style file streams?",
+    "query_embed_ms": 27.52,
+    "vector_search_ms": 2.53,
+    "retrieval_latency_ms": 30.04,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_148",
+        "file_path": "include/fmt/ostream.h",
+        "start_line": 109,
+        "end_line": 130,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.936088
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_144",
+        "file_path": "include/fmt/ostream.h",
+        "start_line": 1,
+        "end_line": 49,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.972309
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_122",
+        "file_path": "include/fmt/fmt-c.h",
+        "start_line": 1,
+        "end_line": 79,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.007964
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_95",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 1,
+        "end_line": 20,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.01069
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_201",
+        "file_path": "include/fmt/std.h",
+        "start_line": 1,
+        "end_line": 50,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.022257
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_004",
+    "repository": "fmtlib/fmt",
+    "category": "function_identification",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does fmt construct dynamic argument lists when format arguments are not known at compile time?",
+    "query_embed_ms": 28.08,
+    "vector_search_ms": 11.91,
+    "retrieval_latency_ms": 39.99,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_1",
+        "file_path": "include/fmt/args.h",
+        "start_line": 1,
+        "end_line": 23,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.648072
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_113",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 565,
+        "end_line": 607,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.691509
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_102",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 225,
+        "end_line": 242,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.73411
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_95",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 1,
+        "end_line": 20,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.769903
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_166",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 631,
+        "end_line": 663,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.792975
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_005",
+    "repository": "fmtlib/fmt",
+    "category": "implementation_understanding",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does fmt detect whether a type satisfies range requirements via the is_range trait?",
+    "query_embed_ms": 31.05,
+    "vector_search_ms": 2.53,
+    "retrieval_latency_ms": 33.57,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 5,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_167",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 1,
+        "end_line": 62,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.880353
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_174",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 109,
+        "end_line": 117,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.934505
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_11",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 81,
+        "end_line": 130,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.971937
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_193",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 525,
+        "end_line": 530,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.976267
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_194",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 531,
+        "end_line": 567,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.991571
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_006",
+    "repository": "fmtlib/fmt",
+    "category": "cross_file_dependencies",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does join construct a view to format those detected ranges with custom delimiters?",
+    "query_embed_ms": 28.1,
+    "vector_search_ms": 2.57,
+    "retrieval_latency_ms": 30.67,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.2961
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_235",
+        "file_path": "include/fmt/xchar.h",
+        "start_line": 158,
+        "end_line": 207,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.072755
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_198",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 680,
+        "end_line": 737,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.085517
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_190",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 401,
+        "end_line": 450,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.16732
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_194",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 531,
+        "end_line": 567,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.187939
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_185",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 253,
+        "end_line": 300,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.20434
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_007",
+    "repository": "fmtlib/fmt",
+    "category": "implementation_understanding",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does dynamic_format_arg_store::push_back store typed values and named arguments?",
+    "query_embed_ms": 28.47,
+    "vector_search_ms": 2.5,
+    "retrieval_latency_ms": 30.97,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 1.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_5",
+        "file_path": "include/fmt/args.h",
+        "start_line": 123,
+        "end_line": 172,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.775752
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_6",
+        "file_path": "include/fmt/args.h",
+        "start_line": 163,
+        "end_line": 212,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.783337
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_113",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 565,
+        "end_line": 607,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.067059
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_102",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 225,
+        "end_line": 242,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.096455
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_101",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 193,
+        "end_line": 224,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.107766
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_008",
+    "repository": "fmtlib/fmt",
+    "category": "cross_file_dependencies",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does the ostream class in fmt provide buffered output for low-level file descriptors?",
+    "query_embed_ms": 29.52,
+    "vector_search_ms": 2.63,
+    "retrieval_latency_ms": 32.15,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 2,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      true,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6509
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_140",
+        "file_path": "include/fmt/os.h",
+        "start_line": 306,
+        "end_line": 319,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.814357
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_143",
+        "file_path": "include/fmt/os.h",
+        "start_line": 361,
+        "end_line": 428,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.842687
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_139",
+        "file_path": "include/fmt/os.h",
+        "start_line": 224,
+        "end_line": 305,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.844717
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_138",
+        "file_path": "include/fmt/os.h",
+        "start_line": 167,
+        "end_line": 223,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.925609
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_201",
+        "file_path": "include/fmt/std.h",
+        "start_line": 1,
+        "end_line": 50,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.97632
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_009",
+    "repository": "fmtlib/fmt",
+    "category": "architecture_flow",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "Walk through the execution flow when printing styled text to that buffered stream.",
+    "query_embed_ms": 29.2,
+    "vector_search_ms": 2.38,
+    "retrieval_latency_ms": 31.58,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.2961
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_91",
+        "file_path": "include/fmt/color.h",
+        "start_line": 527,
+        "end_line": 548,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.867893
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_89",
+        "file_path": "include/fmt/color.h",
+        "start_line": 497,
+        "end_line": 512,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.894937
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_245",
+        "file_path": "include/fmt/xchar.h",
+        "start_line": 355,
+        "end_line": 371,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.017037
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_88",
+        "file_path": "include/fmt/color.h",
+        "start_line": 466,
+        "end_line": 496,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.024488
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_93",
+        "file_path": "include/fmt/color.h",
+        "start_line": 563,
+        "end_line": 619,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.027928
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_010",
+    "repository": "fmtlib/fmt",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the printf_arg_formatter class defined and what format specifiers does it parse?",
+    "query_embed_ms": 28.47,
+    "vector_search_ms": 2.86,
+    "retrieval_latency_ms": 31.33,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 1.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_157",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 232,
+        "end_line": 310,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.862341
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_152",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 1,
+        "end_line": 85,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.90941
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_165",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 591,
+        "end_line": 640,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.966574
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_8",
+        "file_path": "include/fmt/base.h",
+        "start_line": 1,
+        "end_line": 9,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.998405
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_166",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 631,
+        "end_line": 663,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.998654
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_011",
+    "repository": "fmtlib/fmt",
+    "category": "cross_file_dependencies",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does fmt::sprintf invoke vsprintf and detail::vprintf to produce a formatted string?",
+    "query_embed_ms": 30.48,
+    "vector_search_ms": 2.61,
+    "retrieval_latency_ms": 33.09,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.6131
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_165",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 591,
+        "end_line": 640,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.588561
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_89",
+        "file_path": "include/fmt/color.h",
+        "start_line": 497,
+        "end_line": 512,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.606545
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_90",
+        "file_path": "include/fmt/color.h",
+        "start_line": 513,
+        "end_line": 526,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.629151
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_91",
+        "file_path": "include/fmt/color.h",
+        "start_line": 527,
+        "end_line": 548,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.705389
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_166",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 631,
+        "end_line": 663,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.707204
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_012",
+    "repository": "fmtlib/fmt",
+    "category": "architecture_flow",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does fmt format std::tuple and std::pair objects into delimiter-separated elements?",
+    "query_embed_ms": 30.31,
+    "vector_search_ms": 2.65,
+    "retrieval_latency_ms": 32.96,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6131
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_199",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 738,
+        "end_line": 824,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.709504
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_182",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 199,
+        "end_line": 204,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.744806
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_181",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 191,
+        "end_line": 198,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.828022
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_184",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 212,
+        "end_line": 252,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.876426
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_95",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 1,
+        "end_line": 20,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.891988
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_013",
+    "repository": "fmtlib/fmt",
+    "category": "debugging_configuration",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does fmt parse and format time durations with unit suffixes like seconds and milliseconds?",
+    "query_embed_ms": 29.9,
+    "vector_search_ms": 2.29,
+    "retrieval_latency_ms": 32.18,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_72",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 2219,
+        "end_line": 2252,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.896214
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_74",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 2264,
+        "end_line": 2301,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.931449
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_21",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 457,
+        "end_line": 506,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.990354
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_49",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 1525,
+        "end_line": 1549,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.000356
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_95",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 1,
+        "end_line": 20,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.007901
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_014",
+    "repository": "fmtlib/fmt",
+    "category": "debugging_configuration",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How can that formatting syntax be parsed at compile time using macros?",
+    "query_embed_ms": 29.52,
+    "vector_search_ms": 2.37,
+    "retrieval_latency_ms": 31.89,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 4,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.25,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.4307
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_192",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 481,
+        "end_line": 524,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.885409
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_234",
+        "file_path": "include/fmt/xchar.h",
+        "start_line": 118,
+        "end_line": 167,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.903026
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_95",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 1,
+        "end_line": 20,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.910928
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_97",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 24,
+        "end_line": 56,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.945589
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_102",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 225,
+        "end_line": 242,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.956185
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_015",
+    "repository": "fmtlib/fmt",
+    "category": "architecture_flow",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does fmt construct and report Windows operating system errors from native error codes?",
+    "query_embed_ms": 30.66,
+    "vector_search_ms": 2.53,
+    "retrieval_latency_ms": 33.19,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 2,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 1,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6309
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_135",
+        "file_path": "include/fmt/os.h",
+        "start_line": 41,
+        "end_line": 90,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.828637
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_137",
+        "file_path": "include/fmt/os.h",
+        "start_line": 121,
+        "end_line": 166,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.842704
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_414",
+        "file_path": "test/test-assert.h",
+        "start_line": 1,
+        "end_line": 18,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.918066
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_378",
+        "file_path": "test/gtest-extra.h",
+        "start_line": 1,
+        "end_line": 73,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.029612
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_134",
+        "file_path": "include/fmt/os.h",
+        "start_line": 1,
+        "end_line": 50,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.03862
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_016",
+    "repository": "fmtlib/fmt",
+    "category": "implementation_understanding",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does fmt convert C++ enum values to their numeric representations during formatting?",
+    "query_embed_ms": 30.03,
+    "vector_search_ms": 2.25,
+    "retrieval_latency_ms": 32.28,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.3869
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_115",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 41,
+        "end_line": 90,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.643656
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_121",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 249,
+        "end_line": 268,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.726612
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_114",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 1,
+        "end_line": 50,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.857266
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_95",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 1,
+        "end_line": 20,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.865579
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_367",
+        "file_path": "test/c-test.c",
+        "start_line": 33,
+        "end_line": 43,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.883608
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_017",
+    "repository": "fmtlib/fmt",
+    "category": "debugging_configuration",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does fmt implement as_underlying to force formatting an enum as an integer?",
+    "query_embed_ms": 28.14,
+    "vector_search_ms": 2.19,
+    "retrieval_latency_ms": 30.33,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "per_chunk_relevance": [
+      true,
+      false,
+      true,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.9197
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_115",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 41,
+        "end_line": 90,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.578193
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_121",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 249,
+        "end_line": 268,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.623924
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_114",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 1,
+        "end_line": 50,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.834061
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_367",
+        "file_path": "test/c-test.c",
+        "start_line": 33,
+        "end_line": 43,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.897737
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_124",
+        "file_path": "include/fmt/fmt-c.h",
+        "start_line": 84,
+        "end_line": 87,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.912429
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_018",
+    "repository": "fmtlib/fmt",
+    "category": "debugging_configuration",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does fmt define terminal color codes in the terminal_color enum class?",
+    "query_embed_ms": 28.73,
+    "vector_search_ms": 2.25,
+    "retrieval_latency_ms": 30.99,
+    "failed": false,
+    "error": null,
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.4693
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_79",
+        "file_path": "include/fmt/color.h",
+        "start_line": 161,
+        "end_line": 191,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.786627
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_81",
+        "file_path": "include/fmt/color.h",
+        "start_line": 210,
+        "end_line": 235,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.873673
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_75",
+        "file_path": "include/fmt/color.h",
+        "start_line": 1,
+        "end_line": 50,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.891151
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_115",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 41,
+        "end_line": 90,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.899152
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_85",
+        "file_path": "include/fmt/color.h",
+        "start_line": 356,
+        "end_line": 405,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 0.957465
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_019",
+    "repository": "fmtlib/fmt",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "Where is the built-in asynchronous non-blocking thread-pool logging sink configured in fmt?",
+    "query_embed_ms": 28.54,
+    "vector_search_ms": 2.22,
+    "retrieval_latency_ms": 30.76,
+    "failed": false,
+    "error": null,
+    "top1_l2_distance": 1.2867833375930786,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_140",
+        "file_path": "include/fmt/os.h",
+        "start_line": 306,
+        "end_line": 319,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.286783
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_166",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 631,
+        "end_line": 663,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.315106
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_378",
+        "file_path": "test/gtest-extra.h",
+        "start_line": 1,
+        "end_line": 73,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.364616
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_139",
+        "file_path": "include/fmt/os.h",
+        "start_line": 224,
+        "end_line": 305,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 1.371282
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_201",
+        "file_path": "include/fmt/std.h",
+        "start_line": 1,
+        "end_line": 50,
+        "chunk_type": "regex_split_split",
+        "symbol_name": "",
+        "distance": 1.375599
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_020",
+    "repository": "fmtlib/fmt",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "How does fmt parse and serialize JSON documents into C++ struct fields?",
+    "query_embed_ms": 28.56,
+    "vector_search_ms": 2.26,
+    "retrieval_latency_ms": 30.81,
+    "failed": false,
+    "error": null,
+    "top1_l2_distance": 0.8313882350921631,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "chunk_140",
+        "file_path": "include/fmt/os.h",
+        "start_line": 306,
+        "end_line": 319,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.831388
+      },
+      {
+        "rank": 2,
+        "chunk_id": "chunk_139",
+        "file_path": "include/fmt/os.h",
+        "start_line": 224,
+        "end_line": 305,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.89654
+      },
+      {
+        "rank": 3,
+        "chunk_id": "chunk_148",
+        "file_path": "include/fmt/ostream.h",
+        "start_line": 109,
+        "end_line": 130,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.924459
+      },
+      {
+        "rank": 4,
+        "chunk_id": "chunk_95",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 1,
+        "end_line": 20,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.934296
+      },
+      {
+        "rank": 5,
+        "chunk_id": "chunk_121",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 249,
+        "end_line": 268,
+        "chunk_type": "regex_split",
+        "symbol_name": "",
+        "distance": 0.96697
+      }
+    ]
+  }
+]
