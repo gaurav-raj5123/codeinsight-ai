@@ -16,6 +16,8 @@ This directory contains the automated regression and verification test suites fo
   - Verification of Day 3 benchmark runner fairness controls (253 files), isolated collection naming, metadata validation, 24 chunk quality metrics computation, failed-query zeroing, error-analysis transitions, and Day 1/2 artifact preservation.
 - **`test_bm25_and_hybrid.py`**:
   - Verification of Day 4 V1 header-label hygiene (`strip_v1_header_labels`), code-aware tokenization (dotted/scoped/path/camelCase/snake_case/1–2 char symbols), BM25 zero-overlap filtering without padding (including negative RSJ edge cases), RRF fusion & empty-BM25 fallback, un-truncated `Candidate Union` evaluation, ChromaDB persistent BM25 hydration across restarts/re-indexing/repo switching without pickles, and Day 1–3 artifact preservation.
+- **`test_day5_rerank_and_rewrite.py`**:
+  - Verification of Day 5 ONNX Runtime CPU cross-encoder (`ms-marco-MiniLM-L-6-v2` native `[CLS] query [SEP] candidate [SEP]` pair tokenization & `0`/`1` `token_type_ids`), `only_second` + oversized-query (`>512` token) truncation telemetry, raw logit tie-breaking & Hybrid RRF fallback on errors, leakage-free conversational query rewriter gate (`12/12` Turn-2 / `48/48` standalone + retry/fallback), `embedder.search_similar` `hybrid_rerank` end-to-end integration, `app.py` UI wiring, and Day 1–4 artifact preservation.
 
 ### Running Tests
 

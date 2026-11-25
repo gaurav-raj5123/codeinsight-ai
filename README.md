@@ -6,9 +6,9 @@ An intelligent, production-grade Retrieval-Augmented Generation (RAG) assistant 
 
 ## ✨ Features
 
-- **Custom AST Code Chunker**: Uses Python's native `ast` module to split Python code at exact function and class boundaries, accurately handling decorators, docstrings, and async definitions. Employs regex and sliding-window fallbacks for JavaScript, Java, and C++.
-- **Zero-Cost Local Embeddings**: Employs `sentence-transformers` (`all-MiniLM-L6-v2`, 384 dimensions) to generate vector embeddings locally on CPU.
-- **Fast Semantic Search**: Stores and retrieves code chunks using **ChromaDB** with isolated per-repository collections.
+- **Code-Aware AST & Brace Chunking**: Combines V0 compatibility with Day 3 `code_aware_v1` hierarchical Python `ast` + JavaScript/Java/C++ brace-aware chunking bounded cleanly to `<=256` WordPiece tokens with contextual metadata headers (`0.00%` runtime truncation).
+- **Local ONNX Inference Stack (No PyTorch Required)**: Runs both dense embeddings (`all-MiniLM-L6-v2`, 384 dims via ChromaDB ONNX) and CPU cross-encoder reranking (`cross-encoder/ms-marco-MiniLM-L-6-v2` via `onnxruntime` + `tokenizers`) without Windows PyTorch DLL issues.
+- **Hybrid Retrieval + Two-Stage Reranking**: Combines dense vector search, V1-aware Okapi BM25 lexical search (`Hybrid RRF k=60`), and Stage-2 Cross-Encoder reranking, plus an optional gated Gemini conversational query rewriter with safe automatic fallbacks.
 - **No Local Git Required**: Directly fetches repositories as ZIP archives via the GitHub API, making it fast and platform-independent.
 - **Generative AI Responses**: Uses the modern `google-genai` SDK and `gemini-3.5-flash` to synthesize accurate, codebase-aware answers with conversation history support.
 - **Unified Streamlit UI**: A clean, responsive chat interface displaying retrieved code chunks and full transparency.
@@ -40,11 +40,13 @@ flowchart TD
 ├── app.py                         # Streamlit UI, chunking/retrieval selectors & session state
 ├── chunker.py                     # Strategy dispatcher + V0 AST/regex/sliding-window chunker
 ├── chunker_v1.py                  # Day 3 code-aware, <=256-token hierarchical AST + brace chunker
-├── embedder.py                    # ChromaDB client, dense/BM25/hybrid RRF search & cache hydration
+├── embedder.py                    # ChromaDB client, dense/BM25/hybrid RRF/rerank search & caching
 ├── retrieval/                     # 🔍 Day 4+ modular retrieval package
 │   ├── __init__.py
 │   ├── bm25_retriever.py          # Code-aware Okapi BM25, V1 header hygiene & Chroma hydration
-│   └── hybrid_retriever.py        # Reciprocal Rank Fusion (RRF k=60) & candidate union logic
+│   ├── hybrid_retriever.py        # Reciprocal Rank Fusion (RRF k=60) & candidate union logic
+│   ├── reranker.py                # Day 5 CPU ONNX cross-encoder reranker & HybridRerankRetriever
+│   └── query_rewriter.py          # Day 5 leakage-free gated conversational query rewriter
 ├── llm.py                         # Gemini API client, secret sanitization & prompt construction
 ├── repo_loader.py                 # GitHub repository ZIP downloader & source file extractor
 ├── telemetry.py                   # Atomic telemetry persistence & latency instrumentation
@@ -69,6 +71,8 @@ flowchart TD
 │       └── DAY3_CHUNKING_ANALYSIS.md       # Controlled Day 3 comparison & Day 4 recommendation
 │   └── day4/                      # Day 4: Hybrid Retrieval (BM25 + Dense + RRF)
 │       └── DAY4_HYBRID_REPORT.md           # Single-pass hybrid benchmark & Day 5 handoff analysis
+│   └── day5/                      # Day 5: Cross-Encoder Reranking & Conversational Query Rewriting
+│       └── DAY5_RERANK_REWRITE_REPORT.md   # ONNX reranking (E3a vs E3b), Q1 rewrite & Day 6 handoff
 │
 ├── experiments/                   # 🔬 Evaluation harness & experimental artifacts
 │   ├── run_baseline_evaluation.py # Reproducible V0 offline evaluation runner
@@ -83,6 +87,9 @@ flowchart TD
 │   ├── day4_hybrid/               # Day 4 isolated hybrid retrieval harness
 │   │   ├── run_hybrid_comparison.py         # Single-pass Dense/BM25/RRF benchmark & bootstrap CI
 │   │   └── results/                         # hybrid_summary.json, hybrid_comparison.json, per_method/
+│   ├── day5_rerank_rewrite/       # Day 5 ONNX reranking & query rewriting harness
+│   │   ├── run_day5_benchmark.py            # E3a/E3b reranking, Q1/Q2 rewrite & Day 6 handoff runner
+│   │   └── results/                         # day5_summary.json, conversational_subset_analysis.json, per_experiment/
 │   ├── datasets/                  # Ground truth annotations and evaluation questions
 │   │   ├── repositories.json      # Pinned repository metadata & commit SHAs
 │   │   ├── evaluation_questions.json # 60 evaluation questions (conceptual, identifier, conversational)
@@ -103,7 +110,8 @@ flowchart TD
     ├── test_embedding_runner.py         # Embedding runner ONNX smoke & failure accounting tests
     ├── test_chunker_v1.py               # Code-aware V1 chunker, tokenizer budget & Chroma tests
     ├── test_chunking_comparison.py      # Day 3 chunking harness & 24-metric validation tests
-    └── test_bm25_and_hybrid.py          # Code-aware BM25, RRF fusion & Chroma hydration tests
+    ├── test_bm25_and_hybrid.py          # Code-aware BM25, RRF fusion & Chroma hydration tests
+    └── test_day5_rerank_and_rewrite.py  # ONNX cross-encoder, gated query rewriter & integration tests
 ```
 
 ---
@@ -187,6 +195,9 @@ python experiments/chunking_experiments/run_chunking_comparison.py
 
 # 6. Execute the Day 4 controlled hybrid retrieval benchmark
 python experiments/day4_hybrid/run_hybrid_comparison.py
+
+# 7. Execute the Day 5 ONNX cross-encoder & query rewriting benchmark
+python experiments/day5_rerank_rewrite/run_day5_benchmark.py
 ```
 
 ---

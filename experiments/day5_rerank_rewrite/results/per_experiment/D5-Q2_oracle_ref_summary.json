@@ -1,0 +1,39 @@
+{
+  "experiment_id": "D5-Q2_oracle_ref",
+  "label": "D5-Q2-Oracle: Offline Oracle Reference \u2014 Not a Deployable Configuration",
+  "warning": "Offline Oracle Reference \u2014 Not a Deployable Configuration; strictly separate from production rewriter.",
+  "fixed_pipeline_used": "D5-E3a_rerank_rrf20",
+  "failed_queries": 0,
+  "overall_retrieval_metrics": {
+    "query_count": 54,
+    "hit_rate_at_1": 0.5,
+    "hit_rate_at_3": 0.6852,
+    "hit_rate_at_5": 0.7778,
+    "precision_at_5": 0.2852,
+    "mrr_at_5": 0.6025,
+    "span_recall_at_5": 0.6852,
+    "ndcg_at_5": 0.451,
+    "latency_ms": {
+      "mean": 2382.63,
+      "median_p50": 2493.96,
+      "p95": 3342.36,
+      "max": 3821.65
+    }
+  },
+  "conversational_subset_metrics": {
+    "query_count": 12,
+    "hit_rate_at_1": 0.5833,
+    "hit_rate_at_3": 0.75,
+    "hit_rate_at_5": 0.8333,
+    "precision_at_5": 0.3667,
+    "mrr_at_5": 0.6875,
+    "span_recall_at_5": 0.6667,
+    "ndcg_at_5": 0.5006,
+    "latency_ms": {
+      "mean": 2081.12,
+      "median_p50": 1941.09,
+      "p95": 3271.43,
+      "max": 3271.43
+    }
+  }
+}

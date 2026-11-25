@@ -24,8 +24,14 @@ from retrieval.bm25_retriever import (
     compute_corpus_fingerprint,
 )
 from retrieval.hybrid_retriever import HybridRetriever
+from retrieval.query_rewriter import rewrite_conversational_query
+from retrieval.reranker import (
+    DEFAULT_CROSS_ENCODER_MODEL,
+    HybridRerankRetriever,
+    ONNXCrossEncoderReranker,
+)
 
-SUPPORTED_RETRIEVAL_MODES = ("hybrid_rrf", "dense", "bm25")
+SUPPORTED_RETRIEVAL_MODES = ("hybrid_rerank", "hybrid_rrf", "dense", "bm25")
 DEFAULT_RETRIEVAL_MODE = "dense"
 
 # Global telemetry caches for last indexing and retrieval operations
@@ -49,7 +55,14 @@ def load_embedding_model():
     # Embeddings represent text as arrays of numbers (vectors) in high-dimensional space.
     # Texts with similar meanings will have vectors that are mathematically close.
     # We use all-MiniLM-L6-v2 (384-dimensional vectors) via ONNX Runtime.
+    # We use all-MiniLM-L6-v2 (384-dimensional vectors) via ONNX Runtime.
     return embedding_functions.DefaultEmbeddingFunction()
+
+
+@st.cache_resource(show_spinner=False)
+def load_cross_encoder_reranker() -> ONNXCrossEncoderReranker:
+    """Load and cache the CPU ONNX Runtime cross-encoder reranker."""
+    return ONNXCrossEncoderReranker()
 
 # ══════════════════════════════════════════════════════════════════════════════
 # DATABASE SETUP
@@ -242,16 +255,24 @@ def search_similar(
     retrieval_mode: str = DEFAULT_RETRIEVAL_MODE,
     candidate_k: int = 20,
     rrf_k: int = 60,
+    candidate_pool_mode: str = "rrf_top_20",
+    enable_query_rewrite: bool = False,
+    chat_history: Any = None,
 ):
     """Finds top N most relevant code chunks for a query.
-    Supports 'dense' (default V0 backward compatibility), 'bm25', and 'hybrid_rrf'.
-    When 'bm25' or 'hybrid_rrf' is requested, BM25 is hydrated directly from the
-    persisted ChromaDB collection and cached safely by collection fingerprint.
+    Supports 'dense' (default V0 backward compatibility), 'bm25', 'hybrid_rrf',
+    and 'hybrid_rerank' (Hybrid RRF + CPU ONNX Cross-Encoder reranking).
+    Optionally rewrites context-dependent follow-up queries via a leakage-free
+    gate before retrieval, falling back safely on errors.
     If return_metadata=True, returns (retrieved_chunks, retrieval_metadata)."""
     global _LAST_RETRIEVAL_METADATA
     if retrieval_mode not in SUPPORTED_RETRIEVAL_MODES:
         raise ValueError(
             f"Unsupported retrieval_mode {retrieval_mode!r}. Supported: {SUPPORTED_RETRIEVAL_MODES}"
+        )
+    if candidate_pool_mode not in ("rrf_top_20", "candidate_union"):
+        raise ValueError(
+            f"Unsupported candidate_pool_mode {candidate_pool_mode!r}; expected 'rrf_top_20' or 'candidate_union'"
         )
 
     client = get_chroma_client()
@@ -266,6 +287,7 @@ def search_similar(
     except Exception as e:
         empty_meta = {
             "query": query,
+            "effective_query": query,
             "repo_name": repo_name,
             "safe_collection_name": safe_repo_name,
             "retrieval_mode": retrieval_mode,
@@ -273,12 +295,51 @@ def search_similar(
             "n_results_returned": 0,
             "retrieval_latency_seconds": 0.0,
             "distance_metric": "l2" if retrieval_mode != "bm25" else "bm25",
+            "enable_query_rewrite": bool(enable_query_rewrite),
+            "query_rewritten": False,
+            "rewrite_failed": False,
+            "rewrite_error": None,
+            "rewrite_latency_seconds": 0.0,
             "error": str(e)
         }
         _LAST_RETRIEVAL_METADATA = empty_meta
         if return_metadata:
             return [], empty_meta
         return []
+
+    effective_query = query
+    rewrite_meta: dict[str, Any] = {
+        "original_query": query,
+        "retrieval_query": query,
+        "rewritten": False,
+        "gate_triggered": False,
+        "gate_reason": "disabled",
+        "rewrite_failed": False,
+        "error": None,
+        "rewrite_latency_ms": 0.0,
+        "gemini_calls": 0,
+    }
+    if enable_query_rewrite:
+        try:
+            rewrite_meta = rewrite_conversational_query(
+                query=query,
+                previous_context=chat_history,
+                repository_name=repo_name,
+            )
+            effective_query = rewrite_meta.get("retrieval_query") or query
+        except Exception as exc:
+            rewrite_meta = {
+                "original_query": query,
+                "retrieval_query": query,
+                "rewritten": False,
+                "gate_triggered": True,
+                "gate_reason": "exception_fallback",
+                "rewrite_failed": True,
+                "error": str(exc),
+                "rewrite_latency_ms": 0.0,
+                "gemini_calls": 0,
+            }
+            effective_query = query
 
     def _query_chroma_dense(q_txt: str, n_req: int) -> list[dict]:
         total_in_col = int(collection.count())
@@ -303,13 +364,13 @@ def search_similar(
     extra_meta: dict[str, Any] = {}
 
     if retrieval_mode == "dense":
-        retrieved_chunks = _query_chroma_dense(query, n_results)
+        retrieved_chunks = _query_chroma_dense(effective_query, n_results)
         metric_name = "l2"
     elif retrieval_mode == "bm25":
         bm25, bm25_hyd_meta = get_or_build_bm25_index(
             repo_name, client=client, collection=collection, return_metadata=True
         )
-        bm25_hits, bm25_q_meta = bm25.search(query, top_k=n_results, return_metadata=True)
+        bm25_hits, bm25_q_meta = bm25.search(effective_query, top_k=n_results, return_metadata=True)
         retrieved_chunks = [
             {
                 'content': hit['content'],
@@ -328,7 +389,7 @@ def search_similar(
             "bm25_cache_hit": bm25_hyd_meta["cache_hit"],
             "bm25_eligible_overlap_docs": bm25_q_meta["eligible_overlap_docs"],
         }
-    else:  # hybrid_rrf
+    elif retrieval_mode == "hybrid_rrf":
         bm25, bm25_hyd_meta = get_or_build_bm25_index(
             repo_name, client=client, collection=collection, return_metadata=True
         )
@@ -340,7 +401,7 @@ def search_similar(
             rrf_k=rrf_k,
         )
         retrieved_chunks, diag = hybrid.retrieve(
-            query, top_k=n_results, candidate_k=cand_pool_k, return_diagnostics=True
+            effective_query, top_k=n_results, candidate_k=cand_pool_k, return_diagnostics=True
         )
         metric_name = f"hybrid_rrf_k{rrf_k}"
         extra_meta = {
@@ -352,11 +413,86 @@ def search_similar(
             "bm25_fallback_to_dense_only": diag["rrf_stats"]["bm25_fallback_to_dense_only"],
             "rrf_k": rrf_k,
         }
+    else:  # hybrid_rerank
+        bm25, bm25_hyd_meta = get_or_build_bm25_index(
+            repo_name, client=client, collection=collection, return_metadata=True
+        )
+        cand_pool_k = max(int(candidate_k), int(n_results))
+        hybrid = HybridRetriever(
+            dense_search_fn=_query_chroma_dense,
+            bm25_retriever=bm25,
+            candidate_k=cand_pool_k,
+            rrf_k=rrf_k,
+        )
+        try:
+            reranker = load_cross_encoder_reranker()
+            rerank_retriever = HybridRerankRetriever(
+                hybrid_retriever=hybrid,
+                reranker=reranker,
+                candidate_pool_mode=candidate_pool_mode,
+            )
+            retrieved_chunks, r_diag = rerank_retriever.retrieve(
+                effective_query,
+                top_k=n_results,
+                candidate_k=cand_pool_k,
+                fallback_to_rrf_on_error=True,
+                return_diagnostics=True,
+            )
+            h_diag = r_diag["stage1_hybrid"]
+            r_meta = r_diag["reranker_meta"]
+            fallback_used = bool(r_diag["fallback_to_rrf_used"])
+            rerank_failed = bool(r_diag["rerank_failed"])
+            rerank_error = r_diag["rerank_error"]
+            cand_pool_count = r_diag["candidate_pool_count"]
+            metric_name = (
+                f"hybrid_rrf_k{rrf_k}_fallback"
+                if fallback_used
+                else f"hybrid_rerank_{candidate_pool_mode}_k{rrf_k}"
+            )
+        except Exception as exc:
+            retrieved_chunks, h_diag = hybrid.retrieve(
+                effective_query, top_k=n_results, candidate_k=cand_pool_k, return_diagnostics=True
+            )
+            r_meta = {
+                "pairs_count": 0,
+                "pairs_truncated_count": 0,
+                "inference_ms": 0.0,
+            }
+            fallback_used = True
+            rerank_failed = True
+            rerank_error = str(exc)
+            cand_pool_count = len(retrieved_chunks)
+            metric_name = f"hybrid_rrf_k{rrf_k}_fallback"
+
+        extra_meta = {
+            "bm25_corpus_fingerprint": bm25_hyd_meta["corpus_fingerprint"],
+            "bm25_cache_hit": bm25_hyd_meta["cache_hit"],
+            "dense_candidates_count": h_diag["rrf_stats"]["dense_candidates_count"],
+            "bm25_candidates_count": h_diag["rrf_stats"]["bm25_candidates_count"],
+            "union_candidates_count": h_diag["rrf_stats"]["union_candidates_count"],
+            "bm25_fallback_to_dense_only": h_diag["rrf_stats"]["bm25_fallback_to_dense_only"],
+            "rrf_k": rrf_k,
+            "candidate_pool_mode": candidate_pool_mode,
+            "candidate_pool_count": cand_pool_count,
+            "reranker_model": DEFAULT_CROSS_ENCODER_MODEL,
+            "rerank_failed": rerank_failed,
+            "rerank_error": rerank_error,
+            "fallback_to_rrf_used": fallback_used,
+            "rerank_pairs_truncated_count": r_meta.get("pairs_truncated_count", 0),
+            "reranker_inference_ms": r_meta.get("inference_ms", 0.0),
+            "top1_reranker_raw_logit": (
+                retrieved_chunks[0].get("reranker_raw_logit") if retrieved_chunks else None
+            ),
+            "top1_reranker_sigmoid_score": (
+                retrieved_chunks[0].get("reranker_sigmoid_score") if retrieved_chunks else None
+            ),
+        }
 
     retrieval_latency = time.perf_counter() - t_query_start
 
     retrieval_metadata = {
         "query": query,
+        "effective_query": effective_query,
         "repo_name": repo_name,
         "safe_collection_name": safe_repo_name,
         "retrieval_mode": retrieval_mode,
@@ -364,6 +500,13 @@ def search_similar(
         "n_results_returned": len(retrieved_chunks),
         "retrieval_latency_seconds": round(retrieval_latency, 4),
         "distance_metric": metric_name,
+        "enable_query_rewrite": bool(enable_query_rewrite),
+        "query_rewritten": bool(rewrite_meta.get("rewritten", False)),
+        "rewrite_gate_triggered": bool(rewrite_meta.get("gate_triggered", False)),
+        "rewrite_gate_reason": rewrite_meta.get("gate_reason"),
+        "rewrite_failed": bool(rewrite_meta.get("rewrite_failed", False)),
+        "rewrite_error": rewrite_meta.get("error"),
+        "rewrite_latency_seconds": round(float(rewrite_meta.get("rewrite_latency_ms", 0.0)) / 1000.0, 4),
         **extra_meta,
     }
     _LAST_RETRIEVAL_METADATA = retrieval_metadata

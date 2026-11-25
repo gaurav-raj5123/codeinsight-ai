@@ -25,9 +25,14 @@ This directory houses the structured, day-by-day engineering audits, benchmark r
 ### [Day 4: Hybrid Retrieval (BM25 + Dense + RRF)](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day4/)
 - **[DAY4_HYBRID_REPORT.md](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day4/DAY4_HYBRID_REPORT.md)**: Single-pass controlled comparison of Dense V1 (`Hit@5=0.7037`, `NDCG@5=0.3217`), Code-Aware Okapi BM25 with V1 header label hygiene & zero-overlap filtering (`Hit@5=0.6852`, `NDCG@5=0.3689`), and Hybrid RRF `k=60` (`Hit@1=0.3889`, `Hit@5=0.7222`, `Precision@5=0.2444`, `SpanRec@5=0.6389`, `MRR@5=0.5182`, `NDCG@5=0.3737`, `P50=39.56 ms`). Establishes `Candidate Union` (`Dense@20 ∪ BM25@20`) ceiling of **`0.9630` Hit Rate (`52/54`)** and **`0.9074` Span Recall** for Day 5 reranking.
 
+### [Day 5: Cross-Encoder Reranking & Conversational Query Rewriting](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day5/)
+- **[DAY5_RERANK_REWRITE_REPORT.md](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day5/DAY5_RERANK_REWRITE_REPORT.md)**: ONNX-only CPU Cross-Encoder reranking (`cross-encoder/ms-marco-MiniLM-L-6-v2`, rev `233902d25c44`, `86.80 MB`, `0.0%` pair truncation) over `D4-E2` Hybrid RRF (`0.0` Day 4 parity deltas):
+  - **`D5-E3a` (RRF Top-20 -> Rerank, Production Default):** Lifts `Hit@1` `0.3889 -> 0.4630`, `Hit@5` `0.7222 -> 0.7963` (`43/54`), `Precision@5` `0.2444 -> 0.2704`, `SpanRec@5` `0.6389 -> 0.6852`, `MRR@5` `0.5182 -> 0.5861`, `NDCG@5` `0.3737 -> 0.4366` (`P50 = 2,598.23 ms`).
+  - **`D5-E3b` (Full Candidate Union `<=40` -> Rerank):** Reaches `Hit@1 = 0.4815`, `MRR@5 = 0.5948`, `NDCG@5 = 0.4391` (`Hit@5 = 0.7778`, `P50 = 4,498.75 ms`).
+  - **Leakage-Free Conversational Rewriting (`Q1` vs `Q0` & `Q2-Oracle`):** `D5-E3a` already lifts unrewritten Turn-2 `Hit@5` to `0.9167` (`11/12`); live Gemini `Q1` suffers `4/12` API timeouts/503s (`4.2s–32.7s`, safely falling back) and query over-specification (`Hit@5 = 0.7500`), so rewriting is integrated cleanly as an **opt-in toggle (default `False`)**. Includes exploratory Day 6 raw-logit/sigmoid distribution handoff (`Answerable` vs `Unanswerable`).
+
 ---
 
 ### Upcoming Milestones
-- **Day 5**: Cross-Encoder Reranking & Test/Implementation Path Calibration (over Day 4 `Candidate Union` / `RRF Top-20`)
-- **Day 6**: Conversational Anaphora Resolution & Context-Aware Query Rewriting
-- **Day 7**: End-to-End System Integration, Grounding & Final Verification
+- **Day 6**: Score Calibration, Unanswerable Abstention Boundaries & Retrieval Grounding Analysis (building on Day 5 raw-logit/sigmoid score distributions)
+- **Day 7**: End-to-End Generation Evaluation, Final System Polish & Release Verification

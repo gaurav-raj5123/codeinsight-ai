@@ -9,4 +9,6 @@ experiments/datasets/cache/
 experiments/embedding_experiments/chroma_exp_db/
 experiments/chunking_experiments/chroma_day3_db/
 experiments/day4_hybrid/chroma_day4_db/
+experiments/day5/chroma_day5_db/
+experiments/day5_rerank_rewrite/chroma_day5_db/
 .pytest_cache/

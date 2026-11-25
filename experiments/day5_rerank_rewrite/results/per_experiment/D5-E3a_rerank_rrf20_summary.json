@@ -1,0 +1,1551 @@
+{
+  "experiment_id": "D5-E3a_rerank_rrf20",
+  "label": "D5-E3a: Hybrid RRF Top-20 -> ONNX Cross-Encoder -> Top-5",
+  "failed_queries": 0,
+  "overall_retrieval_metrics": {
+    "query_count": 54,
+    "hit_rate_at_1": 0.463,
+    "hit_rate_at_3": 0.7037,
+    "hit_rate_at_5": 0.7963,
+    "precision_at_5": 0.2704,
+    "mrr_at_5": 0.5861,
+    "span_recall_at_5": 0.6852,
+    "ndcg_at_5": 0.4366,
+    "latency_ms": {
+      "mean": 2460.24,
+      "median_p50": 2522.89,
+      "p95": 3446.91,
+      "max": 3821.65
+    }
+  },
+  "breakdowns": {
+    "by_repository": {
+      "pallets/flask": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.4444,
+        "hit_rate_at_3": 0.7222,
+        "hit_rate_at_5": 0.8333,
+        "precision_at_5": 0.2778,
+        "mrr_at_5": 0.5898,
+        "span_recall_at_5": 0.7222,
+        "ndcg_at_5": 0.4374,
+        "latency_ms": {
+          "mean": 1677.6,
+          "median_p50": 1580.18,
+          "p95": 2161.04,
+          "max": 2161.04
+        }
+      },
+      "expressjs/express": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.4444,
+        "hit_rate_at_3": 0.7222,
+        "hit_rate_at_5": 0.7778,
+        "precision_at_5": 0.2,
+        "mrr_at_5": 0.5667,
+        "span_recall_at_5": 0.6111,
+        "ndcg_at_5": 0.4425,
+        "latency_ms": {
+          "mean": 2949.0,
+          "median_p50": 2924.49,
+          "p95": 3821.65,
+          "max": 3821.65
+        }
+      },
+      "fmtlib/fmt": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.5,
+        "hit_rate_at_3": 0.6667,
+        "hit_rate_at_5": 0.7778,
+        "precision_at_5": 0.3333,
+        "mrr_at_5": 0.6018,
+        "span_recall_at_5": 0.7222,
+        "ndcg_at_5": 0.43,
+        "latency_ms": {
+          "mean": 2754.12,
+          "median_p50": 2756.76,
+          "p95": 3316.48,
+          "max": 3316.48
+        }
+      }
+    },
+    "by_category": {
+      "architecture_flow": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.5,
+        "hit_rate_at_3": 0.7,
+        "hit_rate_at_5": 0.9,
+        "precision_at_5": 0.3,
+        "mrr_at_5": 0.6283,
+        "span_recall_at_5": 0.75,
+        "ndcg_at_5": 0.4307,
+        "latency_ms": {
+          "mean": 2544.75,
+          "median_p50": 2756.39,
+          "p95": 3821.65,
+          "max": 3821.65
+        }
+      },
+      "cross_file_dependencies": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.4,
+        "hit_rate_at_3": 0.8,
+        "hit_rate_at_5": 0.9,
+        "precision_at_5": 0.36,
+        "mrr_at_5": 0.5917,
+        "span_recall_at_5": 0.55,
+        "ndcg_at_5": 0.4156,
+        "latency_ms": {
+          "mean": 2668.38,
+          "median_p50": 2872.68,
+          "p95": 3606.64,
+          "max": 3606.64
+        }
+      },
+      "debugging_configuration": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.3,
+        "hit_rate_at_3": 0.6,
+        "hit_rate_at_5": 0.6,
+        "precision_at_5": 0.14,
+        "mrr_at_5": 0.4167,
+        "span_recall_at_5": 0.55,
+        "ndcg_at_5": 0.2603,
+        "latency_ms": {
+          "mean": 2295.64,
+          "median_p50": 2476.51,
+          "p95": 3094.95,
+          "max": 3094.95
+        }
+      },
+      "function_identification": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.5,
+        "hit_rate_at_3": 0.6667,
+        "hit_rate_at_5": 0.8333,
+        "precision_at_5": 0.3,
+        "mrr_at_5": 0.6208,
+        "span_recall_at_5": 0.7917,
+        "ndcg_at_5": 0.5621,
+        "latency_ms": {
+          "mean": 2354.84,
+          "median_p50": 2493.96,
+          "p95": 3178.17,
+          "max": 3178.17
+        }
+      },
+      "implementation_understanding": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.5833,
+        "hit_rate_at_3": 0.75,
+        "hit_rate_at_5": 0.75,
+        "precision_at_5": 0.25,
+        "mrr_at_5": 0.6528,
+        "span_recall_at_5": 0.75,
+        "ndcg_at_5": 0.4807,
+        "latency_ms": {
+          "mean": 2458.93,
+          "median_p50": 2491.28,
+          "p95": 3292.18,
+          "max": 3292.18
+        }
+      }
+    },
+    "by_query_style": {
+      "conceptual": {
+        "query_count": 20,
+        "hit_rate_at_1": 0.25,
+        "hit_rate_at_3": 0.45,
+        "hit_rate_at_5": 0.55,
+        "precision_at_5": 0.15,
+        "mrr_at_5": 0.35,
+        "span_recall_at_5": 0.45,
+        "ndcg_at_5": 0.2607,
+        "latency_ms": {
+          "mean": 2419.06,
+          "median_p50": 2493.28,
+          "p95": 3316.48,
+          "max": 3606.64
+        }
+      },
+      "conversational": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.4167,
+        "hit_rate_at_3": 0.8333,
+        "hit_rate_at_5": 0.9167,
+        "precision_at_5": 0.3,
+        "mrr_at_5": 0.6139,
+        "span_recall_at_5": 0.6667,
+        "ndcg_at_5": 0.436,
+        "latency_ms": {
+          "mean": 2430.34,
+          "median_p50": 2520.89,
+          "p95": 3446.91,
+          "max": 3446.91
+        }
+      },
+      "identifier": {
+        "query_count": 22,
+        "hit_rate_at_1": 0.6818,
+        "hit_rate_at_3": 0.8636,
+        "hit_rate_at_5": 0.9545,
+        "precision_at_5": 0.3636,
+        "mrr_at_5": 0.7856,
+        "span_recall_at_5": 0.9091,
+        "ndcg_at_5": 0.597,
+        "latency_ms": {
+          "mean": 2513.98,
+          "median_p50": 2697.61,
+          "p95": 3342.36,
+          "max": 3821.65
+        }
+      }
+    },
+    "by_evidence_spans": {
+      "single_evidence_queries": {
+        "query_count": 37,
+        "hit_rate_at_1": 0.4865,
+        "hit_rate_at_3": 0.6486,
+        "hit_rate_at_5": 0.7297,
+        "precision_at_5": 0.2324,
+        "mrr_at_5": 0.573,
+        "span_recall_at_5": 0.7297,
+        "ndcg_at_5": 0.4376,
+        "latency_ms": {
+          "mean": 2389.7,
+          "median_p50": 2492.52,
+          "p95": 3342.36,
+          "max": 3821.65
+        }
+      },
+      "multi_evidence_queries": {
+        "query_count": 17,
+        "hit_rate_at_1": 0.4118,
+        "hit_rate_at_3": 0.8235,
+        "hit_rate_at_5": 0.9412,
+        "precision_at_5": 0.3529,
+        "mrr_at_5": 0.6147,
+        "span_recall_at_5": 0.5882,
+        "ndcg_at_5": 0.4345,
+        "latency_ms": {
+          "mean": 2613.76,
+          "median_p50": 2866.62,
+          "p95": 3606.64,
+          "max": 3606.64
+        }
+      }
+    }
+  },
+  "latency_and_cost": {
+    "total_retrieval_latency_ms": {
+      "count": 60,
+      "mean": 2485.36,
+      "median_p50": 2598.23,
+      "p95": 3409.95,
+      "min": 1447.39,
+      "max": 3821.65,
+      "p95_rank_index": 56,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "dense_embed_ms": {
+      "count": 60,
+      "mean": 98.7,
+      "median_p50": 101.72,
+      "p95": 179.16,
+      "min": 29.4,
+      "max": 266.08,
+      "p95_rank_index": 56,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "dense_vector_search_ms": {
+      "count": 60,
+      "mean": 18.34,
+      "median_p50": 16.05,
+      "p95": 55.92,
+      "min": 4.85,
+      "max": 81.26,
+      "p95_rank_index": 56,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "bm25_search_ms": {
+      "count": 60,
+      "mean": 10.39,
+      "median_p50": 6.36,
+      "p95": 19.53,
+      "min": 1.94,
+      "max": 137.92,
+      "p95_rank_index": 56,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "rrf_fusion_ms": {
+      "count": 60,
+      "mean": 1.05,
+      "median_p50": 0.64,
+      "p95": 3.35,
+      "min": 0.17,
+      "max": 5.02,
+      "p95_rank_index": 56,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "candidate_pool_size_stats": {
+      "count": 60,
+      "min": 20.0,
+      "median": 20.0,
+      "mean": 20.0,
+      "max": 20.0,
+      "q25": 20.0,
+      "q75": 20.0,
+      "iqr": 0.0
+    },
+    "total_cross_encoder_pairs_scored": 1200,
+    "candidate_pool_prep_ms": {
+      "count": 60,
+      "mean": 0.0,
+      "median_p50": 0.0,
+      "p95": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "p95_rank_index": 56,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "reranker_tokenization_ms": {
+      "count": 60,
+      "mean": 34.67,
+      "median_p50": 33.12,
+      "p95": 57.31,
+      "min": 20.75,
+      "max": 84.17,
+      "p95_rank_index": 56,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "reranker_inference_ms": {
+      "count": 60,
+      "mean": 2321.37,
+      "median_p50": 2412.49,
+      "p95": 3115.44,
+      "min": 1368.3,
+      "max": 3646.09,
+      "p95_rank_index": 56,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "reranker_total_ms": {
+      "count": 60,
+      "mean": 2356.71,
+      "median_p50": 2456.04,
+      "p95": 3174.22,
+      "min": 1393.61,
+      "max": 3682.27,
+      "p95_rank_index": 56,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "truncation_telemetry": {
+      "total_pairs_scored": 1200,
+      "pairs_truncated_count": 0,
+      "pairs_truncated_pct": 0.0,
+      "query_inputs_truncated_count": 0,
+      "candidate_inputs_truncated_count": 0
+    }
+  },
+  "paired_vs_hybrid_rrf": {
+    "answerable_count": 54,
+    "hit_at_5_quadrants": {
+      "dense_hit_hybrid_hit": 35,
+      "dense_hit_hybrid_miss": 4,
+      "dense_miss_hybrid_hit": 8,
+      "dense_miss_hybrid_miss": 7
+    },
+    "mrr_and_span_transitions": {
+      "hybrid_improved_count": 21,
+      "hybrid_regressed_count": 11,
+      "unchanged_count": 22,
+      "hybrid_gained_hit5": [
+        {
+          "question_id": "flask_009",
+          "repository": "pallets/flask",
+          "category": "architecture_flow",
+          "query_style": "conversational",
+          "question": "Walk through what happens inside the application entrypoint when an incoming request is pushed through those contexts.",
+          "dense_rank": null,
+          "hybrid_rank": 5,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.2,
+          "mrr_delta": 0.2,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 0.5
+        },
+        {
+          "question_id": "flask_011",
+          "repository": "pallets/flask",
+          "category": "cross_file_dependencies",
+          "query_style": "conceptual",
+          "question": "How do modular blueprints record deferred route handlers and apply them to the main application during registration?",
+          "dense_rank": null,
+          "hybrid_rank": 4,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.25,
+          "mrr_delta": 0.25,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 0.5
+        },
+        {
+          "question_id": "flask_014",
+          "repository": "pallets/flask",
+          "category": "debugging_configuration",
+          "query_style": "conversational",
+          "question": "How does it configure security flags like HttpOnly and Secure on those session cookies?",
+          "dense_rank": null,
+          "hybrid_rank": 3,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.3333,
+          "mrr_delta": 0.3333,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_010",
+          "repository": "expressjs/express",
+          "category": "architecture_flow",
+          "query_style": "conversational",
+          "question": "Walk through the dispatch lifecycle when a request first enters that application handler before response generation.",
+          "dense_rank": null,
+          "hybrid_rank": 3,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.3333,
+          "mrr_delta": 0.3333,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 0.5
+        },
+        {
+          "question_id": "express_015",
+          "repository": "expressjs/express",
+          "category": "debugging_configuration",
+          "query_style": "conceptual",
+          "question": "How does Express calculate weak and strong entity tags for caching HTTP responses?",
+          "dense_rank": null,
+          "hybrid_rank": 3,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.3333,
+          "mrr_delta": 0.3333,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_016",
+          "repository": "expressjs/express",
+          "category": "cross_file_dependencies",
+          "query_style": "conceptual",
+          "question": "How does Express determine client IP addresses through proxy hops based on default configuration settings?",
+          "dense_rank": null,
+          "hybrid_rank": 3,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.3333,
+          "mrr_delta": 0.3333,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 0.5
+        },
+        {
+          "question_id": "fmt_001",
+          "repository": "fmtlib/fmt",
+          "category": "function_identification",
+          "query_style": "identifier",
+          "question": "Where is the text_style class defined in fmt and what style attributes does it store?",
+          "dense_rank": null,
+          "hybrid_rank": 4,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.25,
+          "mrr_delta": 0.25,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "fmt_005",
+          "repository": "fmtlib/fmt",
+          "category": "implementation_understanding",
+          "query_style": "identifier",
+          "question": "How does fmt detect whether a type satisfies range requirements via the is_range trait?",
+          "dense_rank": null,
+          "hybrid_rank": 3,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.3333,
+          "mrr_delta": 0.3333,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 1.0
+        }
+      ],
+      "hybrid_lost_hit5": [
+        {
+          "question_id": "flask_017",
+          "repository": "pallets/flask",
+          "category": "debugging_configuration",
+          "query_style": "conceptual",
+          "question": "How does Flask bind Click command-line interface commands to an active application environment?",
+          "dense_rank": 5,
+          "hybrid_rank": null,
+          "dense_mrr": 0.2,
+          "hybrid_mrr": 0.0,
+          "mrr_delta": -0.2,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 0.0
+        },
+        {
+          "question_id": "flask_018",
+          "repository": "pallets/flask",
+          "category": "debugging_configuration",
+          "query_style": "conceptual",
+          "question": "How does Flask pass temporary one-off notification messages between redirected requests?",
+          "dense_rank": 4,
+          "hybrid_rank": null,
+          "dense_mrr": 0.25,
+          "hybrid_mrr": 0.0,
+          "mrr_delta": -0.25,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 0.0
+        },
+        {
+          "question_id": "express_008",
+          "repository": "expressjs/express",
+          "category": "implementation_understanding",
+          "query_style": "conceptual",
+          "question": "How does Express stream static files from disk to the client while handling range headers and transmission errors?",
+          "dense_rank": 2,
+          "hybrid_rank": null,
+          "dense_mrr": 0.5,
+          "hybrid_mrr": 0.0,
+          "mrr_delta": -0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 0.0
+        },
+        {
+          "question_id": "express_011",
+          "repository": "expressjs/express",
+          "category": "cross_file_dependencies",
+          "query_style": "conceptual",
+          "question": "How does the template rendering coordinator locate view files on disk and invoke the underlying view renderer?",
+          "dense_rank": 3,
+          "hybrid_rank": null,
+          "dense_mrr": 0.3333,
+          "hybrid_mrr": 0.0,
+          "mrr_delta": -0.3333,
+          "dense_span_recall": 0.5,
+          "hybrid_span_recall": 0.0
+        }
+      ],
+      "top_improved_queries": [
+        {
+          "question_id": "flask_005",
+          "repository": "pallets/flask",
+          "category": "implementation_understanding",
+          "query_style": "identifier",
+          "question": "How does Flask's route decorator register an endpoint and view function onto the application?",
+          "dense_rank": 5,
+          "hybrid_rank": 1,
+          "dense_mrr": 0.2,
+          "hybrid_mrr": 1.0,
+          "mrr_delta": 0.8,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_002",
+          "repository": "expressjs/express",
+          "category": "implementation_understanding",
+          "query_style": "conversational",
+          "question": "How does that created application set up its default configuration settings like etag, env, and query parser?",
+          "dense_rank": 2,
+          "hybrid_rank": 1,
+          "dense_mrr": 0.5,
+          "hybrid_mrr": 1.0,
+          "mrr_delta": 0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_004",
+          "repository": "expressjs/express",
+          "category": "function_identification",
+          "query_style": "identifier",
+          "question": "Where is the req.get (or req.header) method defined and how does it retrieve HTTP request headers?",
+          "dense_rank": 2,
+          "hybrid_rank": 1,
+          "dense_mrr": 0.5,
+          "hybrid_mrr": 1.0,
+          "mrr_delta": 0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_007",
+          "repository": "expressjs/express",
+          "category": "implementation_understanding",
+          "query_style": "conceptual",
+          "question": "How does the framework serialize objects, apply indentation settings, and send formatted JSON responses?",
+          "dense_rank": 2,
+          "hybrid_rank": 1,
+          "dense_mrr": 0.5,
+          "hybrid_mrr": 1.0,
+          "mrr_delta": 0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_012",
+          "repository": "expressjs/express",
+          "category": "architecture_flow",
+          "query_style": "identifier",
+          "question": "How does res.render render a view and send the rendered HTML response back to the client?",
+          "dense_rank": 2,
+          "hybrid_rank": 1,
+          "dense_mrr": 0.5,
+          "hybrid_mrr": 1.0,
+          "mrr_delta": 0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_017",
+          "repository": "expressjs/express",
+          "category": "function_identification",
+          "query_style": "identifier",
+          "question": "Where is res.cookie defined and how does it serialize cookies and apply options like maxAge and signed?",
+          "dense_rank": 2,
+          "hybrid_rank": 1,
+          "dense_mrr": 0.5,
+          "hybrid_mrr": 1.0,
+          "mrr_delta": 0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "flask_015",
+          "repository": "pallets/flask",
+          "category": "architecture_flow",
+          "query_style": "conceptual",
+          "question": "How does Flask coerce different controller return types such as strings, dictionaries, and tuples into WSGI responses?",
+          "dense_rank": 2,
+          "hybrid_rank": 1,
+          "dense_mrr": 0.5,
+          "hybrid_mrr": 1.0,
+          "mrr_delta": 0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "fmt_008",
+          "repository": "fmtlib/fmt",
+          "category": "cross_file_dependencies",
+          "query_style": "identifier",
+          "question": "How does the ostream class in fmt provide buffered output for low-level file descriptors?",
+          "dense_rank": 2,
+          "hybrid_rank": 1,
+          "dense_mrr": 0.5,
+          "hybrid_mrr": 1.0,
+          "mrr_delta": 0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "fmt_014",
+          "repository": "fmtlib/fmt",
+          "category": "debugging_configuration",
+          "query_style": "conversational",
+          "question": "How can that formatting syntax be parsed at compile time using macros?",
+          "dense_rank": 2,
+          "hybrid_rank": 1,
+          "dense_mrr": 0.5,
+          "hybrid_mrr": 1.0,
+          "mrr_delta": 0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_010",
+          "repository": "expressjs/express",
+          "category": "architecture_flow",
+          "query_style": "conversational",
+          "question": "Walk through the dispatch lifecycle when a request first enters that application handler before response generation.",
+          "dense_rank": null,
+          "hybrid_rank": 3,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.3333,
+          "mrr_delta": 0.3333,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 0.5
+        },
+        {
+          "question_id": "express_015",
+          "repository": "expressjs/express",
+          "category": "debugging_configuration",
+          "query_style": "conceptual",
+          "question": "How does Express calculate weak and strong entity tags for caching HTTP responses?",
+          "dense_rank": null,
+          "hybrid_rank": 3,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.3333,
+          "mrr_delta": 0.3333,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_016",
+          "repository": "expressjs/express",
+          "category": "cross_file_dependencies",
+          "query_style": "conceptual",
+          "question": "How does Express determine client IP addresses through proxy hops based on default configuration settings?",
+          "dense_rank": null,
+          "hybrid_rank": 3,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.3333,
+          "mrr_delta": 0.3333,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 0.5
+        },
+        {
+          "question_id": "flask_014",
+          "repository": "pallets/flask",
+          "category": "debugging_configuration",
+          "query_style": "conversational",
+          "question": "How does it configure security flags like HttpOnly and Secure on those session cookies?",
+          "dense_rank": null,
+          "hybrid_rank": 3,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.3333,
+          "mrr_delta": 0.3333,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "fmt_005",
+          "repository": "fmtlib/fmt",
+          "category": "implementation_understanding",
+          "query_style": "identifier",
+          "question": "How does fmt detect whether a type satisfies range requirements via the is_range trait?",
+          "dense_rank": null,
+          "hybrid_rank": 3,
+          "dense_mrr": 0.0,
+          "hybrid_mrr": 0.3333,
+          "mrr_delta": 0.3333,
+          "dense_span_recall": 0.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_009",
+          "repository": "expressjs/express",
+          "category": "cross_file_dependencies",
+          "query_style": "conceptual",
+          "question": "How does the response transmission mechanism calculate and set entity tags using utility hashing generators?",
+          "dense_rank": 4,
+          "hybrid_rank": 2,
+          "dense_mrr": 0.25,
+          "hybrid_mrr": 0.5,
+          "mrr_delta": 0.25,
+          "dense_span_recall": 0.5,
+          "hybrid_span_recall": 0.5
+        }
+      ],
+      "top_regressed_queries": [
+        {
+          "question_id": "express_008",
+          "repository": "expressjs/express",
+          "category": "implementation_understanding",
+          "query_style": "conceptual",
+          "question": "How does Express stream static files from disk to the client while handling range headers and transmission errors?",
+          "dense_rank": 2,
+          "hybrid_rank": null,
+          "dense_mrr": 0.5,
+          "hybrid_mrr": 0.0,
+          "mrr_delta": -0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 0.0
+        },
+        {
+          "question_id": "express_014",
+          "repository": "expressjs/express",
+          "category": "debugging_configuration",
+          "query_style": "conversational",
+          "question": "How does it compile and apply proxy settings to resolve client IP addresses for those routes?",
+          "dense_rank": 1,
+          "hybrid_rank": 2,
+          "dense_mrr": 1.0,
+          "hybrid_mrr": 0.5,
+          "mrr_delta": -0.5,
+          "dense_span_recall": 0.5,
+          "hybrid_span_recall": 0.5
+        },
+        {
+          "question_id": "flask_001",
+          "repository": "pallets/flask",
+          "category": "function_identification",
+          "query_style": "identifier",
+          "question": "Where is the Flask application class defined and what parameters does its __init__ constructor accept?",
+          "dense_rank": 1,
+          "hybrid_rank": 2,
+          "dense_mrr": 1.0,
+          "hybrid_mrr": 0.5,
+          "mrr_delta": -0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "flask_013",
+          "repository": "pallets/flask",
+          "category": "architecture_flow",
+          "query_style": "identifier",
+          "question": "Where is the session interface implemented and how does SecureCookieSessionInterface open and save sessions?",
+          "dense_rank": 1,
+          "hybrid_rank": 2,
+          "dense_mrr": 1.0,
+          "hybrid_mrr": 0.5,
+          "mrr_delta": -0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "fmt_002",
+          "repository": "fmtlib/fmt",
+          "category": "implementation_understanding",
+          "query_style": "conversational",
+          "question": "How does the styled helper function apply that style to an argument value for formatted output?",
+          "dense_rank": 1,
+          "hybrid_rank": 2,
+          "dense_mrr": 1.0,
+          "hybrid_mrr": 0.5,
+          "mrr_delta": -0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "fmt_010",
+          "repository": "fmtlib/fmt",
+          "category": "function_identification",
+          "query_style": "identifier",
+          "question": "Where is the printf_arg_formatter class defined and what format specifiers does it parse?",
+          "dense_rank": 1,
+          "hybrid_rank": 2,
+          "dense_mrr": 1.0,
+          "hybrid_mrr": 0.5,
+          "mrr_delta": -0.5,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "express_011",
+          "repository": "expressjs/express",
+          "category": "cross_file_dependencies",
+          "query_style": "conceptual",
+          "question": "How does the template rendering coordinator locate view files on disk and invoke the underlying view renderer?",
+          "dense_rank": 3,
+          "hybrid_rank": null,
+          "dense_mrr": 0.3333,
+          "hybrid_mrr": 0.0,
+          "mrr_delta": -0.3333,
+          "dense_span_recall": 0.5,
+          "hybrid_span_recall": 0.0
+        },
+        {
+          "question_id": "flask_018",
+          "repository": "pallets/flask",
+          "category": "debugging_configuration",
+          "query_style": "conceptual",
+          "question": "How does Flask pass temporary one-off notification messages between redirected requests?",
+          "dense_rank": 4,
+          "hybrid_rank": null,
+          "dense_mrr": 0.25,
+          "hybrid_mrr": 0.0,
+          "mrr_delta": -0.25,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 0.0
+        },
+        {
+          "question_id": "flask_017",
+          "repository": "pallets/flask",
+          "category": "debugging_configuration",
+          "query_style": "conceptual",
+          "question": "How does Flask bind Click command-line interface commands to an active application environment?",
+          "dense_rank": 5,
+          "hybrid_rank": null,
+          "dense_mrr": 0.2,
+          "hybrid_mrr": 0.0,
+          "mrr_delta": -0.2,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 0.0
+        },
+        {
+          "question_id": "express_003",
+          "repository": "expressjs/express",
+          "category": "function_identification",
+          "query_style": "identifier",
+          "question": "Where is the View constructor defined in Express and what properties does it store?",
+          "dense_rank": 3,
+          "hybrid_rank": 5,
+          "dense_mrr": 0.3333,
+          "hybrid_mrr": 0.2,
+          "mrr_delta": -0.1333,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        },
+        {
+          "question_id": "fmt_012",
+          "repository": "fmtlib/fmt",
+          "category": "architecture_flow",
+          "query_style": "conceptual",
+          "question": "How does fmt format std::tuple and std::pair objects into delimiter-separated elements?",
+          "dense_rank": 3,
+          "hybrid_rank": 4,
+          "dense_mrr": 0.3333,
+          "hybrid_mrr": 0.25,
+          "mrr_delta": -0.0833,
+          "dense_span_recall": 1.0,
+          "hybrid_span_recall": 1.0
+        }
+      ]
+    },
+    "paired_bootstrap_95pct_ci": {
+      "delta_hit_rate_at_5": {
+        "count": 54,
+        "observed_mean_delta": 0.0741,
+        "ci_95_lower": -0.037,
+        "ci_95_upper": 0.2037,
+        "num_resamples": 10000,
+        "seed": 42,
+        "method": "percentile paired bootstrap (exploratory descriptive interval)"
+      },
+      "delta_mrr_at_5": {
+        "count": 54,
+        "observed_mean_delta": 0.0679,
+        "ci_95_lower": -0.013,
+        "ci_95_upper": 0.1472,
+        "num_resamples": 10000,
+        "seed": 42,
+        "method": "percentile paired bootstrap (exploratory descriptive interval)"
+      }
+    }
+  },
+  "day6_score_handoff": {
+    "note": "Exploratory Day 6 handoff distributions only; sigmoid scores are NOT calibrated relevance probabilities.",
+    "raw_logit_distribution": {
+      "answerable": {
+        "count": 54,
+        "min": -10.049176,
+        "median": 2.21591,
+        "mean": 1.747346,
+        "max": 7.701149,
+        "q25": -0.290444,
+        "q75": 4.533438,
+        "iqr": 4.823882
+      },
+      "unanswerable": {
+        "count": 6,
+        "min": -9.866929,
+        "median": -2.945715,
+        "mean": -3.8535,
+        "max": 2.459127,
+        "q25": -7.107753,
+        "q75": -1.731432,
+        "iqr": 5.376321
+      }
+    },
+    "sigmoid_score_distribution": {
+      "answerable": {
+        "count": 54,
+        "min": 4.3e-05,
+        "median": 0.901344,
+        "mean": 0.697854,
+        "max": 0.999548,
+        "q25": 0.428643,
+        "q75": 0.98937,
+        "iqr": 0.560727
+      },
+      "unanswerable": {
+        "count": 6,
+        "min": 5.2e-05,
+        "median": 0.063526,
+        "mean": 0.203002,
+        "max": 0.921226,
+        "q25": 0.006028,
+        "q75": 0.152995,
+        "iqr": 0.146967
+      }
+    },
+    "distribution_overlap": {
+      "has_overlap": true,
+      "overlap_logit_min": -9.866929,
+      "overlap_logit_max": 2.459127,
+      "answerable_below_unans_max_count": 28,
+      "unanswerable_above_ans_min_count": 6
+    },
+    "per_query_top1_scores": [
+      {
+        "question_id": "flask_001",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 2.707791,
+        "top1_sigmoid": 0.937485
+      },
+      {
+        "question_id": "flask_002",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": -1.94201,
+        "top1_sigmoid": 0.125427
+      },
+      {
+        "question_id": "flask_003",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 4.542437,
+        "top1_sigmoid": 0.989465
+      },
+      {
+        "question_id": "flask_004",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 4.50644,
+        "top1_sigmoid": 0.989083
+      },
+      {
+        "question_id": "flask_005",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 5.55063,
+        "top1_sigmoid": 0.99613
+      },
+      {
+        "question_id": "flask_006",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": -2.826731,
+        "top1_sigmoid": 0.055897
+      },
+      {
+        "question_id": "flask_007",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 4.143474,
+        "top1_sigmoid": 0.98438
+      },
+      {
+        "question_id": "flask_008",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 0.494454,
+        "top1_sigmoid": 0.621155
+      },
+      {
+        "question_id": "flask_009",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 0.237356,
+        "top1_sigmoid": 0.559062
+      },
+      {
+        "question_id": "flask_010",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 1.121497,
+        "top1_sigmoid": 0.754266
+      },
+      {
+        "question_id": "flask_011",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 1.67728,
+        "top1_sigmoid": 0.842544
+      },
+      {
+        "question_id": "flask_012",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 5.082365,
+        "top1_sigmoid": 0.993833
+      },
+      {
+        "question_id": "flask_013",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 5.873341,
+        "top1_sigmoid": 0.997194
+      },
+      {
+        "question_id": "flask_014",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 1.166168,
+        "top1_sigmoid": 0.762452
+      },
+      {
+        "question_id": "flask_015",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 0.912771,
+        "top1_sigmoid": 0.713567
+      },
+      {
+        "question_id": "flask_016",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 6.278509,
+        "top1_sigmoid": 0.998127
+      },
+      {
+        "question_id": "flask_017",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": 2.311412,
+        "top1_sigmoid": 0.909818
+      },
+      {
+        "question_id": "flask_018",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": -1.319471,
+        "top1_sigmoid": 0.210906
+      },
+      {
+        "question_id": "flask_019",
+        "answerable": false,
+        "hit_at_5": null,
+        "top1_raw_logit": -2.156365,
+        "top1_sigmoid": 0.103738
+      },
+      {
+        "question_id": "flask_020",
+        "answerable": false,
+        "hit_at_5": null,
+        "top1_raw_logit": -3.735065,
+        "top1_sigmoid": 0.023315
+      },
+      {
+        "question_id": "express_001",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 2.002711,
+        "top1_sigmoid": 0.881081
+      },
+      {
+        "question_id": "express_002",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 4.247509,
+        "top1_sigmoid": 0.985902
+      },
+      {
+        "question_id": "express_003",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 0.145961,
+        "top1_sigmoid": 0.536426
+      },
+      {
+        "question_id": "express_004",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 4.914133,
+        "top1_sigmoid": 0.992711
+      },
+      {
+        "question_id": "express_005",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 0.803263,
+        "top1_sigmoid": 0.690672
+      },
+      {
+        "question_id": "express_006",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 4.41573,
+        "top1_sigmoid": 0.988059
+      },
+      {
+        "question_id": "express_007",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 0.315945,
+        "top1_sigmoid": 0.578336
+      },
+      {
+        "question_id": "express_008",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": -1.272994,
+        "top1_sigmoid": 0.218745
+      },
+      {
+        "question_id": "express_009",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": -7.60145,
+        "top1_sigmoid": 0.000499
+      },
+      {
+        "question_id": "express_010",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": -10.049176,
+        "top1_sigmoid": 4.3e-05
+      },
+      {
+        "question_id": "express_011",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": -2.680988,
+        "top1_sigmoid": 0.064105
+      },
+      {
+        "question_id": "express_012",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 5.40418,
+        "top1_sigmoid": 0.995522
+      },
+      {
+        "question_id": "express_013",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": 3.135081,
+        "top1_sigmoid": 0.958317
+      },
+      {
+        "question_id": "express_014",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": -0.777616,
+        "top1_sigmoid": 0.314834
+      },
+      {
+        "question_id": "express_015",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": -1.477646,
+        "top1_sigmoid": 0.185783
+      },
+      {
+        "question_id": "express_016",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": -2.117018,
+        "top1_sigmoid": 0.107454
+      },
+      {
+        "question_id": "express_017",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 3.970608,
+        "top1_sigmoid": 0.981487
+      },
+      {
+        "question_id": "express_018",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": 3.414027,
+        "top1_sigmoid": 0.96814
+      },
+      {
+        "question_id": "express_019",
+        "answerable": false,
+        "hit_at_5": null,
+        "top1_raw_logit": -1.589787,
+        "top1_sigmoid": 0.169414
+      },
+      {
+        "question_id": "express_020",
+        "answerable": false,
+        "hit_at_5": null,
+        "top1_raw_logit": -9.866929,
+        "top1_sigmoid": 5.2e-05
+      },
+      {
+        "question_id": "fmt_001",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 3.50968,
+        "top1_sigmoid": 0.970962
+      },
+      {
+        "question_id": "fmt_002",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": -0.435913,
+        "top1_sigmoid": 0.392715
+      },
+      {
+        "question_id": "fmt_003",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": -4.179559,
+        "top1_sigmoid": 0.015075
+      },
+      {
+        "question_id": "fmt_004",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": 2.719862,
+        "top1_sigmoid": 0.938189
+      },
+      {
+        "question_id": "fmt_005",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": -2.488672,
+        "top1_sigmoid": 0.076656
+      },
+      {
+        "question_id": "fmt_006",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 1.246185,
+        "top1_sigmoid": 0.776639
+      },
+      {
+        "question_id": "fmt_007",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 6.153226,
+        "top1_sigmoid": 0.997878
+      },
+      {
+        "question_id": "fmt_008",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 2.120409,
+        "top1_sigmoid": 0.892871
+      },
+      {
+        "question_id": "fmt_009",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": -4.116984,
+        "top1_sigmoid": 0.016032
+      },
+      {
+        "question_id": "fmt_010",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 5.783109,
+        "top1_sigmoid": 0.99693
+      },
+      {
+        "question_id": "fmt_011",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 5.411392,
+        "top1_sigmoid": 0.995554
+      },
+      {
+        "question_id": "fmt_012",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 5.472612,
+        "top1_sigmoid": 0.995817
+      },
+      {
+        "question_id": "fmt_013",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": 2.639172,
+        "top1_sigmoid": 0.93334
+      },
+      {
+        "question_id": "fmt_014",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 1.559949,
+        "top1_sigmoid": 0.826346
+      },
+      {
+        "question_id": "fmt_015",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 4.932261,
+        "top1_sigmoid": 0.992841
+      },
+      {
+        "question_id": "fmt_016",
+        "answerable": true,
+        "hit_at_5": 0.0,
+        "top1_raw_logit": 4.31611,
+        "top1_sigmoid": 0.986824
+      },
+      {
+        "question_id": "fmt_017",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 4.70274,
+        "top1_sigmoid": 0.991011
+      },
+      {
+        "question_id": "fmt_018",
+        "answerable": true,
+        "hit_at_5": 1.0,
+        "top1_raw_logit": 7.701149,
+        "top1_sigmoid": 0.999548
+      },
+      {
+        "question_id": "fmt_019",
+        "answerable": false,
+        "hit_at_5": null,
+        "top1_raw_logit": -8.231982,
+        "top1_sigmoid": 0.000266
+      },
+      {
+        "question_id": "fmt_020",
+        "answerable": false,
+        "hit_at_5": null,
+        "top1_raw_logit": 2.459127,
+        "top1_sigmoid": 0.921226
+      }
+    ],
+    "false_high_score_unanswerable_examples": [
+      {
+        "question_id": "fmt_020",
+        "repository": "fmtlib/fmt",
+        "question": "How does fmt parse and serialize JSON documents into C++ struct fields?",
+        "top1_logit": 2.459127,
+        "top1_sigmoid": 0.921226,
+        "top1_file": "include/fmt/compile.h"
+      },
+      {
+        "question_id": "express_019",
+        "repository": "expressjs/express",
+        "question": "Where is the built-in JWT (JSON Web Token) authentication verification middleware implemented in Express?",
+        "top1_logit": -1.589787,
+        "top1_sigmoid": 0.169414,
+        "top1_file": "examples/web-service/index.js"
+      },
+      {
+        "question_id": "flask_019",
+        "repository": "pallets/flask",
+        "question": "Where is the built-in database connection pool for PostgreSQL configured in Flask?",
+        "top1_logit": -2.156365,
+        "top1_sigmoid": 0.103738,
+        "top1_file": "examples/tutorial/flaskr/db.py"
+      },
+      {
+        "question_id": "flask_020",
+        "repository": "pallets/flask",
+        "question": "How does Flask configure native WebSocket subscriptions and publish-subscribe channels?",
+        "top1_logit": -3.735065,
+        "top1_sigmoid": 0.023315,
+        "top1_file": "src/flask/logging.py"
+      },
+      {
+        "question_id": "fmt_019",
+        "repository": "fmtlib/fmt",
+        "question": "Where is the built-in asynchronous non-blocking thread-pool logging sink configured in fmt?",
+        "top1_logit": -8.231982,
+        "top1_sigmoid": 0.000266,
+        "top1_file": "include/fmt/os.h"
+      },
+      {
+        "question_id": "express_020",
+        "repository": "expressjs/express",
+        "question": "How does Express configure automatic database migration and schema synchronization for MongoDB?",
+        "top1_logit": -9.866929,
+        "top1_sigmoid": 5.2e-05,
+        "top1_file": "test/express.json.js"
+      }
+    ],
+    "lowest_score_answerable_examples": [
+      {
+        "question_id": "express_010",
+        "repository": "expressjs/express",
+        "category": "architecture_flow",
+        "query_style": "conversational",
+        "hit_at_5": 1.0,
+        "question": "Walk through the dispatch lifecycle when a request first enters that application handler before response generation.",
+        "top1_logit": -10.049176,
+        "top1_sigmoid": 4.3e-05
+      },
+      {
+        "question_id": "express_009",
+        "repository": "expressjs/express",
+        "category": "cross_file_dependencies",
+        "query_style": "conceptual",
+        "hit_at_5": 1.0,
+        "question": "How does the response transmission mechanism calculate and set entity tags using utility hashing generators?",
+        "top1_logit": -7.60145,
+        "top1_sigmoid": 0.000499
+      },
+      {
+        "question_id": "fmt_003",
+        "repository": "fmtlib/fmt",
+        "category": "function_identification",
+        "query_style": "conceptual",
+        "hit_at_5": 0.0,
+        "question": "How does the format library provide RAII management for C-style file streams?",
+        "top1_logit": -4.179559,
+        "top1_sigmoid": 0.015075
+      },
+      {
+        "question_id": "fmt_009",
+        "repository": "fmtlib/fmt",
+        "category": "architecture_flow",
+        "query_style": "conversational",
+        "hit_at_5": 1.0,
+        "question": "Walk through the execution flow when printing styled text to that buffered stream.",
+        "top1_logit": -4.116984,
+        "top1_sigmoid": 0.016032
+      },
+      {
+        "question_id": "flask_006",
+        "repository": "pallets/flask",
+        "category": "cross_file_dependencies",
+        "query_style": "conversational",
+        "hit_at_5": 1.0,
+        "question": "How does that method configure those routing rules and delegate to the underlying routing Map?",
+        "top1_logit": -2.826731,
+        "top1_sigmoid": 0.055897
+      },
+      {
+        "question_id": "express_011",
+        "repository": "expressjs/express",
+        "category": "cross_file_dependencies",
+        "query_style": "conceptual",
+        "hit_at_5": 0.0,
+        "question": "How does the template rendering coordinator locate view files on disk and invoke the underlying view renderer?",
+        "top1_logit": -2.680988,
+        "top1_sigmoid": 0.064105
+      },
+      {
+        "question_id": "fmt_005",
+        "repository": "fmtlib/fmt",
+        "category": "implementation_understanding",
+        "query_style": "identifier",
+        "hit_at_5": 1.0,
+        "question": "How does fmt detect whether a type satisfies range requirements via the is_range trait?",
+        "top1_logit": -2.488672,
+        "top1_sigmoid": 0.076656
+      },
+      {
+        "question_id": "express_016",
+        "repository": "expressjs/express",
+        "category": "cross_file_dependencies",
+        "query_style": "conceptual",
+        "hit_at_5": 1.0,
+        "question": "How does Express determine client IP addresses through proxy hops based on default configuration settings?",
+        "top1_logit": -2.117018,
+        "top1_sigmoid": 0.107454
+      },
+      {
+        "question_id": "flask_002",
+        "repository": "pallets/flask",
+        "category": "implementation_understanding",
+        "query_style": "conversational",
+        "hit_at_5": 0.0,
+        "question": "How does it configure default configuration settings during that initialization process?",
+        "top1_logit": -1.94201,
+        "top1_sigmoid": 0.125427
+      },
+      {
+        "question_id": "express_015",
+        "repository": "expressjs/express",
+        "category": "debugging_configuration",
+        "query_style": "conceptual",
+        "hit_at_5": 1.0,
+        "question": "How does Express calculate weak and strong entity tags for caching HTTP responses?",
+        "top1_logit": -1.477646,
+        "top1_sigmoid": 0.185783
+      }
+    ]
+  }
+}

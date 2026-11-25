@@ -59,7 +59,9 @@ if "indexing_diagnostics" not in st.session_state:
 if "chunking_strategy" not in st.session_state:
     st.session_state.chunking_strategy = "code_aware_v1"
 if "retrieval_mode" not in st.session_state:
-    st.session_state.retrieval_mode = "hybrid_rrf"
+    st.session_state.retrieval_mode = "hybrid_rerank"
+if "enable_query_rewrite" not in st.session_state:
+    st.session_state.enable_query_rewrite = False
 
 # ══════════════════
 # PHASE 1: INDEXING (Sidebar)
@@ -86,7 +88,8 @@ with st.sidebar:
     st.session_state.chunking_strategy = selected_strategy
 
     retrieval_labels = {
-        "hybrid_rrf": "hybrid_rrf (Recommended — Dense + BM25 RRF k=60)",
+        "hybrid_rerank": "hybrid_rerank (Recommended — Hybrid RRF + ONNX Cross-Encoder)",
+        "hybrid_rrf": "hybrid_rrf (Fast — Dense + BM25 RRF k=60)",
         "dense": "dense (Vector L2 Only)",
         "bm25": "bm25 (Lexical Code-Aware BM25 Only)",
     }
@@ -99,6 +102,14 @@ with st.sidebar:
         format_func=lambda m: retrieval_labels.get(m, m),
     )
     st.session_state.retrieval_mode = selected_retrieval_mode
+    st.session_state.enable_query_rewrite = st.checkbox(
+        "Enable Conversational Query Rewriting (Experimental)",
+        value=bool(st.session_state.enable_query_rewrite),
+        help=(
+            "Rewrites pronoun-dependent follow-up queries via Gemini before retrieval. "
+            "Standalone queries bypass rewriting cleanly (0 API calls); falls back to original query on errors."
+        ),
+    )
     
     # When the user clicks the index button, start the pipeline
     if st.button("Index Repository", type="primary"):
@@ -298,6 +309,8 @@ if prompt := st.chat_input("Ask a question about the code..."):
                     st.session_state.repo_name,
                     return_metadata=True,
                     retrieval_mode=st.session_state.retrieval_mode,
+                    enable_query_rewrite=st.session_state.enable_query_rewrite,
+                    chat_history=st.session_state.messages[:-1],
                 )
             
             # [5] Generation (llm)
@@ -323,6 +336,12 @@ if prompt := st.chat_input("Ask a question about the code..."):
             # Show the chunks that were used so the user can verify the context (transparency)
             if retrieved_chunks:
                 with st.expander("📄 Retrieved Code Chunks"):
+                    if retrieval_meta.get("query_rewritten"):
+                        st.caption(f"🔎 Rewritten retrieval query: `{retrieval_meta.get('effective_query')}`")
+                    elif retrieval_meta.get("rewrite_failed"):
+                        st.caption("⚠️ Conversational query rewrite failed; retrieved with original query.")
+                    if retrieval_meta.get("fallback_to_rrf_used"):
+                        st.caption("⚠️ Cross-encoder reranker unavailable; fell back to Hybrid RRF scores.")
                     for chunk in retrieved_chunks:
                         meta = chunk['metadata']
                         
@@ -333,7 +352,12 @@ if prompt := st.chat_input("Ask a question about the code..."):
                             
                         id_str = f" | ID: {chunk.get('id')}" if chunk.get('id') else ""
                         dist_str = f" | Distance: {chunk.get('distance'):.4f}" if chunk.get('distance') is not None else ""
-                        st.code(f"// {meta.get('file_path')} | Lines {meta.get('start_line')}-{meta.get('end_line')}{id_str}{dist_str}\n" + chunk['content'], language=lang)
+                        logit_str = (
+                            f" | Rerank Logit: {chunk.get('reranker_raw_logit'):.3f}"
+                            if chunk.get("reranker_raw_logit") is not None
+                            else ""
+                        )
+                        st.code(f"// {meta.get('file_path')} | Lines {meta.get('start_line')}-{meta.get('end_line')}{id_str}{dist_str}{logit_str}\n" + chunk['content'], language=lang)
             
             # Show diagnostic metrics in expander
             with st.expander("📊 Baseline Diagnostics", expanded=False):
@@ -350,6 +374,11 @@ if prompt := st.chat_input("Ask a question about the code..."):
                     f"**Metric:** {retrieval_meta.get('distance_metric', 'l2')} | "
                     f"**Model:** {gen_meta.get('model', 'gemini-3.5-flash')}"
                 )
+                if retrieval_meta.get("enable_query_rewrite"):
+                    st.caption(
+                        f"**Query Rewrite:** {'Rewritten' if retrieval_meta.get('query_rewritten') else 'Bypassed/Fallback'} "
+                        f"(`{retrieval_meta.get('rewrite_gate_reason')}`, {retrieval_meta.get('rewrite_latency_seconds', 0.0):.3f}s)"
+                    )
             
             # Record query event into baseline run if active
             query_event = telemetry.create_query_record(
