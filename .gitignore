@@ -6,3 +6,5 @@ chroma_db/
 venv/
 temp_repos/
 experiments/datasets/cache/
+experiments/embedding_experiments/chroma_exp_db/
+.pytest_cache/

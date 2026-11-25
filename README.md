@@ -46,16 +46,26 @@ flowchart TD
 ├── requirements.txt               # Pinned project dependencies
 ├── .env.example                   # Environment configuration template
 │
+├── evaluation/                    # 📏 Shared retrieval & latency metrics package
+│   ├── __init__.py
+│   └── retrieval_metrics.py       # Hit@K, Precision@5, Span Recall, MRR@5, corpus NDCG@5, P50/P95
+│
 ├── reports/                       # 📊 Daily engineering audits, benchmarks & progress reports
 │   ├── README.md                  # Index of daily reports and engineering roadmap
-│   └── day1/                      # Day 1: Baseline Architecture & V0 Evaluation
-│       ├── DAY1_PROJECT_AUDIT.md          # Technical audit of existing architecture & constraints
-│       ├── DAY1_INSTRUMENTATION_REPORT.md  # Verification of baseline instrumentation & timers
-│       ├── DAY1_TASK3_REPORT.md            # Benchmark dataset curation (60 questions across 3 repos)
-│       └── DAY1_FINAL_REPORT.md            # Final V0 baseline benchmark results & failure analysis
+│   ├── day1/                      # Day 1: Baseline Architecture & V0 Evaluation
+│   │   ├── DAY1_PROJECT_AUDIT.md          # Technical audit of existing architecture & constraints
+│   │   ├── DAY1_INSTRUMENTATION_REPORT.md  # Verification of baseline instrumentation & timers
+│   │   ├── DAY1_TASK3_REPORT.md            # Benchmark dataset curation (60 questions across 3 repos)
+│   │   └── DAY1_FINAL_REPORT.md            # Final V0 baseline benchmark results & failure analysis
+│   └── day2/                      # Day 2: Embedding Optimization & Controlled Retrieval Experiment
+│       └── DAY2_TASK1_REPORT.md            # Controlled ONNX comparison across E0, E1a, E1b, E2, E3
 │
 ├── experiments/                   # 🔬 Evaluation harness & experimental artifacts
-│   ├── run_baseline_evaluation.py # Reproducible offline evaluation runner
+│   ├── run_baseline_evaluation.py # Reproducible V0 offline evaluation runner
+│   ├── embedding_experiments/     # Day 2 isolated ONNX embedding comparison harness
+│   │   ├── configs/embedding_models.json    # Model registry & preprocessing configs
+│   │   ├── run_embedding_comparison.py      # Controlled benchmark & timing-decoupled runner
+│   │   └── results/                         # embedding_summary.json, embedding_comparison.json, per_model/
 │   ├── datasets/                  # Ground truth annotations and evaluation questions
 │   │   ├── repositories.json      # Pinned repository metadata & commit SHAs
 │   │   ├── evaluation_questions.json # 60 evaluation questions (conceptual, identifier, conversational)
@@ -65,12 +75,15 @@ flowchart TD
 │       ├── baseline_evaluation.json # Detailed per-query retrieval results (60 records)
 │       ├── baseline_summary.json    # Aggregated metrics, breakdowns & latency distributions
 │       ├── baseline_run.json        # Live application telemetry records
-│       └── synthetic_baseline_run.json # Fixture reference telemetry records
+│       ├── synthetic_baseline_run.json # Fixture reference telemetry records
+│       └── day2_embedding_analysis.md  # Concise Day 2 embedding comparison analysis
 │
 └── tests/                         # 🧪 Automated regression & verification test suites
     ├── README.md                  # Test suite overview and execution commands
     ├── test_baseline_instrumentation.py # Smoke tests for chunker, embedder, loader, LLM & telemetry
-    └── test_task4_corrections.py        # NDCG mathematical validity, failure accounting & latency tests
+    ├── test_task4_corrections.py        # NDCG mathematical validity, failure accounting & latency tests
+    ├── test_retrieval_metrics.py        # Metric module unit & Day 1 parity tests
+    └── test_embedding_runner.py         # Embedding runner ONNX smoke & failure accounting tests
 ```
 
 ---
@@ -137,17 +150,17 @@ Open your browser at `http://localhost:8501`, paste a GitHub repository URL in t
 ## 🧪 Running Tests & Benchmark Evaluation
 
 ```bash
-# 1. Run baseline instrumentation smoke tests
-python tests/test_baseline_instrumentation.py
+# 1. Run full pytest verification suite (metrics, runner, Day 1 checks)
+python -m pytest tests/test_retrieval_metrics.py tests/test_embedding_runner.py tests/test_task4_corrections.py -v
 
-# 2. Run Task 4 corrections regression suite (NDCG, failure accounting, latency)
-python tests/test_task4_corrections.py
+# 2. Run baseline instrumentation smoke tests
+python tests/test_baseline_instrumentation.py
 
 # 3. Validate benchmark dataset integrity & pinned commit SHAs
 python experiments/datasets/validate_dataset.py
 
-# 4. Execute the offline V0 baseline evaluation harness
-python experiments/run_baseline_evaluation.py
+# 4. Execute the Day 2 controlled ONNX embedding comparison benchmark
+python experiments/embedding_experiments/run_embedding_comparison.py
 ```
 
 ---

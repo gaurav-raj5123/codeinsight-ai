@@ -1,0 +1,3533 @@
+{
+  "suite_metadata": {
+    "run_id": "d2_emb_20261125_082152",
+    "timestamp_utc": "2026-11-25T08:21:52.131273+00:00",
+    "status": "VALID_COMPLETED",
+    "total_suite_duration_seconds": 1030.6,
+    "corpus_extraction_duration_seconds": 0.2604,
+    "corpus_chunking_duration_seconds": 0.3839,
+    "preflight_stats": {
+      "total_questions": 60,
+      "answerable_questions": 54,
+      "unanswerable_questions": 6,
+      "total_evidence_spans": 71,
+      "multi_evidence_questions": 17
+    },
+    "dataset_fingerprints": {
+      "repositories.json_sha256": "b330bb45f3bec445d09834861d5831d045c5c154f6889744591db6d0b3baea56",
+      "evaluation_questions.json_sha256": "4667d86d27d216db0ad969c943ffc59e91914e792e0f51e8f499c33c383ec1f6",
+      "ground_truth.json_sha256": "8ef0f357905eaa43eb68b8fc35793581061dfa109d85c937e23b2e06aaba5b00",
+      "embedding_models.json_sha256": "38268b56fe46d5785a47c63cf4dea2816764453beffc279965a8b4bcaa7cd057"
+    },
+    "pinned_commit_verifications": {
+      "pallets/flask": {
+        "verified": true,
+        "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\flask\\.commit_sha"
+      },
+      "expressjs/express": {
+        "verified": true,
+        "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\express\\.commit_sha"
+      },
+      "fmtlib/fmt": {
+        "verified": true,
+        "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\fmt\\.commit_sha"
+      }
+    },
+    "environment": {
+      "python": "3.14.7",
+      "os": "Windows-11-10.0.26300-SP0",
+      "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+      "cpu_logical_cores": 12,
+      "cpu_physical_cores": 6,
+      "total_ram_gb": 7.34,
+      "ort_providers": [
+        "AzureExecutionProvider",
+        "CPUExecutionProvider"
+      ],
+      "packages": {
+        "chromadb": "1.5.9",
+        "onnxruntime": "1.29.0",
+        "numpy": "2.5.2",
+        "psutil": "7.2.2"
+      },
+      "chunker_configuration": {
+        "max_lines": 100,
+        "sliding_window_size": 50,
+        "sliding_window_overlap": 10,
+        "parsers": "Python AST with regex and sliding-window fallback"
+      }
+    }
+  },
+  "comparison_table": [
+    {
+      "experiment_id": "E0_v0_minilm_l6_v2",
+      "model_name": "all-MiniLM-L6-v2",
+      "dimension": 384,
+      "pooling": "mean",
+      "max_seq_length": 256,
+      "query_prefix": "",
+      "document_prefix": "",
+      "hit_rate_at_1": 0.3148,
+      "hit_rate_at_3": 0.5741,
+      "hit_rate_at_5": 0.6667,
+      "precision_at_5": 0.1815,
+      "span_recall_at_5": 0.5556,
+      "mrr_at_5": 0.4534,
+      "ndcg_at_5": 0.3339,
+      "query_p50_ms": 32.27,
+      "query_p95_ms": 41.57,
+      "doc_embedding_s": 300.0373,
+      "chroma_insert_s": 4.7447,
+      "model_size_mb": 86.2,
+      "failed_queries": 0
+    },
+    {
+      "experiment_id": "E1a_bge_small_en_v15_no_prefix",
+      "model_name": "BAAI/bge-small-en-v1.5",
+      "dimension": 384,
+      "pooling": "cls",
+      "max_seq_length": 512,
+      "query_prefix": "",
+      "document_prefix": "",
+      "hit_rate_at_1": 0.2593,
+      "hit_rate_at_3": 0.5741,
+      "hit_rate_at_5": 0.6111,
+      "precision_at_5": 0.1889,
+      "span_recall_at_5": 0.5185,
+      "mrr_at_5": 0.3963,
+      "ndcg_at_5": 0.337,
+      "query_p50_ms": 11.52,
+      "query_p95_ms": 25.48,
+      "doc_embedding_s": 269.0415,
+      "chroma_insert_s": 6.1248,
+      "model_size_mb": 126.93,
+      "failed_queries": 0
+    },
+    {
+      "experiment_id": "E1b_bge_small_en_v15_instruct",
+      "model_name": "BAAI/bge-small-en-v1.5",
+      "dimension": 384,
+      "pooling": "cls",
+      "max_seq_length": 512,
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "document_prefix": "",
+      "hit_rate_at_1": 0.3148,
+      "hit_rate_at_3": 0.5741,
+      "hit_rate_at_5": 0.6296,
+      "precision_at_5": 0.1963,
+      "span_recall_at_5": 0.5463,
+      "mrr_at_5": 0.4503,
+      "ndcg_at_5": 0.3661,
+      "query_p50_ms": 15.79,
+      "query_p95_ms": 42.43,
+      "doc_embedding_s": 0.0,
+      "chroma_insert_s": 8.1397,
+      "model_size_mb": 126.93,
+      "failed_queries": 0
+    },
+    {
+      "experiment_id": "E2_e5_small_v2",
+      "model_name": "intfloat/e5-small-v2",
+      "dimension": 384,
+      "pooling": "mean",
+      "max_seq_length": 512,
+      "query_prefix": "query: ",
+      "document_prefix": "passage: ",
+      "hit_rate_at_1": 0.2963,
+      "hit_rate_at_3": 0.5185,
+      "hit_rate_at_5": 0.6481,
+      "precision_at_5": 0.1889,
+      "span_recall_at_5": 0.5741,
+      "mrr_at_5": 0.4164,
+      "ndcg_at_5": 0.3529,
+      "query_p50_ms": 12.93,
+      "query_p95_ms": 35.76,
+      "doc_embedding_s": 288.4379,
+      "chroma_insert_s": 6.341,
+      "model_size_mb": 126.93,
+      "failed_queries": 0
+    },
+    {
+      "experiment_id": "E3_minilm_l12_v2",
+      "model_name": "sentence-transformers/all-MiniLM-L12-v2",
+      "dimension": 384,
+      "pooling": "mean",
+      "max_seq_length": 128,
+      "query_prefix": "",
+      "document_prefix": "",
+      "hit_rate_at_1": 0.2778,
+      "hit_rate_at_3": 0.4074,
+      "hit_rate_at_5": 0.4815,
+      "precision_at_5": 0.1185,
+      "span_recall_at_5": 0.3796,
+      "mrr_at_5": 0.3509,
+      "ndcg_at_5": 0.2679,
+      "query_p50_ms": 13.07,
+      "query_p95_ms": 42.79,
+      "doc_embedding_s": 117.6595,
+      "chroma_insert_s": 6.8824,
+      "model_size_mb": 126.96,
+      "failed_queries": 0
+    }
+  ],
+  "models": {
+    "E0_v0_minilm_l6_v2": {
+      "experiment_metadata": {
+        "experiment_id": "E0_v0_minilm_l6_v2",
+        "group": "E0",
+        "display_name": "V0 Baseline: all-MiniLM-L6-v2 (Chroma ONNX)",
+        "run_id": "d2_emb_20261125_082152",
+        "timestamp_utc": "2026-11-25T08:27:01.918342+00:00",
+        "status": "VALID_COMPLETED",
+        "model_identifier": "all-MiniLM-L6-v2",
+        "model_version": "chroma_onnx_sha256:913d7300ceae",
+        "backend": "onnxruntime_direct_v0_chroma_weights",
+        "embedding_dimension": 384,
+        "pooling": "mean",
+        "max_seq_length": 256,
+        "padding_strategy": "fixed_256",
+        "normalize_embeddings": true,
+        "document_prefix": "",
+        "query_prefix": "",
+        "doc_vector_norm_verification": {
+          "min": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "query_vector_norm_verification": {
+          "min": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "top_k": 5,
+        "distance_metric": "l2 (squared Euclidean distance)",
+        "total_chunks": 4272,
+        "total_queries": 60,
+        "answerable_queries": 54,
+        "unanswerable_queries": 6,
+        "successful_queries": 60,
+        "failed_queries": 0,
+        "dedicated_collections": {
+          "pallets/flask": "d2_E0_v0_minilm_l6_v2_flask_082152",
+          "expressjs/express": "d2_E0_v0_minilm_l6_v2_express_082152",
+          "fmtlib/fmt": "d2_E0_v0_minilm_l6_v2_fmt_082152"
+        },
+        "pinned_commit_verifications": {
+          "pallets/flask": {
+            "verified": true,
+            "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\flask\\.commit_sha"
+          },
+          "expressjs/express": {
+            "verified": true,
+            "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\express\\.commit_sha"
+          },
+          "fmtlib/fmt": {
+            "verified": true,
+            "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\fmt\\.commit_sha"
+          }
+        },
+        "dataset_fingerprints": {
+          "repositories.json_sha256": "b330bb45f3bec445d09834861d5831d045c5c154f6889744591db6d0b3baea56",
+          "evaluation_questions.json_sha256": "4667d86d27d216db0ad969c943ffc59e91914e792e0f51e8f499c33c383ec1f6",
+          "ground_truth.json_sha256": "8ef0f357905eaa43eb68b8fc35793581061dfa109d85c937e23b2e06aaba5b00",
+          "embedding_models.json_sha256": "38268b56fe46d5785a47c63cf4dea2816764453beffc279965a8b4bcaa7cd057"
+        },
+        "environment": {
+          "python": "3.14.7",
+          "os": "Windows-11-10.0.26300-SP0",
+          "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+          "cpu_logical_cores": 12,
+          "cpu_physical_cores": 6,
+          "total_ram_gb": 7.34,
+          "ort_providers": [
+            "AzureExecutionProvider",
+            "CPUExecutionProvider"
+          ],
+          "packages": {
+            "chromadb": "1.5.9",
+            "onnxruntime": "1.29.0",
+            "numpy": "2.5.2",
+            "psutil": "7.2.2"
+          },
+          "chunker_configuration": {
+            "max_lines": 100,
+            "sliding_window_size": 50,
+            "sliding_window_overlap": 10,
+            "parsers": "Python AST with regex and sliding-window fallback"
+          }
+        }
+      },
+      "indexing_summary_by_repo": {
+        "pallets/flask": {
+          "repository": "pallets/flask",
+          "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+          "collection_name": "d2_E0_v0_minilm_l6_v2_flask_082152",
+          "chunks_count": 1785,
+          "batches_count": 56,
+          "document_embedding_duration_seconds": 139.9818,
+          "avg_embedding_ms_per_chunk": 78.421,
+          "truncated_chunks_count": 345,
+          "truncated_chunks_pct": 19.33,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 1.9941,
+          "total_indexing_duration_seconds": 141.9759,
+          "reused_same_run_doc_vectors_from": null
+        },
+        "expressjs/express": {
+          "repository": "expressjs/express",
+          "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+          "collection_name": "d2_E0_v0_minilm_l6_v2_express_082152",
+          "chunks_count": 2066,
+          "batches_count": 65,
+          "document_embedding_duration_seconds": 131.1403,
+          "avg_embedding_ms_per_chunk": 63.475,
+          "truncated_chunks_count": 68,
+          "truncated_chunks_pct": 3.29,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 2.1602,
+          "total_indexing_duration_seconds": 133.3005,
+          "reused_same_run_doc_vectors_from": null
+        },
+        "fmtlib/fmt": {
+          "repository": "fmtlib/fmt",
+          "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+          "collection_name": "d2_E0_v0_minilm_l6_v2_fmt_082152",
+          "chunks_count": 421,
+          "batches_count": 14,
+          "document_embedding_duration_seconds": 28.9152,
+          "avg_embedding_ms_per_chunk": 68.682,
+          "truncated_chunks_count": 211,
+          "truncated_chunks_pct": 50.12,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 0.5904,
+          "total_indexing_duration_seconds": 29.5056,
+          "reused_same_run_doc_vectors_from": null
+        }
+      },
+      "performance_metrics": {
+        "model_file_size_mb": 86.2,
+        "cold_start_model_load_seconds": 0.3383,
+        "warmup_duration_seconds_excluded": 0.2466,
+        "document_embedding_duration_seconds": 300.0373,
+        "chroma_insertion_duration_seconds": 4.7447,
+        "total_indexing_duration_seconds": 304.782,
+        "total_chunks_indexed": 4272,
+        "total_embedding_batches": 135,
+        "avg_doc_embedding_ms_per_chunk": 70.233,
+        "truncated_chunks_count": 624,
+        "truncated_chunks_pct": 14.61,
+        "total_query_embedding_duration_seconds": 1.7918,
+        "total_vector_search_duration_seconds": 0.2182,
+        "total_retrieval_duration_seconds": 2.01,
+        "total_experiment_execution_seconds": 308.181,
+        "memory_rss_mb": {
+          "rss_before_load_mb": 124.8,
+          "rss_after_load_mb": 233.25,
+          "model_load_rss_delta_mb": 108.45,
+          "max_sampled_rss_during_eval_mb": 625.64
+        },
+        "reused_same_run_doc_vectors_from": null
+      },
+      "overall_retrieval_metrics": {
+        "query_count": 54,
+        "hit_rate_at_1": 0.3148,
+        "hit_rate_at_3": 0.5741,
+        "hit_rate_at_5": 0.6667,
+        "precision_at_5": 0.1815,
+        "mrr_at_5": 0.4534,
+        "span_recall_at_5": 0.5556,
+        "ndcg_at_5": 0.3339,
+        "latency_ms": {
+          "mean": 33.31,
+          "median_p50": 32.27,
+          "p95": 41.57,
+          "max": 73.2
+        }
+      },
+      "latency_summary": {
+        "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1",
+        "answerable_queries_latency_ms": {
+          "count": 54,
+          "mean": 33.31,
+          "median_p50": 32.27,
+          "p95": 41.57,
+          "min": 28.33,
+          "max": 73.2,
+          "p95_rank_index": 51,
+          "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+        },
+        "all_queries_latency_ms": {
+          "count": 60,
+          "mean": 33.5,
+          "median_p50": 32.34,
+          "p95": 42.16,
+          "min": 28.33,
+          "max": 73.2,
+          "p95_rank_index": 56,
+          "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+        },
+        "query_embedding_only_ms": {
+          "answerable_queries": {
+            "count": 54,
+            "mean": 29.59,
+            "median_p50": 29.46,
+            "p95": 36.09,
+            "min": 20.61,
+            "max": 39.85,
+            "p95_rank_index": 51,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          },
+          "all_queries": {
+            "count": 60,
+            "mean": 29.86,
+            "median_p50": 29.51,
+            "p95": 38.56,
+            "min": 20.61,
+            "max": 39.85,
+            "p95_rank_index": 56,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          }
+        },
+        "vector_search_only_ms": {
+          "answerable_queries": {
+            "count": 54,
+            "mean": 3.72,
+            "median_p50": 2.62,
+            "p95": 9.34,
+            "min": 2.07,
+            "max": 34.64,
+            "p95_rank_index": 51,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          },
+          "all_queries": {
+            "count": 60,
+            "mean": 3.64,
+            "median_p50": 2.66,
+            "p95": 3.99,
+            "min": 2.07,
+            "max": 34.64,
+            "p95_rank_index": 56,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          }
+        }
+      },
+      "breakdowns": {
+        "by_repository": {
+          "pallets/flask": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.2778,
+            "hit_rate_at_3": 0.5556,
+            "hit_rate_at_5": 0.6667,
+            "precision_at_5": 0.2222,
+            "mrr_at_5": 0.4204,
+            "span_recall_at_5": 0.5556,
+            "ndcg_at_5": 0.3323,
+            "latency_ms": {
+              "mean": 35.61,
+              "median_p50": 32.67,
+              "p95": 73.2,
+              "max": 73.2
+            }
+          },
+          "expressjs/express": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.2778,
+            "hit_rate_at_3": 0.5,
+            "hit_rate_at_5": 0.6111,
+            "precision_at_5": 0.1444,
+            "mrr_at_5": 0.3981,
+            "span_recall_at_5": 0.4722,
+            "ndcg_at_5": 0.208,
+            "latency_ms": {
+              "mean": 31.91,
+              "median_p50": 30.09,
+              "p95": 38.9,
+              "max": 38.9
+            }
+          },
+          "fmtlib/fmt": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.3889,
+            "hit_rate_at_3": 0.6667,
+            "hit_rate_at_5": 0.7222,
+            "precision_at_5": 0.1778,
+            "mrr_at_5": 0.5417,
+            "span_recall_at_5": 0.6389,
+            "ndcg_at_5": 0.4615,
+            "latency_ms": {
+              "mean": 32.41,
+              "median_p50": 32.19,
+              "p95": 41.57,
+              "max": 41.57
+            }
+          }
+        },
+        "by_category": {
+          "architecture_flow": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.3,
+            "hit_rate_at_3": 0.7,
+            "hit_rate_at_5": 0.9,
+            "precision_at_5": 0.2,
+            "mrr_at_5": 0.5283,
+            "span_recall_at_5": 0.7,
+            "ndcg_at_5": 0.3165,
+            "latency_ms": {
+              "mean": 31.68,
+              "median_p50": 32.14,
+              "p95": 33.49,
+              "max": 33.49
+            }
+          },
+          "cross_file_dependencies": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.4,
+            "hit_rate_at_3": 1.0,
+            "hit_rate_at_5": 1.0,
+            "precision_at_5": 0.36,
+            "mrr_at_5": 0.6667,
+            "span_recall_at_5": 0.65,
+            "ndcg_at_5": 0.465,
+            "latency_ms": {
+              "mean": 31.1,
+              "median_p50": 30.84,
+              "p95": 35.97,
+              "max": 35.97
+            }
+          },
+          "debugging_configuration": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.4,
+            "hit_rate_at_3": 0.4,
+            "hit_rate_at_5": 0.5,
+            "precision_at_5": 0.16,
+            "mrr_at_5": 0.425,
+            "span_recall_at_5": 0.45,
+            "ndcg_at_5": 0.2882,
+            "latency_ms": {
+              "mean": 33.14,
+              "median_p50": 32.58,
+              "p95": 38.9,
+              "max": 38.9
+            }
+          },
+          "function_identification": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.25,
+            "hit_rate_at_3": 0.4167,
+            "hit_rate_at_5": 0.5,
+            "precision_at_5": 0.1,
+            "mrr_at_5": 0.3361,
+            "span_recall_at_5": 0.5,
+            "ndcg_at_5": 0.3765,
+            "latency_ms": {
+              "mean": 38.3,
+              "median_p50": 35.19,
+              "p95": 73.2,
+              "max": 73.2
+            }
+          },
+          "implementation_understanding": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.25,
+            "hit_rate_at_3": 0.4167,
+            "hit_rate_at_5": 0.5,
+            "precision_at_5": 0.1167,
+            "mrr_at_5": 0.3542,
+            "span_recall_at_5": 0.5,
+            "ndcg_at_5": 0.2348,
+            "latency_ms": {
+              "mean": 31.67,
+              "median_p50": 32.23,
+              "p95": 33.86,
+              "max": 33.86
+            }
+          }
+        },
+        "by_query_style": {
+          "conceptual": {
+            "query_count": 20,
+            "hit_rate_at_1": 0.3,
+            "hit_rate_at_3": 0.6,
+            "hit_rate_at_5": 0.65,
+            "precision_at_5": 0.18,
+            "mrr_at_5": 0.4517,
+            "span_recall_at_5": 0.575,
+            "ndcg_at_5": 0.2758,
+            "latency_ms": {
+              "mean": 32.65,
+              "median_p50": 32.34,
+              "p95": 38.25,
+              "max": 38.9
+            }
+          },
+          "conversational": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.3333,
+            "hit_rate_at_3": 0.6667,
+            "hit_rate_at_5": 0.8333,
+            "precision_at_5": 0.2333,
+            "mrr_at_5": 0.5278,
+            "span_recall_at_5": 0.5417,
+            "ndcg_at_5": 0.319,
+            "latency_ms": {
+              "mean": 31.6,
+              "median_p50": 31.8,
+              "p95": 33.86,
+              "max": 33.86
+            }
+          },
+          "identifier": {
+            "query_count": 22,
+            "hit_rate_at_1": 0.3182,
+            "hit_rate_at_3": 0.5,
+            "hit_rate_at_5": 0.5909,
+            "precision_at_5": 0.1545,
+            "mrr_at_5": 0.4144,
+            "span_recall_at_5": 0.5455,
+            "ndcg_at_5": 0.3949,
+            "latency_ms": {
+              "mean": 34.84,
+              "median_p50": 32.44,
+              "p95": 42.72,
+              "max": 73.2
+            }
+          }
+        },
+        "by_evidence_spans": {
+          "single_evidence_queries": {
+            "query_count": 37,
+            "hit_rate_at_1": 0.2703,
+            "hit_rate_at_3": 0.4054,
+            "hit_rate_at_5": 0.5405,
+            "precision_at_5": 0.1297,
+            "mrr_at_5": 0.3644,
+            "span_recall_at_5": 0.5405,
+            "ndcg_at_5": 0.2992,
+            "latency_ms": {
+              "mean": 34.11,
+              "median_p50": 32.62,
+              "p95": 42.72,
+              "max": 73.2
+            }
+          },
+          "multi_evidence_queries": {
+            "query_count": 17,
+            "hit_rate_at_1": 0.4118,
+            "hit_rate_at_3": 0.9412,
+            "hit_rate_at_5": 0.9412,
+            "precision_at_5": 0.2941,
+            "mrr_at_5": 0.6471,
+            "span_recall_at_5": 0.5882,
+            "ndcg_at_5": 0.4095,
+            "latency_ms": {
+              "mean": 31.58,
+              "median_p50": 31.61,
+              "p95": 37.05,
+              "max": 37.05
+            }
+          }
+        }
+      },
+      "top1_l2_distance_analysis": {
+        "distance_metric": "l2 (squared Euclidean distance on unit-normalized vectors)",
+        "answerable_questions_top1_l2": {
+          "count": 54,
+          "min": 0.394869,
+          "median": 0.862551,
+          "mean": 0.849554,
+          "max": 1.537793
+        },
+        "unanswerable_questions_top1_l2": {
+          "count": 6,
+          "min": 0.831388,
+          "median": 1.068492,
+          "mean": 1.033176,
+          "max": 1.286783
+        },
+        "answerable_questions_mean_top5_l2": {
+          "count": 54,
+          "min": 0.472538,
+          "median": 0.937739,
+          "mean": 0.9291,
+          "max": 1.585699
+        },
+        "unanswerable_questions_mean_top5_l2": {
+          "count": 6,
+          "min": 0.910731,
+          "median": 1.098514,
+          "mean": 1.10177,
+          "max": 1.342677
+        }
+      }
+    },
+    "E1a_bge_small_en_v15_no_prefix": {
+      "experiment_metadata": {
+        "experiment_id": "E1a_bge_small_en_v15_no_prefix",
+        "group": "E1",
+        "display_name": "E1a: BGE-small-en-v1.5 (No Query Prefix)",
+        "run_id": "d2_emb_20261125_082152",
+        "timestamp_utc": "2026-11-25T08:31:42.064187+00:00",
+        "status": "VALID_COMPLETED",
+        "model_identifier": "BAAI/bge-small-en-v1.5",
+        "model_version": "hf_commit:5c38ec7c405e",
+        "backend": "onnxruntime_direct",
+        "embedding_dimension": 384,
+        "pooling": "cls",
+        "max_seq_length": 512,
+        "padding_strategy": "dynamic_batch",
+        "normalize_embeddings": true,
+        "document_prefix": "",
+        "query_prefix": "",
+        "doc_vector_norm_verification": {
+          "min": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "query_vector_norm_verification": {
+          "min": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "top_k": 5,
+        "distance_metric": "l2 (squared Euclidean distance)",
+        "total_chunks": 4272,
+        "total_queries": 60,
+        "answerable_queries": 54,
+        "unanswerable_queries": 6,
+        "successful_queries": 60,
+        "failed_queries": 0,
+        "dedicated_collections": {
+          "pallets/flask": "d2_E1a_bge_small_en_v15_no_prefix_flask_082152",
+          "expressjs/express": "d2_E1a_bge_small_en_v15_no_prefix_express_082152",
+          "fmtlib/fmt": "d2_E1a_bge_small_en_v15_no_prefix_fmt_082152"
+        },
+        "pinned_commit_verifications": {
+          "pallets/flask": {
+            "verified": true,
+            "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\flask\\.commit_sha"
+          },
+          "expressjs/express": {
+            "verified": true,
+            "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\express\\.commit_sha"
+          },
+          "fmtlib/fmt": {
+            "verified": true,
+            "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\fmt\\.commit_sha"
+          }
+        },
+        "dataset_fingerprints": {
+          "repositories.json_sha256": "b330bb45f3bec445d09834861d5831d045c5c154f6889744591db6d0b3baea56",
+          "evaluation_questions.json_sha256": "4667d86d27d216db0ad969c943ffc59e91914e792e0f51e8f499c33c383ec1f6",
+          "ground_truth.json_sha256": "8ef0f357905eaa43eb68b8fc35793581061dfa109d85c937e23b2e06aaba5b00",
+          "embedding_models.json_sha256": "38268b56fe46d5785a47c63cf4dea2816764453beffc279965a8b4bcaa7cd057"
+        },
+        "environment": {
+          "python": "3.14.7",
+          "os": "Windows-11-10.0.26300-SP0",
+          "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+          "cpu_logical_cores": 12,
+          "cpu_physical_cores": 6,
+          "total_ram_gb": 7.34,
+          "ort_providers": [
+            "AzureExecutionProvider",
+            "CPUExecutionProvider"
+          ],
+          "packages": {
+            "chromadb": "1.5.9",
+            "onnxruntime": "1.29.0",
+            "numpy": "2.5.2",
+            "psutil": "7.2.2"
+          },
+          "chunker_configuration": {
+            "max_lines": 100,
+            "sliding_window_size": 50,
+            "sliding_window_overlap": 10,
+            "parsers": "Python AST with regex and sliding-window fallback"
+          }
+        }
+      },
+      "indexing_summary_by_repo": {
+        "pallets/flask": {
+          "repository": "pallets/flask",
+          "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+          "collection_name": "d2_E1a_bge_small_en_v15_no_prefix_flask_082152",
+          "chunks_count": 1785,
+          "batches_count": 56,
+          "document_embedding_duration_seconds": 129.858,
+          "avg_embedding_ms_per_chunk": 72.75,
+          "truncated_chunks_count": 96,
+          "truncated_chunks_pct": 5.38,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 2.9232,
+          "total_indexing_duration_seconds": 132.7812,
+          "reused_same_run_doc_vectors_from": null
+        },
+        "expressjs/express": {
+          "repository": "expressjs/express",
+          "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+          "collection_name": "d2_E1a_bge_small_en_v15_no_prefix_express_082152",
+          "chunks_count": 2066,
+          "batches_count": 65,
+          "document_embedding_duration_seconds": 68.0165,
+          "avg_embedding_ms_per_chunk": 32.922,
+          "truncated_chunks_count": 9,
+          "truncated_chunks_pct": 0.44,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 2.5215,
+          "total_indexing_duration_seconds": 70.538,
+          "reused_same_run_doc_vectors_from": null
+        },
+        "fmtlib/fmt": {
+          "repository": "fmtlib/fmt",
+          "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+          "collection_name": "d2_E1a_bge_small_en_v15_no_prefix_fmt_082152",
+          "chunks_count": 421,
+          "batches_count": 14,
+          "document_embedding_duration_seconds": 71.167,
+          "avg_embedding_ms_per_chunk": 169.043,
+          "truncated_chunks_count": 128,
+          "truncated_chunks_pct": 30.4,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 0.6801,
+          "total_indexing_duration_seconds": 71.8471,
+          "reused_same_run_doc_vectors_from": null
+        }
+      },
+      "performance_metrics": {
+        "model_file_size_mb": 126.93,
+        "cold_start_model_load_seconds": 0.5529,
+        "warmup_duration_seconds_excluded": 0.0438,
+        "document_embedding_duration_seconds": 269.0415,
+        "chroma_insertion_duration_seconds": 6.1248,
+        "total_indexing_duration_seconds": 275.1663,
+        "total_chunks_indexed": 4272,
+        "total_embedding_batches": 135,
+        "avg_doc_embedding_ms_per_chunk": 62.978,
+        "truncated_chunks_count": 233,
+        "truncated_chunks_pct": 5.45,
+        "total_query_embedding_duration_seconds": 0.5509,
+        "total_vector_search_duration_seconds": 0.2363,
+        "total_retrieval_duration_seconds": 0.7872,
+        "total_experiment_execution_seconds": 277.4139,
+        "memory_rss_mb": {
+          "rss_before_load_mb": 146.15,
+          "rss_after_load_mb": 295.84,
+          "model_load_rss_delta_mb": 149.69,
+          "max_sampled_rss_during_eval_mb": 1852.93
+        },
+        "reused_same_run_doc_vectors_from": null
+      },
+      "overall_retrieval_metrics": {
+        "query_count": 54,
+        "hit_rate_at_1": 0.2593,
+        "hit_rate_at_3": 0.5741,
+        "hit_rate_at_5": 0.6111,
+        "precision_at_5": 0.1889,
+        "mrr_at_5": 0.3963,
+        "span_recall_at_5": 0.5185,
+        "ndcg_at_5": 0.337,
+        "latency_ms": {
+          "mean": 13.26,
+          "median_p50": 11.52,
+          "p95": 25.48,
+          "max": 62.85
+        }
+      },
+      "latency_summary": {
+        "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1",
+        "answerable_queries_latency_ms": {
+          "count": 54,
+          "mean": 13.26,
+          "median_p50": 11.52,
+          "p95": 25.48,
+          "min": 10.02,
+          "max": 62.85,
+          "p95_rank_index": 51,
+          "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+        },
+        "all_queries_latency_ms": {
+          "count": 60,
+          "mean": 13.12,
+          "median_p50": 11.55,
+          "p95": 13.32,
+          "min": 10.02,
+          "max": 62.85,
+          "p95_rank_index": 56,
+          "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+        },
+        "query_embedding_only_ms": {
+          "answerable_queries": {
+            "count": 54,
+            "mean": 9.15,
+            "median_p50": 9.05,
+            "p95": 10.58,
+            "min": 7.71,
+            "max": 11.82,
+            "p95_rank_index": 51,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          },
+          "all_queries": {
+            "count": 60,
+            "mean": 9.18,
+            "median_p50": 9.09,
+            "p95": 10.33,
+            "min": 7.71,
+            "max": 11.82,
+            "p95_rank_index": 56,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          }
+        },
+        "vector_search_only_ms": {
+          "answerable_queries": {
+            "count": 54,
+            "mean": 4.11,
+            "median_p50": 2.38,
+            "p95": 16.18,
+            "min": 1.99,
+            "max": 51.03,
+            "p95_rank_index": 51,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          },
+          "all_queries": {
+            "count": 60,
+            "mean": 3.94,
+            "median_p50": 2.37,
+            "p95": 3.45,
+            "min": 1.99,
+            "max": 51.03,
+            "p95_rank_index": 56,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          }
+        }
+      },
+      "breakdowns": {
+        "by_repository": {
+          "pallets/flask": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.1111,
+            "hit_rate_at_3": 0.6111,
+            "hit_rate_at_5": 0.6667,
+            "precision_at_5": 0.2556,
+            "mrr_at_5": 0.3167,
+            "span_recall_at_5": 0.5556,
+            "ndcg_at_5": 0.3202,
+            "latency_ms": {
+              "mean": 14.74,
+              "median_p50": 11.98,
+              "p95": 62.85,
+              "max": 62.85
+            }
+          },
+          "expressjs/express": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.2222,
+            "hit_rate_at_3": 0.2778,
+            "hit_rate_at_5": 0.3333,
+            "precision_at_5": 0.0889,
+            "mrr_at_5": 0.2611,
+            "span_recall_at_5": 0.25,
+            "ndcg_at_5": 0.1496,
+            "latency_ms": {
+              "mean": 12.18,
+              "median_p50": 11.39,
+              "p95": 25.48,
+              "max": 25.48
+            }
+          },
+          "fmtlib/fmt": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.4444,
+            "hit_rate_at_3": 0.8333,
+            "hit_rate_at_5": 0.8333,
+            "precision_at_5": 0.2222,
+            "mrr_at_5": 0.6111,
+            "span_recall_at_5": 0.75,
+            "ndcg_at_5": 0.5412,
+            "latency_ms": {
+              "mean": 12.87,
+              "median_p50": 11.46,
+              "p95": 38.79,
+              "max": 38.79
+            }
+          }
+        },
+        "by_category": {
+          "architecture_flow": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.3,
+            "hit_rate_at_3": 0.7,
+            "hit_rate_at_5": 0.7,
+            "precision_at_5": 0.24,
+            "mrr_at_5": 0.4667,
+            "span_recall_at_5": 0.55,
+            "ndcg_at_5": 0.3779,
+            "latency_ms": {
+              "mean": 11.76,
+              "median_p50": 11.64,
+              "p95": 13.32,
+              "max": 13.32
+            }
+          },
+          "cross_file_dependencies": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.2,
+            "hit_rate_at_3": 0.6,
+            "hit_rate_at_5": 0.8,
+            "precision_at_5": 0.26,
+            "mrr_at_5": 0.39,
+            "span_recall_at_5": 0.5,
+            "ndcg_at_5": 0.3067,
+            "latency_ms": {
+              "mean": 11.38,
+              "median_p50": 11.23,
+              "p95": 12.54,
+              "max": 12.54
+            }
+          },
+          "debugging_configuration": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.3,
+            "hit_rate_at_3": 0.4,
+            "hit_rate_at_5": 0.4,
+            "precision_at_5": 0.12,
+            "mrr_at_5": 0.3333,
+            "span_recall_at_5": 0.4,
+            "ndcg_at_5": 0.2088,
+            "latency_ms": {
+              "mean": 11.23,
+              "median_p50": 11.32,
+              "p95": 12.1,
+              "max": 12.1
+            }
+          },
+          "function_identification": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.25,
+            "hit_rate_at_3": 0.5833,
+            "hit_rate_at_5": 0.5833,
+            "precision_at_5": 0.1167,
+            "mrr_at_5": 0.4167,
+            "span_recall_at_5": 0.5417,
+            "ndcg_at_5": 0.3957,
+            "latency_ms": {
+              "mean": 19.17,
+              "median_p50": 11.79,
+              "p95": 62.85,
+              "max": 62.85
+            }
+          },
+          "implementation_understanding": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.25,
+            "hit_rate_at_3": 0.5833,
+            "hit_rate_at_5": 0.5833,
+            "precision_at_5": 0.2167,
+            "mrr_at_5": 0.375,
+            "span_recall_at_5": 0.5833,
+            "ndcg_at_5": 0.3762,
+            "latency_ms": {
+              "mean": 11.86,
+              "median_p50": 11.86,
+              "p95": 12.92,
+              "max": 12.92
+            }
+          }
+        },
+        "by_query_style": {
+          "conceptual": {
+            "query_count": 20,
+            "hit_rate_at_1": 0.2,
+            "hit_rate_at_3": 0.5,
+            "hit_rate_at_5": 0.55,
+            "precision_at_5": 0.18,
+            "mrr_at_5": 0.3267,
+            "span_recall_at_5": 0.5,
+            "ndcg_at_5": 0.2771,
+            "latency_ms": {
+              "mean": 11.37,
+              "median_p50": 11.36,
+              "p95": 12.31,
+              "max": 13.23
+            }
+          },
+          "conversational": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.1667,
+            "hit_rate_at_3": 0.5,
+            "hit_rate_at_5": 0.5833,
+            "precision_at_5": 0.2167,
+            "mrr_at_5": 0.3222,
+            "span_recall_at_5": 0.4167,
+            "ndcg_at_5": 0.2997,
+            "latency_ms": {
+              "mean": 11.52,
+              "median_p50": 11.37,
+              "p95": 13.32,
+              "max": 13.32
+            }
+          },
+          "identifier": {
+            "query_count": 22,
+            "hit_rate_at_1": 0.3636,
+            "hit_rate_at_3": 0.6818,
+            "hit_rate_at_5": 0.6818,
+            "precision_at_5": 0.1818,
+            "mrr_at_5": 0.5,
+            "span_recall_at_5": 0.5909,
+            "ndcg_at_5": 0.4117,
+            "latency_ms": {
+              "mean": 15.93,
+              "median_p50": 11.98,
+              "p95": 38.79,
+              "max": 62.85
+            }
+          }
+        },
+        "by_evidence_spans": {
+          "single_evidence_queries": {
+            "query_count": 37,
+            "hit_rate_at_1": 0.2703,
+            "hit_rate_at_3": 0.5405,
+            "hit_rate_at_5": 0.5405,
+            "precision_at_5": 0.1622,
+            "mrr_at_5": 0.3829,
+            "span_recall_at_5": 0.5405,
+            "ndcg_at_5": 0.3373,
+            "latency_ms": {
+              "mean": 13.74,
+              "median_p50": 11.58,
+              "p95": 38.79,
+              "max": 62.85
+            }
+          },
+          "multi_evidence_queries": {
+            "query_count": 17,
+            "hit_rate_at_1": 0.2353,
+            "hit_rate_at_3": 0.6471,
+            "hit_rate_at_5": 0.7647,
+            "precision_at_5": 0.2471,
+            "mrr_at_5": 0.4255,
+            "span_recall_at_5": 0.4706,
+            "ndcg_at_5": 0.3364,
+            "latency_ms": {
+              "mean": 12.21,
+              "median_p50": 11.28,
+              "p95": 25.48,
+              "max": 25.48
+            }
+          }
+        }
+      },
+      "top1_l2_distance_analysis": {
+        "distance_metric": "l2 (squared Euclidean distance on unit-normalized vectors)",
+        "answerable_questions_top1_l2": {
+          "count": 54,
+          "min": 0.241412,
+          "median": 0.396931,
+          "mean": 0.392627,
+          "max": 0.574745
+        },
+        "unanswerable_questions_top1_l2": {
+          "count": 6,
+          "min": 0.429116,
+          "median": 0.518217,
+          "mean": 0.501904,
+          "max": 0.542862
+        },
+        "answerable_questions_mean_top5_l2": {
+          "count": 54,
+          "min": 0.26879,
+          "median": 0.431569,
+          "mean": 0.432118,
+          "max": 0.620275
+        },
+        "unanswerable_questions_mean_top5_l2": {
+          "count": 6,
+          "min": 0.44178,
+          "median": 0.552395,
+          "mean": 0.528779,
+          "max": 0.583084
+        }
+      }
+    },
+    "E1b_bge_small_en_v15_instruct": {
+      "experiment_metadata": {
+        "experiment_id": "E1b_bge_small_en_v15_instruct",
+        "group": "E1",
+        "display_name": "E1b: BGE-small-en-v1.5 (Retrieval Query Prefix)",
+        "run_id": "d2_emb_20261125_082152",
+        "timestamp_utc": "2026-11-25T08:31:54.249704+00:00",
+        "status": "VALID_COMPLETED",
+        "model_identifier": "BAAI/bge-small-en-v1.5",
+        "model_version": "hf_commit:5c38ec7c405e",
+        "backend": "onnxruntime_direct",
+        "embedding_dimension": 384,
+        "pooling": "cls",
+        "max_seq_length": 512,
+        "padding_strategy": "dynamic_batch",
+        "normalize_embeddings": true,
+        "document_prefix": "",
+        "query_prefix": "Represent this sentence for searching relevant passages: ",
+        "doc_vector_norm_verification": {
+          "min": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "query_vector_norm_verification": {
+          "min": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "top_k": 5,
+        "distance_metric": "l2 (squared Euclidean distance)",
+        "total_chunks": 4272,
+        "total_queries": 60,
+        "answerable_queries": 54,
+        "unanswerable_queries": 6,
+        "successful_queries": 60,
+        "failed_queries": 0,
+        "dedicated_collections": {
+          "pallets/flask": "d2_E1b_bge_small_en_v15_instruct_flask_082152",
+          "expressjs/express": "d2_E1b_bge_small_en_v15_instruct_express_082152",
+          "fmtlib/fmt": "d2_E1b_bge_small_en_v15_instruct_fmt_082152"
+        },
+        "pinned_commit_verifications": {
+          "pallets/flask": {
+            "verified": true,
+            "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\flask\\.commit_sha"
+          },
+          "expressjs/express": {
+            "verified": true,
+            "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\express\\.commit_sha"
+          },
+          "fmtlib/fmt": {
+            "verified": true,
+            "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\fmt\\.commit_sha"
+          }
+        },
+        "dataset_fingerprints": {
+          "repositories.json_sha256": "b330bb45f3bec445d09834861d5831d045c5c154f6889744591db6d0b3baea56",
+          "evaluation_questions.json_sha256": "4667d86d27d216db0ad969c943ffc59e91914e792e0f51e8f499c33c383ec1f6",
+          "ground_truth.json_sha256": "8ef0f357905eaa43eb68b8fc35793581061dfa109d85c937e23b2e06aaba5b00",
+          "embedding_models.json_sha256": "38268b56fe46d5785a47c63cf4dea2816764453beffc279965a8b4bcaa7cd057"
+        },
+        "environment": {
+          "python": "3.14.7",
+          "os": "Windows-11-10.0.26300-SP0",
+          "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+          "cpu_logical_cores": 12,
+          "cpu_physical_cores": 6,
+          "total_ram_gb": 7.34,
+          "ort_providers": [
+            "AzureExecutionProvider",
+            "CPUExecutionProvider"
+          ],
+          "packages": {
+            "chromadb": "1.5.9",
+            "onnxruntime": "1.29.0",
+            "numpy": "2.5.2",
+            "psutil": "7.2.2"
+          },
+          "chunker_configuration": {
+            "max_lines": 100,
+            "sliding_window_size": 50,
+            "sliding_window_overlap": 10,
+            "parsers": "Python AST with regex and sliding-window fallback"
+          }
+        }
+      },
+      "indexing_summary_by_repo": {
+        "pallets/flask": {
+          "repository": "pallets/flask",
+          "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+          "collection_name": "d2_E1b_bge_small_en_v15_instruct_flask_082152",
+          "chunks_count": 1785,
+          "batches_count": 0,
+          "document_embedding_duration_seconds": 0.0,
+          "avg_embedding_ms_per_chunk": 0.0,
+          "truncated_chunks_count": null,
+          "truncated_chunks_pct": null,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 3.3544,
+          "total_indexing_duration_seconds": 3.3544,
+          "reused_same_run_doc_vectors_from": "E1a_bge_small_en_v15_no_prefix"
+        },
+        "expressjs/express": {
+          "repository": "expressjs/express",
+          "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+          "collection_name": "d2_E1b_bge_small_en_v15_instruct_express_082152",
+          "chunks_count": 2066,
+          "batches_count": 0,
+          "document_embedding_duration_seconds": 0.0,
+          "avg_embedding_ms_per_chunk": 0.0,
+          "truncated_chunks_count": null,
+          "truncated_chunks_pct": null,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 3.8117,
+          "total_indexing_duration_seconds": 3.8117,
+          "reused_same_run_doc_vectors_from": "E1a_bge_small_en_v15_no_prefix"
+        },
+        "fmtlib/fmt": {
+          "repository": "fmtlib/fmt",
+          "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+          "collection_name": "d2_E1b_bge_small_en_v15_instruct_fmt_082152",
+          "chunks_count": 421,
+          "batches_count": 0,
+          "document_embedding_duration_seconds": 0.0,
+          "avg_embedding_ms_per_chunk": 0.0,
+          "truncated_chunks_count": null,
+          "truncated_chunks_pct": null,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 0.9736,
+          "total_indexing_duration_seconds": 0.9736,
+          "reused_same_run_doc_vectors_from": "E1a_bge_small_en_v15_no_prefix"
+        }
+      },
+      "performance_metrics": {
+        "model_file_size_mb": 126.93,
+        "cold_start_model_load_seconds": 0.5824,
+        "warmup_duration_seconds_excluded": 0.0437,
+        "document_embedding_duration_seconds": 0.0,
+        "chroma_insertion_duration_seconds": 8.1397,
+        "total_indexing_duration_seconds": 8.1397,
+        "total_chunks_indexed": 4272,
+        "total_embedding_batches": 0,
+        "avg_doc_embedding_ms_per_chunk": null,
+        "truncated_chunks_count": null,
+        "truncated_chunks_pct": null,
+        "total_query_embedding_duration_seconds": 0.7714,
+        "total_vector_search_duration_seconds": 0.3066,
+        "total_retrieval_duration_seconds": 1.078,
+        "total_experiment_execution_seconds": 9.2842,
+        "memory_rss_mb": {
+          "rss_before_load_mb": 131.98,
+          "rss_after_load_mb": 285.38,
+          "model_load_rss_delta_mb": 153.4,
+          "max_sampled_rss_during_eval_mb": 323.99
+        },
+        "reused_same_run_doc_vectors_from": "E1a_bge_small_en_v15_no_prefix"
+      },
+      "overall_retrieval_metrics": {
+        "query_count": 54,
+        "hit_rate_at_1": 0.3148,
+        "hit_rate_at_3": 0.5741,
+        "hit_rate_at_5": 0.6296,
+        "precision_at_5": 0.1963,
+        "mrr_at_5": 0.4503,
+        "span_recall_at_5": 0.5463,
+        "ndcg_at_5": 0.3661,
+        "latency_ms": {
+          "mean": 18.19,
+          "median_p50": 15.79,
+          "p95": 42.43,
+          "max": 77.58
+        }
+      },
+      "latency_summary": {
+        "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1",
+        "answerable_queries_latency_ms": {
+          "count": 54,
+          "mean": 18.19,
+          "median_p50": 15.79,
+          "p95": 42.43,
+          "min": 13.87,
+          "max": 77.58,
+          "p95_rank_index": 51,
+          "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+        },
+        "all_queries_latency_ms": {
+          "count": 60,
+          "mean": 17.97,
+          "median_p50": 15.82,
+          "p95": 24.75,
+          "min": 13.87,
+          "max": 77.58,
+          "p95_rank_index": 56,
+          "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+        },
+        "query_embedding_only_ms": {
+          "answerable_queries": {
+            "count": 54,
+            "mean": 12.85,
+            "median_p50": 12.75,
+            "p95": 15.38,
+            "min": 11.08,
+            "max": 15.88,
+            "p95_rank_index": 51,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          },
+          "all_queries": {
+            "count": 60,
+            "mean": 12.86,
+            "median_p50": 12.81,
+            "p95": 15.01,
+            "min": 11.08,
+            "max": 15.88,
+            "p95_rank_index": 56,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          }
+        },
+        "vector_search_only_ms": {
+          "answerable_queries": {
+            "count": 54,
+            "mean": 5.34,
+            "median_p50": 3.02,
+            "p95": 28.95,
+            "min": 2.38,
+            "max": 61.7,
+            "p95_rank_index": 51,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          },
+          "all_queries": {
+            "count": 60,
+            "mean": 5.11,
+            "median_p50": 3.02,
+            "p95": 10.95,
+            "min": 2.38,
+            "max": 61.7,
+            "p95_rank_index": 56,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          }
+        }
+      },
+      "breakdowns": {
+        "by_repository": {
+          "pallets/flask": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.2778,
+            "hit_rate_at_3": 0.6667,
+            "hit_rate_at_5": 0.7222,
+            "precision_at_5": 0.2667,
+            "mrr_at_5": 0.4833,
+            "span_recall_at_5": 0.6111,
+            "ndcg_at_5": 0.3986,
+            "latency_ms": {
+              "mean": 20.1,
+              "median_p50": 16.27,
+              "p95": 77.58,
+              "max": 77.58
+            }
+          },
+          "expressjs/express": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.2222,
+            "hit_rate_at_3": 0.3333,
+            "hit_rate_at_5": 0.3889,
+            "precision_at_5": 0.1,
+            "mrr_at_5": 0.2824,
+            "span_recall_at_5": 0.3056,
+            "ndcg_at_5": 0.1677,
+            "latency_ms": {
+              "mean": 17.16,
+              "median_p50": 15.77,
+              "p95": 42.43,
+              "max": 42.43
+            }
+          },
+          "fmtlib/fmt": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.4444,
+            "hit_rate_at_3": 0.7222,
+            "hit_rate_at_5": 0.7778,
+            "precision_at_5": 0.2222,
+            "mrr_at_5": 0.5852,
+            "span_recall_at_5": 0.7222,
+            "ndcg_at_5": 0.532,
+            "latency_ms": {
+              "mean": 17.3,
+              "median_p50": 15.54,
+              "p95": 48.43,
+              "max": 48.43
+            }
+          }
+        },
+        "by_category": {
+          "architecture_flow": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.3,
+            "hit_rate_at_3": 0.8,
+            "hit_rate_at_5": 0.8,
+            "precision_at_5": 0.26,
+            "mrr_at_5": 0.5333,
+            "span_recall_at_5": 0.65,
+            "ndcg_at_5": 0.4192,
+            "latency_ms": {
+              "mean": 15.94,
+              "median_p50": 15.66,
+              "p95": 18.29,
+              "max": 18.29
+            }
+          },
+          "cross_file_dependencies": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.3,
+            "hit_rate_at_3": 0.7,
+            "hit_rate_at_5": 0.8,
+            "precision_at_5": 0.26,
+            "mrr_at_5": 0.5083,
+            "span_recall_at_5": 0.55,
+            "ndcg_at_5": 0.349,
+            "latency_ms": {
+              "mean": 15.93,
+              "median_p50": 16.02,
+              "p95": 17.36,
+              "max": 17.36
+            }
+          },
+          "debugging_configuration": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.3,
+            "hit_rate_at_3": 0.3,
+            "hit_rate_at_5": 0.4,
+            "precision_at_5": 0.14,
+            "mrr_at_5": 0.32,
+            "span_recall_at_5": 0.4,
+            "ndcg_at_5": 0.2256,
+            "latency_ms": {
+              "mean": 14.88,
+              "median_p50": 14.58,
+              "p95": 16.64,
+              "max": 16.64
+            }
+          },
+          "function_identification": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.25,
+            "hit_rate_at_3": 0.5833,
+            "hit_rate_at_5": 0.6667,
+            "precision_at_5": 0.1333,
+            "mrr_at_5": 0.4333,
+            "span_recall_at_5": 0.625,
+            "ndcg_at_5": 0.428,
+            "latency_ms": {
+              "mean": 26.65,
+              "median_p50": 16.86,
+              "p95": 77.58,
+              "max": 77.58
+            }
+          },
+          "implementation_understanding": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.4167,
+            "hit_rate_at_3": 0.5,
+            "hit_rate_at_5": 0.5,
+            "precision_at_5": 0.2,
+            "mrr_at_5": 0.4583,
+            "span_recall_at_5": 0.5,
+            "ndcg_at_5": 0.3911,
+            "latency_ms": {
+              "mean": 16.23,
+              "median_p50": 15.97,
+              "p95": 18.47,
+              "max": 18.47
+            }
+          }
+        },
+        "by_query_style": {
+          "conceptual": {
+            "query_count": 20,
+            "hit_rate_at_1": 0.25,
+            "hit_rate_at_3": 0.45,
+            "hit_rate_at_5": 0.5,
+            "precision_at_5": 0.15,
+            "mrr_at_5": 0.36,
+            "span_recall_at_5": 0.45,
+            "ndcg_at_5": 0.2594,
+            "latency_ms": {
+              "mean": 15.5,
+              "median_p50": 15.38,
+              "p95": 17.92,
+              "max": 18.29
+            }
+          },
+          "conversational": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.1667,
+            "hit_rate_at_3": 0.5,
+            "hit_rate_at_5": 0.5833,
+            "precision_at_5": 0.2333,
+            "mrr_at_5": 0.3542,
+            "span_recall_at_5": 0.4167,
+            "ndcg_at_5": 0.323,
+            "latency_ms": {
+              "mean": 15.72,
+              "median_p50": 15.48,
+              "p95": 18.47,
+              "max": 18.47
+            }
+          },
+          "identifier": {
+            "query_count": 22,
+            "hit_rate_at_1": 0.4545,
+            "hit_rate_at_3": 0.7273,
+            "hit_rate_at_5": 0.7727,
+            "precision_at_5": 0.2182,
+            "mrr_at_5": 0.5848,
+            "span_recall_at_5": 0.7045,
+            "ndcg_at_5": 0.4865,
+            "latency_ms": {
+              "mean": 21.98,
+              "median_p50": 16.16,
+              "p95": 48.43,
+              "max": 77.58
+            }
+          }
+        },
+        "by_evidence_spans": {
+          "single_evidence_queries": {
+            "query_count": 37,
+            "hit_rate_at_1": 0.3243,
+            "hit_rate_at_3": 0.5135,
+            "hit_rate_at_5": 0.5676,
+            "precision_at_5": 0.173,
+            "mrr_at_5": 0.4252,
+            "span_recall_at_5": 0.5676,
+            "ndcg_at_5": 0.366,
+            "latency_ms": {
+              "mean": 18.68,
+              "median_p50": 15.86,
+              "p95": 48.43,
+              "max": 77.58
+            }
+          },
+          "multi_evidence_queries": {
+            "query_count": 17,
+            "hit_rate_at_1": 0.2941,
+            "hit_rate_at_3": 0.7059,
+            "hit_rate_at_5": 0.7647,
+            "precision_at_5": 0.2471,
+            "mrr_at_5": 0.5049,
+            "span_recall_at_5": 0.5,
+            "ndcg_at_5": 0.3662,
+            "latency_ms": {
+              "mean": 17.12,
+              "median_p50": 15.54,
+              "p95": 42.43,
+              "max": 42.43
+            }
+          }
+        }
+      },
+      "top1_l2_distance_analysis": {
+        "distance_metric": "l2 (squared Euclidean distance on unit-normalized vectors)",
+        "answerable_questions_top1_l2": {
+          "count": 54,
+          "min": 0.292136,
+          "median": 0.434465,
+          "mean": 0.431746,
+          "max": 0.633374
+        },
+        "unanswerable_questions_top1_l2": {
+          "count": 6,
+          "min": 0.487292,
+          "median": 0.561219,
+          "mean": 0.562033,
+          "max": 0.622714
+        },
+        "answerable_questions_mean_top5_l2": {
+          "count": 54,
+          "min": 0.336828,
+          "median": 0.483761,
+          "mean": 0.477367,
+          "max": 0.695599
+        },
+        "unanswerable_questions_mean_top5_l2": {
+          "count": 6,
+          "min": 0.502132,
+          "median": 0.584438,
+          "mean": 0.585041,
+          "max": 0.668222
+        }
+      }
+    },
+    "E2_e5_small_v2": {
+      "experiment_metadata": {
+        "experiment_id": "E2_e5_small_v2",
+        "group": "E2",
+        "display_name": "E2: E5-small-v2 (query/passage prefixes)",
+        "run_id": "d2_emb_20261125_082152",
+        "timestamp_utc": "2026-11-25T08:36:53.523156+00:00",
+        "status": "VALID_COMPLETED",
+        "model_identifier": "intfloat/e5-small-v2",
+        "model_version": "hf_commit:ffb93f3bd404",
+        "backend": "onnxruntime_direct",
+        "embedding_dimension": 384,
+        "pooling": "mean",
+        "max_seq_length": 512,
+        "padding_strategy": "dynamic_batch",
+        "normalize_embeddings": true,
+        "document_prefix": "passage: ",
+        "query_prefix": "query: ",
+        "doc_vector_norm_verification": {
+          "min": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "query_vector_norm_verification": {
+          "min": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "top_k": 5,
+        "distance_metric": "l2 (squared Euclidean distance)",
+        "total_chunks": 4272,
+        "total_queries": 60,
+        "answerable_queries": 54,
+        "unanswerable_queries": 6,
+        "successful_queries": 60,
+        "failed_queries": 0,
+        "dedicated_collections": {
+          "pallets/flask": "d2_E2_e5_small_v2_flask_082152",
+          "expressjs/express": "d2_E2_e5_small_v2_express_082152",
+          "fmtlib/fmt": "d2_E2_e5_small_v2_fmt_082152"
+        },
+        "pinned_commit_verifications": {
+          "pallets/flask": {
+            "verified": true,
+            "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\flask\\.commit_sha"
+          },
+          "expressjs/express": {
+            "verified": true,
+            "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\express\\.commit_sha"
+          },
+          "fmtlib/fmt": {
+            "verified": true,
+            "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\fmt\\.commit_sha"
+          }
+        },
+        "dataset_fingerprints": {
+          "repositories.json_sha256": "b330bb45f3bec445d09834861d5831d045c5c154f6889744591db6d0b3baea56",
+          "evaluation_questions.json_sha256": "4667d86d27d216db0ad969c943ffc59e91914e792e0f51e8f499c33c383ec1f6",
+          "ground_truth.json_sha256": "8ef0f357905eaa43eb68b8fc35793581061dfa109d85c937e23b2e06aaba5b00",
+          "embedding_models.json_sha256": "38268b56fe46d5785a47c63cf4dea2816764453beffc279965a8b4bcaa7cd057"
+        },
+        "environment": {
+          "python": "3.14.7",
+          "os": "Windows-11-10.0.26300-SP0",
+          "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+          "cpu_logical_cores": 12,
+          "cpu_physical_cores": 6,
+          "total_ram_gb": 7.34,
+          "ort_providers": [
+            "AzureExecutionProvider",
+            "CPUExecutionProvider"
+          ],
+          "packages": {
+            "chromadb": "1.5.9",
+            "onnxruntime": "1.29.0",
+            "numpy": "2.5.2",
+            "psutil": "7.2.2"
+          },
+          "chunker_configuration": {
+            "max_lines": 100,
+            "sliding_window_size": 50,
+            "sliding_window_overlap": 10,
+            "parsers": "Python AST with regex and sliding-window fallback"
+          }
+        }
+      },
+      "indexing_summary_by_repo": {
+        "pallets/flask": {
+          "repository": "pallets/flask",
+          "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+          "collection_name": "d2_E2_e5_small_v2_flask_082152",
+          "chunks_count": 1785,
+          "batches_count": 56,
+          "document_embedding_duration_seconds": 134.9592,
+          "avg_embedding_ms_per_chunk": 75.607,
+          "truncated_chunks_count": 98,
+          "truncated_chunks_pct": 5.49,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 2.6433,
+          "total_indexing_duration_seconds": 137.6025,
+          "reused_same_run_doc_vectors_from": null
+        },
+        "expressjs/express": {
+          "repository": "expressjs/express",
+          "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+          "collection_name": "d2_E2_e5_small_v2_express_082152",
+          "chunks_count": 2066,
+          "batches_count": 65,
+          "document_embedding_duration_seconds": 77.9542,
+          "avg_embedding_ms_per_chunk": 37.732,
+          "truncated_chunks_count": 9,
+          "truncated_chunks_pct": 0.44,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 2.9169,
+          "total_indexing_duration_seconds": 80.8711,
+          "reused_same_run_doc_vectors_from": null
+        },
+        "fmtlib/fmt": {
+          "repository": "fmtlib/fmt",
+          "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+          "collection_name": "d2_E2_e5_small_v2_fmt_082152",
+          "chunks_count": 421,
+          "batches_count": 14,
+          "document_embedding_duration_seconds": 75.5245,
+          "avg_embedding_ms_per_chunk": 179.393,
+          "truncated_chunks_count": 129,
+          "truncated_chunks_pct": 30.64,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 0.7808,
+          "total_indexing_duration_seconds": 76.3053,
+          "reused_same_run_doc_vectors_from": null
+        }
+      },
+      "performance_metrics": {
+        "model_file_size_mb": 126.93,
+        "cold_start_model_load_seconds": 0.4642,
+        "warmup_duration_seconds_excluded": 0.0495,
+        "document_embedding_duration_seconds": 288.4379,
+        "chroma_insertion_duration_seconds": 6.341,
+        "total_indexing_duration_seconds": 294.7789,
+        "total_chunks_indexed": 4272,
+        "total_embedding_batches": 135,
+        "avg_doc_embedding_ms_per_chunk": 67.518,
+        "truncated_chunks_count": 236,
+        "truncated_chunks_pct": 5.52,
+        "total_query_embedding_duration_seconds": 0.6245,
+        "total_vector_search_duration_seconds": 0.2532,
+        "total_retrieval_duration_seconds": 0.8777,
+        "total_experiment_execution_seconds": 297.0035,
+        "memory_rss_mb": {
+          "rss_before_load_mb": 173.48,
+          "rss_after_load_mb": 316.01,
+          "model_load_rss_delta_mb": 142.53,
+          "max_sampled_rss_during_eval_mb": 1875.68
+        },
+        "reused_same_run_doc_vectors_from": null
+      },
+      "overall_retrieval_metrics": {
+        "query_count": 54,
+        "hit_rate_at_1": 0.2963,
+        "hit_rate_at_3": 0.5185,
+        "hit_rate_at_5": 0.6481,
+        "precision_at_5": 0.1889,
+        "mrr_at_5": 0.4164,
+        "span_recall_at_5": 0.5741,
+        "ndcg_at_5": 0.3529,
+        "latency_ms": {
+          "mean": 14.83,
+          "median_p50": 12.93,
+          "p95": 35.76,
+          "max": 63.34
+        }
+      },
+      "latency_summary": {
+        "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1",
+        "answerable_queries_latency_ms": {
+          "count": 54,
+          "mean": 14.83,
+          "median_p50": 12.93,
+          "p95": 35.76,
+          "min": 11.21,
+          "max": 63.34,
+          "p95_rank_index": 51,
+          "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+        },
+        "all_queries_latency_ms": {
+          "count": 60,
+          "mean": 14.63,
+          "median_p50": 12.93,
+          "p95": 15.03,
+          "min": 11.21,
+          "max": 63.34,
+          "p95_rank_index": 56,
+          "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+        },
+        "query_embedding_only_ms": {
+          "answerable_queries": {
+            "count": 54,
+            "mean": 10.41,
+            "median_p50": 10.35,
+            "p95": 11.81,
+            "min": 8.66,
+            "max": 14.46,
+            "p95_rank_index": 51,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          },
+          "all_queries": {
+            "count": 60,
+            "mean": 10.41,
+            "median_p50": 10.34,
+            "p95": 11.68,
+            "min": 8.66,
+            "max": 14.46,
+            "p95_rank_index": 56,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          }
+        },
+        "vector_search_only_ms": {
+          "answerable_queries": {
+            "count": 54,
+            "mean": 4.42,
+            "median_p50": 2.53,
+            "p95": 25.06,
+            "min": 2.12,
+            "max": 48.89,
+            "p95_rank_index": 51,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          },
+          "all_queries": {
+            "count": 60,
+            "mean": 4.22,
+            "median_p50": 2.52,
+            "p95": 4.0,
+            "min": 2.07,
+            "max": 48.89,
+            "p95_rank_index": 56,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          }
+        }
+      },
+      "breakdowns": {
+        "by_repository": {
+          "pallets/flask": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.1667,
+            "hit_rate_at_3": 0.4444,
+            "hit_rate_at_5": 0.6111,
+            "precision_at_5": 0.1556,
+            "mrr_at_5": 0.3287,
+            "span_recall_at_5": 0.5278,
+            "ndcg_at_5": 0.2748,
+            "latency_ms": {
+              "mean": 16.29,
+              "median_p50": 13.57,
+              "p95": 63.34,
+              "max": 63.34
+            }
+          },
+          "expressjs/express": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.3333,
+            "hit_rate_at_3": 0.4444,
+            "hit_rate_at_5": 0.5,
+            "precision_at_5": 0.1556,
+            "mrr_at_5": 0.3907,
+            "span_recall_at_5": 0.4167,
+            "ndcg_at_5": 0.2319,
+            "latency_ms": {
+              "mean": 14.21,
+              "median_p50": 12.79,
+              "p95": 35.76,
+              "max": 35.76
+            }
+          },
+          "fmtlib/fmt": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.3889,
+            "hit_rate_at_3": 0.6667,
+            "hit_rate_at_5": 0.8333,
+            "precision_at_5": 0.2556,
+            "mrr_at_5": 0.5296,
+            "span_recall_at_5": 0.7778,
+            "ndcg_at_5": 0.552,
+            "latency_ms": {
+              "mean": 14.0,
+              "median_p50": 12.52,
+              "p95": 42.36,
+              "max": 42.36
+            }
+          }
+        },
+        "by_category": {
+          "architecture_flow": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.2,
+            "hit_rate_at_3": 0.6,
+            "hit_rate_at_5": 0.8,
+            "precision_at_5": 0.24,
+            "mrr_at_5": 0.4167,
+            "span_recall_at_5": 0.7,
+            "ndcg_at_5": 0.3578,
+            "latency_ms": {
+              "mean": 13.09,
+              "median_p50": 13.11,
+              "p95": 15.03,
+              "max": 15.03
+            }
+          },
+          "cross_file_dependencies": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.4,
+            "hit_rate_at_3": 0.6,
+            "hit_rate_at_5": 0.7,
+            "precision_at_5": 0.26,
+            "mrr_at_5": 0.5083,
+            "span_recall_at_5": 0.5,
+            "ndcg_at_5": 0.4041,
+            "latency_ms": {
+              "mean": 12.77,
+              "median_p50": 12.57,
+              "p95": 13.99,
+              "max": 13.99
+            }
+          },
+          "debugging_configuration": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.2,
+            "hit_rate_at_3": 0.4,
+            "hit_rate_at_5": 0.7,
+            "precision_at_5": 0.2,
+            "mrr_at_5": 0.365,
+            "span_recall_at_5": 0.65,
+            "ndcg_at_5": 0.3221,
+            "latency_ms": {
+              "mean": 12.24,
+              "median_p50": 12.24,
+              "p95": 13.05,
+              "max": 13.05
+            }
+          },
+          "function_identification": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.4167,
+            "hit_rate_at_3": 0.5833,
+            "hit_rate_at_5": 0.5833,
+            "precision_at_5": 0.1167,
+            "mrr_at_5": 0.4722,
+            "span_recall_at_5": 0.5417,
+            "ndcg_at_5": 0.4007,
+            "latency_ms": {
+              "mean": 21.7,
+              "median_p50": 13.69,
+              "p95": 63.34,
+              "max": 63.34
+            }
+          },
+          "implementation_understanding": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.25,
+            "hit_rate_at_3": 0.4167,
+            "hit_rate_at_5": 0.5,
+            "precision_at_5": 0.15,
+            "mrr_at_5": 0.3264,
+            "span_recall_at_5": 0.5,
+            "ndcg_at_5": 0.2839,
+            "latency_ms": {
+              "mean": 13.29,
+              "median_p50": 13.33,
+              "p95": 14.84,
+              "max": 14.84
+            }
+          }
+        },
+        "by_query_style": {
+          "conceptual": {
+            "query_count": 20,
+            "hit_rate_at_1": 0.2,
+            "hit_rate_at_3": 0.4,
+            "hit_rate_at_5": 0.6,
+            "precision_at_5": 0.18,
+            "mrr_at_5": 0.3333,
+            "span_recall_at_5": 0.525,
+            "ndcg_at_5": 0.2678,
+            "latency_ms": {
+              "mean": 12.68,
+              "median_p50": 12.62,
+              "p95": 13.77,
+              "max": 15.03
+            }
+          },
+          "conversational": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.1667,
+            "hit_rate_at_3": 0.3333,
+            "hit_rate_at_5": 0.5833,
+            "precision_at_5": 0.2,
+            "mrr_at_5": 0.2903,
+            "span_recall_at_5": 0.5,
+            "ndcg_at_5": 0.3,
+            "latency_ms": {
+              "mean": 12.91,
+              "median_p50": 12.81,
+              "p95": 14.78,
+              "max": 14.78
+            }
+          },
+          "identifier": {
+            "query_count": 22,
+            "hit_rate_at_1": 0.4545,
+            "hit_rate_at_3": 0.7273,
+            "hit_rate_at_5": 0.7273,
+            "precision_at_5": 0.1909,
+            "mrr_at_5": 0.5606,
+            "span_recall_at_5": 0.6591,
+            "ndcg_at_5": 0.4591,
+            "latency_ms": {
+              "mean": 17.84,
+              "median_p50": 13.57,
+              "p95": 42.36,
+              "max": 63.34
+            }
+          }
+        },
+        "by_evidence_spans": {
+          "single_evidence_queries": {
+            "query_count": 37,
+            "hit_rate_at_1": 0.2703,
+            "hit_rate_at_3": 0.4865,
+            "hit_rate_at_5": 0.6216,
+            "precision_at_5": 0.1676,
+            "mrr_at_5": 0.3928,
+            "span_recall_at_5": 0.6216,
+            "ndcg_at_5": 0.3432,
+            "latency_ms": {
+              "mean": 15.15,
+              "median_p50": 12.93,
+              "p95": 42.36,
+              "max": 63.34
+            }
+          },
+          "multi_evidence_queries": {
+            "query_count": 17,
+            "hit_rate_at_1": 0.3529,
+            "hit_rate_at_3": 0.5882,
+            "hit_rate_at_5": 0.7059,
+            "precision_at_5": 0.2353,
+            "mrr_at_5": 0.4676,
+            "span_recall_at_5": 0.4706,
+            "ndcg_at_5": 0.374,
+            "latency_ms": {
+              "mean": 14.14,
+              "median_p50": 12.63,
+              "p95": 35.76,
+              "max": 35.76
+            }
+          }
+        }
+      },
+      "top1_l2_distance_analysis": {
+        "distance_metric": "l2 (squared Euclidean distance on unit-normalized vectors)",
+        "answerable_questions_top1_l2": {
+          "count": 54,
+          "min": 0.178127,
+          "median": 0.249038,
+          "mean": 0.249203,
+          "max": 0.320864
+        },
+        "unanswerable_questions_top1_l2": {
+          "count": 6,
+          "min": 0.236004,
+          "median": 0.28345,
+          "mean": 0.292136,
+          "max": 0.353468
+        },
+        "answerable_questions_mean_top5_l2": {
+          "count": 54,
+          "min": 0.191126,
+          "median": 0.263275,
+          "mean": 0.266502,
+          "max": 0.330289
+        },
+        "unanswerable_questions_mean_top5_l2": {
+          "count": 6,
+          "min": 0.253209,
+          "median": 0.28932,
+          "mean": 0.301916,
+          "max": 0.371629
+        }
+      }
+    },
+    "E3_minilm_l12_v2": {
+      "experiment_metadata": {
+        "experiment_id": "E3_minilm_l12_v2",
+        "group": "E3",
+        "display_name": "E3: all-MiniLM-L12-v2 (12-layer MiniLM)",
+        "run_id": "d2_emb_20261125_082152",
+        "timestamp_utc": "2026-11-25T08:39:02.626693+00:00",
+        "status": "VALID_COMPLETED",
+        "model_identifier": "sentence-transformers/all-MiniLM-L12-v2",
+        "model_version": "hf_commit:a50ef00143b4",
+        "backend": "onnxruntime_direct",
+        "embedding_dimension": 384,
+        "pooling": "mean",
+        "max_seq_length": 128,
+        "padding_strategy": "dynamic_batch",
+        "normalize_embeddings": true,
+        "document_prefix": "",
+        "query_prefix": "",
+        "doc_vector_norm_verification": {
+          "min": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "query_vector_norm_verification": {
+          "min": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "top_k": 5,
+        "distance_metric": "l2 (squared Euclidean distance)",
+        "total_chunks": 4272,
+        "total_queries": 60,
+        "answerable_queries": 54,
+        "unanswerable_queries": 6,
+        "successful_queries": 60,
+        "failed_queries": 0,
+        "dedicated_collections": {
+          "pallets/flask": "d2_E3_minilm_l12_v2_flask_082152",
+          "expressjs/express": "d2_E3_minilm_l12_v2_express_082152",
+          "fmtlib/fmt": "d2_E3_minilm_l12_v2_fmt_082152"
+        },
+        "pinned_commit_verifications": {
+          "pallets/flask": {
+            "verified": true,
+            "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\flask\\.commit_sha"
+          },
+          "expressjs/express": {
+            "verified": true,
+            "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\express\\.commit_sha"
+          },
+          "fmtlib/fmt": {
+            "verified": true,
+            "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+            "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\fmt\\.commit_sha"
+          }
+        },
+        "dataset_fingerprints": {
+          "repositories.json_sha256": "b330bb45f3bec445d09834861d5831d045c5c154f6889744591db6d0b3baea56",
+          "evaluation_questions.json_sha256": "4667d86d27d216db0ad969c943ffc59e91914e792e0f51e8f499c33c383ec1f6",
+          "ground_truth.json_sha256": "8ef0f357905eaa43eb68b8fc35793581061dfa109d85c937e23b2e06aaba5b00",
+          "embedding_models.json_sha256": "38268b56fe46d5785a47c63cf4dea2816764453beffc279965a8b4bcaa7cd057"
+        },
+        "environment": {
+          "python": "3.14.7",
+          "os": "Windows-11-10.0.26300-SP0",
+          "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+          "cpu_logical_cores": 12,
+          "cpu_physical_cores": 6,
+          "total_ram_gb": 7.34,
+          "ort_providers": [
+            "AzureExecutionProvider",
+            "CPUExecutionProvider"
+          ],
+          "packages": {
+            "chromadb": "1.5.9",
+            "onnxruntime": "1.29.0",
+            "numpy": "2.5.2",
+            "psutil": "7.2.2"
+          },
+          "chunker_configuration": {
+            "max_lines": 100,
+            "sliding_window_size": 50,
+            "sliding_window_overlap": 10,
+            "parsers": "Python AST with regex and sliding-window fallback"
+          }
+        }
+      },
+      "indexing_summary_by_repo": {
+        "pallets/flask": {
+          "repository": "pallets/flask",
+          "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+          "collection_name": "d2_E3_minilm_l12_v2_flask_082152",
+          "chunks_count": 1785,
+          "batches_count": 56,
+          "document_embedding_duration_seconds": 48.2109,
+          "avg_embedding_ms_per_chunk": 27.009,
+          "truncated_chunks_count": 623,
+          "truncated_chunks_pct": 34.9,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 3.0021,
+          "total_indexing_duration_seconds": 51.213,
+          "reused_same_run_doc_vectors_from": null
+        },
+        "expressjs/express": {
+          "repository": "expressjs/express",
+          "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+          "collection_name": "d2_E3_minilm_l12_v2_express_082152",
+          "chunks_count": 2066,
+          "batches_count": 65,
+          "document_embedding_duration_seconds": 50.8401,
+          "avg_embedding_ms_per_chunk": 24.608,
+          "truncated_chunks_count": 462,
+          "truncated_chunks_pct": 22.36,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 3.0647,
+          "total_indexing_duration_seconds": 53.9048,
+          "reused_same_run_doc_vectors_from": null
+        },
+        "fmtlib/fmt": {
+          "repository": "fmtlib/fmt",
+          "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+          "collection_name": "d2_E3_minilm_l12_v2_fmt_082152",
+          "chunks_count": 421,
+          "batches_count": 14,
+          "document_embedding_duration_seconds": 18.6085,
+          "avg_embedding_ms_per_chunk": 44.201,
+          "truncated_chunks_count": 281,
+          "truncated_chunks_pct": 66.75,
+          "doc_vector_norm_stats": {
+            "min": 1.0,
+            "mean": 1.0,
+            "max": 1.0
+          },
+          "chroma_insertion_duration_seconds": 0.8156,
+          "total_indexing_duration_seconds": 19.4241,
+          "reused_same_run_doc_vectors_from": null
+        }
+      },
+      "performance_metrics": {
+        "model_file_size_mb": 126.96,
+        "cold_start_model_load_seconds": 0.6475,
+        "warmup_duration_seconds_excluded": 0.0647,
+        "document_embedding_duration_seconds": 117.6595,
+        "chroma_insertion_duration_seconds": 6.8824,
+        "total_indexing_duration_seconds": 124.5419,
+        "total_chunks_indexed": 4272,
+        "total_embedding_batches": 135,
+        "avg_doc_embedding_ms_per_chunk": 27.542,
+        "truncated_chunks_count": 1366,
+        "truncated_chunks_pct": 31.98,
+        "total_query_embedding_duration_seconds": 0.6368,
+        "total_vector_search_duration_seconds": 0.2646,
+        "total_retrieval_duration_seconds": 0.9014,
+        "total_experiment_execution_seconds": 126.7795,
+        "memory_rss_mb": {
+          "rss_before_load_mb": 148.45,
+          "rss_after_load_mb": 292.87,
+          "model_load_rss_delta_mb": 144.42,
+          "max_sampled_rss_during_eval_mb": 539.08
+        },
+        "reused_same_run_doc_vectors_from": null
+      },
+      "overall_retrieval_metrics": {
+        "query_count": 54,
+        "hit_rate_at_1": 0.2778,
+        "hit_rate_at_3": 0.4074,
+        "hit_rate_at_5": 0.4815,
+        "precision_at_5": 0.1185,
+        "mrr_at_5": 0.3509,
+        "span_recall_at_5": 0.3796,
+        "ndcg_at_5": 0.2679,
+        "latency_ms": {
+          "mean": 15.24,
+          "median_p50": 13.07,
+          "p95": 42.79,
+          "max": 64.89
+        }
+      },
+      "latency_summary": {
+        "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1",
+        "answerable_queries_latency_ms": {
+          "count": 54,
+          "mean": 15.24,
+          "median_p50": 13.07,
+          "p95": 42.79,
+          "min": 11.89,
+          "max": 64.89,
+          "p95_rank_index": 51,
+          "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+        },
+        "all_queries_latency_ms": {
+          "count": 60,
+          "mean": 15.02,
+          "median_p50": 13.07,
+          "p95": 14.89,
+          "min": 11.89,
+          "max": 64.89,
+          "p95_rank_index": 56,
+          "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+        },
+        "query_embedding_only_ms": {
+          "answerable_queries": {
+            "count": 54,
+            "mean": 10.62,
+            "median_p50": 10.48,
+            "p95": 12.3,
+            "min": 9.34,
+            "max": 13.79,
+            "p95_rank_index": 51,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          },
+          "all_queries": {
+            "count": 60,
+            "mean": 10.61,
+            "median_p50": 10.48,
+            "p95": 12.04,
+            "min": 9.34,
+            "max": 13.79,
+            "p95_rank_index": 56,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          }
+        },
+        "vector_search_only_ms": {
+          "answerable_queries": {
+            "count": 54,
+            "mean": 4.62,
+            "median_p50": 2.57,
+            "p95": 31.71,
+            "min": 2.09,
+            "max": 51.1,
+            "p95_rank_index": 51,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          },
+          "all_queries": {
+            "count": 60,
+            "mean": 4.41,
+            "median_p50": 2.56,
+            "p95": 3.17,
+            "min": 2.09,
+            "max": 51.1,
+            "p95_rank_index": 56,
+            "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+          }
+        }
+      },
+      "breakdowns": {
+        "by_repository": {
+          "pallets/flask": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.1667,
+            "hit_rate_at_3": 0.2778,
+            "hit_rate_at_5": 0.3889,
+            "precision_at_5": 0.1,
+            "mrr_at_5": 0.2407,
+            "span_recall_at_5": 0.3333,
+            "ndcg_at_5": 0.2025,
+            "latency_ms": {
+              "mean": 16.29,
+              "median_p50": 13.3,
+              "p95": 64.89,
+              "max": 64.89
+            }
+          },
+          "expressjs/express": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.2222,
+            "hit_rate_at_3": 0.2778,
+            "hit_rate_at_5": 0.3889,
+            "precision_at_5": 0.0778,
+            "mrr_at_5": 0.275,
+            "span_recall_at_5": 0.2222,
+            "ndcg_at_5": 0.1201,
+            "latency_ms": {
+              "mean": 14.62,
+              "median_p50": 12.75,
+              "p95": 42.79,
+              "max": 42.79
+            }
+          },
+          "fmtlib/fmt": {
+            "query_count": 18,
+            "hit_rate_at_1": 0.4444,
+            "hit_rate_at_3": 0.6667,
+            "hit_rate_at_5": 0.6667,
+            "precision_at_5": 0.1778,
+            "mrr_at_5": 0.537,
+            "span_recall_at_5": 0.5833,
+            "ndcg_at_5": 0.4812,
+            "latency_ms": {
+              "mean": 14.82,
+              "median_p50": 12.86,
+              "p95": 46.36,
+              "max": 46.36
+            }
+          }
+        },
+        "by_category": {
+          "architecture_flow": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.4,
+            "hit_rate_at_3": 0.5,
+            "hit_rate_at_5": 0.6,
+            "precision_at_5": 0.14,
+            "mrr_at_5": 0.4533,
+            "span_recall_at_5": 0.5,
+            "ndcg_at_5": 0.294,
+            "latency_ms": {
+              "mean": 13.22,
+              "median_p50": 13.13,
+              "p95": 14.54,
+              "max": 14.54
+            }
+          },
+          "cross_file_dependencies": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.2,
+            "hit_rate_at_3": 0.6,
+            "hit_rate_at_5": 0.7,
+            "precision_at_5": 0.18,
+            "mrr_at_5": 0.425,
+            "span_recall_at_5": 0.35,
+            "ndcg_at_5": 0.2619,
+            "latency_ms": {
+              "mean": 13.37,
+              "median_p50": 13.12,
+              "p95": 14.89,
+              "max": 14.89
+            }
+          },
+          "debugging_configuration": {
+            "query_count": 10,
+            "hit_rate_at_1": 0.2,
+            "hit_rate_at_3": 0.3,
+            "hit_rate_at_5": 0.4,
+            "precision_at_5": 0.12,
+            "mrr_at_5": 0.2583,
+            "span_recall_at_5": 0.35,
+            "ndcg_at_5": 0.1851,
+            "latency_ms": {
+              "mean": 12.58,
+              "median_p50": 12.55,
+              "p95": 13.76,
+              "max": 13.76
+            }
+          },
+          "function_identification": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.4167,
+            "hit_rate_at_3": 0.5,
+            "hit_rate_at_5": 0.5,
+            "precision_at_5": 0.1,
+            "mrr_at_5": 0.4444,
+            "span_recall_at_5": 0.4583,
+            "ndcg_at_5": 0.4141,
+            "latency_ms": {
+              "mean": 22.93,
+              "median_p50": 13.96,
+              "p95": 64.89,
+              "max": 64.89
+            }
+          },
+          "implementation_understanding": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.1667,
+            "hit_rate_at_3": 0.1667,
+            "hit_rate_at_5": 0.25,
+            "precision_at_5": 0.0667,
+            "mrr_at_5": 0.1875,
+            "span_recall_at_5": 0.25,
+            "ndcg_at_5": 0.174,
+            "latency_ms": {
+              "mean": 13.02,
+              "median_p50": 12.91,
+              "p95": 13.8,
+              "max": 13.8
+            }
+          }
+        },
+        "by_query_style": {
+          "conceptual": {
+            "query_count": 20,
+            "hit_rate_at_1": 0.15,
+            "hit_rate_at_3": 0.15,
+            "hit_rate_at_5": 0.2,
+            "precision_at_5": 0.04,
+            "mrr_at_5": 0.1625,
+            "span_recall_at_5": 0.15,
+            "ndcg_at_5": 0.1049,
+            "latency_ms": {
+              "mean": 13.09,
+              "median_p50": 12.95,
+              "p95": 14.54,
+              "max": 14.84
+            }
+          },
+          "conversational": {
+            "query_count": 12,
+            "hit_rate_at_1": 0.25,
+            "hit_rate_at_3": 0.5833,
+            "hit_rate_at_5": 0.6667,
+            "precision_at_5": 0.2,
+            "mrr_at_5": 0.4236,
+            "span_recall_at_5": 0.4583,
+            "ndcg_at_5": 0.2964,
+            "latency_ms": {
+              "mean": 12.91,
+              "median_p50": 12.87,
+              "p95": 13.95,
+              "max": 13.95
+            }
+          },
+          "identifier": {
+            "query_count": 22,
+            "hit_rate_at_1": 0.4091,
+            "hit_rate_at_3": 0.5455,
+            "hit_rate_at_5": 0.6364,
+            "precision_at_5": 0.1455,
+            "mrr_at_5": 0.4826,
+            "span_recall_at_5": 0.5455,
+            "ndcg_at_5": 0.4006,
+            "latency_ms": {
+              "mean": 18.47,
+              "median_p50": 13.37,
+              "p95": 46.36,
+              "max": 64.89
+            }
+          }
+        },
+        "by_evidence_spans": {
+          "single_evidence_queries": {
+            "query_count": 37,
+            "hit_rate_at_1": 0.2162,
+            "hit_rate_at_3": 0.2703,
+            "hit_rate_at_5": 0.3514,
+            "precision_at_5": 0.0865,
+            "mrr_at_5": 0.2532,
+            "span_recall_at_5": 0.3514,
+            "ndcg_at_5": 0.2404,
+            "latency_ms": {
+              "mean": 15.41,
+              "median_p50": 13.09,
+              "p95": 46.36,
+              "max": 64.89
+            }
+          },
+          "multi_evidence_queries": {
+            "query_count": 17,
+            "hit_rate_at_1": 0.4118,
+            "hit_rate_at_3": 0.7059,
+            "hit_rate_at_5": 0.7647,
+            "precision_at_5": 0.1882,
+            "mrr_at_5": 0.5637,
+            "span_recall_at_5": 0.4412,
+            "ndcg_at_5": 0.3278,
+            "latency_ms": {
+              "mean": 14.88,
+              "median_p50": 12.88,
+              "p95": 42.79,
+              "max": 42.79
+            }
+          }
+        }
+      },
+      "top1_l2_distance_analysis": {
+        "distance_metric": "l2 (squared Euclidean distance on unit-normalized vectors)",
+        "answerable_questions_top1_l2": {
+          "count": 54,
+          "min": 0.406996,
+          "median": 0.823864,
+          "mean": 0.817046,
+          "max": 1.34667
+        },
+        "unanswerable_questions_top1_l2": {
+          "count": 6,
+          "min": 0.876833,
+          "median": 1.108517,
+          "mean": 1.104854,
+          "max": 1.334074
+        },
+        "answerable_questions_mean_top5_l2": {
+          "count": 54,
+          "min": 0.456068,
+          "median": 0.945161,
+          "mean": 0.927878,
+          "max": 1.439079
+        },
+        "unanswerable_questions_mean_top5_l2": {
+          "count": 6,
+          "min": 1.005966,
+          "median": 1.1377,
+          "mean": 1.180903,
+          "max": 1.48952
+        }
+      }
+    }
+  },
+  "error_analysis": {
+    "baseline_experiment_id": "E0_v0_minilm_l6_v2",
+    "transitions_vs_baseline": {
+      "E1a_bge_small_en_v15_no_prefix": {
+        "solved_by_model_missed_by_v0_count": 6,
+        "solved_by_model_missed_by_v0": [
+          {
+            "question_id": "flask_007",
+            "repository": "pallets/flask",
+            "category": "implementation_understanding",
+            "query_style": "identifier",
+            "question": "How does dispatch_request in Flask execute the endpoint matched from the active request URL?",
+            "v0_first_rank": null,
+            "model_first_rank": 3,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "flask_016",
+            "repository": "pallets/flask",
+            "category": "implementation_understanding",
+            "query_style": "identifier",
+            "question": "How does Config.from_object in Flask inspect and load configuration values from a Python module or class?",
+            "v0_first_rank": null,
+            "model_first_rank": 3,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "express_001",
+            "repository": "expressjs/express",
+            "category": "function_identification",
+            "query_style": "identifier",
+            "question": "Where is createApplication defined in Express and how does it mix in EventEmitter and the application prototype?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 0.5
+          },
+          {
+            "question_id": "fmt_002",
+            "repository": "fmtlib/fmt",
+            "category": "implementation_understanding",
+            "query_style": "conversational",
+            "question": "How does the styled helper function apply that style to an argument value for formatted output?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "fmt_004",
+            "repository": "fmtlib/fmt",
+            "category": "function_identification",
+            "query_style": "conceptual",
+            "question": "How does fmt construct dynamic argument lists when format arguments are not known at compile time?",
+            "v0_first_rank": null,
+            "model_first_rank": 2,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "fmt_013",
+            "repository": "fmtlib/fmt",
+            "category": "debugging_configuration",
+            "query_style": "conceptual",
+            "question": "How does fmt parse and format time durations with unit suffixes like seconds and milliseconds?",
+            "v0_first_rank": null,
+            "model_first_rank": 3,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          }
+        ],
+        "regressed_by_model_solved_by_v0_count": 9,
+        "regressed_by_model_solved_by_v0": [
+          {
+            "question_id": "flask_001",
+            "repository": "pallets/flask",
+            "category": "function_identification",
+            "query_style": "identifier",
+            "question": "Where is the Flask application class defined and what parameters does its __init__ constructor accept?",
+            "v0_first_rank": 5,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "flask_015",
+            "repository": "pallets/flask",
+            "category": "architecture_flow",
+            "query_style": "conceptual",
+            "question": "How does Flask coerce different controller return types such as strings, dictionaries, and tuples into WSGI responses?",
+            "v0_first_rank": 5,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_002",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conversational",
+            "question": "How does that created application set up its default configuration settings like etag, env, and query parser?",
+            "v0_first_rank": 4,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_008",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conceptual",
+            "question": "How does Express stream static files from disk to the client while handling range headers and transmission errors?",
+            "v0_first_rank": 2,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_010",
+            "repository": "expressjs/express",
+            "category": "architecture_flow",
+            "query_style": "conversational",
+            "question": "Walk through the dispatch lifecycle when a request first enters that application handler before response generation.",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_011",
+            "repository": "expressjs/express",
+            "category": "cross_file_dependencies",
+            "query_style": "conceptual",
+            "question": "How does the template rendering coordinator locate view files on disk and invoke the underlying view renderer?",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_014",
+            "repository": "expressjs/express",
+            "category": "debugging_configuration",
+            "query_style": "conversational",
+            "question": "How does it compile and apply proxy settings to resolve client IP addresses for those routes?",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_016",
+            "repository": "expressjs/express",
+            "category": "cross_file_dependencies",
+            "query_style": "conceptual",
+            "question": "How does Express determine client IP addresses through proxy hops based on default configuration settings?",
+            "v0_first_rank": 3,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "fmt_014",
+            "repository": "fmtlib/fmt",
+            "category": "debugging_configuration",
+            "query_style": "conversational",
+            "question": "How can that formatting syntax be parsed at compile time using macros?",
+            "v0_first_rank": 4,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          }
+        ],
+        "both_hit_count": 27,
+        "both_miss_count": 12
+      },
+      "E1b_bge_small_en_v15_instruct": {
+        "solved_by_model_missed_by_v0_count": 7,
+        "solved_by_model_missed_by_v0": [
+          {
+            "question_id": "flask_007",
+            "repository": "pallets/flask",
+            "category": "implementation_understanding",
+            "query_style": "identifier",
+            "question": "How does dispatch_request in Flask execute the endpoint matched from the active request URL?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "flask_016",
+            "repository": "pallets/flask",
+            "category": "implementation_understanding",
+            "query_style": "identifier",
+            "question": "How does Config.from_object in Flask inspect and load configuration values from a Python module or class?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "express_001",
+            "repository": "expressjs/express",
+            "category": "function_identification",
+            "query_style": "identifier",
+            "question": "Where is createApplication defined in Express and how does it mix in EventEmitter and the application prototype?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 0.5
+          },
+          {
+            "question_id": "express_013",
+            "repository": "expressjs/express",
+            "category": "architecture_flow",
+            "query_style": "identifier",
+            "question": "How does Express handle HTTP method routing when methods like app.get, app.post, and app.all are invoked?",
+            "v0_first_rank": null,
+            "model_first_rank": 3,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "fmt_002",
+            "repository": "fmtlib/fmt",
+            "category": "implementation_understanding",
+            "query_style": "conversational",
+            "question": "How does the styled helper function apply that style to an argument value for formatted output?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "fmt_004",
+            "repository": "fmtlib/fmt",
+            "category": "function_identification",
+            "query_style": "conceptual",
+            "question": "How does fmt construct dynamic argument lists when format arguments are not known at compile time?",
+            "v0_first_rank": null,
+            "model_first_rank": 2,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "fmt_013",
+            "repository": "fmtlib/fmt",
+            "category": "debugging_configuration",
+            "query_style": "conceptual",
+            "question": "How does fmt parse and format time durations with unit suffixes like seconds and milliseconds?",
+            "v0_first_rank": null,
+            "model_first_rank": 5,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          }
+        ],
+        "regressed_by_model_solved_by_v0_count": 9,
+        "regressed_by_model_solved_by_v0": [
+          {
+            "question_id": "flask_015",
+            "repository": "pallets/flask",
+            "category": "architecture_flow",
+            "query_style": "conceptual",
+            "question": "How does Flask coerce different controller return types such as strings, dictionaries, and tuples into WSGI responses?",
+            "v0_first_rank": 5,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_002",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conversational",
+            "question": "How does that created application set up its default configuration settings like etag, env, and query parser?",
+            "v0_first_rank": 4,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_008",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conceptual",
+            "question": "How does Express stream static files from disk to the client while handling range headers and transmission errors?",
+            "v0_first_rank": 2,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_010",
+            "repository": "expressjs/express",
+            "category": "architecture_flow",
+            "query_style": "conversational",
+            "question": "Walk through the dispatch lifecycle when a request first enters that application handler before response generation.",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_011",
+            "repository": "expressjs/express",
+            "category": "cross_file_dependencies",
+            "query_style": "conceptual",
+            "question": "How does the template rendering coordinator locate view files on disk and invoke the underlying view renderer?",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_014",
+            "repository": "expressjs/express",
+            "category": "debugging_configuration",
+            "query_style": "conversational",
+            "question": "How does it compile and apply proxy settings to resolve client IP addresses for those routes?",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_016",
+            "repository": "expressjs/express",
+            "category": "cross_file_dependencies",
+            "query_style": "conceptual",
+            "question": "How does Express determine client IP addresses through proxy hops based on default configuration settings?",
+            "v0_first_rank": 3,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "fmt_014",
+            "repository": "fmtlib/fmt",
+            "category": "debugging_configuration",
+            "query_style": "conversational",
+            "question": "How can that formatting syntax be parsed at compile time using macros?",
+            "v0_first_rank": 4,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "fmt_016",
+            "repository": "fmtlib/fmt",
+            "category": "implementation_understanding",
+            "query_style": "conceptual",
+            "question": "How does fmt convert C++ enum values to their numeric representations during formatting?",
+            "v0_first_rank": 2,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          }
+        ],
+        "both_hit_count": 27,
+        "both_miss_count": 11
+      },
+      "E2_e5_small_v2": {
+        "solved_by_model_missed_by_v0_count": 8,
+        "solved_by_model_missed_by_v0": [
+          {
+            "question_id": "flask_002",
+            "repository": "pallets/flask",
+            "category": "implementation_understanding",
+            "query_style": "conversational",
+            "question": "How does it configure default configuration settings during that initialization process?",
+            "v0_first_rank": null,
+            "model_first_rank": 4,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "flask_007",
+            "repository": "pallets/flask",
+            "category": "implementation_understanding",
+            "query_style": "identifier",
+            "question": "How does dispatch_request in Flask execute the endpoint matched from the active request URL?",
+            "v0_first_rank": null,
+            "model_first_rank": 3,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "express_001",
+            "repository": "expressjs/express",
+            "category": "function_identification",
+            "query_style": "identifier",
+            "question": "Where is createApplication defined in Express and how does it mix in EventEmitter and the application prototype?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 0.5
+          },
+          {
+            "question_id": "express_013",
+            "repository": "expressjs/express",
+            "category": "architecture_flow",
+            "query_style": "identifier",
+            "question": "How does Express handle HTTP method routing when methods like app.get, app.post, and app.all are invoked?",
+            "v0_first_rank": null,
+            "model_first_rank": 2,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "express_017",
+            "repository": "expressjs/express",
+            "category": "function_identification",
+            "query_style": "identifier",
+            "question": "Where is res.cookie defined and how does it serialize cookies and apply options like maxAge and signed?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "express_018",
+            "repository": "expressjs/express",
+            "category": "debugging_configuration",
+            "query_style": "conceptual",
+            "question": "How does Express register custom template engines to render non-standard file extensions?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "fmt_002",
+            "repository": "fmtlib/fmt",
+            "category": "implementation_understanding",
+            "query_style": "conversational",
+            "question": "How does the styled helper function apply that style to an argument value for formatted output?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "fmt_013",
+            "repository": "fmtlib/fmt",
+            "category": "debugging_configuration",
+            "query_style": "conceptual",
+            "question": "How does fmt parse and format time durations with unit suffixes like seconds and milliseconds?",
+            "v0_first_rank": null,
+            "model_first_rank": 4,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          }
+        ],
+        "regressed_by_model_solved_by_v0_count": 9,
+        "regressed_by_model_solved_by_v0": [
+          {
+            "question_id": "flask_001",
+            "repository": "pallets/flask",
+            "category": "function_identification",
+            "query_style": "identifier",
+            "question": "Where is the Flask application class defined and what parameters does its __init__ constructor accept?",
+            "v0_first_rank": 5,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "flask_006",
+            "repository": "pallets/flask",
+            "category": "cross_file_dependencies",
+            "query_style": "conversational",
+            "question": "How does that method configure those routing rules and delegate to the underlying routing Map?",
+            "v0_first_rank": 2,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "flask_009",
+            "repository": "pallets/flask",
+            "category": "architecture_flow",
+            "query_style": "conversational",
+            "question": "Walk through what happens inside the application entrypoint when an incoming request is pushed through those contexts.",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_002",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conversational",
+            "question": "How does that created application set up its default configuration settings like etag, env, and query parser?",
+            "v0_first_rank": 4,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_006",
+            "repository": "expressjs/express",
+            "category": "cross_file_dependencies",
+            "query_style": "conversational",
+            "question": "How does that instance lazily initialize its underlying router with case-sensitive and strict routing settings?",
+            "v0_first_rank": 3,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_007",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conceptual",
+            "question": "How does the framework serialize objects, apply indentation settings, and send formatted JSON responses?",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_008",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conceptual",
+            "question": "How does Express stream static files from disk to the client while handling range headers and transmission errors?",
+            "v0_first_rank": 2,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_009",
+            "repository": "expressjs/express",
+            "category": "cross_file_dependencies",
+            "query_style": "conceptual",
+            "question": "How does the response transmission mechanism calculate and set entity tags using utility hashing generators?",
+            "v0_first_rank": 2,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_010",
+            "repository": "expressjs/express",
+            "category": "architecture_flow",
+            "query_style": "conversational",
+            "question": "Walk through the dispatch lifecycle when a request first enters that application handler before response generation.",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          }
+        ],
+        "both_hit_count": 27,
+        "both_miss_count": 10
+      },
+      "E3_minilm_l12_v2": {
+        "solved_by_model_missed_by_v0_count": 4,
+        "solved_by_model_missed_by_v0": [
+          {
+            "question_id": "flask_007",
+            "repository": "pallets/flask",
+            "category": "implementation_understanding",
+            "query_style": "identifier",
+            "question": "How does dispatch_request in Flask execute the endpoint matched from the active request URL?",
+            "v0_first_rank": null,
+            "model_first_rank": 4,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "express_001",
+            "repository": "expressjs/express",
+            "category": "function_identification",
+            "query_style": "identifier",
+            "question": "Where is createApplication defined in Express and how does it mix in EventEmitter and the application prototype?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 0.5
+          },
+          {
+            "question_id": "express_013",
+            "repository": "expressjs/express",
+            "category": "architecture_flow",
+            "query_style": "identifier",
+            "question": "How does Express handle HTTP method routing when methods like app.get, app.post, and app.all are invoked?",
+            "v0_first_rank": null,
+            "model_first_rank": 5,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          },
+          {
+            "question_id": "fmt_002",
+            "repository": "fmtlib/fmt",
+            "category": "implementation_understanding",
+            "query_style": "conversational",
+            "question": "How does the styled helper function apply that style to an argument value for formatted output?",
+            "v0_first_rank": null,
+            "model_first_rank": 1,
+            "v0_span_recall": 0.0,
+            "model_span_recall": 1.0
+          }
+        ],
+        "regressed_by_model_solved_by_v0_count": 14,
+        "regressed_by_model_solved_by_v0": [
+          {
+            "question_id": "flask_004",
+            "repository": "pallets/flask",
+            "category": "function_identification",
+            "query_style": "identifier",
+            "question": "Where is the url_for helper function defined and how does it generate URLs from endpoints?",
+            "v0_first_rank": 3,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "flask_008",
+            "repository": "pallets/flask",
+            "category": "cross_file_dependencies",
+            "query_style": "conceptual",
+            "question": "How does the framework isolate request and application state across threads and push contexts onto the active stack?",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "flask_009",
+            "repository": "pallets/flask",
+            "category": "architecture_flow",
+            "query_style": "conversational",
+            "question": "Walk through what happens inside the application entrypoint when an incoming request is pushed through those contexts.",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "flask_011",
+            "repository": "pallets/flask",
+            "category": "cross_file_dependencies",
+            "query_style": "conceptual",
+            "question": "How do modular blueprints record deferred route handlers and apply them to the main application during registration?",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "flask_012",
+            "repository": "pallets/flask",
+            "category": "architecture_flow",
+            "query_style": "conceptual",
+            "question": "How does Flask handle unhandled server exceptions and transform them into HTTP 500 error responses?",
+            "v0_first_rank": 2,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "flask_015",
+            "repository": "pallets/flask",
+            "category": "architecture_flow",
+            "query_style": "conceptual",
+            "question": "How does Flask coerce different controller return types such as strings, dictionaries, and tuples into WSGI responses?",
+            "v0_first_rank": 5,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_002",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conversational",
+            "question": "How does that created application set up its default configuration settings like etag, env, and query parser?",
+            "v0_first_rank": 4,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_005",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conceptual",
+            "question": "How does Express register middleware and mount nested sub-applications under a specific route prefix?",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_007",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conceptual",
+            "question": "How does the framework serialize objects, apply indentation settings, and send formatted JSON responses?",
+            "v0_first_rank": 1,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_008",
+            "repository": "expressjs/express",
+            "category": "implementation_understanding",
+            "query_style": "conceptual",
+            "question": "How does Express stream static files from disk to the client while handling range headers and transmission errors?",
+            "v0_first_rank": 2,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_012",
+            "repository": "expressjs/express",
+            "category": "architecture_flow",
+            "query_style": "identifier",
+            "question": "How does res.render render a view and send the rendered HTML response back to the client?",
+            "v0_first_rank": 4,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "express_016",
+            "repository": "expressjs/express",
+            "category": "cross_file_dependencies",
+            "query_style": "conceptual",
+            "question": "How does Express determine client IP addresses through proxy hops based on default configuration settings?",
+            "v0_first_rank": 3,
+            "model_first_rank": null,
+            "v0_span_recall": 0.5,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "fmt_014",
+            "repository": "fmtlib/fmt",
+            "category": "debugging_configuration",
+            "query_style": "conversational",
+            "question": "How can that formatting syntax be parsed at compile time using macros?",
+            "v0_first_rank": 4,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          },
+          {
+            "question_id": "fmt_016",
+            "repository": "fmtlib/fmt",
+            "category": "implementation_understanding",
+            "query_style": "conceptual",
+            "question": "How does fmt convert C++ enum values to their numeric representations during formatting?",
+            "v0_first_rank": 2,
+            "model_first_rank": null,
+            "v0_span_recall": 1.0,
+            "model_span_recall": 0.0
+          }
+        ],
+        "both_hit_count": 22,
+        "both_miss_count": 14
+      }
+    },
+    "missed_by_all_models_count": 8,
+    "missed_by_all_models": [
+      {
+        "question_id": "flask_005",
+        "repository": "pallets/flask",
+        "category": "implementation_understanding",
+        "query_style": "identifier",
+        "question": "How does Flask's route decorator register an endpoint and view function onto the application?"
+      },
+      {
+        "question_id": "flask_017",
+        "repository": "pallets/flask",
+        "category": "debugging_configuration",
+        "query_style": "conceptual",
+        "question": "How does Flask bind Click command-line interface commands to an active application environment?"
+      },
+      {
+        "question_id": "flask_018",
+        "repository": "pallets/flask",
+        "category": "debugging_configuration",
+        "query_style": "conceptual",
+        "question": "How does Flask pass temporary one-off notification messages between redirected requests?"
+      },
+      {
+        "question_id": "express_003",
+        "repository": "expressjs/express",
+        "category": "function_identification",
+        "query_style": "identifier",
+        "question": "Where is the View constructor defined in Express and what properties does it store?"
+      },
+      {
+        "question_id": "express_004",
+        "repository": "expressjs/express",
+        "category": "function_identification",
+        "query_style": "identifier",
+        "question": "Where is the req.get (or req.header) method defined and how does it retrieve HTTP request headers?"
+      },
+      {
+        "question_id": "express_015",
+        "repository": "expressjs/express",
+        "category": "debugging_configuration",
+        "query_style": "conceptual",
+        "question": "How does Express calculate weak and strong entity tags for caching HTTP responses?"
+      },
+      {
+        "question_id": "fmt_003",
+        "repository": "fmtlib/fmt",
+        "category": "function_identification",
+        "query_style": "conceptual",
+        "question": "How does the format library provide RAII management for C-style file streams?"
+      },
+      {
+        "question_id": "fmt_005",
+        "repository": "fmtlib/fmt",
+        "category": "implementation_understanding",
+        "query_style": "identifier",
+        "question": "How does fmt detect whether a type satisfies range requirements via the is_range trait?"
+      }
+    ]
+  }
+}

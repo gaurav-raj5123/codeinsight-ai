@@ -1,0 +1,505 @@
+{
+  "experiment_metadata": {
+    "experiment_id": "E0_v0_minilm_l6_v2",
+    "group": "E0",
+    "display_name": "V0 Baseline: all-MiniLM-L6-v2 (Chroma ONNX)",
+    "run_id": "d2_emb_20261125_082152",
+    "timestamp_utc": "2026-11-25T08:27:01.918342+00:00",
+    "status": "VALID_COMPLETED",
+    "model_identifier": "all-MiniLM-L6-v2",
+    "model_version": "chroma_onnx_sha256:913d7300ceae",
+    "backend": "onnxruntime_direct_v0_chroma_weights",
+    "embedding_dimension": 384,
+    "pooling": "mean",
+    "max_seq_length": 256,
+    "padding_strategy": "fixed_256",
+    "normalize_embeddings": true,
+    "document_prefix": "",
+    "query_prefix": "",
+    "doc_vector_norm_verification": {
+      "min": 1.0,
+      "mean": 1.0,
+      "max": 1.0
+    },
+    "query_vector_norm_verification": {
+      "min": 1.0,
+      "mean": 1.0,
+      "max": 1.0
+    },
+    "top_k": 5,
+    "distance_metric": "l2 (squared Euclidean distance)",
+    "total_chunks": 4272,
+    "total_queries": 60,
+    "answerable_queries": 54,
+    "unanswerable_queries": 6,
+    "successful_queries": 60,
+    "failed_queries": 0,
+    "dedicated_collections": {
+      "pallets/flask": "d2_E0_v0_minilm_l6_v2_flask_082152",
+      "expressjs/express": "d2_E0_v0_minilm_l6_v2_express_082152",
+      "fmtlib/fmt": "d2_E0_v0_minilm_l6_v2_fmt_082152"
+    },
+    "pinned_commit_verifications": {
+      "pallets/flask": {
+        "verified": true,
+        "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\flask\\.commit_sha"
+      },
+      "expressjs/express": {
+        "verified": true,
+        "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\express\\.commit_sha"
+      },
+      "fmtlib/fmt": {
+        "verified": true,
+        "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+        "marker_path": "C:\\Users\\gaura\\Downloads\\RAG PROJECT\\experiments\\datasets\\cache\\fmt\\.commit_sha"
+      }
+    },
+    "dataset_fingerprints": {
+      "repositories.json_sha256": "b330bb45f3bec445d09834861d5831d045c5c154f6889744591db6d0b3baea56",
+      "evaluation_questions.json_sha256": "4667d86d27d216db0ad969c943ffc59e91914e792e0f51e8f499c33c383ec1f6",
+      "ground_truth.json_sha256": "8ef0f357905eaa43eb68b8fc35793581061dfa109d85c937e23b2e06aaba5b00",
+      "embedding_models.json_sha256": "38268b56fe46d5785a47c63cf4dea2816764453beffc279965a8b4bcaa7cd057"
+    },
+    "environment": {
+      "python": "3.14.7",
+      "os": "Windows-11-10.0.26300-SP0",
+      "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+      "cpu_logical_cores": 12,
+      "cpu_physical_cores": 6,
+      "total_ram_gb": 7.34,
+      "ort_providers": [
+        "AzureExecutionProvider",
+        "CPUExecutionProvider"
+      ],
+      "packages": {
+        "chromadb": "1.5.9",
+        "onnxruntime": "1.29.0",
+        "numpy": "2.5.2",
+        "psutil": "7.2.2"
+      },
+      "chunker_configuration": {
+        "max_lines": 100,
+        "sliding_window_size": 50,
+        "sliding_window_overlap": 10,
+        "parsers": "Python AST with regex and sliding-window fallback"
+      }
+    }
+  },
+  "indexing_summary_by_repo": {
+    "pallets/flask": {
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "collection_name": "d2_E0_v0_minilm_l6_v2_flask_082152",
+      "chunks_count": 1785,
+      "batches_count": 56,
+      "document_embedding_duration_seconds": 139.9818,
+      "avg_embedding_ms_per_chunk": 78.421,
+      "truncated_chunks_count": 345,
+      "truncated_chunks_pct": 19.33,
+      "doc_vector_norm_stats": {
+        "min": 1.0,
+        "mean": 1.0,
+        "max": 1.0
+      },
+      "chroma_insertion_duration_seconds": 1.9941,
+      "total_indexing_duration_seconds": 141.9759,
+      "reused_same_run_doc_vectors_from": null
+    },
+    "expressjs/express": {
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "collection_name": "d2_E0_v0_minilm_l6_v2_express_082152",
+      "chunks_count": 2066,
+      "batches_count": 65,
+      "document_embedding_duration_seconds": 131.1403,
+      "avg_embedding_ms_per_chunk": 63.475,
+      "truncated_chunks_count": 68,
+      "truncated_chunks_pct": 3.29,
+      "doc_vector_norm_stats": {
+        "min": 1.0,
+        "mean": 1.0,
+        "max": 1.0
+      },
+      "chroma_insertion_duration_seconds": 2.1602,
+      "total_indexing_duration_seconds": 133.3005,
+      "reused_same_run_doc_vectors_from": null
+    },
+    "fmtlib/fmt": {
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "collection_name": "d2_E0_v0_minilm_l6_v2_fmt_082152",
+      "chunks_count": 421,
+      "batches_count": 14,
+      "document_embedding_duration_seconds": 28.9152,
+      "avg_embedding_ms_per_chunk": 68.682,
+      "truncated_chunks_count": 211,
+      "truncated_chunks_pct": 50.12,
+      "doc_vector_norm_stats": {
+        "min": 1.0,
+        "mean": 1.0,
+        "max": 1.0
+      },
+      "chroma_insertion_duration_seconds": 0.5904,
+      "total_indexing_duration_seconds": 29.5056,
+      "reused_same_run_doc_vectors_from": null
+    }
+  },
+  "performance_metrics": {
+    "model_file_size_mb": 86.2,
+    "cold_start_model_load_seconds": 0.3383,
+    "warmup_duration_seconds_excluded": 0.2466,
+    "document_embedding_duration_seconds": 300.0373,
+    "chroma_insertion_duration_seconds": 4.7447,
+    "total_indexing_duration_seconds": 304.782,
+    "total_chunks_indexed": 4272,
+    "total_embedding_batches": 135,
+    "avg_doc_embedding_ms_per_chunk": 70.233,
+    "truncated_chunks_count": 624,
+    "truncated_chunks_pct": 14.61,
+    "total_query_embedding_duration_seconds": 1.7918,
+    "total_vector_search_duration_seconds": 0.2182,
+    "total_retrieval_duration_seconds": 2.01,
+    "total_experiment_execution_seconds": 308.181,
+    "memory_rss_mb": {
+      "rss_before_load_mb": 124.8,
+      "rss_after_load_mb": 233.25,
+      "model_load_rss_delta_mb": 108.45,
+      "max_sampled_rss_during_eval_mb": 625.64
+    },
+    "reused_same_run_doc_vectors_from": null
+  },
+  "overall_retrieval_metrics": {
+    "query_count": 54,
+    "hit_rate_at_1": 0.3148,
+    "hit_rate_at_3": 0.5741,
+    "hit_rate_at_5": 0.6667,
+    "precision_at_5": 0.1815,
+    "mrr_at_5": 0.4534,
+    "span_recall_at_5": 0.5556,
+    "ndcg_at_5": 0.3339,
+    "latency_ms": {
+      "mean": 33.31,
+      "median_p50": 32.27,
+      "p95": 41.57,
+      "max": 73.2
+    }
+  },
+  "latency_summary": {
+    "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1",
+    "answerable_queries_latency_ms": {
+      "count": 54,
+      "mean": 33.31,
+      "median_p50": 32.27,
+      "p95": 41.57,
+      "min": 28.33,
+      "max": 73.2,
+      "p95_rank_index": 51,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "all_queries_latency_ms": {
+      "count": 60,
+      "mean": 33.5,
+      "median_p50": 32.34,
+      "p95": 42.16,
+      "min": 28.33,
+      "max": 73.2,
+      "p95_rank_index": 56,
+      "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+    },
+    "query_embedding_only_ms": {
+      "answerable_queries": {
+        "count": 54,
+        "mean": 29.59,
+        "median_p50": 29.46,
+        "p95": 36.09,
+        "min": 20.61,
+        "max": 39.85,
+        "p95_rank_index": 51,
+        "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+      },
+      "all_queries": {
+        "count": 60,
+        "mean": 29.86,
+        "median_p50": 29.51,
+        "p95": 38.56,
+        "min": 20.61,
+        "max": 39.85,
+        "p95_rank_index": 56,
+        "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+      }
+    },
+    "vector_search_only_ms": {
+      "answerable_queries": {
+        "count": 54,
+        "mean": 3.72,
+        "median_p50": 2.62,
+        "p95": 9.34,
+        "min": 2.07,
+        "max": 34.64,
+        "p95_rank_index": 51,
+        "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+      },
+      "all_queries": {
+        "count": 60,
+        "mean": 3.64,
+        "median_p50": 2.66,
+        "p95": 3.99,
+        "min": 2.07,
+        "max": 34.64,
+        "p95_rank_index": 56,
+        "p95_convention": "nearest rank index math.ceil(0.95 * n) - 1"
+      }
+    }
+  },
+  "breakdowns": {
+    "by_repository": {
+      "pallets/flask": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.2778,
+        "hit_rate_at_3": 0.5556,
+        "hit_rate_at_5": 0.6667,
+        "precision_at_5": 0.2222,
+        "mrr_at_5": 0.4204,
+        "span_recall_at_5": 0.5556,
+        "ndcg_at_5": 0.3323,
+        "latency_ms": {
+          "mean": 35.61,
+          "median_p50": 32.67,
+          "p95": 73.2,
+          "max": 73.2
+        }
+      },
+      "expressjs/express": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.2778,
+        "hit_rate_at_3": 0.5,
+        "hit_rate_at_5": 0.6111,
+        "precision_at_5": 0.1444,
+        "mrr_at_5": 0.3981,
+        "span_recall_at_5": 0.4722,
+        "ndcg_at_5": 0.208,
+        "latency_ms": {
+          "mean": 31.91,
+          "median_p50": 30.09,
+          "p95": 38.9,
+          "max": 38.9
+        }
+      },
+      "fmtlib/fmt": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.3889,
+        "hit_rate_at_3": 0.6667,
+        "hit_rate_at_5": 0.7222,
+        "precision_at_5": 0.1778,
+        "mrr_at_5": 0.5417,
+        "span_recall_at_5": 0.6389,
+        "ndcg_at_5": 0.4615,
+        "latency_ms": {
+          "mean": 32.41,
+          "median_p50": 32.19,
+          "p95": 41.57,
+          "max": 41.57
+        }
+      }
+    },
+    "by_category": {
+      "architecture_flow": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.3,
+        "hit_rate_at_3": 0.7,
+        "hit_rate_at_5": 0.9,
+        "precision_at_5": 0.2,
+        "mrr_at_5": 0.5283,
+        "span_recall_at_5": 0.7,
+        "ndcg_at_5": 0.3165,
+        "latency_ms": {
+          "mean": 31.68,
+          "median_p50": 32.14,
+          "p95": 33.49,
+          "max": 33.49
+        }
+      },
+      "cross_file_dependencies": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.4,
+        "hit_rate_at_3": 1.0,
+        "hit_rate_at_5": 1.0,
+        "precision_at_5": 0.36,
+        "mrr_at_5": 0.6667,
+        "span_recall_at_5": 0.65,
+        "ndcg_at_5": 0.465,
+        "latency_ms": {
+          "mean": 31.1,
+          "median_p50": 30.84,
+          "p95": 35.97,
+          "max": 35.97
+        }
+      },
+      "debugging_configuration": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.4,
+        "hit_rate_at_3": 0.4,
+        "hit_rate_at_5": 0.5,
+        "precision_at_5": 0.16,
+        "mrr_at_5": 0.425,
+        "span_recall_at_5": 0.45,
+        "ndcg_at_5": 0.2882,
+        "latency_ms": {
+          "mean": 33.14,
+          "median_p50": 32.58,
+          "p95": 38.9,
+          "max": 38.9
+        }
+      },
+      "function_identification": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.25,
+        "hit_rate_at_3": 0.4167,
+        "hit_rate_at_5": 0.5,
+        "precision_at_5": 0.1,
+        "mrr_at_5": 0.3361,
+        "span_recall_at_5": 0.5,
+        "ndcg_at_5": 0.3765,
+        "latency_ms": {
+          "mean": 38.3,
+          "median_p50": 35.19,
+          "p95": 73.2,
+          "max": 73.2
+        }
+      },
+      "implementation_understanding": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.25,
+        "hit_rate_at_3": 0.4167,
+        "hit_rate_at_5": 0.5,
+        "precision_at_5": 0.1167,
+        "mrr_at_5": 0.3542,
+        "span_recall_at_5": 0.5,
+        "ndcg_at_5": 0.2348,
+        "latency_ms": {
+          "mean": 31.67,
+          "median_p50": 32.23,
+          "p95": 33.86,
+          "max": 33.86
+        }
+      }
+    },
+    "by_query_style": {
+      "conceptual": {
+        "query_count": 20,
+        "hit_rate_at_1": 0.3,
+        "hit_rate_at_3": 0.6,
+        "hit_rate_at_5": 0.65,
+        "precision_at_5": 0.18,
+        "mrr_at_5": 0.4517,
+        "span_recall_at_5": 0.575,
+        "ndcg_at_5": 0.2758,
+        "latency_ms": {
+          "mean": 32.65,
+          "median_p50": 32.34,
+          "p95": 38.25,
+          "max": 38.9
+        }
+      },
+      "conversational": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.3333,
+        "hit_rate_at_3": 0.6667,
+        "hit_rate_at_5": 0.8333,
+        "precision_at_5": 0.2333,
+        "mrr_at_5": 0.5278,
+        "span_recall_at_5": 0.5417,
+        "ndcg_at_5": 0.319,
+        "latency_ms": {
+          "mean": 31.6,
+          "median_p50": 31.8,
+          "p95": 33.86,
+          "max": 33.86
+        }
+      },
+      "identifier": {
+        "query_count": 22,
+        "hit_rate_at_1": 0.3182,
+        "hit_rate_at_3": 0.5,
+        "hit_rate_at_5": 0.5909,
+        "precision_at_5": 0.1545,
+        "mrr_at_5": 0.4144,
+        "span_recall_at_5": 0.5455,
+        "ndcg_at_5": 0.3949,
+        "latency_ms": {
+          "mean": 34.84,
+          "median_p50": 32.44,
+          "p95": 42.72,
+          "max": 73.2
+        }
+      }
+    },
+    "by_evidence_spans": {
+      "single_evidence_queries": {
+        "query_count": 37,
+        "hit_rate_at_1": 0.2703,
+        "hit_rate_at_3": 0.4054,
+        "hit_rate_at_5": 0.5405,
+        "precision_at_5": 0.1297,
+        "mrr_at_5": 0.3644,
+        "span_recall_at_5": 0.5405,
+        "ndcg_at_5": 0.2992,
+        "latency_ms": {
+          "mean": 34.11,
+          "median_p50": 32.62,
+          "p95": 42.72,
+          "max": 73.2
+        }
+      },
+      "multi_evidence_queries": {
+        "query_count": 17,
+        "hit_rate_at_1": 0.4118,
+        "hit_rate_at_3": 0.9412,
+        "hit_rate_at_5": 0.9412,
+        "precision_at_5": 0.2941,
+        "mrr_at_5": 0.6471,
+        "span_recall_at_5": 0.5882,
+        "ndcg_at_5": 0.4095,
+        "latency_ms": {
+          "mean": 31.58,
+          "median_p50": 31.61,
+          "p95": 37.05,
+          "max": 37.05
+        }
+      }
+    }
+  },
+  "top1_l2_distance_analysis": {
+    "distance_metric": "l2 (squared Euclidean distance on unit-normalized vectors)",
+    "answerable_questions_top1_l2": {
+      "count": 54,
+      "min": 0.394869,
+      "median": 0.862551,
+      "mean": 0.849554,
+      "max": 1.537793
+    },
+    "unanswerable_questions_top1_l2": {
+      "count": 6,
+      "min": 0.831388,
+      "median": 1.068492,
+      "mean": 1.033176,
+      "max": 1.286783
+    },
+    "answerable_questions_mean_top5_l2": {
+      "count": 54,
+      "min": 0.472538,
+      "median": 0.937739,
+      "mean": 0.9291,
+      "max": 1.585699
+    },
+    "unanswerable_questions_mean_top5_l2": {
+      "count": 6,
+      "min": 0.910731,
+      "median": 1.098514,
+      "mean": 1.10177,
+      "max": 1.342677
+    }
+  }
+}
