@@ -14,6 +14,8 @@ This directory contains the automated regression and verification test suites fo
   - Verification of `code_aware_v1` (`chunker_v1.py`) and `chunker.py` strategy dispatch parity: V0 backward compatibility, Python hierarchical AST without duplicate nested functions, module-level imports/constants preservation, decorator/docstring attachment, accurate 1-based line mapping, WordPiece `<=256`-token budgeting on oversized/single-line blocks, JS/C++ brace & macro scanning, fallback handling, deterministic IDs, and live ChromaDB insertion.
 - **`test_chunking_comparison.py`**:
   - Verification of Day 3 benchmark runner fairness controls (253 files), isolated collection naming, metadata validation, 24 chunk quality metrics computation, failed-query zeroing, error-analysis transitions, and Day 1/2 artifact preservation.
+- **`test_bm25_and_hybrid.py`**:
+  - Verification of Day 4 V1 header-label hygiene (`strip_v1_header_labels`), code-aware tokenization (dotted/scoped/path/camelCase/snake_case/1–2 char symbols), BM25 zero-overlap filtering without padding (including negative RSJ edge cases), RRF fusion & empty-BM25 fallback, un-truncated `Candidate Union` evaluation, ChromaDB persistent BM25 hydration across restarts/re-indexing/repo switching without pickles, and Day 1–3 artifact preservation.
 
 ### Running Tests
 

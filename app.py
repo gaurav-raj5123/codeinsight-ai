@@ -58,6 +58,8 @@ if "indexing_diagnostics" not in st.session_state:
     st.session_state.indexing_diagnostics = None
 if "chunking_strategy" not in st.session_state:
     st.session_state.chunking_strategy = "code_aware_v1"
+if "retrieval_mode" not in st.session_state:
+    st.session_state.retrieval_mode = "hybrid_rrf"
 
 # ══════════════════
 # PHASE 1: INDEXING (Sidebar)
@@ -82,6 +84,21 @@ with st.sidebar:
         format_func=lambda s: strategy_labels.get(s, s),
     )
     st.session_state.chunking_strategy = selected_strategy
+
+    retrieval_labels = {
+        "hybrid_rrf": "hybrid_rrf (Recommended — Dense + BM25 RRF k=60)",
+        "dense": "dense (Vector L2 Only)",
+        "bm25": "bm25 (Lexical Code-Aware BM25 Only)",
+    }
+    selected_retrieval_mode = st.selectbox(
+        "Retrieval Strategy",
+        options=list(embedder.SUPPORTED_RETRIEVAL_MODES),
+        index=list(embedder.SUPPORTED_RETRIEVAL_MODES).index(st.session_state.retrieval_mode)
+        if st.session_state.retrieval_mode in embedder.SUPPORTED_RETRIEVAL_MODES
+        else 0,
+        format_func=lambda m: retrieval_labels.get(m, m),
+    )
+    st.session_state.retrieval_mode = selected_retrieval_mode
     
     # When the user clicks the index button, start the pipeline
     if st.button("Index Repository", type="primary"):
@@ -276,7 +293,12 @@ if prompt := st.chat_input("Ask a question about the code..."):
             # [4] Retrieval (embedder)
             # Find the chunks of code most relevant to the user's question
             with st.spinner("Searching codebase..."):
-                retrieved_chunks, retrieval_meta = embedder.search_similar(prompt, st.session_state.repo_name, return_metadata=True)
+                retrieved_chunks, retrieval_meta = embedder.search_similar(
+                    prompt,
+                    st.session_state.repo_name,
+                    return_metadata=True,
+                    retrieval_mode=st.session_state.retrieval_mode,
+                )
             
             # [5] Generation (llm)
             # Combine the user's question, the retrieved code chunks, repo context,
@@ -322,7 +344,12 @@ if prompt := st.chat_input("Ask a question about the code..."):
                     st.metric("Generation Latency", f"{gen_meta.get('latency_seconds', 0.0):.3f}s")
                 with col3:
                     st.metric("Total Turn Latency", f"{total_turn_duration:.3f}s")
-                st.write(f"**Chunks:** {len(retrieved_chunks)} / {retrieval_meta.get('n_results_requested', 5)} | **Metric:** {retrieval_meta.get('distance_metric', 'l2')} | **Model:** {gen_meta.get('model', 'gemini-3.5-flash')}")
+                st.write(
+                    f"**Chunks:** {len(retrieved_chunks)} / {retrieval_meta.get('n_results_requested', 5)} | "
+                    f"**Mode:** {retrieval_meta.get('retrieval_mode', 'dense')} | "
+                    f"**Metric:** {retrieval_meta.get('distance_metric', 'l2')} | "
+                    f"**Model:** {gen_meta.get('model', 'gemini-3.5-flash')}"
+                )
             
             # Record query event into baseline run if active
             query_event = telemetry.create_query_record(

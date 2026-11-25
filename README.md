@@ -37,10 +37,14 @@ flowchart TD
 ## 📁 Repository Organization
 
 ```text
-├── app.py                         # Streamlit UI, chunking strategy selector & session state
+├── app.py                         # Streamlit UI, chunking/retrieval selectors & session state
 ├── chunker.py                     # Strategy dispatcher + V0 AST/regex/sliding-window chunker
 ├── chunker_v1.py                  # Day 3 code-aware, <=256-token hierarchical AST + brace chunker
-├── embedder.py                    # ChromaDB client, indexing, and vector similarity search
+├── embedder.py                    # ChromaDB client, dense/BM25/hybrid RRF search & cache hydration
+├── retrieval/                     # 🔍 Day 4+ modular retrieval package
+│   ├── __init__.py
+│   ├── bm25_retriever.py          # Code-aware Okapi BM25, V1 header hygiene & Chroma hydration
+│   └── hybrid_retriever.py        # Reciprocal Rank Fusion (RRF k=60) & candidate union logic
 ├── llm.py                         # Gemini API client, secret sanitization & prompt construction
 ├── repo_loader.py                 # GitHub repository ZIP downloader & source file extractor
 ├── telemetry.py                   # Atomic telemetry persistence & latency instrumentation
@@ -63,6 +67,8 @@ flowchart TD
 │   └── day3/                      # Day 3: Code-Aware Chunking Optimization
 │       ├── DAY3_CHUNKING_AUDIT.md          # Pre-modification V0 chunker & tokenizer audit
 │       └── DAY3_CHUNKING_ANALYSIS.md       # Controlled Day 3 comparison & Day 4 recommendation
+│   └── day4/                      # Day 4: Hybrid Retrieval (BM25 + Dense + RRF)
+│       └── DAY4_HYBRID_REPORT.md           # Single-pass hybrid benchmark & Day 5 handoff analysis
 │
 ├── experiments/                   # 🔬 Evaluation harness & experimental artifacts
 │   ├── run_baseline_evaluation.py # Reproducible V0 offline evaluation runner
@@ -74,6 +80,9 @@ flowchart TD
 │   │   ├── validate_baseline_v0.py          # Pre-modification V0 Day 1 parity validator
 │   │   ├── run_chunking_comparison.py       # Controlled 3-strategy benchmark (C0/C1/C2)
 │   │   └── results/                         # chunking_summary.json, chunking_comparison.json, per_strategy/
+│   ├── day4_hybrid/               # Day 4 isolated hybrid retrieval harness
+│   │   ├── run_hybrid_comparison.py         # Single-pass Dense/BM25/RRF benchmark & bootstrap CI
+│   │   └── results/                         # hybrid_summary.json, hybrid_comparison.json, per_method/
 │   ├── datasets/                  # Ground truth annotations and evaluation questions
 │   │   ├── repositories.json      # Pinned repository metadata & commit SHAs
 │   │   ├── evaluation_questions.json # 60 evaluation questions (conceptual, identifier, conversational)
@@ -93,7 +102,8 @@ flowchart TD
     ├── test_retrieval_metrics.py        # Metric module unit & Day 1 parity tests
     ├── test_embedding_runner.py         # Embedding runner ONNX smoke & failure accounting tests
     ├── test_chunker_v1.py               # Code-aware V1 chunker, tokenizer budget & Chroma tests
-    └── test_chunking_comparison.py      # Day 3 chunking harness & 24-metric validation tests
+    ├── test_chunking_comparison.py      # Day 3 chunking harness & 24-metric validation tests
+    └── test_bm25_and_hybrid.py          # Code-aware BM25, RRF fusion & Chroma hydration tests
 ```
 
 ---
@@ -174,6 +184,9 @@ python experiments/embedding_experiments/run_embedding_comparison.py
 
 # 5. Execute the Day 3 controlled chunking comparison benchmark
 python experiments/chunking_experiments/run_chunking_comparison.py
+
+# 6. Execute the Day 4 controlled hybrid retrieval benchmark
+python experiments/day4_hybrid/run_hybrid_comparison.py
 ```
 
 ---

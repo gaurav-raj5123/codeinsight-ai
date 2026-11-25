@@ -22,10 +22,12 @@ This directory houses the structured, day-by-day engineering audits, benchmark r
 - **[DAY3_CHUNKING_AUDIT.md](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day3/DAY3_CHUNKING_AUDIT.md)**: Pre-modification audit identifying Python `ast.walk` self-duplication (`436` nested chunks), dropped Python module globals (`66/83` Flask files), Express JS regex control-flow fragmentation (`473` 1-line chunks), and `624` (`14.61%`) >256-token truncations.
 - **[DAY3_CHUNKING_ANALYSIS.md](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day3/DAY3_CHUNKING_ANALYSIS.md)**: Controlled Day 3 benchmark (`fixed_window_v0` vs `existing_chunker_v0` vs `code_aware_v1`) establishing `code_aware_v1` as the clear winner (`Hit@1`: `0.3148 -> 0.3704`, `Hit@5`: `0.6667 -> 0.7037`, `Precision@5`: `0.1815 -> 0.2185`, `MRR@5`: `0.4534 -> 0.5052`, `SpanRec@5`: `0.5556 -> 0.6111`, `0.00%` runtime truncation, `-24.5%` faster indexing).
 
+### [Day 4: Hybrid Retrieval (BM25 + Dense + RRF)](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day4/)
+- **[DAY4_HYBRID_REPORT.md](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day4/DAY4_HYBRID_REPORT.md)**: Single-pass controlled comparison of Dense V1 (`Hit@5=0.7037`, `NDCG@5=0.3217`), Code-Aware Okapi BM25 with V1 header label hygiene & zero-overlap filtering (`Hit@5=0.6852`, `NDCG@5=0.3689`), and Hybrid RRF `k=60` (`Hit@1=0.3889`, `Hit@5=0.7222`, `Precision@5=0.2444`, `SpanRec@5=0.6389`, `MRR@5=0.5182`, `NDCG@5=0.3737`, `P50=39.56 ms`). Establishes `Candidate Union` (`Dense@20 ∪ BM25@20`) ceiling of **`0.9630` Hit Rate (`52/54`)** and **`0.9074` Span Recall** for Day 5 reranking.
+
 ---
 
 ### Upcoming Milestones
-- **Day 4**: Hybrid Retrieval (Lexical BM25 + Dense `code_aware_v1` Vectors via RRF)
-- **Day 5**: Cross-Encoder Reranking & Test/Implementation Path Calibration
+- **Day 5**: Cross-Encoder Reranking & Test/Implementation Path Calibration (over Day 4 `Candidate Union` / `RRF Top-20`)
 - **Day 6**: Conversational Anaphora Resolution & Context-Aware Query Rewriting
 - **Day 7**: End-to-End System Integration, Grounding & Final Verification

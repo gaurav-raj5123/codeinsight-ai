@@ -8,4 +8,5 @@ temp_repos/
 experiments/datasets/cache/
 experiments/embedding_experiments/chroma_exp_db/
 experiments/chunking_experiments/chroma_day3_db/
+experiments/day4_hybrid/chroma_day4_db/
 .pytest_cache/

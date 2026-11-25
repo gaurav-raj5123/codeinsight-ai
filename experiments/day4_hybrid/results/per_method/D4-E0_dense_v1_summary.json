@@ -1,0 +1,239 @@
+{
+  "method_id": "D4-E0_dense_v1",
+  "label": "D4-E0: Dense Vector Top-5 (all-MiniLM-L6-v2 + code_aware_v1)",
+  "failed_queries": 0,
+  "overall_retrieval_metrics": {
+    "query_count": 54,
+    "hit_rate_at_1": 0.3704,
+    "hit_rate_at_3": 0.6296,
+    "hit_rate_at_5": 0.7037,
+    "precision_at_5": 0.2185,
+    "mrr_at_5": 0.5052,
+    "span_recall_at_5": 0.6111,
+    "ndcg_at_5": 0.3217,
+    "latency_ms": {
+      "mean": 38.66,
+      "median_p50": 36.16,
+      "p95": 46.75,
+      "max": 113.62
+    }
+  },
+  "breakdowns": {
+    "by_repository": {
+      "pallets/flask": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.3889,
+        "hit_rate_at_3": 0.6667,
+        "hit_rate_at_5": 0.7778,
+        "precision_at_5": 0.2111,
+        "mrr_at_5": 0.5463,
+        "span_recall_at_5": 0.6944,
+        "ndcg_at_5": 0.3207,
+        "latency_ms": {
+          "mean": 41.29,
+          "median_p50": 35.38,
+          "p95": 113.62,
+          "max": 113.62
+        }
+      },
+      "expressjs/express": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.2222,
+        "hit_rate_at_3": 0.5556,
+        "hit_rate_at_5": 0.6667,
+        "precision_at_5": 0.1556,
+        "mrr_at_5": 0.3954,
+        "span_recall_at_5": 0.5278,
+        "ndcg_at_5": 0.2794,
+        "latency_ms": {
+          "mean": 36.92,
+          "median_p50": 36.96,
+          "p95": 41.5,
+          "max": 41.5
+        }
+      },
+      "fmtlib/fmt": {
+        "query_count": 18,
+        "hit_rate_at_1": 0.5,
+        "hit_rate_at_3": 0.6667,
+        "hit_rate_at_5": 0.6667,
+        "precision_at_5": 0.2889,
+        "mrr_at_5": 0.5741,
+        "span_recall_at_5": 0.6111,
+        "ndcg_at_5": 0.365,
+        "latency_ms": {
+          "mean": 37.78,
+          "median_p50": 36.34,
+          "p95": 43.8,
+          "max": 43.8
+        }
+      }
+    },
+    "by_category": {
+      "architecture_flow": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.4,
+        "hit_rate_at_3": 0.8,
+        "hit_rate_at_5": 0.8,
+        "precision_at_5": 0.26,
+        "mrr_at_5": 0.5667,
+        "span_recall_at_5": 0.7,
+        "ndcg_at_5": 0.347,
+        "latency_ms": {
+          "mean": 35.88,
+          "median_p50": 35.78,
+          "p95": 37.04,
+          "max": 37.04
+        }
+      },
+      "cross_file_dependencies": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.5,
+        "hit_rate_at_3": 0.9,
+        "hit_rate_at_5": 0.9,
+        "precision_at_5": 0.3,
+        "mrr_at_5": 0.7,
+        "span_recall_at_5": 0.6,
+        "ndcg_at_5": 0.379,
+        "latency_ms": {
+          "mean": 37.78,
+          "median_p50": 37.39,
+          "p95": 42.9,
+          "max": 42.9
+        }
+      },
+      "debugging_configuration": {
+        "query_count": 10,
+        "hit_rate_at_1": 0.4,
+        "hit_rate_at_3": 0.4,
+        "hit_rate_at_5": 0.4,
+        "precision_at_5": 0.12,
+        "mrr_at_5": 0.4,
+        "span_recall_at_5": 0.35,
+        "ndcg_at_5": 0.2096,
+        "latency_ms": {
+          "mean": 35.69,
+          "median_p50": 35.3,
+          "p95": 38.27,
+          "max": 38.27
+        }
+      },
+      "function_identification": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.3333,
+        "hit_rate_at_3": 0.3333,
+        "hit_rate_at_5": 0.6667,
+        "precision_at_5": 0.2,
+        "mrr_at_5": 0.4125,
+        "span_recall_at_5": 0.625,
+        "ndcg_at_5": 0.3242,
+        "latency_ms": {
+          "mean": 44.95,
+          "median_p50": 37.36,
+          "p95": 113.62,
+          "max": 113.62
+        }
+      },
+      "implementation_understanding": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.25,
+        "hit_rate_at_3": 0.75,
+        "hit_rate_at_5": 0.75,
+        "precision_at_5": 0.2167,
+        "mrr_at_5": 0.4722,
+        "span_recall_at_5": 0.75,
+        "ndcg_at_5": 0.3438,
+        "latency_ms": {
+          "mean": 37.9,
+          "median_p50": 35.83,
+          "p95": 46.75,
+          "max": 46.75
+        }
+      }
+    },
+    "by_query_style": {
+      "conceptual": {
+        "query_count": 20,
+        "hit_rate_at_1": 0.15,
+        "hit_rate_at_3": 0.6,
+        "hit_rate_at_5": 0.6,
+        "precision_at_5": 0.17,
+        "mrr_at_5": 0.35,
+        "span_recall_at_5": 0.525,
+        "ndcg_at_5": 0.2248,
+        "latency_ms": {
+          "mean": 36.52,
+          "median_p50": 35.64,
+          "p95": 41.5,
+          "max": 43.8
+        }
+      },
+      "conversational": {
+        "query_count": 12,
+        "hit_rate_at_1": 0.5833,
+        "hit_rate_at_3": 0.75,
+        "hit_rate_at_5": 0.75,
+        "precision_at_5": 0.2167,
+        "mrr_at_5": 0.6528,
+        "span_recall_at_5": 0.5417,
+        "ndcg_at_5": 0.3573,
+        "latency_ms": {
+          "mean": 37.76,
+          "median_p50": 36.8,
+          "p95": 46.75,
+          "max": 46.75
+        }
+      },
+      "identifier": {
+        "query_count": 22,
+        "hit_rate_at_1": 0.4545,
+        "hit_rate_at_3": 0.5909,
+        "hit_rate_at_5": 0.7727,
+        "precision_at_5": 0.2636,
+        "mrr_at_5": 0.5659,
+        "span_recall_at_5": 0.7273,
+        "ndcg_at_5": 0.3904,
+        "latency_ms": {
+          "mean": 41.11,
+          "median_p50": 36.62,
+          "p95": 47.11,
+          "max": 113.62
+        }
+      }
+    },
+    "by_evidence_spans": {
+      "single_evidence_queries": {
+        "query_count": 37,
+        "hit_rate_at_1": 0.2703,
+        "hit_rate_at_3": 0.5135,
+        "hit_rate_at_5": 0.6216,
+        "precision_at_5": 0.1784,
+        "mrr_at_5": 0.4041,
+        "span_recall_at_5": 0.6216,
+        "ndcg_at_5": 0.2757,
+        "latency_ms": {
+          "mean": 39.39,
+          "median_p50": 36.04,
+          "p95": 47.11,
+          "max": 113.62
+        }
+      },
+      "multi_evidence_queries": {
+        "query_count": 17,
+        "hit_rate_at_1": 0.5882,
+        "hit_rate_at_3": 0.8824,
+        "hit_rate_at_5": 0.8824,
+        "precision_at_5": 0.3059,
+        "mrr_at_5": 0.7255,
+        "span_recall_at_5": 0.5882,
+        "ndcg_at_5": 0.4218,
+        "latency_ms": {
+          "mean": 37.08,
+          "median_p50": 36.6,
+          "p95": 42.9,
+          "max": 42.9
+        }
+      }
+    }
+  }
+}

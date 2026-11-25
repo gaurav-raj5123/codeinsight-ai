@@ -1,0 +1,6784 @@
+[
+  {
+    "question_id": "flask_001",
+    "repository": "pallets/flask",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the Flask application class defined and what parameters does its __init__ constructor accept?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 126.58,
+    "bm25_eligible_overlap_docs": 1187,
+    "union_candidates_count": 34,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      true,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 1.4307,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.8772
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_58efeba1395b0679",
+        "file_path": "src/flask/app.py",
+        "start_line": 108,
+        "end_line": 126,
+        "symbol_name": "Flask",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.03011775,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_9a055ef7bc461461",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 74,
+        "end_line": 93,
+        "symbol_name": "App",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.03009207,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 13,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_c55338e190b844d1",
+        "file_path": "src/flask/templating.py",
+        "start_line": 49,
+        "end_line": 55,
+        "symbol_name": "DispatchingJinjaLoader, __init__",
+        "chunk_type": "class_overview",
+        "rrf_score": 0.0298574,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 6
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_81ab7654e80110e4",
+        "file_path": "src/flask/app.py",
+        "start_line": 125,
+        "end_line": 144,
+        "symbol_name": "Flask",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.02938653,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 14,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_6f718e6d8fc88d29",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 60,
+        "end_line": 75,
+        "symbol_name": "App",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.02859477,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 12,
+        "bm25_rank": 8
+      }
+    ]
+  },
+  {
+    "question_id": "flask_002",
+    "repository": "pallets/flask",
+    "category": "implementation_understanding",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does it configure default configuration settings during that initialization process?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 48.52,
+    "bm25_eligible_overlap_docs": 423,
+    "union_candidates_count": 36,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_1da9a5fac4c5906e",
+        "file_path": "src/flask/cli.py",
+        "start_line": 576,
+        "end_line": 590,
+        "symbol_name": "__init__",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02946237,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 15,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_671072709522e674",
+        "file_path": "src/flask/config.py",
+        "start_line": 50,
+        "end_line": 68,
+        "symbol_name": "Config",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.02808327,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 16,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_95da8b9ed46c535e",
+        "file_path": "tests/test_config.py",
+        "start_line": 161,
+        "end_line": 171,
+        "symbol_name": "test_config_from_envvar_missing",
+        "chunk_type": "function",
+        "rrf_score": 0.02804284,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 19,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_3baebb7b8ec62664",
+        "file_path": "src/flask/config.py",
+        "start_line": 102,
+        "end_line": 114,
+        "symbol_name": "from_envvar",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02782609,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 9,
+        "bm25_rank": 15
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_6afa1d0ec758a30e",
+        "file_path": "tests/test_basic.py",
+        "start_line": 90,
+        "end_line": 104,
+        "symbol_name": "test_provide_automatic_options_attr_enable",
+        "chunk_type": "function",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      }
+    ]
+  },
+  {
+    "question_id": "flask_003",
+    "repository": "pallets/flask",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the Request wrapper class defined in Flask and what base class does it inherit from?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 54.22,
+    "bm25_eligible_overlap_docs": 1266,
+    "union_candidates_count": 35,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 1.0,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6131
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_87e947c38c0bd50c",
+        "file_path": "src/flask/wrappers.py",
+        "start_line": 18,
+        "end_line": 36,
+        "symbol_name": "Request",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_058101a8ee348029",
+        "file_path": "src/flask/wrappers.py",
+        "start_line": 222,
+        "end_line": 243,
+        "symbol_name": "Response",
+        "chunk_type": "class_overview",
+        "rrf_score": 0.02911605,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 17
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_58efeba1395b0679",
+        "file_path": "src/flask/app.py",
+        "start_line": 108,
+        "end_line": 126,
+        "symbol_name": "Flask",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.02857143,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 10,
+        "bm25_rank": 10
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_a086b71d213c46ee",
+        "file_path": "src/flask/app.py",
+        "start_line": 1291,
+        "end_line": 1307,
+        "symbol_name": "make_response",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02854251,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 16
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_d4d2856e79ea066f",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 260,
+        "end_line": 274,
+        "symbol_name": "AppContext",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.0272424,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 16,
+        "bm25_rank": 11
+      }
+    ]
+  },
+  {
+    "question_id": "flask_004",
+    "repository": "pallets/flask",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the url_for helper function defined and how does it generate URLs from endpoints?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 47.64,
+    "bm25_eligible_overlap_docs": 1267,
+    "union_candidates_count": 30,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      true,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 1.4307,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6714
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_15fbe825560f3a69",
+        "file_path": "src/flask/helpers.py",
+        "start_line": 218,
+        "end_line": 230,
+        "symbol_name": "url_for",
+        "chunk_type": "function_split",
+        "rrf_score": 0.03252247,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_1bd98ed986148d10",
+        "file_path": "src/flask/app.py",
+        "start_line": 1187,
+        "end_line": 1201,
+        "symbol_name": "url_for",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03201844,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_6414b72aa6ae3b52",
+        "file_path": "src/flask/app.py",
+        "start_line": 1145,
+        "end_line": 1166,
+        "symbol_name": "url_for",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03079839,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_fa6995700e06e88f",
+        "file_path": "src/flask/helpers.py",
+        "start_line": 200,
+        "end_line": 219,
+        "symbol_name": "url_for",
+        "chunk_type": "function_split",
+        "rrf_score": 0.03062179,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_7c69454c1b80ce15",
+        "file_path": "src/flask/app.py",
+        "start_line": 1176,
+        "end_line": 1188,
+        "symbol_name": "url_for",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02946912,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 11
+      }
+    ]
+  },
+  {
+    "question_id": "flask_005",
+    "repository": "pallets/flask",
+    "category": "implementation_understanding",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does Flask's route decorator register an endpoint and view function onto the application?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 40.41,
+    "bm25_eligible_overlap_docs": 1337,
+    "union_candidates_count": 31,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "first_relevant_rank": 5,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 0.3869,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.2,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.2372
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_6414b72aa6ae3b52",
+        "file_path": "src/flask/app.py",
+        "start_line": 1145,
+        "end_line": 1166,
+        "symbol_name": "url_for",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03201844,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_8798ac309ec38195",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 401,
+        "end_line": 416,
+        "symbol_name": "add_url_rule",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03201844,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_be80851d4b83a9e8",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 443,
+        "end_line": 465,
+        "symbol_name": "endpoint",
+        "chunk_type": "method",
+        "rrf_score": 0.03200205,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_213cc15c3c1126f7",
+        "file_path": "tests/test_blueprints.py",
+        "start_line": 283,
+        "end_line": 308,
+        "symbol_name": "test_route_decorator_custom_endpoint",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02881426,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 12
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_3500bc2bc583923c",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 343,
+        "end_line": 362,
+        "symbol_name": "route",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02800627,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 14,
+        "bm25_rank": 9
+      }
+    ]
+  },
+  {
+    "question_id": "flask_006",
+    "repository": "pallets/flask",
+    "category": "cross_file_dependencies",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does that method configure those routing rules and delegate to the underlying routing Map?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 41.37,
+    "bm25_eligible_overlap_docs": 811,
+    "union_candidates_count": 34,
+    "per_chunk_relevance": [
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "first_relevant_rank": 3,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 5,
+    "dcg_at_5": 0.5,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.3333,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.1696
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_ab7b3a2abd199010",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 428,
+        "end_line": 441,
+        "symbol_name": "add_url_rule",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03015873,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 10
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_d718957509ef774b",
+        "file_path": "tests/test_basic.py",
+        "start_line": 197,
+        "end_line": 215,
+        "symbol_name": "test_werkzeug_routing",
+        "chunk_type": "function",
+        "rrf_score": 0.02985075,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_8798ac309ec38195",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 401,
+        "end_line": 416,
+        "symbol_name": "add_url_rule",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02885015,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 13
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_5911607e3e8011cb",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 405,
+        "end_line": 414,
+        "symbol_name": "match_request",
+        "chunk_type": "method",
+        "rrf_score": 0.02840451,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 13,
+        "bm25_rank": 8
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_048d813d37ccde71",
+        "file_path": "src/flask/cli.py",
+        "start_line": 1047,
+        "end_line": 1066,
+        "symbol_name": "routes_command",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02813853,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 17,
+        "bm25_rank": 6
+      }
+    ]
+  },
+  {
+    "question_id": "flask_007",
+    "repository": "pallets/flask",
+    "category": "implementation_understanding",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does dispatch_request in Flask execute the endpoint matched from the active request URL?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 38.43,
+    "bm25_eligible_overlap_docs": 1249,
+    "union_candidates_count": 31,
+    "per_chunk_relevance": [
+      true,
+      false,
+      true,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 1.5,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.7039
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_95ef208bef7ccfd3",
+        "file_path": "src/flask/app.py",
+        "start_line": 1010,
+        "end_line": 1021,
+        "symbol_name": "dispatch_request",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03200205,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_a3c4153f2611103d",
+        "file_path": "src/flask/views.py",
+        "start_line": 78,
+        "end_line": 83,
+        "symbol_name": "dispatch_request",
+        "chunk_type": "method",
+        "rrf_score": 0.03175403,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_3a9dfb7a3e7b8cdf",
+        "file_path": "src/flask/app.py",
+        "start_line": 993,
+        "end_line": 1011,
+        "symbol_name": "dispatch_request",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03154496,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_d0abcf39ba3d2f21",
+        "file_path": "src/flask/app.py",
+        "start_line": 1044,
+        "end_line": 1054,
+        "symbol_name": "full_dispatch_request",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02938046,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 17
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_5911607e3e8011cb",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 405,
+        "end_line": 414,
+        "symbol_name": "match_request",
+        "chunk_type": "method",
+        "rrf_score": 0.02879039,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 11
+      }
+    ]
+  },
+  {
+    "question_id": "flask_008",
+    "repository": "pallets/flask",
+    "category": "cross_file_dependencies",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does the framework isolate request and application state across threads and push contexts onto the active stack?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 35.42,
+    "bm25_eligible_overlap_docs": 796,
+    "union_candidates_count": 37,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "first_relevant_rank": 4,
+    "matched_evidence_spans_count": 2,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 6,
+    "dcg_at_5": 0.8175,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 0.25,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.2773
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_6b055a43faa46b32",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 416,
+        "end_line": 434,
+        "symbol_name": "push",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03252247,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_6d585b2408daa27e",
+        "file_path": "src/flask/testing.py",
+        "start_line": 227,
+        "end_line": 247,
+        "symbol_name": "open",
+        "chunk_type": "method_split",
+        "rrf_score": 0.0308862,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 9,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_dea83205d6d5f74c",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 154,
+        "end_line": 169,
+        "symbol_name": "copy_current_request_context",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02861201,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 17
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_1478f5cbb83c188b",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 273,
+        "end_line": 294,
+        "symbol_name": "AppContext",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": null
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_b6e1a51c484681a7",
+        "file_path": "src/flask/app.py",
+        "start_line": 1542,
+        "end_line": 1560,
+        "symbol_name": "app_context",
+        "chunk_type": "method",
+        "rrf_score": 0.01587302,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": null
+      }
+    ]
+  },
+  {
+    "question_id": "flask_009",
+    "repository": "pallets/flask",
+    "category": "architecture_flow",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "Walk through what happens inside the application entrypoint when an incoming request is pushed through those contexts.",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.75,
+    "bm25_eligible_overlap_docs": 849,
+    "union_candidates_count": 32,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 5,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_b6e1a51c484681a7",
+        "file_path": "src/flask/app.py",
+        "start_line": 1542,
+        "end_line": 1560,
+        "symbol_name": "app_context",
+        "chunk_type": "method",
+        "rrf_score": 0.03175403,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_1478f5cbb83c188b",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 273,
+        "end_line": 294,
+        "symbol_name": "AppContext",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.03109932,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 8
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_a9a4b1d6b8fa8738",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 370,
+        "end_line": 379,
+        "symbol_name": "request",
+        "chunk_type": "method",
+        "rrf_score": 0.0297619,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 12,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_04bd72daf02e0315",
+        "file_path": "src/flask/ctx.py",
+        "start_line": 300,
+        "end_line": 321,
+        "symbol_name": "__init__",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02963126,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_54addae3a41f1322",
+        "file_path": "src/flask/sansio/scaffold.py",
+        "start_line": 515,
+        "end_line": 534,
+        "symbol_name": "teardown_request",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02889344,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 20,
+        "bm25_rank": 1
+      }
+    ]
+  },
+  {
+    "question_id": "flask_010",
+    "repository": "pallets/flask",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the Blueprint class defined and what are its initialization parameters?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 36.97,
+    "bm25_eligible_overlap_docs": 875,
+    "union_candidates_count": 39,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 1.0,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.4693
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_d327a8f7d05b9587",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 138,
+        "end_line": 151,
+        "symbol_name": "Blueprint",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.0281746,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 10,
+        "bm25_rank": 12
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_afc7d003b7f7c183",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 34,
+        "end_line": 40,
+        "symbol_name": "BlueprintSetupState",
+        "chunk_type": "class_overview",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_81ab7654e80110e4",
+        "file_path": "src/flask/app.py",
+        "start_line": 125,
+        "end_line": 144,
+        "symbol_name": "Flask",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_908c28017c7242a8",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 570,
+        "end_line": 584,
+        "symbol_name": "register_blueprint",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": null
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_9a055ef7bc461461",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 74,
+        "end_line": 93,
+        "symbol_name": "App",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 2
+      }
+    ]
+  },
+  {
+    "question_id": "flask_011",
+    "repository": "pallets/flask",
+    "category": "cross_file_dependencies",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How do modular blueprints record deferred route handlers and apply them to the main application during registration?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.49,
+    "bm25_eligible_overlap_docs": 909,
+    "union_candidates_count": 33,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 8,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_b13412f9815c7f1a",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 119,
+        "end_line": 139,
+        "symbol_name": "Blueprint",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.03252247,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_a525ce4f88b514ff",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 232,
+        "end_line": 244,
+        "symbol_name": "record_once",
+        "chunk_type": "method",
+        "rrf_score": 0.03109932,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_6620f9fed2de77f9",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 223,
+        "end_line": 230,
+        "symbol_name": "record",
+        "chunk_type": "method",
+        "rrf_score": 0.03100962,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_bb5fd1c0e68605fb",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 331,
+        "end_line": 347,
+        "symbol_name": "register",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02881426,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 12,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_8408dcd35137d129",
+        "file_path": "src/flask/sansio/blueprints.py",
+        "start_line": 41,
+        "end_line": 66,
+        "symbol_name": "__init__",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02866503,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 14,
+        "bm25_rank": 6
+      }
+    ]
+  },
+  {
+    "question_id": "flask_012",
+    "repository": "pallets/flask",
+    "category": "architecture_flow",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Flask handle unhandled server exceptions and transform them into HTTP 500 error responses?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 39.42,
+    "bm25_eligible_overlap_docs": 1176,
+    "union_candidates_count": 30,
+    "per_chunk_relevance": [
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 1.6309,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.7654
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_89f6fdc091f65028",
+        "file_path": "src/flask/app.py",
+        "start_line": 916,
+        "end_line": 930,
+        "symbol_name": "handle_exception",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03225806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_3764379190483b45",
+        "file_path": "src/flask/app.py",
+        "start_line": 929,
+        "end_line": 947,
+        "symbol_name": "handle_exception",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03131882,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_1f2c67cc482f9402",
+        "file_path": "src/flask/app.py",
+        "start_line": 841,
+        "end_line": 861,
+        "symbol_name": "handle_http_exception",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03036577,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_05b21a97fab9d5d0",
+        "file_path": "src/flask/app.py",
+        "start_line": 964,
+        "end_line": 971,
+        "symbol_name": "handle_exception",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02990696,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 14
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_cb4b9eabdd5fcbee",
+        "file_path": "src/flask/app.py",
+        "start_line": 860,
+        "end_line": 878,
+        "symbol_name": "handle_http_exception",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02923602,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 11
+      }
+    ]
+  },
+  {
+    "question_id": "flask_013",
+    "repository": "pallets/flask",
+    "category": "architecture_flow",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the session interface implemented and how does SecureCookieSessionInterface open and save sessions?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 38.63,
+    "bm25_eligible_overlap_docs": 767,
+    "union_candidates_count": 28,
+    "per_chunk_relevance": [
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 2,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 6,
+    "dcg_at_5": 1.6309,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.5531
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_3304dff8156e0e14",
+        "file_path": "src/flask/app.py",
+        "start_line": 243,
+        "end_line": 250,
+        "symbol_name": "Flask",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.03226646,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_b33de95684436fbe",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 337,
+        "end_line": 350,
+        "symbol_name": "save_session",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03177806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_99f8af4640b20f1d",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 372,
+        "end_line": 385,
+        "symbol_name": "save_session",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03125763,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_4e2747e6f48630f9",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 100,
+        "end_line": 118,
+        "symbol_name": "SessionInterface",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.03105441,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_4b27f506ab15ae47",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 349,
+        "end_line": 373,
+        "symbol_name": "save_session",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03077652,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 4
+      }
+    ]
+  },
+  {
+    "question_id": "flask_014",
+    "repository": "pallets/flask",
+    "category": "debugging_configuration",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does it configure security flags like HttpOnly and Secure on those session cookies?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.56,
+    "bm25_eligible_overlap_docs": 624,
+    "union_candidates_count": 28,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 5,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_4c445988c8c3e4af",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 57,
+        "end_line": 72,
+        "symbol_name": "SecureCookieSession",
+        "chunk_type": "class_overview",
+        "rrf_score": 0.03226646,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_b33de95684436fbe",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 337,
+        "end_line": 350,
+        "symbol_name": "save_session",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03200205,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_99f8af4640b20f1d",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 372,
+        "end_line": 385,
+        "symbol_name": "save_session",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03175403,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_4b27f506ab15ae47",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 349,
+        "end_line": 373,
+        "symbol_name": "save_session",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03100962,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_b368e54ac2e96825",
+        "file_path": "src/flask/sessions.py",
+        "start_line": 284,
+        "end_line": 302,
+        "symbol_name": "SecureCookieSessionInterface",
+        "chunk_type": "class_overview",
+        "rrf_score": 0.03007689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 6
+      }
+    ]
+  },
+  {
+    "question_id": "flask_015",
+    "repository": "pallets/flask",
+    "category": "architecture_flow",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Flask coerce different controller return types such as strings, dictionaries, and tuples into WSGI responses?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 39.19,
+    "bm25_eligible_overlap_docs": 1218,
+    "union_candidates_count": 34,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 0.6309,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.2961
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_4ce9aa67aa0b1daa",
+        "file_path": "src/flask/app.py",
+        "start_line": 1358,
+        "end_line": 1374,
+        "symbol_name": "make_response",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03109932,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_a086b71d213c46ee",
+        "file_path": "src/flask/app.py",
+        "start_line": 1291,
+        "end_line": 1307,
+        "symbol_name": "make_response",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02967033,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 10,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_f80f249f4ca2cde7",
+        "file_path": "tests/test_basic.py",
+        "start_line": 1167,
+        "end_line": 1189,
+        "symbol_name": "test_response_types",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02941813,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_939730b0727ed0d7",
+        "file_path": "src/flask/typing.py",
+        "start_line": 1,
+        "end_line": 20,
+        "symbol_name": "annotations, cabc, t, ResponseValue, HeaderValue, HeadersValue",
+        "chunk_type": "module_context_split",
+        "rrf_score": 0.02894955,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 18
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_62748ba823818c8f",
+        "file_path": "src/flask/config.py",
+        "start_line": 126,
+        "end_line": 142,
+        "symbol_name": "from_prefixed_env",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02777778,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 12,
+        "bm25_rank": 12
+      }
+    ]
+  },
+  {
+    "question_id": "flask_016",
+    "repository": "pallets/flask",
+    "category": "implementation_understanding",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does Config.from_object in Flask inspect and load configuration values from a Python module or class?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 42.3,
+    "bm25_eligible_overlap_docs": 1352,
+    "union_candidates_count": 30,
+    "per_chunk_relevance": [
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 1.6309,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.7654
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_61d1ed4abff60f80",
+        "file_path": "src/flask/config.py",
+        "start_line": 218,
+        "end_line": 235,
+        "symbol_name": "from_object",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_1d957d705288aa4d",
+        "file_path": "src/flask/config.py",
+        "start_line": 234,
+        "end_line": 251,
+        "symbol_name": "from_object",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03200205,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_f3728a90a6a06e6c",
+        "file_path": "src/flask/config.py",
+        "start_line": 67,
+        "end_line": 83,
+        "symbol_name": "Config",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.03077652,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_b79e1a0c7fd20720",
+        "file_path": "tests/test_config.py",
+        "start_line": 132,
+        "end_line": 141,
+        "symbol_name": "test_config_from_class",
+        "chunk_type": "function",
+        "rrf_score": 0.03033088,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 8
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_671072709522e674",
+        "file_path": "src/flask/config.py",
+        "start_line": 50,
+        "end_line": 68,
+        "symbol_name": "Config",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.03021354,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 11,
+        "bm25_rank": 2
+      }
+    ]
+  },
+  {
+    "question_id": "flask_017",
+    "repository": "pallets/flask",
+    "category": "debugging_configuration",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Flask bind Click command-line interface commands to an active application environment?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 38.1,
+    "bm25_eligible_overlap_docs": 1131,
+    "union_candidates_count": 32,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "first_relevant_rank": 5,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 0.3869,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.2,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.1815
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_63232b8a7e046828",
+        "file_path": "src/flask/cli.py",
+        "start_line": 609,
+        "end_line": 626,
+        "symbol_name": "get_command",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03125,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_37ed92e405b6aa11",
+        "file_path": "src/flask/cli.py",
+        "start_line": 625,
+        "end_line": 634,
+        "symbol_name": "get_command",
+        "chunk_type": "method_split",
+        "rrf_score": 0.0308862,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_7660804ddd6b621a",
+        "file_path": "src/flask/cli.py",
+        "start_line": 531,
+        "end_line": 547,
+        "symbol_name": "FlaskGroup",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.03030999,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_55bb53ac6713f53c",
+        "file_path": "src/flask/cli.py",
+        "start_line": 998,
+        "end_line": 1019,
+        "symbol_name": "shell_command",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02957165,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 13
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_e1755aae2bfbb5ee",
+        "file_path": "src/flask/cli.py",
+        "start_line": 380,
+        "end_line": 397,
+        "symbol_name": "with_appcontext",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02941813,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 9,
+        "bm25_rank": 7
+      }
+    ]
+  },
+  {
+    "question_id": "flask_018",
+    "repository": "pallets/flask",
+    "category": "debugging_configuration",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Flask pass temporary one-off notification messages between redirected requests?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.88,
+    "bm25_eligible_overlap_docs": 1112,
+    "union_candidates_count": 40,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "first_relevant_rank": 4,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 0.4307,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.25,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.2021
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_f6e0d38b94eb3d8d",
+        "file_path": "src/flask/app.py",
+        "start_line": 1409,
+        "end_line": 1424,
+        "symbol_name": "preprocess_request",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_bc592daa4df381ca",
+        "file_path": "src/flask/cli.py",
+        "start_line": 766,
+        "end_line": 777,
+        "symbol_name": "show_server_banner",
+        "chunk_type": "function",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_6d585b2408daa27e",
+        "file_path": "src/flask/testing.py",
+        "start_line": 227,
+        "end_line": 247,
+        "symbol_name": "open",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": null
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_1f10cf66cd1d6f13",
+        "file_path": "src/flask/helpers.py",
+        "start_line": 360,
+        "end_line": 373,
+        "symbol_name": "get_flashed_messages",
+        "chunk_type": "function_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_edc3e0a1f70d49f9",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 940,
+        "end_line": 959,
+        "symbol_name": "redirect",
+        "chunk_type": "method",
+        "rrf_score": 0.01587302,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": null
+      }
+    ]
+  },
+  {
+    "question_id": "flask_019",
+    "repository": "pallets/flask",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "Where is the built-in database connection pool for PostgreSQL configured in Flask?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 39.84,
+    "top1_rrf_score": 0.03201844,
+    "union_candidates_count": 34,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_a9616c9595806186",
+        "file_path": "examples/tutorial/flaskr/db.py",
+        "start_line": 1,
+        "end_line": 20,
+        "symbol_name": "sqlite3, datetime, click, current_app, g, get_db",
+        "chunk_type": "function",
+        "rrf_score": 0.03201844,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_211055b4962f433f",
+        "file_path": "examples/tutorial/flaskr/db.py",
+        "start_line": 23,
+        "end_line": 30,
+        "symbol_name": "close_db",
+        "chunk_type": "function",
+        "rrf_score": 0.03128055,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 6
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_fca02addd55a92a6",
+        "file_path": "src/flask/app.py",
+        "start_line": 412,
+        "end_line": 428,
+        "symbol_name": "open_resource",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03001792,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 12,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_63283dd04f993002",
+        "file_path": "src/flask/app.py",
+        "start_line": 143,
+        "end_line": 158,
+        "symbol_name": "Flask",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.02987737,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 9,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_c52648f3df63ddeb",
+        "file_path": "examples/tutorial/flaskr/auth.py",
+        "start_line": 32,
+        "end_line": 43,
+        "symbol_name": "load_logged_in_user",
+        "chunk_type": "function",
+        "rrf_score": 0.0275836,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 19,
+        "bm25_rank": 7
+      }
+    ]
+  },
+  {
+    "question_id": "flask_020",
+    "repository": "pallets/flask",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "How does Flask configure native WebSocket subscriptions and publish-subscribe channels?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.12,
+    "top1_rrf_score": 0.02990696,
+    "union_candidates_count": 39,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_440bba408d407106",
+        "file_path": "src/flask/app.py",
+        "start_line": 157,
+        "end_line": 178,
+        "symbol_name": "Flask",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.02990696,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 14,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_d0ea3e1e149cc3a7",
+        "file_path": "tests/test_json.py",
+        "start_line": 176,
+        "end_line": 188,
+        "symbol_name": "test_jsonify_uuid_types",
+        "chunk_type": "function",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_a3b7e510dd94e32c",
+        "file_path": "src/flask/app.py",
+        "start_line": 690,
+        "end_line": 703,
+        "symbol_name": "run",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": null
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_d828049aba9784a1",
+        "file_path": "src/flask/json/provider.py",
+        "start_line": 136,
+        "end_line": 156,
+        "symbol_name": "DefaultJSONProvider",
+        "chunk_type": "class_overview_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_8e24f4fcb4663342",
+        "file_path": "src/flask/sansio/app.py",
+        "start_line": 330,
+        "end_line": 341,
+        "symbol_name": "__init__",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01587302,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": null
+      }
+    ]
+  },
+  {
+    "question_id": "express_001",
+    "repository": "expressjs/express",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is createApplication defined in Express and how does it mix in EventEmitter and the application prototype?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 40.02,
+    "bm25_eligible_overlap_docs": 1182,
+    "union_candidates_count": 36,
+    "per_chunk_relevance": [
+      true,
+      true,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 1.6309,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.7654
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_5197a5e36b7e7a7c",
+        "file_path": "lib/express.js",
+        "start_line": 27,
+        "end_line": 36,
+        "symbol_name": "module.exports, createApplication",
+        "chunk_type": "export",
+        "rrf_score": 0.03226646,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_a2563a80cb24a1b8",
+        "file_path": "lib/express.js",
+        "start_line": 37,
+        "end_line": 63,
+        "symbol_name": "app, application, request",
+        "chunk_type": "function",
+        "rrf_score": 0.03225806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_fe0d0d2ecf8a29b7",
+        "file_path": "lib/express.js",
+        "start_line": 1,
+        "end_line": 26,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header",
+        "rrf_score": 0.03028233,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 12,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_a2c7a4897ada6374",
+        "file_path": "test/app.js",
+        "start_line": 8,
+        "end_line": 18,
+        "symbol_name": "it",
+        "chunk_type": "method",
+        "rrf_score": 0.0292735,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 12
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_df10fa401764e1e1",
+        "file_path": "test/res.render.js",
+        "start_line": 385,
+        "end_line": 392,
+        "symbol_name": "createApp",
+        "chunk_type": "function",
+        "rrf_score": 0.01587302,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": null
+      }
+    ]
+  },
+  {
+    "question_id": "express_002",
+    "repository": "expressjs/express",
+    "category": "implementation_understanding",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does that created application set up its default configuration settings like etag, env, and query parser?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.52,
+    "bm25_eligible_overlap_docs": 840,
+    "union_candidates_count": 34,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 0.6309,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.2961
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_1f16212e519ea504",
+        "file_path": "lib/application.js",
+        "start_line": 351,
+        "end_line": 384,
+        "symbol_name": "app.set",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03252247,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_008a5e54b12fb068",
+        "file_path": "lib/application.js",
+        "start_line": 90,
+        "end_line": 108,
+        "symbol_name": "app.defaultConfiguration",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03252247,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_f2da08bc56cf3195",
+        "file_path": "test/req.query.js",
+        "start_line": 94,
+        "end_line": 107,
+        "symbol_name": "createApp",
+        "chunk_type": "function",
+        "rrf_score": 0.02908325,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 13
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_685fe56745141928",
+        "file_path": "lib/utils.js",
+        "start_line": 130,
+        "end_line": 161,
+        "symbol_name": "compileETag",
+        "chunk_type": "export",
+        "rrf_score": 0.02843889,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 14,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_2041c082ec6f77b6",
+        "file_path": "test/req.query.js",
+        "start_line": 41,
+        "end_line": 58,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02547874,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 18,
+        "bm25_rank": 19
+      }
+    ]
+  },
+  {
+    "question_id": "express_003",
+    "repository": "expressjs/express",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the View constructor defined in Express and what properties does it store?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 40.1,
+    "bm25_eligible_overlap_docs": 1170,
+    "union_candidates_count": 36,
+    "per_chunk_relevance": [
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "first_relevant_rank": 3,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 0.5,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.3333,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.3066
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_b0c6264222a348a2",
+        "file_path": "test/app.render.js",
+        "start_line": 275,
+        "end_line": 280,
+        "symbol_name": "View",
+        "chunk_type": "function_split",
+        "rrf_score": 0.03226646,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_1693eaa9546416e5",
+        "file_path": "examples/view-constructor/index.js",
+        "start_line": 27,
+        "end_line": 49,
+        "symbol_name": "index.js",
+        "chunk_type": "module_context_split",
+        "rrf_score": 0.03151365,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_6be35a644ec60013",
+        "file_path": "lib/view.js",
+        "start_line": 78,
+        "end_line": 109,
+        "symbol_name": "View",
+        "chunk_type": "function_split",
+        "rrf_score": 0.03053613,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 6
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_ef48b055efe055aa",
+        "file_path": "test/app.render.js",
+        "start_line": 169,
+        "end_line": 185,
+        "symbol_name": "View",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02597403,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 17,
+        "bm25_rank": 17
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_3862718aaaf1cd68",
+        "file_path": "examples/view-constructor/github-view.js",
+        "start_line": 23,
+        "end_line": 44,
+        "symbol_name": "GithubView",
+        "chunk_type": "function_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      }
+    ]
+  },
+  {
+    "question_id": "express_004",
+    "repository": "expressjs/express",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the req.get (or req.header) method defined and how does it retrieve HTTP request headers?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 42.05,
+    "bm25_eligible_overlap_docs": 1266,
+    "union_candidates_count": 33,
+    "per_chunk_relevance": [
+      false,
+      true,
+      true,
+      false,
+      false
+    ],
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 1.1309,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6934
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_90014ca5ff734583",
+        "file_path": "test/req.get.js",
+        "start_line": 28,
+        "end_line": 54,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03201844,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_b32068b53b30e712",
+        "file_path": "lib/request.js",
+        "start_line": 37,
+        "end_line": 63,
+        "symbol_name": "module.exports",
+        "chunk_type": "export",
+        "rrf_score": 0.03177806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_62df5fe74c232b84",
+        "file_path": "lib/request.js",
+        "start_line": 64,
+        "end_line": 91,
+        "symbol_name": "req.header",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03175403,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_063278668f680678",
+        "file_path": "lib/request.js",
+        "start_line": 269,
+        "end_line": 296,
+        "symbol_name": "req.is",
+        "chunk_type": "method",
+        "rrf_score": 0.03102453,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 6
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_ac3d8ec4db148a6b",
+        "file_path": "lib/request.js",
+        "start_line": 90,
+        "end_line": 107,
+        "symbol_name": "req.header",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03036577,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 9,
+        "bm25_rank": 3
+      }
+    ]
+  },
+  {
+    "question_id": "express_005",
+    "repository": "expressjs/express",
+    "category": "implementation_understanding",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Express register middleware and mount nested sub-applications under a specific route prefix?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 38.09,
+    "bm25_eligible_overlap_docs": 1032,
+    "union_candidates_count": 35,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 1.0,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.4693
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_86fbdca8cf0c2e71",
+        "file_path": "lib/application.js",
+        "start_line": 237,
+        "end_line": 255,
+        "symbol_name": "app.use",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03252247,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_42c234e4cf66175d",
+        "file_path": "examples/static-files/index.js",
+        "start_line": 22,
+        "end_line": 34,
+        "symbol_name": "index.js",
+        "chunk_type": "module_context_split",
+        "rrf_score": 0.0300905,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 8
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_d3c0c4c0ee732092",
+        "file_path": "test/req.baseUrl.js",
+        "start_line": 7,
+        "end_line": 33,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02908325,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 13,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_57448082322372a7",
+        "file_path": "test/req.baseUrl.js",
+        "start_line": 50,
+        "end_line": 69,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02761905,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 10,
+        "bm25_rank": 15
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_59f13c29aa22d9ee",
+        "file_path": "lib/application.js",
+        "start_line": 256,
+        "end_line": 277,
+        "symbol_name": "app.route",
+        "chunk_type": "method_split",
+        "rrf_score": 0.0275836,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 19,
+        "bm25_rank": 7
+      }
+    ]
+  },
+  {
+    "question_id": "express_006",
+    "repository": "expressjs/express",
+    "category": "cross_file_dependencies",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does that instance lazily initialize its underlying router with case-sensitive and strict routing settings?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 39.3,
+    "bm25_eligible_overlap_docs": 672,
+    "union_candidates_count": 37,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 1.0,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.6131
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_258b993d1c9441f7",
+        "file_path": "lib/application.js",
+        "start_line": 59,
+        "end_line": 89,
+        "symbol_name": "app.init",
+        "chunk_type": "method",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_2e64d5bb7368a04a",
+        "file_path": "test/app.router.js",
+        "start_line": 243,
+        "end_line": 273,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03200205,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_06f5de0da1f46e25",
+        "file_path": "test/app.router.js",
+        "start_line": 272,
+        "end_line": 286,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03200205,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_decd96d7e11927e7",
+        "file_path": "test/Router.js",
+        "start_line": 108,
+        "end_line": 134,
+        "symbol_name": "it",
+        "chunk_type": "method",
+        "rrf_score": 0.015625,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": null
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_f2b83a5fb9d8e9a8",
+        "file_path": "test/support/utils.js",
+        "start_line": 45,
+        "end_line": 56,
+        "symbol_name": "shouldHaveHeader",
+        "chunk_type": "function",
+        "rrf_score": 0.015625,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 4
+      }
+    ]
+  },
+  {
+    "question_id": "express_007",
+    "repository": "expressjs/express",
+    "category": "implementation_understanding",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does the framework serialize objects, apply indentation settings, and send formatted JSON responses?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 36.43,
+    "bm25_eligible_overlap_docs": 774,
+    "union_candidates_count": 38,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "dcg_at_5": 0.6309,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6309
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_38f8a3bfe70480fd",
+        "file_path": "test/res.jsonp.js",
+        "start_line": 211,
+        "end_line": 234,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_83868f5639449b4f",
+        "file_path": "lib/response.js",
+        "start_line": 236,
+        "end_line": 263,
+        "symbol_name": "res.json",
+        "chunk_type": "method",
+        "rrf_score": 0.03149802,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_ae1eaca288da5b7f",
+        "file_path": "lib/response.js",
+        "start_line": 200,
+        "end_line": 235,
+        "symbol_name": "res.send",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": null
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_ac2f3f92c11f4851",
+        "file_path": "test/utils.js",
+        "start_line": 111,
+        "end_line": 116,
+        "symbol_name": "it",
+        "chunk_type": "method",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_a6ccfbe619a60728",
+        "file_path": "lib/application.js",
+        "start_line": 494,
+        "end_line": 521,
+        "symbol_name": "app.all",
+        "chunk_type": "method",
+        "rrf_score": 0.01587302,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 3
+      }
+    ]
+  },
+  {
+    "question_id": "express_008",
+    "repository": "expressjs/express",
+    "category": "implementation_understanding",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Express stream static files from disk to the client while handling range headers and transmission errors?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 40.41,
+    "bm25_eligible_overlap_docs": 1064,
+    "union_candidates_count": 36,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 0.6309,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.2961
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_ca02a3343a240494",
+        "file_path": "lib/response.js",
+        "start_line": 346,
+        "end_line": 362,
+        "symbol_name": "res.sendStatus",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03226646,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_da86e5936f5f5cac",
+        "file_path": "lib/response.js",
+        "start_line": 408,
+        "end_line": 427,
+        "symbol_name": "sendfile",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02957165,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 13
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_10e501fce8f508c3",
+        "file_path": "test/express.static.js",
+        "start_line": 671,
+        "end_line": 691,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02791239,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 17,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_2214957352bb7f03",
+        "file_path": "examples/static-files/index.js",
+        "start_line": 1,
+        "end_line": 23,
+        "symbol_name": "index.js",
+        "chunk_type": "module_context_split",
+        "rrf_score": 0.02564524,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 19,
+        "bm25_rank": 17
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_42c234e4cf66175d",
+        "file_path": "examples/static-files/index.js",
+        "start_line": 22,
+        "end_line": 34,
+        "symbol_name": "index.js",
+        "chunk_type": "module_context_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      }
+    ]
+  },
+  {
+    "question_id": "express_009",
+    "repository": "expressjs/express",
+    "category": "cross_file_dependencies",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does the response transmission mechanism calculate and set entity tags using utility hashing generators?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 39.75,
+    "bm25_eligible_overlap_docs": 839,
+    "union_candidates_count": 35,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "first_relevant_rank": 4,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 4,
+    "dcg_at_5": 0.4307,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.25,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.1681
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_e3f759f2970f9ec9",
+        "file_path": "lib/response.js",
+        "start_line": 659,
+        "end_line": 670,
+        "symbol_name": "res.append",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_f9f57e89edde272f",
+        "file_path": "lib/utils.js",
+        "start_line": 225,
+        "end_line": 248,
+        "symbol_name": "setCharset",
+        "chunk_type": "export",
+        "rrf_score": 0.03030999,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_511ed29f23596cd4",
+        "file_path": "lib/response.js",
+        "start_line": 486,
+        "end_line": 507,
+        "symbol_name": "res.download",
+        "chunk_type": "method_split",
+        "rrf_score": 0.0300905,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_e2e5e54963430d7c",
+        "file_path": "lib/response.js",
+        "start_line": 159,
+        "end_line": 179,
+        "symbol_name": "res.send",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02964255,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 14,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_0393081c6e8ce41f",
+        "file_path": "examples/auth/index.js",
+        "start_line": 48,
+        "end_line": 59,
+        "symbol_name": "imports_and_setup",
+        "chunk_type": "module_context_split",
+        "rrf_score": 0.028125,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 20,
+        "bm25_rank": 4
+      }
+    ]
+  },
+  {
+    "question_id": "express_010",
+    "repository": "expressjs/express",
+    "category": "architecture_flow",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "Walk through the dispatch lifecycle when a request first enters that application handler before response generation.",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 41.03,
+    "bm25_eligible_overlap_docs": 1105,
+    "union_candidates_count": 39,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 4,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_c3fdbd1ebb2e7ace",
+        "file_path": "lib/application.js",
+        "start_line": 125,
+        "end_line": 151,
+        "symbol_name": "app.defaultConfiguration",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03200205,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_8076a515b1a5c2b0",
+        "file_path": "lib/request.js",
+        "start_line": 497,
+        "end_line": 507,
+        "symbol_name": "stale",
+        "chunk_type": "getter",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_511ed29f23596cd4",
+        "file_path": "lib/response.js",
+        "start_line": 486,
+        "end_line": 507,
+        "symbol_name": "res.download",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_e1de45d7dd359213",
+        "file_path": "test/req.is.js",
+        "start_line": 237,
+        "end_line": 260,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_d81005d98d596f91",
+        "file_path": "lib/request.js",
+        "start_line": 469,
+        "end_line": 496,
+        "symbol_name": "fresh",
+        "chunk_type": "getter",
+        "rrf_score": 0.01587302,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": null
+      }
+    ]
+  },
+  {
+    "question_id": "express_011",
+    "repository": "expressjs/express",
+    "category": "cross_file_dependencies",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does the template rendering coordinator locate view files on disk and invoke the underlying view renderer?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.91,
+    "bm25_eligible_overlap_docs": 535,
+    "union_candidates_count": 31,
+    "per_chunk_relevance": [
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "first_relevant_rank": 3,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 5,
+    "dcg_at_5": 0.5,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.3333,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.1696
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_dd21f111895ca8f0",
+        "file_path": "lib/view.js",
+        "start_line": 36,
+        "end_line": 51,
+        "symbol_name": "module.exports",
+        "chunk_type": "export",
+        "rrf_score": 0.03131882,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_8f8889cca131c23f",
+        "file_path": "lib/response.js",
+        "start_line": 878,
+        "end_line": 896,
+        "symbol_name": "res.vary",
+        "chunk_type": "method",
+        "rrf_score": 0.02995752,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 11
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_9412c4245caaaf66",
+        "file_path": "lib/view.js",
+        "start_line": 108,
+        "end_line": 137,
+        "symbol_name": "View",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02990696,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 14
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_cf030aab03c30808",
+        "file_path": "test/app.render.js",
+        "start_line": 132,
+        "end_line": 155,
+        "symbol_name": "View",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02987737,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 9,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_5d6997a8e083dbae",
+        "file_path": "test/app.render.js",
+        "start_line": 154,
+        "end_line": 170,
+        "symbol_name": "View",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02843889,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 14,
+        "bm25_rank": 7
+      }
+    ]
+  },
+  {
+    "question_id": "express_012",
+    "repository": "expressjs/express",
+    "category": "architecture_flow",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does res.render render a view and send the rendered HTML response back to the client?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 39.86,
+    "bm25_eligible_overlap_docs": 1136,
+    "union_candidates_count": 30,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 0.6309,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.3869
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_8f8889cca131c23f",
+        "file_path": "lib/response.js",
+        "start_line": 878,
+        "end_line": 896,
+        "symbol_name": "res.vary",
+        "chunk_type": "method",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_7a9f5407b1cb09cd",
+        "file_path": "lib/response.js",
+        "start_line": 897,
+        "end_line": 923,
+        "symbol_name": "res.render",
+        "chunk_type": "method",
+        "rrf_score": 0.03225806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_1693eaa9546416e5",
+        "file_path": "examples/view-constructor/index.js",
+        "start_line": 27,
+        "end_line": 49,
+        "symbol_name": "index.js",
+        "chunk_type": "module_context_split",
+        "rrf_score": 0.03125763,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_a6ccfbe619a60728",
+        "file_path": "lib/application.js",
+        "start_line": 494,
+        "end_line": 521,
+        "symbol_name": "app.all",
+        "chunk_type": "method",
+        "rrf_score": 0.03033088,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_6509fce0cb7b12cc",
+        "file_path": "test/res.render.js",
+        "start_line": 144,
+        "end_line": 166,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.0292735,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 12
+      }
+    ]
+  },
+  {
+    "question_id": "express_013",
+    "repository": "expressjs/express",
+    "category": "architecture_flow",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does Express handle HTTP method routing when methods like app.get, app.post, and app.all are invoked?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 43.19,
+    "bm25_eligible_overlap_docs": 1253,
+    "union_candidates_count": 36,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_4f615b52509a3e63",
+        "file_path": "test/app.router.js",
+        "start_line": 436,
+        "end_line": 464,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02900988,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 11
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_c58b08d61f869fa8",
+        "file_path": "test/app.routes.error.js",
+        "start_line": 8,
+        "end_line": 32,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02854251,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 16,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_a91fd3af8d404d16",
+        "file_path": "test/app.all.js",
+        "start_line": 8,
+        "end_line": 24,
+        "symbol_name": "it",
+        "chunk_type": "method",
+        "rrf_score": 0.02840451,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 13
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_c7fa9f314e938c92",
+        "file_path": "test/app.router.js",
+        "start_line": 489,
+        "end_line": 518,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02638889,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 20,
+        "bm25_rank": 12
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_fecb72a33eae3911",
+        "file_path": "test/app.route.js",
+        "start_line": 23,
+        "end_line": 41,
+        "symbol_name": "it",
+        "chunk_type": "method",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      }
+    ]
+  },
+  {
+    "question_id": "express_014",
+    "repository": "expressjs/express",
+    "category": "debugging_configuration",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does it compile and apply proxy settings to resolve client IP addresses for those routes?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 38.72,
+    "bm25_eligible_overlap_docs": 1098,
+    "union_candidates_count": 31,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 1.0,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.6131
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_5d80ed73764c7824",
+        "file_path": "lib/request.js",
+        "start_line": 340,
+        "end_line": 356,
+        "symbol_name": "ip",
+        "chunk_type": "getter",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_ac2e62a476c9a9c5",
+        "file_path": "test/req.ip.js",
+        "start_line": 7,
+        "end_line": 33,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03128055,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_87335bc59ad99454",
+        "file_path": "test/req.ips.js",
+        "start_line": 7,
+        "end_line": 29,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03100962,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_f086de32bf0c35f0",
+        "file_path": "test/req.ip.js",
+        "start_line": 92,
+        "end_line": 108,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03079839,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_cc204c4ba2f08d1b",
+        "file_path": "test/req.ip.js",
+        "start_line": 32,
+        "end_line": 51,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03053613,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 6
+      }
+    ]
+  },
+  {
+    "question_id": "express_015",
+    "repository": "expressjs/express",
+    "category": "debugging_configuration",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Express calculate weak and strong entity tags for caching HTTP responses?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 41.52,
+    "bm25_eligible_overlap_docs": 997,
+    "union_candidates_count": 39,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_d81005d98d596f91",
+        "file_path": "lib/request.js",
+        "start_line": 469,
+        "end_line": 496,
+        "symbol_name": "fresh",
+        "chunk_type": "getter",
+        "rrf_score": 0.0297619,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 12
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_2e149f893eadfb41",
+        "file_path": "test/req.fresh.js",
+        "start_line": 56,
+        "end_line": 80,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_f8205575ad968e4b",
+        "file_path": "test/utils.js",
+        "start_line": 102,
+        "end_line": 106,
+        "symbol_name": "it",
+        "chunk_type": "method",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_689a11fbdc468791",
+        "file_path": "test/req.stale.js",
+        "start_line": 7,
+        "end_line": 30,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": null
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_a62fea631080a20a",
+        "file_path": "test/res.send.js",
+        "start_line": 523,
+        "end_line": 547,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 2
+      }
+    ]
+  },
+  {
+    "question_id": "express_016",
+    "repository": "expressjs/express",
+    "category": "cross_file_dependencies",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Express determine client IP addresses through proxy hops based on default configuration settings?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 44.11,
+    "bm25_eligible_overlap_docs": 921,
+    "union_candidates_count": 31,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_ac2e62a476c9a9c5",
+        "file_path": "test/req.ip.js",
+        "start_line": 7,
+        "end_line": 33,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03174603,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_f086de32bf0c35f0",
+        "file_path": "test/req.ip.js",
+        "start_line": 92,
+        "end_line": 108,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03131882,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_87335bc59ad99454",
+        "file_path": "test/req.ips.js",
+        "start_line": 7,
+        "end_line": 29,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03062179,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_cc204c4ba2f08d1b",
+        "file_path": "test/req.ip.js",
+        "start_line": 32,
+        "end_line": 51,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03053613,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 6
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_f74917c3b7d7a68b",
+        "file_path": "test/req.ip.js",
+        "start_line": 71,
+        "end_line": 93,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03033088,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 8
+      }
+    ]
+  },
+  {
+    "question_id": "express_017",
+    "repository": "expressjs/express",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is res.cookie defined and how does it serialize cookies and apply options like maxAge and signed?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 39.7,
+    "bm25_eligible_overlap_docs": 1206,
+    "union_candidates_count": 29,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 0.6309,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.3869
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_0ca4f244faa6f19c",
+        "file_path": "lib/response.js",
+        "start_line": 715,
+        "end_line": 737,
+        "symbol_name": "res.clearCookie",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03225806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_5b4315a80297dad1",
+        "file_path": "lib/response.js",
+        "start_line": 748,
+        "end_line": 777,
+        "symbol_name": "res.cookie",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03131882,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_396b1e78e19dbcdb",
+        "file_path": "test/res.cookie.js",
+        "start_line": 126,
+        "end_line": 151,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03100962,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_2067477a79476605",
+        "file_path": "test/req.signedCookies.js",
+        "start_line": 1,
+        "end_line": 7,
+        "symbol_name": "imports_and_setup",
+        "chunk_type": "module_context",
+        "rrf_score": 0.03036577,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_129272e429eb3411",
+        "file_path": "test/res.cookie.js",
+        "start_line": 232,
+        "end_line": 254,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.02951389,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 12
+      }
+    ]
+  },
+  {
+    "question_id": "express_018",
+    "repository": "expressjs/express",
+    "category": "debugging_configuration",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does Express register custom template engines to render non-standard file extensions?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 40.3,
+    "bm25_eligible_overlap_docs": 1009,
+    "union_candidates_count": 31,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 1,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_59f13c29aa22d9ee",
+        "file_path": "lib/application.js",
+        "start_line": 256,
+        "end_line": 277,
+        "symbol_name": "app.route",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_322661b231b744bc",
+        "file_path": "lib/application.js",
+        "start_line": 276,
+        "end_line": 293,
+        "symbol_name": "app.route",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03225806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_cc7507571d9a3808",
+        "file_path": "examples/mvc/index.js",
+        "start_line": 1,
+        "end_line": 21,
+        "symbol_name": "index.js",
+        "chunk_type": "module_context_split",
+        "rrf_score": 0.03100962,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_41cb69da53a9c7fc",
+        "file_path": "examples/ejs/index.js",
+        "start_line": 1,
+        "end_line": 26,
+        "symbol_name": "index.js",
+        "chunk_type": "module_context_split",
+        "rrf_score": 0.0305789,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 8
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_f02271ab31fe995e",
+        "file_path": "test/res.render.js",
+        "start_line": 32,
+        "end_line": 57,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.0305789,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 3
+      }
+    ]
+  },
+  {
+    "question_id": "express_019",
+    "repository": "expressjs/express",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "Where is the built-in JWT (JSON Web Token) authentication verification middleware implemented in Express?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 40.68,
+    "top1_rrf_score": 0.02919864,
+    "union_candidates_count": 37,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_108d992706657dd2",
+        "file_path": "examples/web-service/index.js",
+        "start_line": 15,
+        "end_line": 38,
+        "symbol_name": "error",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02919864,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_2214957352bb7f03",
+        "file_path": "examples/static-files/index.js",
+        "start_line": 1,
+        "end_line": 23,
+        "symbol_name": "index.js",
+        "chunk_type": "module_context_split",
+        "rrf_score": 0.028125,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 20
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_18053bd842fc769a",
+        "file_path": "examples/error/index.js",
+        "start_line": 1,
+        "end_line": 19,
+        "symbol_name": "imports_and_setup",
+        "chunk_type": "module_context",
+        "rrf_score": 0.02779923,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 14,
+        "bm25_rank": 10
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_04d61b239084ef2f",
+        "file_path": "examples/route-middleware/index.js",
+        "start_line": 50,
+        "end_line": 77,
+        "symbol_name": "andRestrictTo",
+        "chunk_type": "function_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_dec6097559abea8c",
+        "file_path": "examples/web-service/index.js",
+        "start_line": 87,
+        "end_line": 104,
+        "symbol_name": "error",
+        "chunk_type": "function_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      }
+    ]
+  },
+  {
+    "question_id": "express_020",
+    "repository": "expressjs/express",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "How does Express configure automatic database migration and schema synchronization for MongoDB?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 40.08,
+    "top1_rrf_score": 0.0298574,
+    "union_candidates_count": 37,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_cbbb5d3c1f2a32a3",
+        "file_path": "examples/web-service/index.js",
+        "start_line": 37,
+        "end_line": 55,
+        "symbol_name": "error",
+        "chunk_type": "function_split",
+        "rrf_score": 0.0298574,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 8
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_ed7f8afb442aa5f9",
+        "file_path": "examples/content-negotiation/db.js",
+        "start_line": 1,
+        "end_line": 10,
+        "symbol_name": "imports_and_setup, module.exports",
+        "chunk_type": "export",
+        "rrf_score": 0.02871795,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 15
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_73c430ee07b3d5b3",
+        "file_path": "examples/route-separation/post.js",
+        "start_line": 1,
+        "end_line": 14,
+        "symbol_name": "imports_and_setup, list",
+        "chunk_type": "export",
+        "rrf_score": 0.02739726,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 13,
+        "bm25_rank": 13
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_fc402ece93e069d0",
+        "file_path": "test/res.sendFile.js",
+        "start_line": 412,
+        "end_line": 434,
+        "symbol_name": "describe",
+        "chunk_type": "method_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_e6811ec44d25c99c",
+        "file_path": "examples/mvc/controllers/user/index.js",
+        "start_line": 1,
+        "end_line": 27,
+        "symbol_name": "imports_and_setup, before, list",
+        "chunk_type": "export",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_001",
+    "repository": "fmtlib/fmt",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the text_style class defined in fmt and what style attributes does it store?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 41.45,
+    "bm25_eligible_overlap_docs": 1044,
+    "union_candidates_count": 28,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_e607d4a97f22f360",
+        "file_path": "include/fmt/color.h",
+        "start_line": 341,
+        "end_line": 347,
+        "symbol_name": "bg",
+        "chunk_type": "method",
+        "rrf_score": 0.03175403,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_de92ef58945a1633",
+        "file_path": "include/fmt/color.h",
+        "start_line": 330,
+        "end_line": 340,
+        "symbol_name": "get_emphasis, text_style, fg",
+        "chunk_type": "method",
+        "rrf_score": 0.03102453,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 6
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_6ce6961351fc4209",
+        "file_path": "include/fmt/color.h",
+        "start_line": 348,
+        "end_line": 353,
+        "symbol_name": "fg",
+        "chunk_type": "function",
+        "rrf_score": 0.03047795,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 11
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_719319af5fe1c1f2",
+        "file_path": "include/fmt/color.h",
+        "start_line": 290,
+        "end_line": 290,
+        "symbol_name": "text_style",
+        "chunk_type": "method",
+        "rrf_score": 0.03033088,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 8
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_3114cae3062ea930",
+        "file_path": "include/fmt/color.h",
+        "start_line": 354,
+        "end_line": 365,
+        "symbol_name": "bg",
+        "chunk_type": "function",
+        "rrf_score": 0.02943723,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 10
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_002",
+    "repository": "fmtlib/fmt",
+    "category": "implementation_understanding",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does the styled helper function apply that style to an argument value for formatted output?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 41.24,
+    "bm25_eligible_overlap_docs": 897,
+    "union_candidates_count": 35,
+    "per_chunk_relevance": [
+      true,
+      false,
+      true,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 2,
+    "dcg_at_5": 1.5,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.9197
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_6e05a2497bac1abb",
+        "file_path": "include/fmt/color.h",
+        "start_line": 652,
+        "end_line": 663,
+        "symbol_name": "decltype",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03226646,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_aec45775bea98973",
+        "file_path": "include/fmt/color.h",
+        "start_line": 466,
+        "end_line": 476,
+        "symbol_name": "reset_color, styled_arg",
+        "chunk_type": "function",
+        "rrf_score": 0.03055037,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_d52e9b325fbeabdd",
+        "file_path": "include/fmt/color.h",
+        "start_line": 664,
+        "end_line": 674,
+        "symbol_name": "styled",
+        "chunk_type": "function",
+        "rrf_score": 0.02941813,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_4f43f012e697ac95",
+        "file_path": "include/fmt/color.h",
+        "start_line": 593,
+        "end_line": 609,
+        "symbol_name": "vformat_to",
+        "chunk_type": "function_split",
+        "rrf_score": 0.0290404,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 12
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_88f8c3b539a5b2de",
+        "file_path": "include/fmt/color.h",
+        "start_line": 586,
+        "end_line": 592,
+        "symbol_name": "format",
+        "chunk_type": "function",
+        "rrf_score": 0.02837302,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 20
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_003",
+    "repository": "fmtlib/fmt",
+    "category": "function_identification",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does the format library provide RAII management for C-style file streams?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 42.03,
+    "bm25_eligible_overlap_docs": 724,
+    "union_candidates_count": 38,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_a5c8c278a641f761",
+        "file_path": "include/fmt/fmt-c.h",
+        "start_line": 46,
+        "end_line": 68,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.02938653,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 14,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_d6751afbf2ffe47f",
+        "file_path": "include/fmt/std.h",
+        "start_line": 1,
+        "end_line": 26,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.0292735,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 12
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_c0f45adc566abfd4",
+        "file_path": "include/fmt/ostream.h",
+        "start_line": 108,
+        "end_line": 110,
+        "symbol_name": "formatter",
+        "chunk_type": "struct",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_2dd520574a83d901",
+        "file_path": "include/fmt/std.h",
+        "start_line": 52,
+        "end_line": 68,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_364c86b57fa1adf9",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 275,
+        "end_line": 288,
+        "symbol_name": "gmtime_s",
+        "chunk_type": "function",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": null
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_004",
+    "repository": "fmtlib/fmt",
+    "category": "function_identification",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does fmt construct dynamic argument lists when format arguments are not known at compile time?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 47.59,
+    "bm25_eligible_overlap_docs": 962,
+    "union_candidates_count": 36,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 5,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_8c1cd3786aeb22a4",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 581,
+        "end_line": 599,
+        "symbol_name": "c_str",
+        "chunk_type": "function_split",
+        "rrf_score": 0.03128055,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_905d53b08ea9a8db",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 214,
+        "end_line": 231,
+        "symbol_name": "format",
+        "chunk_type": "function",
+        "rrf_score": 0.03028233,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 12
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_96c2a04448405915",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 36,
+        "end_line": 52,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.02837022,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 10,
+        "bm25_rank": 11
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_694bf36da11cc31d",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 409,
+        "end_line": 418,
+        "symbol_name": "compile_format_string",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02580753,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 18,
+        "bm25_rank": 17
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_ca2cfdf44d779620",
+        "file_path": "test/gtest/gtest/gtest-spi.h",
+        "start_line": 183,
+        "end_line": 199,
+        "symbol_name": "SingleFailureChecker",
+        "chunk_type": "class_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_005",
+    "repository": "fmtlib/fmt",
+    "category": "implementation_understanding",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does fmt detect whether a type satisfies range requirements via the is_range trait?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 48.57,
+    "bm25_eligible_overlap_docs": 1010,
+    "union_candidates_count": 32,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_df748b64b06530f5",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 523,
+        "end_line": 529,
+        "symbol_name": "range_format_kind",
+        "chunk_type": "struct",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_2ee3a49e433a8d48",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 252,
+        "end_line": 264,
+        "symbol_name": "range_format_kind_",
+        "chunk_type": "struct",
+        "rrf_score": 0.02946912,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 11,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_d5e8260a6efee7c1",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 110,
+        "end_line": 115,
+        "symbol_name": "decltype",
+        "chunk_type": "function",
+        "rrf_score": 0.02923602,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 11
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_ccea2a27060233d9",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 634,
+        "end_line": 644,
+        "symbol_name": "formatter",
+        "chunk_type": "struct",
+        "rrf_score": 0.02921109,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 10,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_d2f18bfe1ad0e471",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 126,
+        "end_line": 134,
+        "symbol_name": "is_range_",
+        "chunk_type": "struct_split",
+        "rrf_score": 0.02878289,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 16
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_006",
+    "repository": "fmtlib/fmt",
+    "category": "cross_file_dependencies",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How does join construct a view to format those detected ranges with custom delimiters?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 46.34,
+    "bm25_eligible_overlap_docs": 776,
+    "union_candidates_count": 30,
+    "per_chunk_relevance": [
+      true,
+      false,
+      true,
+      true,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 8,
+    "dcg_at_5": 1.9307,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.6,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.6548
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_ddf6add7518fe5ea",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 847,
+        "end_line": 865,
+        "symbol_name": "join",
+        "chunk_type": "function",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_d785a30dfb5463ce",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 726,
+        "end_line": 736,
+        "symbol_name": "tuple_join_view",
+        "chunk_type": "function",
+        "rrf_score": 0.03225806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_612617574d5532f3",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 882,
+        "end_line": 896,
+        "symbol_name": "join",
+        "chunk_type": "function",
+        "rrf_score": 0.03077652,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_02b63eb01d1971f1",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 866,
+        "end_line": 868,
+        "symbol_name": "join, decltype",
+        "chunk_type": "function",
+        "rrf_score": 0.03033088,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 8
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_dc8ae954fec938bc",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 897,
+        "end_line": 907,
+        "symbol_name": "join",
+        "chunk_type": "function",
+        "rrf_score": 0.0298574,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 6
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_007",
+    "repository": "fmtlib/fmt",
+    "category": "implementation_understanding",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does dynamic_format_arg_store::push_back store typed values and named arguments?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 44.86,
+    "bm25_eligible_overlap_docs": 590,
+    "union_candidates_count": 29,
+    "per_chunk_relevance": [
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "dcg_at_5": 1.8869,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.6,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.7366
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_5037a46f8e8ce769",
+        "file_path": "include/fmt/args.h",
+        "start_line": 173,
+        "end_line": 184,
+        "symbol_name": "push_back, static_assert",
+        "chunk_type": "function",
+        "rrf_score": 0.03226646,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_53645b4827e7951c",
+        "file_path": "include/fmt/args.h",
+        "start_line": 136,
+        "end_line": 152,
+        "symbol_name": "decltype",
+        "chunk_type": "function_split",
+        "rrf_score": 0.03226646,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_fa58f187009ad63b",
+        "file_path": "include/fmt/args.h",
+        "start_line": 153,
+        "end_line": 170,
+        "symbol_name": "push_back",
+        "chunk_type": "function_split",
+        "rrf_score": 0.03175403,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_8ca35549a895fe6a",
+        "file_path": "include/fmt/args.h",
+        "start_line": 58,
+        "end_line": 77,
+        "symbol_name": "push",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03128055,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 6
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_22e516440b44d1d5",
+        "file_path": "include/fmt/args.h",
+        "start_line": 185,
+        "end_line": 196,
+        "symbol_name": "push_back",
+        "chunk_type": "function",
+        "rrf_score": 0.03077652,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 4
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_008",
+    "repository": "fmtlib/fmt",
+    "category": "cross_file_dependencies",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does the ostream class in fmt provide buffered output for low-level file descriptors?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 45.7,
+    "bm25_eligible_overlap_docs": 1024,
+    "union_candidates_count": 31,
+    "per_chunk_relevance": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 2,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 7,
+    "dcg_at_5": 1.9485,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.8,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.6608
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_3ce36634be30c75a",
+        "file_path": "include/fmt/os.h",
+        "start_line": 351,
+        "end_line": 360,
+        "symbol_name": "ostream_params",
+        "chunk_type": "method",
+        "rrf_score": 0.03154496,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 6
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_8711d50eff5905f4",
+        "file_path": "include/fmt/os.h",
+        "start_line": 393,
+        "end_line": 399,
+        "symbol_name": "close",
+        "chunk_type": "method",
+        "rrf_score": 0.03105441,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 7,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_53b42ed54eac7329",
+        "file_path": "include/fmt/os.h",
+        "start_line": 186,
+        "end_line": 207,
+        "symbol_name": "buffered_file, get",
+        "chunk_type": "method",
+        "rrf_score": 0.03062179,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_25d5b2d550ad977b",
+        "file_path": "include/fmt/os.h",
+        "start_line": 180,
+        "end_line": 185,
+        "symbol_name": "buffered_file",
+        "chunk_type": "method",
+        "rrf_score": 0.03033088,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 8
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_b012c98418b47297",
+        "file_path": "include/fmt/os.h",
+        "start_line": 361,
+        "end_line": 377,
+        "symbol_name": "ostream, writer",
+        "chunk_type": "class",
+        "rrf_score": 0.02995752,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 11
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_009",
+    "repository": "fmtlib/fmt",
+    "category": "architecture_flow",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "Walk through the execution flow when printing styled text to that buffered stream.",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 38.21,
+    "bm25_eligible_overlap_docs": 447,
+    "union_candidates_count": 37,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 4,
+    "dcg_at_5": 1.0,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.3904
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_f82f938e1454b978",
+        "file_path": "include/fmt/color.h",
+        "start_line": 497,
+        "end_line": 511,
+        "symbol_name": "vprint",
+        "chunk_type": "function",
+        "rrf_score": 0.03067916,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 10
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_d9159ece72aea5c6",
+        "file_path": "include/fmt/color.h",
+        "start_line": 531,
+        "end_line": 547,
+        "symbol_name": "vprintln",
+        "chunk_type": "function",
+        "rrf_score": 0.03001792,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 12
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_aec45775bea98973",
+        "file_path": "include/fmt/color.h",
+        "start_line": 466,
+        "end_line": 476,
+        "symbol_name": "reset_color, styled_arg",
+        "chunk_type": "function",
+        "rrf_score": 0.02967033,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 10,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_ca2cfdf44d779620",
+        "file_path": "test/gtest/gtest/gtest-spi.h",
+        "start_line": 183,
+        "end_line": 199,
+        "symbol_name": "SingleFailureChecker",
+        "chunk_type": "class_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_d52e9b325fbeabdd",
+        "file_path": "include/fmt/color.h",
+        "start_line": 664,
+        "end_line": 674,
+        "symbol_name": "styled",
+        "chunk_type": "function",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 2
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_010",
+    "repository": "fmtlib/fmt",
+    "category": "function_identification",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "Where is the printf_arg_formatter class defined and what format specifiers does it parse?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 36.69,
+    "bm25_eligible_overlap_docs": 886,
+    "union_candidates_count": 28,
+    "per_chunk_relevance": [
+      true,
+      false,
+      true,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "dcg_at_5": 1.5,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.5856
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_7b91ffc557f9e46e",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 231,
+        "end_line": 238,
+        "symbol_name": "printf_arg_formatter",
+        "chunk_type": "class",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_c0c0b9d0a57dc0ce",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 304,
+        "end_line": 309,
+        "symbol_name": "operator",
+        "chunk_type": "method",
+        "rrf_score": 0.03225806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_382f1e7ef10681ee",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 245,
+        "end_line": 258,
+        "symbol_name": "write_zero_with_zero_precision, printf_arg_formatter, base, operator",
+        "chunk_type": "method",
+        "rrf_score": 0.03100962,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 5,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_869c07f7772720c0",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 562,
+        "end_line": 578,
+        "symbol_name": "vprintf",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02987737,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 9,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_f5da75928932fde3",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 215,
+        "end_line": 223,
+        "symbol_name": "operator",
+        "chunk_type": "method",
+        "rrf_score": 0.02957165,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 13,
+        "bm25_rank": 3
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_011",
+    "repository": "fmtlib/fmt",
+    "category": "cross_file_dependencies",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does fmt::sprintf invoke vsprintf and detail::vprintf to produce a formatted string?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 35.66,
+    "bm25_eligible_overlap_docs": 969,
+    "union_candidates_count": 34,
+    "per_chunk_relevance": [
+      true,
+      true,
+      true,
+      false,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 8,
+    "dcg_at_5": 2.1309,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.6,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 0.5,
+      "ndcg_at_5": 0.7227
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_caea70368554bd29",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 589,
+        "end_line": 605,
+        "symbol_name": "vsprintf",
+        "chunk_type": "function",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_3cd177ba38372d19",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 606,
+        "end_line": 609,
+        "symbol_name": "sprintf",
+        "chunk_type": "function",
+        "rrf_score": 0.03200205,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_ea601ba8414d2bda",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 610,
+        "end_line": 615,
+        "symbol_name": "sprintf",
+        "chunk_type": "function",
+        "rrf_score": 0.03102453,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_869c07f7772720c0",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 562,
+        "end_line": 578,
+        "symbol_name": "vprintf",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02921109,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 10,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_d9159ece72aea5c6",
+        "file_path": "include/fmt/color.h",
+        "start_line": 531,
+        "end_line": 547,
+        "symbol_name": "vprintln",
+        "chunk_type": "function",
+        "rrf_score": 0.02720588,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 20
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_012",
+    "repository": "fmtlib/fmt",
+    "category": "architecture_flow",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does fmt format std::tuple and std::pair objects into delimiter-separated elements?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.8,
+    "bm25_eligible_overlap_docs": 949,
+    "union_candidates_count": 34,
+    "per_chunk_relevance": [
+      false,
+      false,
+      true,
+      true,
+      false
+    ],
+    "first_relevant_rank": 3,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 8,
+    "dcg_at_5": 0.9307,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 0.3333,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.3156
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_75c203c723f50614",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 869,
+        "end_line": 881,
+        "symbol_name": "decltype",
+        "chunk_type": "function",
+        "rrf_score": 0.03252247,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_612617574d5532f3",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 882,
+        "end_line": 896,
+        "symbol_name": "join",
+        "chunk_type": "function",
+        "rrf_score": 0.03226646,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_53fd3aa71b464073",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 744,
+        "end_line": 751,
+        "symbol_name": "format",
+        "chunk_type": "function",
+        "rrf_score": 0.02837302,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 20
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_54b00ce24316aa64",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 761,
+        "end_line": 776,
+        "symbol_name": "do_parse",
+        "chunk_type": "function",
+        "rrf_score": 0.02778314,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 13,
+        "bm25_rank": 11
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_75b8a56e9c8e4f77",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 300,
+        "end_line": 311,
+        "symbol_name": "formatter",
+        "chunk_type": "struct",
+        "rrf_score": 0.02678571,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 20,
+        "bm25_rank": 10
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_013",
+    "repository": "fmtlib/fmt",
+    "category": "debugging_configuration",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does fmt parse and format time durations with unit suffixes like seconds and milliseconds?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 35.84,
+    "bm25_eligible_overlap_docs": 961,
+    "union_candidates_count": 37,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 5,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_b4f43d2cb875ad68",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 1608,
+        "end_line": 1619,
+        "symbol_name": "get_milliseconds",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02894955,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 18,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_9f882153ff66c355",
+        "file_path": "include/fmt/printf.h",
+        "start_line": 640,
+        "end_line": 653,
+        "symbol_name": "fprintf",
+        "chunk_type": "function",
+        "rrf_score": 0.02779923,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 14,
+        "bm25_rank": 10
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_6fc7044929c6d1b9",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 2281,
+        "end_line": 2296,
+        "symbol_name": "decltype",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02690502,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 11,
+        "bm25_rank": 18
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_ff28d1a41623da74",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 2218,
+        "end_line": 2225,
+        "symbol_name": "formatter, parse",
+        "chunk_type": "struct",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_9b1defa7ef0c76ea",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 1599,
+        "end_line": 1609,
+        "symbol_name": "get_milliseconds",
+        "chunk_type": "function_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_014",
+    "repository": "fmtlib/fmt",
+    "category": "debugging_configuration",
+    "query_style": "conversational",
+    "answerable": true,
+    "raw_question": "How can that formatting syntax be parsed at compile time using macros?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 36.41,
+    "bm25_eligible_overlap_docs": 341,
+    "union_candidates_count": 38,
+    "per_chunk_relevance": [
+      false,
+      true,
+      false,
+      true,
+      false
+    ],
+    "first_relevant_rank": 2,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 3,
+    "dcg_at_5": 1.0616,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 0.5,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.4982
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_6e05a2497bac1abb",
+        "file_path": "include/fmt/color.h",
+        "start_line": 652,
+        "end_line": 663,
+        "symbol_name": "decltype",
+        "chunk_type": "method_split",
+        "rrf_score": 0.03177806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_96c2a04448405915",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 36,
+        "end_line": 52,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.02972678,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 15,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_812d58c6dabf82bf",
+        "file_path": "include/fmt/ranges.h",
+        "start_line": 347,
+        "end_line": 361,
+        "symbol_name": "parse",
+        "chunk_type": "function",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": null
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_372615ac292d073f",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 24,
+        "end_line": 37,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_0e522e20d0a574e8",
+        "file_path": "include/fmt/std.h",
+        "start_line": 789,
+        "end_line": 796,
+        "symbol_name": "parse, format",
+        "chunk_type": "function",
+        "rrf_score": 0.01587302,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": null
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_015",
+    "repository": "fmtlib/fmt",
+    "category": "architecture_flow",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does fmt construct and report Windows operating system errors from native error codes?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.73,
+    "bm25_eligible_overlap_docs": 954,
+    "union_candidates_count": 31,
+    "per_chunk_relevance": [
+      true,
+      true,
+      false,
+      true,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 2,
+    "total_evidence_spans_count": 2,
+    "total_relevant_chunks_in_repo": 4,
+    "dcg_at_5": 2.0616,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.6,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.8048
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_798e22315354a805",
+        "file_path": "include/fmt/os.h",
+        "start_line": 151,
+        "end_line": 160,
+        "symbol_name": "windows_error",
+        "chunk_type": "function",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_28ae6518d742d299",
+        "file_path": "include/fmt/os.h",
+        "start_line": 124,
+        "end_line": 142,
+        "symbol_name": "vwindows_error",
+        "chunk_type": "function_split",
+        "rrf_score": 0.03225806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_387bd9c985b8f9e9",
+        "file_path": "include/fmt/os.h",
+        "start_line": 110,
+        "end_line": 123,
+        "symbol_name": "c_str, format_windows_error",
+        "chunk_type": "function",
+        "rrf_score": 0.03125,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 4
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_ea79cc01e9451443",
+        "file_path": "include/fmt/os.h",
+        "start_line": 141,
+        "end_line": 150,
+        "symbol_name": "vwindows_error",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02987737,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 9,
+        "bm25_rank": 5
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_86f98dd91bd94b3b",
+        "file_path": "test/gtest-extra.h",
+        "start_line": 60,
+        "end_line": 73,
+        "symbol_name": "system_error_message",
+        "chunk_type": "function",
+        "rrf_score": 0.02866503,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 14
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_016",
+    "repository": "fmtlib/fmt",
+    "category": "implementation_understanding",
+    "query_style": "conceptual",
+    "answerable": true,
+    "raw_question": "How does fmt convert C++ enum values to their numeric representations during formatting?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 38.23,
+    "bm25_eligible_overlap_docs": 955,
+    "union_candidates_count": 33,
+    "per_chunk_relevance": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "first_relevant_rank": null,
+    "matched_evidence_spans_count": 0,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "dcg_at_5": 0.0,
+    "metrics": {
+      "hit_rate_at_1": 0.0,
+      "hit_rate_at_3": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_5": 0.0,
+      "mrr_at_5": 0.0,
+      "span_recall_at_5": 0.0,
+      "ndcg_at_5": 0.0
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_5a475bcf2a63cbb8",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 669,
+        "end_line": 675,
+        "symbol_name": "numeric_system",
+        "chunk_type": "enum",
+        "rrf_score": 0.03109932,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_f4750d2d7b5904e1",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 45,
+        "end_line": 64,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.0308862,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 9
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_a5c8c278a641f761",
+        "file_path": "include/fmt/fmt-c.h",
+        "start_line": 46,
+        "end_line": 68,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.03062179,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 9,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_a44569ae94d44408",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 94,
+        "end_line": 103,
+        "symbol_name": "use_underlying",
+        "chunk_type": "function_split",
+        "rrf_score": 0.02995752,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 11
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_2b33e70f8e6d6004",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 23,
+        "end_line": 46,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.0290404,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 12
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_017",
+    "repository": "fmtlib/fmt",
+    "category": "debugging_configuration",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does fmt implement as_underlying to force formatting an enum as an integer?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.6,
+    "bm25_eligible_overlap_docs": 940,
+    "union_candidates_count": 32,
+    "per_chunk_relevance": [
+      true,
+      false,
+      false,
+      true,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "dcg_at_5": 1.4307,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.4,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.5585
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_f4750d2d7b5904e1",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 45,
+        "end_line": 64,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_6394a95c37f63689",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 233,
+        "end_line": 247,
+        "symbol_name": "format",
+        "chunk_type": "method",
+        "rrf_score": 0.03128055,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 6
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_3eba27639b42db65",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 251,
+        "end_line": 256,
+        "symbol_name": "format_as",
+        "chunk_type": "function",
+        "rrf_score": 0.0305789,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 8
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_adba9c083959dfe8",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 71,
+        "end_line": 80,
+        "symbol_name": "use_identifiers",
+        "chunk_type": "function",
+        "rrf_score": 0.03036577,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 9,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_2b33e70f8e6d6004",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 23,
+        "end_line": 46,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.03033088,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 8,
+        "bm25_rank": 4
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_018",
+    "repository": "fmtlib/fmt",
+    "category": "debugging_configuration",
+    "query_style": "identifier",
+    "answerable": true,
+    "raw_question": "How does fmt define terminal color codes in the terminal_color enum class?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 39.15,
+    "bm25_eligible_overlap_docs": 1015,
+    "union_candidates_count": 31,
+    "per_chunk_relevance": [
+      true,
+      false,
+      true,
+      true,
+      false
+    ],
+    "first_relevant_rank": 1,
+    "matched_evidence_spans_count": 1,
+    "total_evidence_spans_count": 1,
+    "total_relevant_chunks_in_repo": 4,
+    "dcg_at_5": 1.9307,
+    "metrics": {
+      "hit_rate_at_1": 1.0,
+      "hit_rate_at_3": 1.0,
+      "hit_rate_at_5": 1.0,
+      "precision_at_5": 0.6,
+      "mrr_at_5": 1.0,
+      "span_recall_at_5": 1.0,
+      "ndcg_at_5": 0.7537
+    },
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_97ee6acb752e90c4",
+        "file_path": "include/fmt/color.h",
+        "start_line": 160,
+        "end_line": 178,
+        "symbol_name": "terminal_color",
+        "chunk_type": "enum",
+        "rrf_score": 0.03278689,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_2e02a45f192051d3",
+        "file_path": "include/fmt/color.h",
+        "start_line": 215,
+        "end_line": 228,
+        "symbol_name": "color_type, value_, is_terminal_color",
+        "chunk_type": "method",
+        "rrf_score": 0.03225806,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_74346feb7af49af8",
+        "file_path": "include/fmt/color.h",
+        "start_line": 179,
+        "end_line": 191,
+        "symbol_name": "emphasis",
+        "chunk_type": "enum",
+        "rrf_score": 0.03079839,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 7
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_7ea1ea3f5009f117",
+        "file_path": "include/fmt/color.h",
+        "start_line": 199,
+        "end_line": 209,
+        "symbol_name": "g, b",
+        "chunk_type": "method",
+        "rrf_score": 0.03077652,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 6
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_1ccc2e64a370e2bd",
+        "file_path": "include/fmt/color.h",
+        "start_line": 366,
+        "end_line": 380,
+        "symbol_name": "ansi_color_escape",
+        "chunk_type": "function_split",
+        "rrf_score": 0.03077652,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 6,
+        "bm25_rank": 4
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_019",
+    "repository": "fmtlib/fmt",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "Where is the built-in asynchronous non-blocking thread-pool logging sink configured in fmt?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 36.53,
+    "top1_rrf_score": 0.02911605,
+    "union_candidates_count": 38,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_948e4cde0956a404",
+        "file_path": "test/gtest/gtest/gtest-spi.h",
+        "start_line": 59,
+        "end_line": 70,
+        "symbol_name": "InterceptMode",
+        "chunk_type": "enum",
+        "rrf_score": 0.02911605,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 17,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_33d1674be3ea0606",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 289,
+        "end_line": 297,
+        "symbol_name": "formatbuf",
+        "chunk_type": "function",
+        "rrf_score": 0.02741784,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 15,
+        "bm25_rank": 11
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_3ce36634be30c75a",
+        "file_path": "include/fmt/os.h",
+        "start_line": 351,
+        "end_line": 360,
+        "symbol_name": "ostream_params",
+        "chunk_type": "method",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": null
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_5037a46f8e8ce769",
+        "file_path": "include/fmt/args.h",
+        "start_line": 173,
+        "end_line": 184,
+        "symbol_name": "push_back, static_assert",
+        "chunk_type": "function",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_25d5b2d550ad977b",
+        "file_path": "include/fmt/os.h",
+        "start_line": 180,
+        "end_line": 185,
+        "symbol_name": "buffered_file",
+        "chunk_type": "method",
+        "rrf_score": 0.01612903,
+        "retrieval_sources": [
+          "dense"
+        ],
+        "dense_rank": 2,
+        "bm25_rank": null
+      }
+    ]
+  },
+  {
+    "question_id": "fmt_020",
+    "repository": "fmtlib/fmt",
+    "category": "unanswerable",
+    "query_style": "unanswerable",
+    "answerable": false,
+    "raw_question": "How does fmt parse and serialize JSON documents into C++ struct fields?",
+    "failed": false,
+    "error": null,
+    "retrieval_latency_ms": 37.69,
+    "top1_rrf_score": 0.03226646,
+    "union_candidates_count": 36,
+    "top_k_results": [
+      {
+        "rank": 1,
+        "chunk_id": "v1_a5c8c278a641f761",
+        "file_path": "include/fmt/fmt-c.h",
+        "start_line": 46,
+        "end_line": 68,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.03226646,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 1,
+        "bm25_rank": 3
+      },
+      {
+        "rank": 2,
+        "chunk_id": "v1_96c2a04448405915",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 36,
+        "end_line": 52,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.03021354,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 11,
+        "bm25_rank": 2
+      },
+      {
+        "rank": 3,
+        "chunk_id": "v1_e19cc1bf6297aa9e",
+        "file_path": "include/fmt/enum.h",
+        "start_line": 223,
+        "end_line": 232,
+        "symbol_name": "formatter, parse",
+        "chunk_type": "struct",
+        "rrf_score": 0.0297619,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 3,
+        "bm25_rank": 12
+      },
+      {
+        "rank": 4,
+        "chunk_id": "v1_ff28d1a41623da74",
+        "file_path": "include/fmt/chrono.h",
+        "start_line": 2218,
+        "end_line": 2225,
+        "symbol_name": "formatter, parse",
+        "chunk_type": "struct",
+        "rrf_score": 0.02844551,
+        "retrieval_sources": [
+          "dense",
+          "bm25"
+        ],
+        "dense_rank": 4,
+        "bm25_rank": 18
+      },
+      {
+        "rank": 5,
+        "chunk_id": "v1_372615ac292d073f",
+        "file_path": "include/fmt/compile.h",
+        "start_line": 24,
+        "end_line": 37,
+        "symbol_name": "license_header",
+        "chunk_type": "file_header_split",
+        "rrf_score": 0.01639344,
+        "retrieval_sources": [
+          "bm25"
+        ],
+        "dense_rank": null,
+        "bm25_rank": 1
+      }
+    ]
+  }
+]
