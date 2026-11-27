@@ -243,6 +243,9 @@ def validate_and_render_citations(
 
     def _replace_bracket_group(match: re.Match[str]) -> str:
         inner = match.group(1)
+        upper_inner = inner.strip().upper()
+        if upper_inner.startswith("UNVERIFIED_CITATION:") or "(METADATA UNAVAILABLE)" in upper_inner:
+            return match.group(0)
         parts = [p.strip() for p in inner.split(",") if p.strip()]
         # If every comma-segment is an EVIDENCE_ token, replace cleanly
         if parts and all(_EVIDENCE_TOKEN_RE.fullmatch(p) for p in parts):
@@ -260,15 +263,19 @@ def validate_and_render_citations(
             match.group(0),
         )
 
-    rendered_body = _BRACKET_GROUP_RE.sub(_replace_bracket_group, answer_text)
-    # Catch any remaining standalone `EVIDENCE_k` outside brackets (not already rewritten inside ` (`)
-    # Only replace tokens not preceded by `[`
-    rendered_body = re.sub(
-        r"(?<!\[)\b(EVIDENCE_\d+)\b(?!\s*\()",
-        lambda em: _render_single_eid(em.group(1).upper(), evidence_map),
-        rendered_body,
-        flags=re.IGNORECASE,
+    # Single-pass replacement handles bracket groups and bare tokens without re-wrapping
+    # already-rendered `[UNVERIFIED_CITATION: EVIDENCE_k]` outputs.
+    single_pass_re = re.compile(
+        r"\[([^\[\]]*EVIDENCE_[^\[\]]+)\]|(?<!\[)(?<!UNVERIFIED_CITATION:\s)\b(EVIDENCE_\d+)\b(?!\s*\()",
+        re.IGNORECASE,
     )
+
+    def _replace_single_pass(match: re.Match[str]) -> str:
+        if match.group(1) is not None:
+            return _replace_bracket_group(match)
+        return _render_single_eid(match.group(2).upper(), evidence_map)
+
+    rendered_body = single_pass_re.sub(_replace_single_pass, answer_text)
 
     resolved_sources: list[dict[str, Any]] = []
     for eid in valid_citation_ids:

@@ -65,6 +65,8 @@ if "enable_query_rewrite" not in st.session_state:
     st.session_state.enable_query_rewrite = False
 if "grounded_generation" not in st.session_state:
     st.session_state.grounded_generation = True
+if "grounded_model" not in st.session_state:
+    st.session_state.grounded_model = "gemini-3.5-flash-lite"
 if "repo_commit_sha" not in st.session_state:
     st.session_state.repo_commit_sha = "unknown"
 
@@ -123,6 +125,19 @@ with st.sidebar:
             "flags partial evidence, and abstains honestly when evidence is insufficient."
         ),
     )
+    if st.session_state.grounded_generation:
+        grounded_model_options = ["gemini-3.5-flash-lite", "gemini-3.5-flash"]
+        st.session_state.grounded_model = st.selectbox(
+            "Grounded Generation Model",
+            options=grounded_model_options,
+            index=grounded_model_options.index(st.session_state.grounded_model)
+            if st.session_state.grounded_model in grounded_model_options
+            else 0,
+            help=(
+                "gemini-3.5-flash-lite (Recommended) completed all Day 6 benchmarks cleanly (~1.8s P50); "
+                "gemini-3.5-flash hits a 20 requests/day Free Tier limit."
+            ),
+        )
     
     # When the user clicks the index button, start the pipeline
     if st.button("Index Repository", type="primary"):
@@ -274,7 +289,9 @@ def _render_retrieved_chunks_panel(retrieved_chunks: list[dict], retrieved_meta:
                 rank = src.get("rank")
                 st.markdown(f"- **[{eid}]** `{label}`{sym}")
                 if isinstance(rank, int) and rank in chunk_by_idx:
-                    ch_txt = chunk_by_idx[rank].get("content", "")
+                    ch_txt = generation.strip_redundant_v1_header_for_prompt(
+                        chunk_by_idx[rank].get("content", "")
+                    )
                     if ch_txt:
                         fp = str(src.get("file_path", ""))
                         src_lang = "python"
@@ -312,9 +329,10 @@ def _render_retrieved_chunks_panel(retrieved_chunks: list[dict], retrieved_meta:
                     if chunk.get("reranker_raw_logit") is not None
                     else ""
                 )
+                display_body = generation.strip_redundant_v1_header_for_prompt(chunk["content"])
                 st.code(
                     f"// [EVIDENCE_{idx}] {meta.get('file_path')} | Lines {meta.get('start_line')}-{meta.get('end_line')}{id_str}{dist_str}{logit_str}\n"
-                    + chunk["content"],
+                    + display_body,
                     language=lang,
                 )
 
@@ -365,7 +383,16 @@ for message in st.session_state.messages:
                     st.metric("Generation Latency", f"{g.get('latency_seconds', 0.0):.3f}s")
                 with col3:
                     st.metric("Total Turn Latency", f"{diag.get('total_turn_latency_seconds', 0.0):.3f}s")
-                st.write(f"**Chunks:** {r.get('actual_results_returned', 0)} / {r.get('top_k_requested', 5)} | **Metric:** {r.get('distance_metric', 'l2')} | **Model:** {g.get('model', 'gemini-3.5-flash')}")
+                st.write(
+                    f"**Chunks:** {r.get('actual_results_returned', 0)} / {r.get('top_k_requested', 5)} | "
+                    f"**Metric:** {r.get('distance_metric', 'l2')} | **Model:** {g.get('model', 'gemini-3.5-flash')}"
+                )
+                if g.get("validation_status"):
+                    st.caption(
+                        f"**Grounding:** tier=`{g.get('confidence_tier')}` | abstained=`{g.get('abstention_status')}` | "
+                        f"citations=`{len(g.get('valid_citation_ids', []))}` valid / `{len(g.get('invalid_citation_ids', []))}` invalid | "
+                        f"status=`{g.get('validation_status')}`"
+                    )
 
 # Wait for user to enter a new prompt
 # `st.chat_input` pauses execution here until the user submits text
@@ -409,7 +436,7 @@ if prompt := st.chat_input("Ask a question about the code..."):
                         directory_tree=st.session_state.directory_tree,
                         chat_history=st.session_state.messages[:-1],
                         repository_name=st.session_state.repo_name,
-                        model="gemini-3.5-flash-lite",
+                        model=st.session_state.grounded_model,
                     )
                     g3 = gen_bundle["g3"]
                     g4 = gen_bundle["g4"]
@@ -499,6 +526,12 @@ if prompt := st.chat_input("Ask a question about the code..."):
                     st.caption(
                         f"**Query Rewrite:** {'Rewritten' if retrieval_meta.get('query_rewritten') else 'Bypassed/Fallback'} "
                         f"(`{retrieval_meta.get('rewrite_gate_reason')}`, {retrieval_meta.get('rewrite_latency_seconds', 0.0):.3f}s)"
+                    )
+                if grounding_info:
+                    st.caption(
+                        f"**Grounding:** tier=`{grounding_info.get('confidence_tier')}` | abstained=`{grounding_info.get('abstained')}` | "
+                        f"citations=`{len(grounding_info.get('resolved_sources', []))}` valid | "
+                        f"status=`{grounding_info.get('validation_status')}`"
                     )
             
             # Record query event into baseline run safely (telemetry failure must never crash chat)

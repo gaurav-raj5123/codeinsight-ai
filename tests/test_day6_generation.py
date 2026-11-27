@@ -163,7 +163,7 @@ def test_citation_validation_edge_cases_and_no_fabricated_links():
     raw_ans = (
         "Routing uses `dispatch_request` [EVIDENCE_1, EVIDENCE_1]. "
         "Settings use `from_object` [EVIDENCE_2]. "
-        "Fake helper in src/flask/magic.py [EVIDENCE_99] [EVIDENCE_0]."
+        "Fake helper in src/flask/magic.py [EVIDENCE_99] [EVIDENCE_0] and bare EVIDENCE_88."
     )
     cit = validate_and_render_citations(
         raw_answer=raw_ans,
@@ -173,14 +173,16 @@ def test_citation_validation_edge_cases_and_no_fabricated_links():
     )
     assert cit["valid_citation_ids"] == ["EVIDENCE_1", "EVIDENCE_2"]
     assert cit["duplicate_citation_ids"] == ["EVIDENCE_1"]
-    assert set(cit["invalid_citation_ids"]) == {"EVIDENCE_99", "not_an_id.py", "EVIDENCE_0"}
+    assert set(cit["invalid_citation_ids"]) == {"EVIDENCE_99", "not_an_id.py", "EVIDENCE_0", "EVIDENCE_88"}
     assert cit["has_invalid_citations"] is True
     assert cit["validation_status"] == "invalid_citations_detected"
     assert "[EVIDENCE_1 (src/flask/app.py:1490–1525)]" in cit["rendered_answer"]
     assert "[EVIDENCE_2 (src/flask/config.py:240–265)]" in cit["rendered_answer"]
-    # Invalid citations MUST NOT become file links!
+    # Invalid citations MUST NOT become file links or double-wrapped!
     assert "[UNVERIFIED_CITATION: EVIDENCE_99]" in cit["rendered_answer"]
     assert "[UNVERIFIED_CITATION: EVIDENCE_0]" in cit["rendered_answer"]
+    assert "[UNVERIFIED_CITATION: EVIDENCE_88]" in cit["rendered_answer"]
+    assert "[UNVERIFIED_CITATION: [UNVERIFIED_CITATION:" not in cit["rendered_answer"]
     assert "src/flask/magic.py" in cit["unretrieved_file_mentions"]
 
     # Missing file_path and invalid line range metadata handling
@@ -448,7 +450,7 @@ def test_checkpoint_and_resume_behavior_with_simulated_partial_failure(tmp_path)
     # Offline G4 makes zero API calls and preserves G3 raw text
     g4_out, cit_sum = run_g4_offline_stage(frozen_mock, out2)
     assert all(r["api_calls_made"] == 0 for r in g4_out)
-    assert g4_out[0]["valid_citation_ids"] if "valid_citation_ids" in g4_out[0] else g4_out[0]["citation_validation_report"]["valid_citation_ids"] == ["EVIDENCE_1"]
+    assert g4_out[0]["citation_validation_report"]["valid_citation_ids"] == ["EVIDENCE_1"]
     assert g4_out[1]["abstained"] is True
     assert cit_sum["additional_live_api_calls"] == 0
 

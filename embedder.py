@@ -55,7 +55,6 @@ def load_embedding_model():
     # Embeddings represent text as arrays of numbers (vectors) in high-dimensional space.
     # Texts with similar meanings will have vectors that are mathematically close.
     # We use all-MiniLM-L6-v2 (384-dimensional vectors) via ONNX Runtime.
-    # We use all-MiniLM-L6-v2 (384-dimensional vectors) via ONNX Runtime.
     return embedding_functions.DefaultEmbeddingFunction()
 
 
@@ -91,7 +90,7 @@ def _normalize_repo_collection_name(repo_name: str) -> str:
     return safe_repo_name
 
 
-@st.cache_resource(show_spinner=False)
+@st.cache_resource(show_spinner=False, max_entries=16)
 def _cached_hydrate_bm25_from_chroma(cache_key: str, _collection: Any) -> tuple[BM25Retriever, str]:
     """Hydrate and cache a BM25Retriever directly from a persisted ChromaDB collection."""
     return build_bm25_from_collection(_collection, k1=1.5, b=0.75, idf_mode="lucene")
