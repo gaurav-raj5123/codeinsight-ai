@@ -113,7 +113,8 @@ def create_query_record(
     generation_error: str | None = None,
     prompt_length_chars: int = 0,
     response_length_chars: int = 0,
-    total_turn_latency_seconds: float = 0.0
+    total_turn_latency_seconds: float = 0.0,
+    generation_details: dict | None = None,
 ) -> dict:
     """Creates a structured record for a single query turn."""
     # Format retrieved chunks for logging
@@ -132,15 +133,57 @@ def create_query_record(
         formatted_chunks.append(chunk_entry)
 
     # Sanitize generation error (remove any sensitive tokens or full API keys if present)
-    safe_error = None
-    if generation_error:
-        safe_error = str(generation_error)
-        # Mask out any apparent API key patterns
-        import re
-        safe_error = re.sub(r'AIza[0-9A-Za-z-_]+', '[REDACTED_API_KEY]', safe_error)
+    import re
+
+    def _mask(val):
+        if val is None:
+            return None
+        if isinstance(val, str):
+            return re.sub(r'AIza[0-9A-Za-z-_]+', '[REDACTED_API_KEY]', val)
+        if isinstance(val, list):
+            return [_mask(v) for v in val]
+        if isinstance(val, dict):
+            return {k: _mask(v) for k, v in val.items()}
+        return val
+
+    safe_error = _mask(str(generation_error)) if generation_error else None
+
+    generation_block = {
+        "model": generation_model,
+        "latency_seconds": round(generation_latency_seconds, 4),
+        "success": generation_success,
+        "error": safe_error,
+        "prompt_length_chars": prompt_length_chars,
+        "response_length_chars": response_length_chars,
+    }
+    if generation_details and isinstance(generation_details, dict):
+        # Record Day 6 grounded-generation fields safely without exposing secrets or altering V0 keys
+        allowed_keys = (
+            "experiment",
+            "prompt_version",
+            "commit_sha",
+            "retrieval_config",
+            "frozen_retrieval_evidence_ids",
+            "evidence_sufficiency",
+            "confidence_tier",
+            "reason",
+            "missing_information",
+            "abstention_status",
+            "raw_response",
+            "parsed_response",
+            "citation_ids",
+            "valid_citation_ids",
+            "invalid_citation_ids",
+            "validation_status",
+            "retry_count",
+            "evaluation_results",
+        )
+        for k in allowed_keys:
+            if k in generation_details:
+                generation_block[k] = _mask(generation_details[k])
 
     query_id = f"query_{datetime.now(timezone.utc).strftime('%H%M%S')}_{uuid.uuid4().hex[:4]}"
-    return {
+    record = {
         "query_id": query_id,
         "timestamp": get_current_iso_timestamp(),
         "query_text": query_text,
@@ -152,16 +195,12 @@ def create_query_record(
             "distance_metric": distance_metric,
             "retrieved_chunks": formatted_chunks
         },
-        "generation": {
-            "model": generation_model,
-            "latency_seconds": round(generation_latency_seconds, 4),
-            "success": generation_success,
-            "error": safe_error,
-            "prompt_length_chars": prompt_length_chars,
-            "response_length_chars": response_length_chars
-        },
+        "generation": generation_block,
         "total_turn_latency_seconds": round(total_turn_latency_seconds, 4)
     }
+    if generation_details and isinstance(generation_details, dict) and "question_id" in generation_details:
+        record["benchmark_question_id"] = generation_details["question_id"]
+    return record
 
 
 def save_baseline_run(run_record: dict, filepath: str = BASELINE_LOG_PATH) -> str:

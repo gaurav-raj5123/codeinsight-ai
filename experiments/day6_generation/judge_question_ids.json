@@ -1,0 +1,60 @@
+{
+  "name": "day6_blinded_judge_n24",
+  "created_at_utc": "2026-11-27T14:54:59.202473+00:00",
+  "selection_policy": "deterministic_pre_experiment_stratified",
+  "count": 24,
+  "question_ids": [
+    "flask_001",
+    "flask_006",
+    "flask_009",
+    "flask_014",
+    "flask_002",
+    "flask_017",
+    "flask_019",
+    "flask_020",
+    "express_002",
+    "express_004",
+    "express_010",
+    "express_015",
+    "express_008",
+    "express_011",
+    "express_019",
+    "express_020",
+    "fmt_005",
+    "fmt_009",
+    "fmt_011",
+    "fmt_017",
+    "fmt_003",
+    "fmt_013",
+    "fmt_019",
+    "fmt_020"
+  ],
+  "breakdown": {
+    "by_repository": {
+      "pallets/flask": 8,
+      "expressjs/express": 8,
+      "fmtlib/fmt": 8
+    },
+    "by_cohort": {
+      "cohort_a_hit": 12,
+      "cohort_b_miss": 6,
+      "cohort_c_unanswerable": 6
+    },
+    "by_category": {
+      "function_identification": 3,
+      "cross_file_dependencies": 3,
+      "architecture_flow": 3,
+      "debugging_configuration": 5,
+      "implementation_understanding": 4,
+      "unanswerable": 6
+    },
+    "by_query_style": {
+      "identifier": 5,
+      "conversational": 7,
+      "conceptual": 6,
+      "unanswerable": 6
+    },
+    "turn_2_count": 7,
+    "multi_evidence_count": 6
+  }
+}

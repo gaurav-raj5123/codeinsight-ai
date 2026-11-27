@@ -1,0 +1,54 @@
+{
+  "name": "day6_ablation_g1_g2_n18",
+  "created_at_utc": "2026-11-27T14:54:59.202316+00:00",
+  "selection_policy": "deterministic_pre_experiment_stratified",
+  "count": 18,
+  "question_ids": [
+    "flask_001",
+    "flask_006",
+    "flask_012",
+    "flask_002",
+    "flask_017",
+    "flask_019",
+    "express_004",
+    "express_010",
+    "express_016",
+    "express_008",
+    "express_018",
+    "express_020",
+    "fmt_005",
+    "fmt_009",
+    "fmt_011",
+    "fmt_003",
+    "fmt_013",
+    "fmt_020"
+  ],
+  "breakdown": {
+    "by_repository": {
+      "pallets/flask": 6,
+      "expressjs/express": 6,
+      "fmtlib/fmt": 6
+    },
+    "by_cohort": {
+      "cohort_a_hit": 9,
+      "cohort_b_miss": 6,
+      "cohort_c_unanswerable": 3
+    },
+    "by_category": {
+      "function_identification": 3,
+      "cross_file_dependencies": 3,
+      "architecture_flow": 3,
+      "implementation_understanding": 3,
+      "debugging_configuration": 3,
+      "unanswerable": 3
+    },
+    "by_query_style": {
+      "identifier": 4,
+      "conversational": 4,
+      "conceptual": 7,
+      "unanswerable": 3
+    },
+    "turn_2_count": 4,
+    "multi_evidence_count": 5
+  }
+}

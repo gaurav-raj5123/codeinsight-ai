@@ -31,8 +31,11 @@ This directory houses the structured, day-by-day engineering audits, benchmark r
   - **`D5-E3b` (Full Candidate Union `<=40` -> Rerank):** Reaches `Hit@1 = 0.4815`, `MRR@5 = 0.5948`, `NDCG@5 = 0.4391` (`Hit@5 = 0.7778`, `P50 = 4,498.75 ms`).
   - **Leakage-Free Conversational Rewriting (`Q1` vs `Q0` & `Q2-Oracle`):** `D5-E3a` already lifts unrewritten Turn-2 `Hit@5` to `0.9167` (`11/12`); live Gemini `Q1` suffers `4/12` API timeouts/503s (`4.2s–32.7s`, safely falling back) and query over-specification (`Hit@5 = 0.7500`), so rewriting is integrated cleanly as an **opt-in toggle (default `False`)**. Includes exploratory Day 6 raw-logit/sigmoid distribution handoff (`Answerable` vs `Unanswerable`).
 
+### [Day 6: Trustworthy Grounded Generation & Citation Validation](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day6/)
+- **[DAY6_GENERATION_AUDIT.md](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day6/DAY6_GENERATION_AUDIT.md)**: Pre-implementation audit identifying `llm.build_prompt()` directory-tree/history leakage hazards, V1 header duplication, lack of timeout/retry handling, free-tier `20 RPD` cap on `gemini-3.5-flash`, and verified frozen `D5-E3a` cohort counts (`43 / 11 / 6`, `300/300` ChromaDB hydration match).
+- **[DAY6_GROUNDED_GENERATION_REPORT.md](file:///C:/Users/gaura/Downloads/RAG%20PROJECT/reports/day6/DAY6_GROUNDED_GENERATION_REPORT.md)**: Controlled generation evaluation (`204/204` live calls on `gemini-3.5-flash-lite` + archived partial `gemini-3.5-flash` run) comparing `G0` (`N=60`), `G1` (`N=18`), `G2` (`N=18`), `G3` (`N=60`), and `G4` (`N=60`, deterministic offline validation, `0.33 ms` median): **`100.0%` token-level citation validity (`154/154`)**, `0` unretrieved file/line mentions (`2 -> 0` / `9 -> 0`), `100.0%` Cohort C abstention (`6/6`), **`100.0%` blinded-judge faithfulness (`24/24`)**, `0.0%` judge parametric leakage (`0/24`), plus 10 verbatim Layer 3 manual audits and Streamlit UI integration.
+
 ---
 
 ### Upcoming Milestones
-- **Day 6**: Score Calibration, Unanswerable Abstention Boundaries & Retrieval Grounding Analysis (building on Day 5 raw-logit/sigmoid score distributions)
-- **Day 7**: End-to-End Generation Evaluation, Final System Polish & Release Verification
+- **Day 7**: End-to-End Pipeline Evaluation, Partial-Span Abstention Calibration & Final Release Verification

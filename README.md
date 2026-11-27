@@ -47,7 +47,13 @@ flowchart TD
 │   ├── hybrid_retriever.py        # Reciprocal Rank Fusion (RRF k=60) & candidate union logic
 │   ├── reranker.py                # Day 5 CPU ONNX cross-encoder reranker & HybridRerankRetriever
 │   └── query_rewriter.py          # Day 5 leakage-free gated conversational query rewriter
-├── llm.py                         # Gemini API client, secret sanitization & prompt construction
+├── llm.py                         # Legacy V0 Gemini API client & prompt builder (preserved anchor)
+├── generation/                    # 🛡️ Day 6+ trustworthy grounded generation & citation package
+│   ├── __init__.py
+│   ├── prompts.py                 # Evidence rules, tree/history isolation, V1 header hygiene, G0–G3/Judge prompts
+│   ├── citations.py               # Deterministic `[EVIDENCE_i]` resolution, validation & rendering
+│   ├── grounded_generator.py      # Single-call structured G3, resilient API retries & offline G4 validation
+│   └── evaluation.py              # Layer 1 deterministic cohort evaluator & Layer 2 blinded LLM judge
 ├── repo_loader.py                 # GitHub repository ZIP downloader & source file extractor
 ├── telemetry.py                   # Atomic telemetry persistence & latency instrumentation
 ├── requirements.txt               # Pinned project dependencies
@@ -73,6 +79,9 @@ flowchart TD
 │       └── DAY4_HYBRID_REPORT.md           # Single-pass hybrid benchmark & Day 5 handoff analysis
 │   └── day5/                      # Day 5: Cross-Encoder Reranking & Conversational Query Rewriting
 │       └── DAY5_RERANK_REWRITE_REPORT.md   # ONNX reranking (E3a vs E3b), Q1 rewrite & Day 6 handoff
+│   └── day6/                      # Day 6: Trustworthy Grounded Generation & Citation Validation
+│       ├── DAY6_GENERATION_AUDIT.md        # Pre-implementation generation, tree/history & quota audit
+│       └── DAY6_GROUNDED_GENERATION_REPORT.md # Frozen G0–G4 + Judge results, manual audit & UI integration
 │
 ├── experiments/                   # 🔬 Evaluation harness & experimental artifacts
 │   ├── run_baseline_evaluation.py # Reproducible V0 offline evaluation runner
@@ -90,6 +99,13 @@ flowchart TD
 │   ├── day5_rerank_rewrite/       # Day 5 ONNX reranking & query rewriting harness
 │   │   ├── run_day5_benchmark.py            # E3a/E3b reranking, Q1/Q2 rewrite & Day 6 handoff runner
 │   │   └── results/                         # day5_summary.json, conversational_subset_analysis.json, per_experiment/
+│   ├── day6_generation/           # Day 6 frozen grounded generation & citation harness
+│   │   ├── freeze_evidence.py               # Hydrates exact 300/300 D5-E3a Top-5 chunks without rerunning retrieval
+│   │   ├── frozen_retrieval_evidence.json   # Immutable frozen evidence, repo trees & Turn-2 context
+│   │   ├── ablation_question_ids.json       # Deterministic stratified N=18 G1/G2 subset
+│   │   ├── judge_question_ids.json          # Deterministic stratified N=24 Judge subset (12A/6B/6C)
+│   │   ├── run_day6_benchmark.py            # Checkpointed G0–G4 & Layer 2 blinded judge runner
+│   │   └── results/                         # day6_summary.json, layer1/layer2 reports & archived 3.5-flash run
 │   ├── datasets/                  # Ground truth annotations and evaluation questions
 │   │   ├── repositories.json      # Pinned repository metadata & commit SHAs
 │   │   ├── evaluation_questions.json # 60 evaluation questions (conceptual, identifier, conversational)
@@ -111,7 +127,8 @@ flowchart TD
     ├── test_chunker_v1.py               # Code-aware V1 chunker, tokenizer budget & Chroma tests
     ├── test_chunking_comparison.py      # Day 3 chunking harness & 24-metric validation tests
     ├── test_bm25_and_hybrid.py          # Code-aware BM25, RRF fusion & Chroma hydration tests
-    └── test_day5_rerank_and_rewrite.py  # ONNX cross-encoder, gated query rewriter & integration tests
+    ├── test_day5_rerank_and_rewrite.py  # ONNX cross-encoder, gated query rewriter & integration tests
+    └── test_day6_generation.py          # Grounded G3/G4 citations, isolation, resilience & UI tests
 ```
 
 ---
@@ -198,6 +215,10 @@ python experiments/day4_hybrid/run_hybrid_comparison.py
 
 # 7. Execute the Day 5 ONNX cross-encoder & query rewriting benchmark
 python experiments/day5_rerank_rewrite/run_day5_benchmark.py
+
+# 8. Freeze Day 5 evidence & execute the Day 6 checkpointed generation benchmark
+python experiments/day6_generation/freeze_evidence.py
+python experiments/day6_generation/run_day6_benchmark.py --model gemini-3.5-flash-lite --checkpoint-prefix flash_lite
 ```
 
 ---

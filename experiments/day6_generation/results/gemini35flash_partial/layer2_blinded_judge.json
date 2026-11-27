@@ -1,0 +1,33 @@
+{
+  "judge_subset_size": 24,
+  "judge_question_ids": [
+    "flask_001",
+    "flask_006",
+    "flask_009",
+    "flask_014",
+    "flask_002",
+    "flask_017",
+    "flask_019",
+    "flask_020",
+    "express_002",
+    "express_004",
+    "express_010",
+    "express_015",
+    "express_008",
+    "express_011",
+    "express_019",
+    "express_020",
+    "fmt_005",
+    "fmt_009",
+    "fmt_011",
+    "fmt_017",
+    "fmt_003",
+    "fmt_013",
+    "fmt_019",
+    "fmt_020"
+  ],
+  "G0_summary": {},
+  "G4_summary": {},
+  "G0_verdicts": [],
+  "G4_verdicts": []
+}

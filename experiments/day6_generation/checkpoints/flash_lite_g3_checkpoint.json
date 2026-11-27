@@ -1,0 +1,2781 @@
+{
+  "experiment": "G3",
+  "updated_at_utc": "2026-11-27T15:11:28.604269+00:00",
+  "total_saved": 60,
+  "api_success_count": 60,
+  "items_by_key": {
+    "flask_001": {
+      "question_id": "flask_001",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:07:44.084346+00:00",
+      "latency": 2.356,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_9a055ef7bc461461",
+        "v1_58efeba1395b0679",
+        "v1_6f718e6d8fc88d29",
+        "v1_81ab7654e80110e4",
+        "v1_c6d5ea39804b8631"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.356,
+      "prompt_length_chars": 14504,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved evidence defines the Flask application class (inheriting from App) and provides details about its first parameter (the module/package name) and make_config parameters like instance_relative, but does not provide the full __init__ constructor signature and all its parameters.\",\n  \"missing_information\": [\n    \"Complete method signature and full parameter list of the Flask.__init__ constructor.\"\n  ],\n  \"answer\": \"The Flask application class is defined as `class Flask(App):` in `src/flask/app.py` [EVIDENCE_2]. It acts as the central WSGI application object and is passed the name of the module or package of the application as its first parameter [EVIDENCE_2]. The retrieved evidence also shows `App.make_config` accepts an `instance_relative` parameter (passed from the Flask constructor as `instance_relative_config`) [EVIDENCE_5]. However, the complete parameter list of the `__init__` constructor is not present in the retrieved code blocks.\",\n  \"citations\": [\n    \"EVIDENCE_2\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved evidence defines the Flask application class (inheriting from App) and provides details about its first parameter (the module/package name) and make_config parameters like instance_relative, but does not provide the full __init__ constructor signature and all its parameters.",
+        "missing_information": [
+          "Complete method signature and full parameter list of the Flask.__init__ constructor."
+        ],
+        "answer": "The Flask application class is defined as `class Flask(App):` in `src/flask/app.py` [EVIDENCE_2]. It acts as the central WSGI application object and is passed the name of the module or package of the application as its first parameter [EVIDENCE_2]. The retrieved evidence also shows `App.make_config` accepts an `instance_relative` parameter (passed from the Flask constructor as `instance_relative_config`) [EVIDENCE_5]. However, the complete parameter list of the `__init__` constructor is not present in the retrieved code blocks.",
+        "citations": [
+          "EVIDENCE_2",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_006": {
+      "question_id": "flask_006",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:07:47.981321+00:00",
+      "latency": 1.8824,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_5911607e3e8011cb",
+        "v1_8798ac309ec38195",
+        "v1_17c5392b27f40060",
+        "v1_c544b52933ba1cbc",
+        "v1_bf9fadef23aa9a62"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.8824,
+      "prompt_length_chars": 14738,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved evidence blocks discuss routing rule registration via add_url_rule [EVIDENCE_2, EVIDENCE_3], request matching via match_request [EVIDENCE_1], routing exceptions [EVIDENCE_5], and the Werkzeug Map initialization [EVIDENCE_4], but they do not provide the complete implementation details showing how add_url_rule specifically delegates to the underlying routing Map.\",\n  \"missing_information\": [\n    \"The body of add_url_rule showing how it interacts with self.url_map\",\n    \"Implementation details of how routing rules are added to the underlying routing Map\"\n  ],\n  \"answer\": \"The retrieved evidence shows that Scaffold.add_url_rule registers a rule for routing and URL building, serving as a lower-level method related to the route decorator [EVIDENCE_3]. However, the retrieved code does not contain the implementation body of add_url_rule or show how it delegates to the underlying routing Map [EVIDENCE_3, EVIDENCE_4].\",\n  \"citations\": [\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\"\n  ],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved evidence blocks discuss routing rule registration via add_url_rule [EVIDENCE_2, EVIDENCE_3], request matching via match_request [EVIDENCE_1], routing exceptions [EVIDENCE_5], and the Werkzeug Map initialization [EVIDENCE_4], but they do not provide the complete implementation details showing how add_url_rule specifically delegates to the underlying routing Map.",
+        "missing_information": [
+          "The body of add_url_rule showing how it interacts with self.url_map",
+          "Implementation details of how routing rules are added to the underlying routing Map"
+        ],
+        "answer": "The retrieved evidence shows that Scaffold.add_url_rule registers a rule for routing and URL building, serving as a lower-level method related to the route decorator [EVIDENCE_3]. However, the retrieved code does not contain the implementation body of add_url_rule or show how it delegates to the underlying routing Map [EVIDENCE_3, EVIDENCE_4].",
+        "citations": [
+          "EVIDENCE_3",
+          "EVIDENCE_4"
+        ],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_012": {
+      "question_id": "flask_012",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:07:52.315549+00:00",
+      "latency": 2.3273,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_3764379190483b45",
+        "v1_89f6fdc091f65028",
+        "v1_1f2c67cc482f9402",
+        "v1_05b21a97fab9d5d0",
+        "v1_33a5cf6d2bb86ac9"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.3273,
+      "prompt_length_chars": 14375,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence details Flask's exception handling entry points and workflow for unhandled exceptions, specifically showing how Flask.handle_exception converts an unhandled exception into an InternalServerError (HTTP 500) and looks up registered error handlers, but full implementation details of internal methods like finalize_request or _find_error_handler are outside the retrieved lines.\",\n  \"missing_information\": [\n    \"Complete method implementation of finalize_request\",\n    \"Full implementation details of _find_error_handler\",\n    \"Lines governing PROPAGATE_EXCEPTIONS checks and signal sending inside handle_exception\"\n  ],\n  \"answer\": \"According to the retrieved code, Flask handles unhandled exceptions via Flask.handle_exception, which always causes a 500 InternalServerError [EVIDENCE_1, EVIDENCE_2]. An InternalServerError instance is created with the original exception set as original_exception [EVIDENCE_4]. Flask then looks up an error handler for the server error based on the request blueprints [EVIDENCE_4]. If a handler is found, it is executed synchronously using ensure_sync and the result is finalized and returned [EVIDENCE_4].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_4\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence details Flask's exception handling entry points and workflow for unhandled exceptions, specifically showing how Flask.handle_exception converts an unhandled exception into an InternalServerError (HTTP 500) and looks up registered error handlers, but full implementation details of internal methods like finalize_request or _find_error_handler are outside the retrieved lines.",
+        "missing_information": [
+          "Complete method implementation of finalize_request",
+          "Full implementation details of _find_error_handler",
+          "Lines governing PROPAGATE_EXCEPTIONS checks and signal sending inside handle_exception"
+        ],
+        "answer": "According to the retrieved code, Flask handles unhandled exceptions via Flask.handle_exception, which always causes a 500 InternalServerError [EVIDENCE_1, EVIDENCE_2]. An InternalServerError instance is created with the original exception set as original_exception [EVIDENCE_4]. Flask then looks up an error handler for the server error based on the request blueprints [EVIDENCE_4]. If a handler is found, it is executed synchronously using ensure_sync and the result is finalized and returned [EVIDENCE_4].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_4"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_002": {
+      "question_id": "flask_002",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:07:55.916295+00:00",
+      "latency": 1.594,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_1d957d705288aa4d",
+        "v1_3baebb7b8ec62664",
+        "v1_55bb53ac6713f53c",
+        "v1_671072709522e674",
+        "v1_95da8b9ed46c535e"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.594,
+      "prompt_length_chars": 14477,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved evidence includes configuration loading mechanisms such as Config.from_object [EVIDENCE_1], Config.from_envvar [EVIDENCE_2, EVIDENCE_5], and the Config class description [EVIDENCE_4], but it does not contain code or details regarding the Flask initialization process itself or how default configuration settings are applied during that specific initialization process.\",\n  \"missing_information\": [\n    \"Flask class initialization code\",\n    \"Default configuration values and how they are populated upon app instantiation\"\n  ],\n  \"answer\": \"Based on the retrieved code, it is not possible to establish how default configuration settings are configured during the initialization process of Flask. The retrieved evidence only details parts of the Config class and its methods like from_object and from_envvar [EVIDENCE_1, EVIDENCE_2, EVIDENCE_4, EVIDENCE_5], but lacks the initialization implementation of the Flask class.\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved evidence includes configuration loading mechanisms such as Config.from_object [EVIDENCE_1], Config.from_envvar [EVIDENCE_2, EVIDENCE_5], and the Config class description [EVIDENCE_4], but it does not contain code or details regarding the Flask initialization process itself or how default configuration settings are applied during that specific initialization process.",
+        "missing_information": [
+          "Flask class initialization code",
+          "Default configuration values and how they are populated upon app instantiation"
+        ],
+        "answer": "Based on the retrieved code, it is not possible to establish how default configuration settings are configured during the initialization process of Flask. The retrieved evidence only details parts of the Config class and its methods like from_object and from_envvar [EVIDENCE_1, EVIDENCE_2, EVIDENCE_4, EVIDENCE_5], but lacks the initialization implementation of the Flask class.",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_017": {
+      "question_id": "flask_017",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:00.047000+00:00",
+      "latency": 2.1225,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_7e81101d2d55b742",
+        "v1_37ed92e405b6aa11",
+        "v1_7f85410213d35071",
+        "v1_0b32d65c3cf21b37",
+        "v1_55bb53ac6713f53c"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.1225,
+      "prompt_length_chars": 13600,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence shows how Flask's CLI group pushes an application context for the loaded app (making the context available to parameter and command callbacks without needing @with_appcontext) and retrieves commands via app.cli.get_command(ctx, name) [EVIDENCE_2], but full details on all binding mechanisms across the entire codebase are not completely retrieved.\",\n  \"missing_information\": [\n    \"Full implementation details of how Flask discovers and registers all application and blueprint CLI commands beyond FlaskGroup.get_command and basic command definitions.\"\n  ],\n  \"answer\": \"Flask binds Click command-line interface commands to an active application environment by pushing an application context for the loaded app (unless already active) inside FlaskGroup.get_command so that the context is available to parameters and command callbacks [EVIDENCE_2]. Additionally, commands can be decorated with @with_appcontext (such as the shell command) to run in the context of a given Flask application [EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_2\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence shows how Flask's CLI group pushes an application context for the loaded app (making the context available to parameter and command callbacks without needing @with_appcontext) and retrieves commands via app.cli.get_command(ctx, name) [EVIDENCE_2], but full details on all binding mechanisms across the entire codebase are not completely retrieved.",
+        "missing_information": [
+          "Full implementation details of how Flask discovers and registers all application and blueprint CLI commands beyond FlaskGroup.get_command and basic command definitions."
+        ],
+        "answer": "Flask binds Click command-line interface commands to an active application environment by pushing an application context for the loaded app (unless already active) inside FlaskGroup.get_command so that the context is available to parameters and command callbacks [EVIDENCE_2]. Additionally, commands can be decorated with @with_appcontext (such as the shell command) to run in the context of a given Flask application [EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_2",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_019": {
+      "question_id": "flask_019",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_c_unanswerable",
+      "answerable": false,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:03.965768+00:00",
+      "latency": 1.9035,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_a9616c9595806186",
+        "v1_680a8ebbf01f2dc0",
+        "v1_f6c4ea1945eef07f",
+        "v1_8e24f4fcb4663342",
+        "v1_211055b4962f433f"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.9035,
+      "prompt_length_chars": 12553,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved evidence blocks discuss SQLite usage in the tutorial example (examples/tutorial/flaskr/db.py) and configuration notes for Flask URLs, app initialization, and JSON providers, but do not contain any implementation or configuration details for a built-in PostgreSQL connection pool.\",\n  \"missing_information\": [\n    \"PostgreSQL connection pool implementation\",\n    \"PostgreSQL configuration settings\"\n  ],\n  \"answer\": \"The retrieved evidence does not establish where a built-in database connection pool for PostgreSQL is configured in Flask. The only database-related evidence retrieved pertains to a tutorial example using SQLite and sqlite3.connect within an application request context [EVIDENCE_1, EVIDENCE_3, EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved evidence blocks discuss SQLite usage in the tutorial example (examples/tutorial/flaskr/db.py) and configuration notes for Flask URLs, app initialization, and JSON providers, but do not contain any implementation or configuration details for a built-in PostgreSQL connection pool.",
+        "missing_information": [
+          "PostgreSQL connection pool implementation",
+          "PostgreSQL configuration settings"
+        ],
+        "answer": "The retrieved evidence does not establish where a built-in database connection pool for PostgreSQL is configured in Flask. The only database-related evidence retrieved pertains to a tutorial example using SQLite and sqlite3.connect within an application request context [EVIDENCE_1, EVIDENCE_3, EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_3",
+          "EVIDENCE_5"
+        ],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "express_004": {
+      "question_id": "express_004",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:07.986349+00:00",
+      "latency": 2.0096,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_b32068b53b30e712",
+        "v1_62df5fe74c232b84",
+        "v1_90014ca5ff734583",
+        "v1_ac3d8ec4db148a6b",
+        "v1_ad4eb73cae5167ec"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.0096,
+      "prompt_length_chars": 12834,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"Retrieved evidence clearly establishes the definition and behavior of req.get (aliased as req.header) in lib/request.js, showing how it validates input types, lowercases header names, handles 'referer'/'referrer' special-casing, and retrieves headers from the request headers object.\",\n  \"missing_information\": [],\n  \"answer\": \"The `req.get` method (aliased as `req.header`) is defined in `lib/request.js` [EVIDENCE_1, EVIDENCE_2]. It retrieves HTTP request headers by performing the following steps: \\n1. It validates that the `name` argument is provided and is a string, throwing a `TypeError` otherwise [EVIDENCE_2]. \\n2. It lowercases the header name [EVIDENCE_2]. \\n3. It special-cases `referer` and `referrer` to check and return either `this.headers.referrer` or `this.headers.referer` [EVIDENCE_2]. \\n4. For all other headers, it retrieves and returns the value from `this.headers[lc]` using the lowercased header name [EVIDENCE_2].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "Retrieved evidence clearly establishes the definition and behavior of req.get (aliased as req.header) in lib/request.js, showing how it validates input types, lowercases header names, handles 'referer'/'referrer' special-casing, and retrieves headers from the request headers object.",
+        "missing_information": [],
+        "answer": "The `req.get` method (aliased as `req.header`) is defined in `lib/request.js` [EVIDENCE_1, EVIDENCE_2]. It retrieves HTTP request headers by performing the following steps: \n1. It validates that the `name` argument is provided and is a string, throwing a `TypeError` otherwise [EVIDENCE_2]. \n2. It lowercases the header name [EVIDENCE_2]. \n3. It special-cases `referer` and `referrer` to check and return either `this.headers.referrer` or `this.headers.referer` [EVIDENCE_2]. \n4. For all other headers, it retrieves and returns the value from `this.headers[lc]` using the lowercased header name [EVIDENCE_2].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_010": {
+      "question_id": "express_010",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:08:12.317077+00:00",
+      "latency": 2.3222,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_901fe41d2fae9648",
+        "v1_7fd4d8f93031bb28",
+        "v1_a2563a80cb24a1b8",
+        "v1_5d8ccb79751569a2",
+        "v1_c3fdbd1ebb2e7ace"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.3222,
+      "prompt_length_chars": 13714,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence covers the entry application handler dispatch function and parts of app initialization/configuration, but does not contain the full complete end-to-end middleware stack execution or subsequent response dispatch pipeline.\",\n  \"missing_information\": [\n    \"Full details of app.handle execution\",\n    \"Detailed middleware stack traversal and route matching logic\"\n  ],\n  \"answer\": \"When a request first enters the application handler, the request and response are passed into the application function handler `app(req, res, next)`, which invokes `app.handle(req, res, next)` [EVIDENCE_3]. During application initialization and default configuration, prototypes for requests and responses are created and bound to the application [EVIDENCE_3], and default settings such as views, view engine, and environment configurations are set up [EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_3\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence covers the entry application handler dispatch function and parts of app initialization/configuration, but does not contain the full complete end-to-end middleware stack execution or subsequent response dispatch pipeline.",
+        "missing_information": [
+          "Full details of app.handle execution",
+          "Detailed middleware stack traversal and route matching logic"
+        ],
+        "answer": "When a request first enters the application handler, the request and response are passed into the application function handler `app(req, res, next)`, which invokes `app.handle(req, res, next)` [EVIDENCE_3]. During application initialization and default configuration, prototypes for requests and responses are created and bound to the application [EVIDENCE_3], and default settings such as views, view engine, and environment configurations are set up [EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_3",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_016": {
+      "question_id": "express_016",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:16.506025+00:00",
+      "latency": 2.181,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_87335bc59ad99454",
+        "v1_cc204c4ba2f08d1b",
+        "v1_5d80ed73764c7824",
+        "v1_f74917c3b7d7a68b",
+        "v1_543a457167f33530"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.181,
+      "prompt_length_chars": 12793,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence establishes how req.ip and req.ips behave when 'trust proxy' is disabled or enabled through tests and getter definitions, but default configuration settings for proxy trust out of the box are only partially documented in the test snippets.\",\n  \"missing_information\": [\n    \"Exact default boolean or function value of 'trust proxy' in application initialization without explicit configuration\"\n  ],\n  \"answer\": \"When 'trust proxy' is disabled (default or explicit), req.ip returns the remote address [EVIDENCE_4], and req.ips returns an empty array [EVIDENCE_5]. When 'trust proxy' is enabled, req.ip uses proxyaddr with the trust proxy function retrieved from the application settings [EVIDENCE_3], and req.ips returns an array of specified addresses from headers like X-Forwarded-For based on the trust proxy settings [EVIDENCE_1].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence establishes how req.ip and req.ips behave when 'trust proxy' is disabled or enabled through tests and getter definitions, but default configuration settings for proxy trust out of the box are only partially documented in the test snippets.",
+        "missing_information": [
+          "Exact default boolean or function value of 'trust proxy' in application initialization without explicit configuration"
+        ],
+        "answer": "When 'trust proxy' is disabled (default or explicit), req.ip returns the remote address [EVIDENCE_4], and req.ips returns an empty array [EVIDENCE_5]. When 'trust proxy' is enabled, req.ip uses proxyaddr with the trust proxy function retrieved from the application settings [EVIDENCE_3], and req.ips returns an array of specified addresses from headers like X-Forwarded-For based on the trust proxy settings [EVIDENCE_1].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_3",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_008": {
+      "question_id": "express_008",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:20.549662+00:00",
+      "latency": 2.0277,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_10e501fce8f508c3",
+        "v1_3da7035bd0e2391e",
+        "v1_42c234e4cf66175d",
+        "v1_05e0becaaf1753a5",
+        "v1_2214957352bb7f03"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.0277,
+      "prompt_length_chars": 12873,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved evidence shows test cases demonstrating how express.static handles Range headers and partial content responses (such as 206 and 416), and lib/response.js illustrates file stream event listeners ('directory', 'end', 'error', 'file', 'stream', 'headers') and piping the file stream to the response. However, the complete end-to-end implementation details of how express.static combines disk streaming and range parsing are partially covered.\",\n  \"missing_information\": [\n    \"Complete implementation code of express.static and its internal range-parsing helper logic.\"\n  ],\n  \"answer\": \"Based on the retrieved evidence, `express.static` serves files by checking for a file matching `req.path` within a specified directory [EVIDENCE_5]. When requests include a 'Range' header, tests show it can return partial content (e.g., status 206 with a 'Content-Length' and 'Content-Range' header) [EVIDENCE_2], respond with a 'Content-Range' of complete length and status 416 when out of bounds [EVIDENCE_1], or respond with 200 and the entire contents if the range is syntactically invalid [EVIDENCE_1]. For streaming execution, file transfer events such as 'directory', 'end', 'error', 'file', 'stream', and 'headers' are attached to handle transmission behavior before the file is piped to the response (`file.pipe(res)`) [EVIDENCE_4].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved evidence shows test cases demonstrating how express.static handles Range headers and partial content responses (such as 206 and 416), and lib/response.js illustrates file stream event listeners ('directory', 'end', 'error', 'file', 'stream', 'headers') and piping the file stream to the response. However, the complete end-to-end implementation details of how express.static combines disk streaming and range parsing are partially covered.",
+        "missing_information": [
+          "Complete implementation code of express.static and its internal range-parsing helper logic."
+        ],
+        "answer": "Based on the retrieved evidence, `express.static` serves files by checking for a file matching `req.path` within a specified directory [EVIDENCE_5]. When requests include a 'Range' header, tests show it can return partial content (e.g., status 206 with a 'Content-Length' and 'Content-Range' header) [EVIDENCE_2], respond with a 'Content-Range' of complete length and status 416 when out of bounds [EVIDENCE_1], or respond with 200 and the entire contents if the range is syntactically invalid [EVIDENCE_1]. For streaming execution, file transfer events such as 'directory', 'end', 'error', 'file', 'stream', and 'headers' are attached to handle transmission behavior before the file is piped to the response (`file.pipe(res)`) [EVIDENCE_4].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_018": {
+      "question_id": "express_018",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:24.397521+00:00",
+      "latency": 1.8313,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_59f13c29aa22d9ee",
+        "v1_322661b231b744bc",
+        "v1_cc7507571d9a3808",
+        "v1_f02271ab31fe995e",
+        "v1_cf030aab03c30808"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.8313,
+      "prompt_length_chars": 13153,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence directly establishes how `app.engine` registers a template engine callback for an extension and describes how engines map to extensions, but does not provide the complete implementation body of `app.engine` itself.\",\n  \"missing_information\": [\n    \"The complete function body and implementation details of `app.engine` in lib/application.js.\"\n  ],\n  \"answer\": \"Express registers a template engine callback function for a specific file extension using the `app.engine(ext, fn)` method [EVIDENCE_1]. By default, Express uses `require()` to load the engine based on file extensions (e.g., `app.engine('ejs', require('ejs').__express)`), but custom engines or alternative mappings to non-standard extensions (such as mapping EJS to `.html` files) can be registered by passing the engine's render function (like `require('ejs').renderFile`) to `app.engine` [EVIDENCE_1].\",\n  \"citations\": [\n    \"EVIDENCE_1\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence directly establishes how `app.engine` registers a template engine callback for an extension and describes how engines map to extensions, but does not provide the complete implementation body of `app.engine` itself.",
+        "missing_information": [
+          "The complete function body and implementation details of `app.engine` in lib/application.js."
+        ],
+        "answer": "Express registers a template engine callback function for a specific file extension using the `app.engine(ext, fn)` method [EVIDENCE_1]. By default, Express uses `require()` to load the engine based on file extensions (e.g., `app.engine('ejs', require('ejs').__express)`), but custom engines or alternative mappings to non-standard extensions (such as mapping EJS to `.html` files) can be registered by passing the engine's render function (like `require('ejs').renderFile`) to `app.engine` [EVIDENCE_1].",
+        "citations": [
+          "EVIDENCE_1"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_020": {
+      "question_id": "express_020",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_c_unanswerable",
+      "answerable": false,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:27.991980+00:00",
+      "latency": 1.586,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_dc6cdd196f50ed9c",
+        "v1_70faf4f4e7f56454",
+        "v1_e8c7f51521d06927",
+        "v1_3ca794a7837b13cf",
+        "v1_4600e7bb81854b21"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.586,
+      "prompt_length_chars": 12636,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved code evidence blocks only contain tests related to async local storage for json, raw, text parsers, static file serving, and test utilities, but do not provide any information or implementation regarding automatic database migration or schema synchronization for MongoDB.\",\n  \"missing_information\": [\n    \"Database migration configuration for MongoDB\",\n    \"Schema synchronization logic or configuration for MongoDB\"\n  ],\n  \"answer\": \"The retrieved code evidence does not contain any implementation or configuration details regarding automatic database migration and schema synchronization for MongoDB.\",\n  \"citations\": [],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved code evidence blocks only contain tests related to async local storage for json, raw, text parsers, static file serving, and test utilities, but do not provide any information or implementation regarding automatic database migration or schema synchronization for MongoDB.",
+        "missing_information": [
+          "Database migration configuration for MongoDB",
+          "Schema synchronization logic or configuration for MongoDB"
+        ],
+        "answer": "The retrieved code evidence does not contain any implementation or configuration details regarding automatic database migration and schema synchronization for MongoDB.",
+        "citations": [],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_005": {
+      "question_id": "fmt_005",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:32.151261+00:00",
+      "latency": 2.1496,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_36741ae0add79ff0",
+        "v1_ccea2a27060233d9",
+        "v1_6cc5702cad38cf95",
+        "v1_d2f18bfe1ad0e471",
+        "v1_df748b64b06530f5"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.1496,
+      "prompt_length_chars": 9775,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved evidence shows the public is_range trait structure and how it depends on detail::is_range_<T>::value [EVIDENCE_3], as well as a partial template structure for detail::is_range_<T, void> using a check function [EVIDENCE_4], but it does not show the full implementation details of how detail::is_range_ detects range requirements.\",\n  \"missing_information\": [\n    \"Full implementation details of detail::is_range_ and its helper check functions\"\n  ],\n  \"answer\": \"The retrieved evidence shows that the public is_range trait checks whether detail::is_range_<T>::value is true while ensuring the type is not optional-like and does not have a string view [EVIDENCE_3]. Furthermore, a partial implementation of detail::is_range_<T, void> uses a template check function returning void to determine range validity [EVIDENCE_4], but complete details of the detection mechanism are missing.\",\n  \"citations\": [\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "partial",
+        "reason": "The retrieved evidence shows the public is_range trait structure and how it depends on detail::is_range_<T>::value [EVIDENCE_3], as well as a partial template structure for detail::is_range_<T, void> using a check function [EVIDENCE_4], but it does not show the full implementation details of how detail::is_range_ detects range requirements.",
+        "missing_information": [
+          "Full implementation details of detail::is_range_ and its helper check functions"
+        ],
+        "answer": "The retrieved evidence shows that the public is_range trait checks whether detail::is_range_<T>::value is true while ensuring the type is not optional-like and does not have a string view [EVIDENCE_3]. Furthermore, a partial implementation of detail::is_range_<T, void> uses a template check function returning void to determine range validity [EVIDENCE_4], but complete details of the detection mechanism are missing.",
+        "citations": [
+          "EVIDENCE_3",
+          "EVIDENCE_4"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_009": {
+      "question_id": "fmt_009",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:08:36.311371+00:00",
+      "latency": 2.1439,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_f82f938e1454b978",
+        "v1_d9159ece72aea5c6",
+        "v1_3ce36634be30c75a",
+        "v1_aec45775bea98973",
+        "v1_51b480e6b676fb2f"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.1439,
+      "prompt_length_chars": 10636,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved code establishes how styled text is formatted into a memory buffer using `vformat_to` and printed via `vprint` or `vprintln` (using ANSI escape sequences), and mentions a fast buffered output stream class via `ostream_params`, but does not fully trace every step of combining `vformat_to` directly into the custom buffered output stream class.\",\n  \"missing_information\": [\n    \"Complete end-to-end integration between the buffered output stream class and the text styling print functions.\"\n  ],\n  \"answer\": \"When printing styled text, `vformat_to` creates a `memory_buffer` [EVIDENCE_1, EVIDENCE_2]. It first checks if the text style has emphasis, appending any resulting ANSI escape sequences to the buffer [EVIDENCE_5]. It then checks for foreground and background colors, appending their respective ANSI escape sequences to the buffer [EVIDENCE_5]. Finally, `vprint` or `vprintln` takes the formatted buffer contents and writes them to the specified file stream [EVIDENCE_1, EVIDENCE_2]. Additionally, the codebase defines a fast buffered output stream for writing from a single thread [EVIDENCE_3].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved code establishes how styled text is formatted into a memory buffer using `vformat_to` and printed via `vprint` or `vprintln` (using ANSI escape sequences), and mentions a fast buffered output stream class via `ostream_params`, but does not fully trace every step of combining `vformat_to` directly into the custom buffered output stream class.",
+        "missing_information": [
+          "Complete end-to-end integration between the buffered output stream class and the text styling print functions."
+        ],
+        "answer": "When printing styled text, `vformat_to` creates a `memory_buffer` [EVIDENCE_1, EVIDENCE_2]. It first checks if the text style has emphasis, appending any resulting ANSI escape sequences to the buffer [EVIDENCE_5]. It then checks for foreground and background colors, appending their respective ANSI escape sequences to the buffer [EVIDENCE_5]. Finally, `vprint` or `vprintln` takes the formatted buffer contents and writes them to the specified file stream [EVIDENCE_1, EVIDENCE_2]. Additionally, the codebase defines a fast buffered output stream for writing from a single thread [EVIDENCE_3].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_011": {
+      "question_id": "fmt_011",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:40.206475+00:00",
+      "latency": 1.8796,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_caea70368554bd29",
+        "v1_3cd177ba38372d19",
+        "v1_ea601ba8414d2bda",
+        "v1_869c07f7772720c0",
+        "v1_ed022cc17e979fef"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.8796,
+      "prompt_length_chars": 9583,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"Retrieved evidence directly shows the template implementations of fmt::sprintf, which calls vsprintf, which in turn calls detail::vprintf with a basic_memory_buffer to produce a formatted string.\",\n  \"missing_information\": [],\n  \"answer\": \"fmt::sprintf invokes vsprintf by forwarding the format string and arguments packed via make_printf_args (e.g., `return vsprintf(fmt, make_printf_args(args...));`) [EVIDENCE_2, EVIDENCE_3]. Then, vsprintf creates a basic_memory_buffer and invokes detail::vprintf with this buffer, format, and arguments (`detail::vprintf(buf, fmt, args);`), subsequently returning the resulting std::string or std::wstring constructed from the buffer data [EVIDENCE_1].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "Retrieved evidence directly shows the template implementations of fmt::sprintf, which calls vsprintf, which in turn calls detail::vprintf with a basic_memory_buffer to produce a formatted string.",
+        "missing_information": [],
+        "answer": "fmt::sprintf invokes vsprintf by forwarding the format string and arguments packed via make_printf_args (e.g., `return vsprintf(fmt, make_printf_args(args...));`) [EVIDENCE_2, EVIDENCE_3]. Then, vsprintf creates a basic_memory_buffer and invokes detail::vprintf with this buffer, format, and arguments (`detail::vprintf(buf, fmt, args);`), subsequently returning the resulting std::string or std::wstring constructed from the buffer data [EVIDENCE_1].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_003": {
+      "question_id": "fmt_003",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:43.661518+00:00",
+      "latency": 1.4446,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_d6751afbf2ffe47f",
+        "v1_cb3a9faed3498204",
+        "v1_2dd520574a83d901",
+        "v1_8c29f67ba0b25c27",
+        "v1_b23c19dfb5465477"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.4446,
+      "prompt_length_chars": 10691,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved evidence blocks only contain license headers, header inclusions, and basic test setup macros (such as in include/fmt/std.h, include/fmt/ostream.h, test/c-test.c, and test/scan.h), but do not contain any implementation code related to RAII management for C-style file streams.\",\n  \"missing_information\": [\n    \"Implementation details of RAII management for C-style file streams\",\n    \"Classes or functions handling file streams using RAII in the codebase\"\n  ],\n  \"answer\": \"The retrieved code evidence does not establish how the format library provides RAII management for C-style file streams.\",\n  \"citations\": [],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved evidence blocks only contain license headers, header inclusions, and basic test setup macros (such as in include/fmt/std.h, include/fmt/ostream.h, test/c-test.c, and test/scan.h), but do not contain any implementation code related to RAII management for C-style file streams.",
+        "missing_information": [
+          "Implementation details of RAII management for C-style file streams",
+          "Classes or functions handling file streams using RAII in the codebase"
+        ],
+        "answer": "The retrieved code evidence does not establish how the format library provides RAII management for C-style file streams.",
+        "citations": [],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_013": {
+      "question_id": "fmt_013",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:47.091933+00:00",
+      "latency": 1.4131,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_9b1defa7ef0c76ea",
+        "v1_b4f43d2cb875ad68",
+        "v1_c49a140b437256c1",
+        "v1_6fc7044929c6d1b9",
+        "v1_ff28d1a41623da74"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.4131,
+      "prompt_length_chars": 10174,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved code blocks contain snippets related to duration casting (such as `get_milliseconds` and fractional seconds writing), but do not establish the complete parsing and formatting mechanism for time durations with unit suffixes.\",\n  \"missing_information\": [\n    \"Complete parsing logic for duration unit suffixes\",\n    \"Formatting implementation details for duration types and their suffixes\"\n  ],\n  \"answer\": \"The retrieved evidence does not contain the complete implementation or explanation for how fmt parses and formats time durations with unit suffixes. It only shows helper logic such as `get_milliseconds` and fractional seconds handling in `include/fmt/chrono.h` [EVIDENCE_1, EVIDENCE_2, EVIDENCE_3].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved code blocks contain snippets related to duration casting (such as `get_milliseconds` and fractional seconds writing), but do not establish the complete parsing and formatting mechanism for time durations with unit suffixes.",
+        "missing_information": [
+          "Complete parsing logic for duration unit suffixes",
+          "Formatting implementation details for duration types and their suffixes"
+        ],
+        "answer": "The retrieved evidence does not contain the complete implementation or explanation for how fmt parses and formats time durations with unit suffixes. It only shows helper logic such as `get_milliseconds` and fractional seconds handling in `include/fmt/chrono.h` [EVIDENCE_1, EVIDENCE_2, EVIDENCE_3].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3"
+        ],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_020": {
+      "question_id": "fmt_020",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_c_unanswerable",
+      "answerable": false,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:50.797661+00:00",
+      "latency": 1.698,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_372615ac292d073f",
+        "v1_e19cc1bf6297aa9e",
+        "v1_96c2a04448405915",
+        "v1_ff28d1a41623da74",
+        "v1_a5c8c278a641f761"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.698,
+      "prompt_length_chars": 10349,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved code evidence blocks relate to format string compilation, enum formatting, chrono time formatting, and the C API argument structure, but do not contain any implementation details regarding parsing or serializing JSON documents into C++ struct fields.\",\n  \"missing_information\": [\n    \"JSON parsing functions or classes\",\n    \"JSON serialization logic\",\n    \"Mapping mechanisms between JSON documents and C++ struct fields\"\n  ],\n  \"answer\": \"The retrieved code evidence does not contain any information regarding how fmt parses or serializes JSON documents into C++ struct fields.\",\n  \"citations\": [],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved code evidence blocks relate to format string compilation, enum formatting, chrono time formatting, and the C API argument structure, but do not contain any implementation details regarding parsing or serializing JSON documents into C++ struct fields.",
+        "missing_information": [
+          "JSON parsing functions or classes",
+          "JSON serialization logic",
+          "Mapping mechanisms between JSON documents and C++ struct fields"
+        ],
+        "answer": "The retrieved code evidence does not contain any information regarding how fmt parses or serializes JSON documents into C++ struct fields.",
+        "citations": [],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_003": {
+      "question_id": "flask_003",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:54.540192+00:00",
+      "latency": 1.7266,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_87e947c38c0bd50c",
+        "v1_6b2c47450a981f0a",
+        "v1_1713db77e7de8c47",
+        "v1_058101a8ee348029",
+        "v1_e28109d4708e1f08"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.7266,
+      "prompt_length_chars": 13766,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"The retrieved evidence explicitly defines the Request class in src/flask/wrappers.py and states its base class as RequestBase, which is imported from werkzeug.wrappers.\",\n  \"missing_information\": [],\n  \"answer\": \"The Request wrapper class is defined in `src/flask/wrappers.py` [EVIDENCE_1]. It inherits from `RequestBase`, which is imported from `werkzeug.wrappers` [EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "The retrieved evidence explicitly defines the Request class in src/flask/wrappers.py and states its base class as RequestBase, which is imported from werkzeug.wrappers.",
+        "missing_information": [],
+        "answer": "The Request wrapper class is defined in `src/flask/wrappers.py` [EVIDENCE_1]. It inherits from `RequestBase`, which is imported from `werkzeug.wrappers` [EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_004": {
+      "question_id": "flask_004",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:08:58.737568+00:00",
+      "latency": 2.181,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_fa6995700e06e88f",
+        "v1_15fbe825560f3a69",
+        "v1_be185118cb11f852",
+        "v1_6414b72aa6ae3b52",
+        "v1_1bd98ed986148d10"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.181,
+      "prompt_length_chars": 14114,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved evidence defines the url_for helper function in src/flask/helpers.py and Flask.url_for in src/flask/app.py, detailing its parameters and general documentation, but does not provide the full implementation body of how URLs are ultimately built.\",\n  \"missing_information\": [\n    \"The full execution body of Flask.url_for showing how the url_adapter builds the final URL string.\"\n  ],\n  \"answer\": \"The url_for helper function is defined in src/flask/helpers.py [EVIDENCE_1], where it requires an active request or application context and calls current_app.url_for() (Flask.url_for) [EVIDENCE_1]. Flask.url_for is defined in src/flask/app.py [EVIDENCE_4]. It accepts an endpoint name, keyword arguments such as _anchor, _method, _scheme, and _external, and variable URL rule values (with unknown keys appended as query string arguments) [EVIDENCE_1, EVIDENCE_2, EVIDENCE_4, EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved evidence defines the url_for helper function in src/flask/helpers.py and Flask.url_for in src/flask/app.py, detailing its parameters and general documentation, but does not provide the full implementation body of how URLs are ultimately built.",
+        "missing_information": [
+          "The full execution body of Flask.url_for showing how the url_adapter builds the final URL string."
+        ],
+        "answer": "The url_for helper function is defined in src/flask/helpers.py [EVIDENCE_1], where it requires an active request or application context and calls current_app.url_for() (Flask.url_for) [EVIDENCE_1]. Flask.url_for is defined in src/flask/app.py [EVIDENCE_4]. It accepts an endpoint name, keyword arguments such as _anchor, _method, _scheme, and _external, and variable URL rule values (with unknown keys appended as query string arguments) [EVIDENCE_1, EVIDENCE_2, EVIDENCE_4, EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_005": {
+      "question_id": "flask_005",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:02.461296+00:00",
+      "latency": 1.7064,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_3500bc2bc583923c",
+        "v1_be80851d4b83a9e8",
+        "v1_8798ac309ec38195",
+        "v1_85a477e7da128ca1",
+        "v1_0ec0bb8338edff4c"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.7064,
+      "prompt_length_chars": 13763,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved evidence shows how the route decorator and add_url_rule work conceptually (delegating to add_url_rule, defaulting the endpoint name to the view function name, and associating endpoints with view functions via endpoint decorators), but the full implementation body of route and add_url_rule are truncated.\",\n  \"missing_information\": [\n    \"The full source code of Scaffold.route and Scaffold.add_url_rule demonstrating the complete registration logic.\"\n  ],\n  \"answer\": \"Flask's route decorator decorates a view function to register it with a given URL rule and options, calling add_url_rule [EVIDENCE_1]. The endpoint name for the route defaults to the name of the view function if the endpoint parameter is not passed [EVIDENCE_1, EVIDENCE_3]. Furthermore, view functions can be associated with endpoints using the endpoint decorator or add_url_rule [EVIDENCE_2, EVDENCE_3].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved evidence shows how the route decorator and add_url_rule work conceptually (delegating to add_url_rule, defaulting the endpoint name to the view function name, and associating endpoints with view functions via endpoint decorators), but the full implementation body of route and add_url_rule are truncated.",
+        "missing_information": [
+          "The full source code of Scaffold.route and Scaffold.add_url_rule demonstrating the complete registration logic."
+        ],
+        "answer": "Flask's route decorator decorates a view function to register it with a given URL rule and options, calling add_url_rule [EVIDENCE_1]. The endpoint name for the route defaults to the name of the view function if the endpoint parameter is not passed [EVIDENCE_1, EVIDENCE_3]. Furthermore, view functions can be associated with endpoints using the endpoint decorator or add_url_rule [EVIDENCE_2, EVDENCE_3].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_007": {
+      "question_id": "flask_007",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:06.647225+00:00",
+      "latency": 2.1773,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_3a9dfb7a3e7b8cdf",
+        "v1_87e947c38c0bd50c",
+        "v1_16a687723572f850",
+        "v1_95ef208bef7ccfd3",
+        "v1_5911607e3e8011cb"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.1773,
+      "prompt_length_chars": 13921,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"Retrieved evidence details the steps taken by Flask.dispatch_request to check routing exceptions, handle automatic OPTIONS requests, obtain view arguments, and invoke the view function associated with the matched rule endpoint.\",\n  \"missing_information\": [],\n  \"answer\": \"In Flask, dispatch_request takes an AppContext `ctx` and handles request dispatching as follows: \\n1. It checks if there is a routing exception on the request and raises it if present [EVIDENCE_1]. \\n2. It retrieves the matched URL rule from `req.url_rule` [EVIDENCE_1, EVIDENCE_4]. \\n3. If automatic options are provided for the rule and the request method is 'OPTIONS', it automatically replies using `self.make_default_options_response(ctx)` [EVIDENCE_4]. \\n4. Otherwise, it extracts view arguments from `req.view_args` and invokes the view function mapped in `self.view_functions[rule.endpoint]` with those arguments, ensuring synchronicity via `self.ensure_sync` [EVIDENCE_4].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_4\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "Retrieved evidence details the steps taken by Flask.dispatch_request to check routing exceptions, handle automatic OPTIONS requests, obtain view arguments, and invoke the view function associated with the matched rule endpoint.",
+        "missing_information": [],
+        "answer": "In Flask, dispatch_request takes an AppContext `ctx` and handles request dispatching as follows: \n1. It checks if there is a routing exception on the request and raises it if present [EVIDENCE_1]. \n2. It retrieves the matched URL rule from `req.url_rule` [EVIDENCE_1, EVIDENCE_4]. \n3. If automatic options are provided for the rule and the request method is 'OPTIONS', it automatically replies using `self.make_default_options_response(ctx)` [EVIDENCE_4]. \n4. Otherwise, it extracts view arguments from `req.view_args` and invokes the view function mapped in `self.view_functions[rule.endpoint]` with those arguments, ensuring synchronicity via `self.ensure_sync` [EVIDENCE_4].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_4"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_008": {
+      "question_id": "flask_008",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:10.252286+00:00",
+      "latency": 1.5885,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_6b055a43faa46b32",
+        "v1_6d585b2408daa27e",
+        "v1_b6e1a51c484681a7",
+        "v1_1a3493030e5b5526",
+        "v1_b8a64f975549593d"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.5885,
+      "prompt_length_chars": 13961,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved evidence establishes how application context pushes set tokens using context variables (_cv_app.set) and how test client context stacks are managed during requests, but does not fully detail request context threading/isolation mechanisms.\",\n  \"missing_information\": [\n    \"Complete request context isolation and threading implementation details beyond app context push and test client stack handling.\"\n  ],\n  \"answer\": \"Based on the retrieved code, application context pushing sets the context token using `_cv_app.set(self)` and sends the `appcontext_pushed` signal [EVIDENCE_1, EVIDENCE_5]. Additionally, test client request execution closes previously preserved contexts, performs the request, and re-pushes preserved contexts using `self._context_stack` [EVIDENCE_2].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved evidence establishes how application context pushes set tokens using context variables (_cv_app.set) and how test client context stacks are managed during requests, but does not fully detail request context threading/isolation mechanisms.",
+        "missing_information": [
+          "Complete request context isolation and threading implementation details beyond app context push and test client stack handling."
+        ],
+        "answer": "Based on the retrieved code, application context pushing sets the context token using `_cv_app.set(self)` and sends the `appcontext_pushed` signal [EVIDENCE_1, EVIDENCE_5]. Additionally, test client request execution closes previously preserved contexts, performs the request, and re-pushes preserved contexts using `self._context_stack` [EVIDENCE_2].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_009": {
+      "question_id": "flask_009",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:09:13.809353+00:00",
+      "latency": 1.5482,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_b6e1a51c484681a7",
+        "v1_54addae3a41f1322",
+        "v1_1478f5cbb83c188b",
+        "v1_d4d2856e79ea066f",
+        "v1_6b055a43faa46b32"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.5482,
+      "prompt_length_chars": 14929,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence explains that a combined app and request context is pushed for every request, and when pushed, it calls match_request to perform routing if it is a request context, but full end-to-end entrypoint dispatch details are not fully retrieved.\",\n  \"missing_information\": [\n    \"Full request dispatch lifecycle implementation beyond the context push and routing matching.\"\n  ],\n  \"answer\": \"When an incoming request is handled, a combined app and request context is pushed [EVIDENCE_3, EVIDENCE_4]. When this context is pushed, if it is a request context, it calls `match_request` to perform routing with the context active [EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence explains that a combined app and request context is pushed for every request, and when pushed, it calls match_request to perform routing if it is a request context, but full end-to-end entrypoint dispatch details are not fully retrieved.",
+        "missing_information": [
+          "Full request dispatch lifecycle implementation beyond the context push and routing matching."
+        ],
+        "answer": "When an incoming request is handled, a combined app and request context is pushed [EVIDENCE_3, EVIDENCE_4]. When this context is pushed, if it is a request context, it calls `match_request` to perform routing with the context active [EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_3",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_010": {
+      "question_id": "flask_010",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:17.825412+00:00",
+      "latency": 2.0071,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_b13412f9815c7f1a",
+        "v1_afc7d003b7f7c183",
+        "v1_9a1ec6ea3391a098",
+        "v1_5f6ddd129979ecdf",
+        "v1_f04c424d48b16be8"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.0071,
+      "prompt_length_chars": 12870,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved evidence establishes that Blueprint is defined as subclassing SansioBlueprint across src/flask/blueprints.py and src/flask/sansio/blueprints.py, and specifies initialization parameters name and import_name in its docstring. However, other parameters inherited from Scaffold or SansioBlueprint are not fully detailed in the retrieved snippet.\",\n  \"missing_information\": [\n    \"Complete list of all initialization parameters defined on Blueprint or its superclasses beyond name and import_name from the retrieved blocks.\"\n  ],\n  \"answer\": \"The Blueprint class is defined in src/flask/blueprints.py inheriting from SansioBlueprint [EVIDENCE_1, EVIDENCE_3]. Its initialization parameters documented in the retrieved code include `name` (the name of the blueprint prepended to each endpoint name) and `import_name` (the name of the blueprint package, usually `__name__`, which helps locate the `root_path`) [EVIDENCE_1].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved evidence establishes that Blueprint is defined as subclassing SansioBlueprint across src/flask/blueprints.py and src/flask/sansio/blueprints.py, and specifies initialization parameters name and import_name in its docstring. However, other parameters inherited from Scaffold or SansioBlueprint are not fully detailed in the retrieved snippet.",
+        "missing_information": [
+          "Complete list of all initialization parameters defined on Blueprint or its superclasses beyond name and import_name from the retrieved blocks."
+        ],
+        "answer": "The Blueprint class is defined in src/flask/blueprints.py inheriting from SansioBlueprint [EVIDENCE_1, EVIDENCE_3]. Its initialization parameters documented in the retrieved code include `name` (the name of the blueprint prepended to each endpoint name) and `import_name` (the name of the blueprint package, usually `__name__`, which helps locate the `root_path`) [EVIDENCE_1].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_011": {
+      "question_id": "flask_011",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:21.580810+00:00",
+      "latency": 1.7391,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_b13412f9815c7f1a",
+        "v1_a525ce4f88b514ff",
+        "v1_6620f9fed2de77f9",
+        "v1_908c28017c7242a8",
+        "v1_bb5fd1c0e68605fb"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.7391,
+      "prompt_length_chars": 13790,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"The retrieved evidence clearly shows how blueprints record deferred functions using the record method and how these deferred functions are subsequently iterated and called during blueprint registration on the application.\",\n  \"missing_information\": [],\n  \"answer\": \"Modular blueprints record deferred setup functions via the Blueprint.record method [EVIDENCE_3], which appends them to self.deferred_functions. There is also a Blueprint.record_once method that ensures a function is only called on the first registration [EVIDENCE_2]. When the blueprint is registered onto an application via register_blueprint [EVIDENCE_4], the blueprint's register method iterates through all recorded deferred functions and executes them with the appropriate state [EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "The retrieved evidence clearly shows how blueprints record deferred functions using the record method and how these deferred functions are subsequently iterated and called during blueprint registration on the application.",
+        "missing_information": [],
+        "answer": "Modular blueprints record deferred setup functions via the Blueprint.record method [EVIDENCE_3], which appends them to self.deferred_functions. There is also a Blueprint.record_once method that ensures a function is only called on the first registration [EVIDENCE_2]. When the blueprint is registered onto an application via register_blueprint [EVIDENCE_4], the blueprint's register method iterates through all recorded deferred functions and executes them with the appropriate state [EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_2",
+          "EVIDENCE_3",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_013": {
+      "question_id": "flask_013",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:25.571566+00:00",
+      "latency": 1.9816,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_4e2747e6f48630f9",
+        "v1_b368e54ac2e96825",
+        "v1_b33de95684436fbe",
+        "v1_3304dff8156e0e14",
+        "v1_4b27f506ab15ae47"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.9816,
+      "prompt_length_chars": 14076,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence covers where the session interface is defined and part of SecureCookieSessionInterface (such as default attributes, Flask app usage, and parts of save_session), but the full implementation of open_session and the complete body of save_session are not fully retrieved.\",\n  \"missing_information\": [\n    \"Full implementation details of open_session in SecureCookieSessionInterface\",\n    \"Complete remaining lines of save_session implementation\"\n  ],\n  \"answer\": \"The session interface is defined by the SessionInterface base class in src/flask/sessions.py [EVIDENCE_1], and Flask defaults to using an instance of SecureCookieSessionInterface as its session_interface [EVIDENCE_4]. SecureCookieSessionInterface stores sessions in signed cookies using itsdangerous [EVIDENCE_2]. During save_session, it retrieves cookie properties (name, domain, path, secure, partitioned, samesite, httponly) [EVIDENCE_3], adds a 'Vary: Cookie' header if the session was accessed [EVIDENCE_3, EVIDENCE_5], deletes the cookie if a modified session is empty [EVIDENCE_5], or serializes and sets the cookie if conditions are met [EVIDENCE_5]. However, the open_session method implementation and the full conclusion of save_session are not present in the retrieved evidence.\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence covers where the session interface is defined and part of SecureCookieSessionInterface (such as default attributes, Flask app usage, and parts of save_session), but the full implementation of open_session and the complete body of save_session are not fully retrieved.",
+        "missing_information": [
+          "Full implementation details of open_session in SecureCookieSessionInterface",
+          "Complete remaining lines of save_session implementation"
+        ],
+        "answer": "The session interface is defined by the SessionInterface base class in src/flask/sessions.py [EVIDENCE_1], and Flask defaults to using an instance of SecureCookieSessionInterface as its session_interface [EVIDENCE_4]. SecureCookieSessionInterface stores sessions in signed cookies using itsdangerous [EVIDENCE_2]. During save_session, it retrieves cookie properties (name, domain, path, secure, partitioned, samesite, httponly) [EVIDENCE_3], adds a 'Vary: Cookie' header if the session was accessed [EVIDENCE_3, EVIDENCE_5], deletes the cookie if a modified session is empty [EVIDENCE_5], or serializes and sets the cookie if conditions are met [EVIDENCE_5]. However, the open_session method implementation and the full conclusion of save_session are not present in the retrieved evidence.",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_014": {
+      "question_id": "flask_014",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:09:29.165905+00:00",
+      "latency": 1.5775,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_b33de95684436fbe",
+        "v1_4b27f506ab15ae47",
+        "v1_9b9e18bc50c184dd",
+        "v1_99f8af4640b20f1d",
+        "v1_9a22c2b2437a7b74"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.5775,
+      "prompt_length_chars": 14170,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"Retrieved evidence directly demonstrates how SecureCookieSessionInterface retrieves security flags (such as secure, httponly, samesite, partitioned) via configuration/helper methods and sets them on response cookies during save_session.\",\n  \"missing_information\": [],\n  \"answer\": \"SecureCookieSessionInterface configures security flags on session cookies by calling specific getter methods during the save_session process [EVIDENCE_1, EVIDENCE_2]. For example, secure settings like SESSION_COOKIE_SECURE are retrieved via helper methods such as get_cookie_secure (which reads app.config[\\\"SESSION_COOKIE_SECURE\\\"]) [EVIDENCE_3]. Similar helper methods retrieve options like httponly, samesite, partitioned, domain, and path [EVIDENCE_1]. These retrieved flag values are then passed directly into response.set_cookie or response.delete_cookie [EVIDENCE_2, EVIDENCE_4].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "Retrieved evidence directly demonstrates how SecureCookieSessionInterface retrieves security flags (such as secure, httponly, samesite, partitioned) via configuration/helper methods and sets them on response cookies during save_session.",
+        "missing_information": [],
+        "answer": "SecureCookieSessionInterface configures security flags on session cookies by calling specific getter methods during the save_session process [EVIDENCE_1, EVIDENCE_2]. For example, secure settings like SESSION_COOKIE_SECURE are retrieved via helper methods such as get_cookie_secure (which reads app.config[\"SESSION_COOKIE_SECURE\"]) [EVIDENCE_3]. Similar helper methods retrieve options like httponly, samesite, partitioned, domain, and path [EVIDENCE_1]. These retrieved flag values are then passed directly into response.set_cookie or response.delete_cookie [EVIDENCE_2, EVIDENCE_4].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3",
+          "EVIDENCE_4"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_015": {
+      "question_id": "flask_015",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:33.170415+00:00",
+      "latency": 1.9873,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_a043f9b44fa18a48",
+        "v1_7aea8d8cccf1beb1",
+        "v1_a086b71d213c46ee",
+        "v1_6d7f2fc5667bbd65",
+        "v1_ce3f006852093d48"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.9873,
+      "prompt_length_chars": 14339,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence explains the valid response return types and what happens during response coercion in Flask.make_response (such as handling strings, dicts, lists, tuples, and Response instances), but does not show the full implementation block where each specific type is checked and converted.\",\n  \"missing_information\": [\n    \"The exact implementation branch lines inside Flask.make_response that convert dict, list, string, and tuple return types.\"\n  ],\n  \"answer\": \"Flask's `make_response` method coerces various return types into a `response_class` instance [EVIDENCE_1, EVIDENCE_2, EVIDENCE_3]. Valid return types include strings, dicts, lists, tuples with headers or status, Response instances, and WSGI callables [EVIDENCE_2]. Specifically, tuples can be provided as `(body, status, headers)`, `(body, status)`, or `(body, headers)`, where `body` is any allowed type, `status` is a string or integer, and `headers` is a dictionary or list of `(key, value)` tuples [EVIDENCE_3]. If a view function returns an invalid type, a `TypeError` is raised [EVIDENCE_2].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence explains the valid response return types and what happens during response coercion in Flask.make_response (such as handling strings, dicts, lists, tuples, and Response instances), but does not show the full implementation block where each specific type is checked and converted.",
+        "missing_information": [
+          "The exact implementation branch lines inside Flask.make_response that convert dict, list, string, and tuple return types."
+        ],
+        "answer": "Flask's `make_response` method coerces various return types into a `response_class` instance [EVIDENCE_1, EVIDENCE_2, EVIDENCE_3]. Valid return types include strings, dicts, lists, tuples with headers or status, Response instances, and WSGI callables [EVIDENCE_2]. Specifically, tuples can be provided as `(body, status, headers)`, `(body, status)`, or `(body, headers)`, where `body` is any allowed type, `status` is a string or integer, and `headers` is a dictionary or list of `(key, value)` tuples [EVIDENCE_3]. If a view function returns an invalid type, a `TypeError` is raised [EVIDENCE_2].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_016": {
+      "question_id": "flask_016",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:36.618349+00:00",
+      "latency": 1.4312,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_1d957d705288aa4d",
+        "v1_f3728a90a6a06e6c",
+        "v1_61d1ed4abff60f80",
+        "v1_671072709522e674",
+        "v1_62748ba823818c8f"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.4312,
+      "prompt_length_chars": 14415,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence details the parameters, type handling (string vs object import), and uppercase attribute filtering rule for Config.from_object, but does not include the full implementation loop that iterates over attributes.\",\n  \"missing_information\": [\n    \"The exact iteration and attribute-filtering loop implementation inside Config.from_object.\"\n  ],\n  \"answer\": \"Config.from_object accepts an import name as a string or an actual object reference (such as a module or class) [EVIDENCE_1, EVIDENCE_3]. If a string is provided, it imports the object using import_string [EVIDENCE_1]. It loads only the uppercase attributes from the module or class, and a dict object will not work because dict keys are not attributes [EVIDENCE_3].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence details the parameters, type handling (string vs object import), and uppercase attribute filtering rule for Config.from_object, but does not include the full implementation loop that iterates over attributes.",
+        "missing_information": [
+          "The exact iteration and attribute-filtering loop implementation inside Config.from_object."
+        ],
+        "answer": "Config.from_object accepts an import name as a string or an actual object reference (such as a module or class) [EVIDENCE_1, EVIDENCE_3]. If a string is provided, it imports the object using import_string [EVIDENCE_1]. It loads only the uppercase attributes from the module or class, and a dict object will not work because dict keys are not attributes [EVIDENCE_3].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_018": {
+      "question_id": "flask_018",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:40.196747+00:00",
+      "latency": 1.5611,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_444b55e0489d176f",
+        "v1_9c38fc38b17e342c",
+        "v1_94827a2147917afd",
+        "v1_6d585b2408daa27e",
+        "v1_edc3e0a1f70d49f9"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.5611,
+      "prompt_length_chars": 14315,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved evidence blocks discuss redirect handling (such as the default status code change in version 3.2), request teardown, request finalization, and test client opening, but do not contain information about how Flask passes temporary one-off notification messages (such as flashed messages) between redirected requests.\",\n  \"missing_information\": [\n    \"Implementation or documentation of flashed messages or temporary notification messaging between redirected requests\"\n  ],\n  \"answer\": \"The retrieved code evidence does not establish how Flask passes temporary one-off notification messages between redirected requests. The provided evidence only covers redirect response creation helpers [EVIDENCE_1, EVIDENCE_5], request finalization [EVIDENCE_3], request teardown [EVIDENCE_2], and client request opening/redirection handling [EVIDENCE_4].\",\n  \"citations\": [],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved evidence blocks discuss redirect handling (such as the default status code change in version 3.2), request teardown, request finalization, and test client opening, but do not contain information about how Flask passes temporary one-off notification messages (such as flashed messages) between redirected requests.",
+        "missing_information": [
+          "Implementation or documentation of flashed messages or temporary notification messaging between redirected requests"
+        ],
+        "answer": "The retrieved code evidence does not establish how Flask passes temporary one-off notification messages between redirected requests. The provided evidence only covers redirect response creation helpers [EVIDENCE_1, EVIDENCE_5], request finalization [EVIDENCE_3], request teardown [EVIDENCE_2], and client request opening/redirection handling [EVIDENCE_4].",
+        "citations": [],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "flask_020": {
+      "question_id": "flask_020",
+      "repository": "pallets/flask",
+      "commit_sha": "49943b5a94413a530761350f04e896f76e8d620e",
+      "cohort": "cohort_c_unanswerable",
+      "answerable": false,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:44.057139+00:00",
+      "latency": 1.8511,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_98aabe644574c972",
+        "v1_b593c3f70e3ce039",
+        "v1_fad3927cb41a8003",
+        "v1_440bba408d407106",
+        "v1_a9046a0cd93a0d01"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.8511,
+      "prompt_length_chars": 14090,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved code evidence blocks do not contain any implementation details, functions, classes, or configuration options regarding native WebSocket subscriptions or publish-subscribe channels in Flask.\",\n  \"missing_information\": [\n    \"WebSocket subscription handling\",\n    \"Publish-subscribe channel configuration and mechanics\",\n    \"Any relevant source code or documentation regarding WebSockets or PubSub in Flask\"\n  ],\n  \"answer\": \"The retrieved code evidence does not establish how Flask configures native WebSocket subscriptions or publish-subscribe channels. The available evidence covers logging configuration [EVIDENCE_1], url building [EVIDENCE_2], app running options [EVIDENCE_3], class parameters [EVIDENCE_4], and the debug property mapping to the DEBUG config key [EVIDENCE_5], but contains no information on WebSockets or PubSub.\",\n  \"citations\": [],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved code evidence blocks do not contain any implementation details, functions, classes, or configuration options regarding native WebSocket subscriptions or publish-subscribe channels in Flask.",
+        "missing_information": [
+          "WebSocket subscription handling",
+          "Publish-subscribe channel configuration and mechanics",
+          "Any relevant source code or documentation regarding WebSockets or PubSub in Flask"
+        ],
+        "answer": "The retrieved code evidence does not establish how Flask configures native WebSocket subscriptions or publish-subscribe channels. The available evidence covers logging configuration [EVIDENCE_1], url building [EVIDENCE_2], app running options [EVIDENCE_3], class parameters [EVIDENCE_4], and the debug property mapping to the DEBUG config key [EVIDENCE_5], but contains no information on WebSockets or PubSub.",
+        "citations": [],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "express_001": {
+      "question_id": "express_001",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:47.398107+00:00",
+      "latency": 1.324,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_a2563a80cb24a1b8",
+        "v1_5197a5e36b7e7a7c",
+        "v1_fe0d0d2ecf8a29b7",
+        "v1_d801bc10d67ea84e",
+        "v1_4b988259d02a7a06"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.324,
+      "prompt_length_chars": 11482,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"The retrieved code in lib/express.js precisely defines createApplication and shows how it mixes in EventEmitter and the application prototype onto the app function.\",\n  \"missing_information\": [],\n  \"answer\": \"The function createApplication is defined in lib/express.js [EVIDENCE_2, EVIDENCE_3]. Within createApplication, the app function is created [EVIDENCE_1], and EventEmitter.prototype and the application prototype (proto) are mixed into app using merge-descriptors (mixin) [EVIDENCE_1, EVIDENCE_3].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "The retrieved code in lib/express.js precisely defines createApplication and shows how it mixes in EventEmitter and the application prototype onto the app function.",
+        "missing_information": [],
+        "answer": "The function createApplication is defined in lib/express.js [EVIDENCE_2, EVIDENCE_3]. Within createApplication, the app function is created [EVIDENCE_1], and EventEmitter.prototype and the application prototype (proto) are mixed into app using merge-descriptors (mixin) [EVIDENCE_1, EVIDENCE_3].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_002": {
+      "question_id": "express_002",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:09:51.414234+00:00",
+      "latency": 1.9981,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_008a5e54b12fb068",
+        "v1_1f16212e519ea504",
+        "v1_c3fdbd1ebb2e7ace",
+        "v1_f2da08bc56cf3195",
+        "v1_f9f57e89edde272f"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.9981,
+      "prompt_length_chars": 13020,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"The retrieved code from lib/application.js directly shows how the application sets up its default configuration settings, including 'x-powered-by', 'etag', 'env', 'query parser', 'subdomain offset', and 'trust proxy' inside app.defaultConfiguration.\",\n  \"missing_information\": [],\n  \"answer\": \"The created application sets up its default configuration settings in `app.defaultConfiguration` [EVIDENCE_1]. Specifically, it enables 'x-powered-by', and sets default values for 'etag' ('weak'), 'env' (based on `process.env.NODE_ENV` or defaulting to 'development'), 'query parser' ('simple'), 'subdomain offset' (2), and 'trust proxy' (false) [EVIDENCE_1]. Additionally, it sets default values for 'view' (`View`), 'views' (resolved to 'views'), and 'jsonp callback name' ('callback') [EVIDENCE_3].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "The retrieved code from lib/application.js directly shows how the application sets up its default configuration settings, including 'x-powered-by', 'etag', 'env', 'query parser', 'subdomain offset', and 'trust proxy' inside app.defaultConfiguration.",
+        "missing_information": [],
+        "answer": "The created application sets up its default configuration settings in `app.defaultConfiguration` [EVIDENCE_1]. Specifically, it enables 'x-powered-by', and sets default values for 'etag' ('weak'), 'env' (based on `process.env.NODE_ENV` or defaulting to 'development'), 'query parser' ('simple'), 'subdomain offset' (2), and 'trust proxy' (false) [EVIDENCE_1]. Additionally, it sets default values for 'view' (`View`), 'views' (resolved to 'views'), and 'jsonp callback name' ('callback') [EVIDENCE_3].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_003": {
+      "question_id": "express_003",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:55.300093+00:00",
+      "latency": 1.868,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_1693eaa9546416e5",
+        "v1_b0c6264222a348a2",
+        "v1_7b5605c871309639",
+        "v1_3862718aaaf1cd68",
+        "v1_6be35a644ec60013"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.868,
+      "prompt_length_chars": 12430,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved code provides the signature and partial implementation of the View constructor in lib/view.js, but does not show all stored properties across the entire constructor definition since only parts of lib/view.js were retrieved.\",\n  \"missing_information\": [\n    \"Full implementation details of the View constructor in lib/view.js showing every assigned property from start to finish\"\n  ],\n  \"answer\": \"The retrieved evidence shows that the View constructor is defined in lib/view.js [EVIDENCE_5]. Within the retrieved code blocks, it stores properties such as this.engine (loaded from options.engines) and this.path (looked up via this.lookup(fileName)) [EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved code provides the signature and partial implementation of the View constructor in lib/view.js, but does not show all stored properties across the entire constructor definition since only parts of lib/view.js were retrieved.",
+        "missing_information": [
+          "Full implementation details of the View constructor in lib/view.js showing every assigned property from start to finish"
+        ],
+        "answer": "The retrieved evidence shows that the View constructor is defined in lib/view.js [EVIDENCE_5]. Within the retrieved code blocks, it stores properties such as this.engine (loaded from options.engines) and this.path (looked up via this.lookup(fileName)) [EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_005": {
+      "question_id": "express_005",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:09:59.023044+00:00",
+      "latency": 1.7046,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_86fbdca8cf0c2e71",
+        "v1_13297c46d4e97976",
+        "v1_42c234e4cf66175d",
+        "v1_6bbc774fb3df79e8",
+        "v1_91e759af56b05ebb"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.7046,
+      "prompt_length_chars": 12540,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved evidence shows that Express uses app.use() (proxied to Router#use()) to add middleware and mount sub-applications, with support for route prefixes (such as '/static' or '/user/'). However, the internal implementation details of how Router handles the mounting and path prefix stripping are not fully present in the retrieved code blocks.\",\n  \"missing_information\": [\n    \"Internal implementation of Router#use() and how path prefix stripping is executed in the router code.\"\n  ],\n  \"answer\": \"Express registers middleware and mounts sub-applications (or apps/middleware under a path prefix) by using `app.use()`, which proxies to `Router#use()` [EVIDENCE_1, EVIDENCE_2]. When an express app or middleware is passed to `app.use()`, a route prefix can be specified (e.g., `app.use('/static', ...)` or `app.use('/user/', ...)`) [EVIDENCE_3, EVIDENCE_4, EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved evidence shows that Express uses app.use() (proxied to Router#use()) to add middleware and mount sub-applications, with support for route prefixes (such as '/static' or '/user/'). However, the internal implementation details of how Router handles the mounting and path prefix stripping are not fully present in the retrieved code blocks.",
+        "missing_information": [
+          "Internal implementation of Router#use() and how path prefix stripping is executed in the router code."
+        ],
+        "answer": "Express registers middleware and mounts sub-applications (or apps/middleware under a path prefix) by using `app.use()`, which proxies to `Router#use()` [EVIDENCE_1, EVIDENCE_2]. When an express app or middleware is passed to `app.use()`, a route prefix can be specified (e.g., `app.use('/static', ...)` or `app.use('/user/', ...)`) [EVIDENCE_3, EVIDENCE_4, EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_006": {
+      "question_id": "express_006",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:10:02.754099+00:00",
+      "latency": 1.7206,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_258b993d1c9441f7",
+        "v1_2e64d5bb7368a04a",
+        "v1_06f5de0da1f46e25",
+        "v1_4f615b52509a3e63",
+        "v1_91e759af56b05ebb"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.7206,
+      "prompt_length_chars": 13576,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"The retrieved evidence in lib/application.js explicitly shows how app.init defines a getter for this.router that lazily instantiates a Router using the 'case sensitive routing' and 'strict routing' settings.\",\n  \"missing_information\": [],\n  \"answer\": \"The application instance lazily initializes its underlying router via a property getter defined on `this` in `app.init` [EVIDENCE_1]. When `router` is accessed and `router === null`, a new `Router` instance is created with options `caseSensitive` configured via `this.enabled('case sensitive routing')` and `strict` configured via `this.enabled('strict routing')` [EVIDENCE_1].\",\n  \"citations\": [\n    \"EVIDENCE_1\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "The retrieved evidence in lib/application.js explicitly shows how app.init defines a getter for this.router that lazily instantiates a Router using the 'case sensitive routing' and 'strict routing' settings.",
+        "missing_information": [],
+        "answer": "The application instance lazily initializes its underlying router via a property getter defined on `this` in `app.init` [EVIDENCE_1]. When `router` is accessed and `router === null`, a new `Router` instance is created with options `caseSensitive` configured via `this.enabled('case sensitive routing')` and `strict` configured via `this.enabled('strict routing')` [EVIDENCE_1].",
+        "citations": [
+          "EVIDENCE_1"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_007": {
+      "question_id": "express_007",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:06.643203+00:00",
+      "latency": 1.8714,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_83868f5639449b4f",
+        "v1_537b3a9c9ded2d1c",
+        "v1_35aa08db72c842be",
+        "v1_67349a4bb14526f0",
+        "v1_38f8a3bfe70480fd"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.8714,
+      "prompt_length_chars": 13198,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence directly shows how res.json uses app settings for json escape, json replacer, and json spaces, and passes the result to stringify and then this.send(body). However, the exact implementation details of stringify are not in the retrieved evidence.\",\n  \"missing_information\": [\n    \"The implementation definition of the `stringify` function used in `res.json`.\"\n  ],\n  \"answer\": \"The framework serializes objects and applies indentation settings in `res.json` by retrieving application settings such as `json escape`, `json replacer`, and `json spaces` from the app instance [EVIDENCE_1]. It then passes these settings along with the object to a `stringify` function, sets the `Content-Type` to `application/json` if it has not already been set, and sends the resulting body using `this.send(body)` [EVIDENCE_1].\",\n  \"citations\": [\n    \"EVIDENCE_1\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence directly shows how res.json uses app settings for json escape, json replacer, and json spaces, and passes the result to stringify and then this.send(body). However, the exact implementation details of stringify are not in the retrieved evidence.",
+        "missing_information": [
+          "The implementation definition of the `stringify` function used in `res.json`."
+        ],
+        "answer": "The framework serializes objects and applies indentation settings in `res.json` by retrieving application settings such as `json escape`, `json replacer`, and `json spaces` from the app instance [EVIDENCE_1]. It then passes these settings along with the object to a `stringify` function, sets the `Content-Type` to `application/json` if it has not already been set, and sends the resulting body using `this.send(body)` [EVIDENCE_1].",
+        "citations": [
+          "EVIDENCE_1"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_009": {
+      "question_id": "express_009",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:10.370504+00:00",
+      "latency": 1.7138,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_cd45799573e24584",
+        "v1_5c97ffc842ce3629",
+        "v1_7fd4d8f93031bb28",
+        "v1_e3f759f2970f9ec9",
+        "v1_e1c5a432a98533ff"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.7138,
+      "prompt_length_chars": 12807,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved evidence mentions the population of the ETag header using 'generateETag' and 'etagFn(chunk, encoding)' in lib/response.js [EVIDENCE_2], but it does not contain the implementation details of how utility hashing generators calculate the entity tags.\",\n  \"missing_information\": [\n    \"Implementation details of the utility hashing generator (etagFn)\",\n    \"How the entity tag value is computed from chunks or bodies\"\n  ],\n  \"answer\": \"The retrieved evidence indicates that the ETag is populated when `generateETag` is truthy and the length is defined, using an `etagFn(chunk, encoding)` call to generate the ETag value before setting it via `this.set('ETag', etag)` [EVIDENCE_2]. However, the exact mechanism and utility hashing generators used to calculate these entity tags are not present in the retrieved evidence.\",\n  \"citations\": [\n    \"EVIDENCE_2\"\n  ],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved evidence mentions the population of the ETag header using 'generateETag' and 'etagFn(chunk, encoding)' in lib/response.js [EVIDENCE_2], but it does not contain the implementation details of how utility hashing generators calculate the entity tags.",
+        "missing_information": [
+          "Implementation details of the utility hashing generator (etagFn)",
+          "How the entity tag value is computed from chunks or bodies"
+        ],
+        "answer": "The retrieved evidence indicates that the ETag is populated when `generateETag` is truthy and the length is defined, using an `etagFn(chunk, encoding)` call to generate the ETag value before setting it via `this.set('ETag', etag)` [EVIDENCE_2]. However, the exact mechanism and utility hashing generators used to calculate these entity tags are not present in the retrieved evidence.",
+        "citations": [
+          "EVIDENCE_2"
+        ],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "express_011": {
+      "question_id": "express_011",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:13.958452+00:00",
+      "latency": 1.569,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_5d6997a8e083dbae",
+        "v1_ab713c7a18078e32",
+        "v1_ef54c485d5ca7d9d",
+        "v1_1693eaa9546416e5",
+        "v1_cf030aab03c30808"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.569,
+      "prompt_length_chars": 13134,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved code evidence consists of test cases and an example script demonstrating view settings, errors, custom View constructors, and engine rendering invocations, but it does not contain the internal implementation of the template rendering coordinator (such as application.render or the View class lookup/rendering mechanics) that locates view files on disk and invokes the underlying view renderer.\",\n  \"missing_information\": [\n    \"Implementation of application.render in lib/application.js\",\n    \"Implementation of the View class and file lookup logic in lib/view.js\"\n  ],\n  \"answer\": \"The retrieved code blocks do not establish how the template rendering coordinator locates view files on disk or invokes the underlying view renderer. They only show tests and usage examples where views are configured via app.set('views', ...), custom View constructors are defined, and templates are rendered through app.render() [EVIDENCE_1, EVIDENCE_2, EVIDENCE_3, EVIDENCE_4, EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved code evidence consists of test cases and an example script demonstrating view settings, errors, custom View constructors, and engine rendering invocations, but it does not contain the internal implementation of the template rendering coordinator (such as application.render or the View class lookup/rendering mechanics) that locates view files on disk and invokes the underlying view renderer.",
+        "missing_information": [
+          "Implementation of application.render in lib/application.js",
+          "Implementation of the View class and file lookup logic in lib/view.js"
+        ],
+        "answer": "The retrieved code blocks do not establish how the template rendering coordinator locates view files on disk or invokes the underlying view renderer. They only show tests and usage examples where views are configured via app.set('views', ...), custom View constructors are defined, and templates are rendered through app.render() [EVIDENCE_1, EVIDENCE_2, EVIDENCE_3, EVIDENCE_4, EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "express_012": {
+      "question_id": "express_012",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:17.534593+00:00",
+      "latency": 1.557,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_7a9f5407b1cb09cd",
+        "v1_8f8889cca131c23f",
+        "v1_6509fce0cb7b12cc",
+        "v1_0b6621ab23b52605",
+        "v1_473afb1e7f3366bb"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.557,
+      "prompt_length_chars": 12466,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence directly establishes how res.render handles options, merges locals, delegates to app.render, and handles the default callback by sending the rendered string, but does not show the complete inner workings of app.render.\",\n  \"missing_information\": [\n    \"Complete internal implementation of app.render\"\n  ],\n  \"answer\": \"The res.render function accepts a view, options, and an optional callback [EVIDENCE_1]. If the options argument is a function, it treats it as the callback and initializes options as an empty object [EVIDENCE_1]. It merges response-local variables (self.locals) into the options object under `_locals` [EVIDENCE_1]. If no callback is provided, it defaults to a function that handles any rendering error by passing it to `req.next(err)`, or calling `self.send(str)` to send the rendered string response back to the client [EVIDENCE_1]. Finally, it delegates the actual rendering process by calling `app.render(view, opts, done)` [EVIDENCE_1].\",\n  \"citations\": [\n    \"EVIDENCE_1\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence directly establishes how res.render handles options, merges locals, delegates to app.render, and handles the default callback by sending the rendered string, but does not show the complete inner workings of app.render.",
+        "missing_information": [
+          "Complete internal implementation of app.render"
+        ],
+        "answer": "The res.render function accepts a view, options, and an optional callback [EVIDENCE_1]. If the options argument is a function, it treats it as the callback and initializes options as an empty object [EVIDENCE_1]. It merges response-local variables (self.locals) into the options object under `_locals` [EVIDENCE_1]. If no callback is provided, it defaults to a function that handles any rendering error by passing it to `req.next(err)`, or calling `self.send(str)` to send the rendered string response back to the client [EVIDENCE_1]. Finally, it delegates the actual rendering process by calling `app.render(view, opts, done)` [EVIDENCE_1].",
+        "citations": [
+          "EVIDENCE_1"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_013": {
+      "question_id": "express_013",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:21.364866+00:00",
+      "latency": 1.811,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_fecb72a33eae3911",
+        "v1_c58b08d61f869fa8",
+        "v1_c357f9f2c412e3be",
+        "v1_c7fa9f314e938c92",
+        "v1_bc67b09f37706857"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.811,
+      "prompt_length_chars": 12730,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence demonstrates how app.route chaining with methods like .all(), .get(), and .post() can handle HTTP verbs [EVIDENCE_1, EVIDENCE_3], and how routing handles requests and error propagation [EVIDENCE_2], but does not provide complete source implementation details of app.get, app.post, or app.all from lib/application.js or lib/router/.\",\n  \"missing_information\": [\n    \"Source implementation of app.get, app.post, and app.all in application.js or router implementation files\"\n  ],\n  \"answer\": \"Based on the retrieved test evidence, Express allows chaining HTTP method routing handlers such as .get() and .post() using app.route() (e.g., app.route('/foo').all(...).get(...).post(...)) [EVIDENCE_1, EVIDENCE_3]. Additionally, HTTP requests hitting routes are matched based on the defined methods and paths, and unhandled errors or errors propagated via next(err) are handled by error handling mechanisms during request processing [EVIDENCE_2].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence demonstrates how app.route chaining with methods like .all(), .get(), and .post() can handle HTTP verbs [EVIDENCE_1, EVIDENCE_3], and how routing handles requests and error propagation [EVIDENCE_2], but does not provide complete source implementation details of app.get, app.post, or app.all from lib/application.js or lib/router/.",
+        "missing_information": [
+          "Source implementation of app.get, app.post, and app.all in application.js or router implementation files"
+        ],
+        "answer": "Based on the retrieved test evidence, Express allows chaining HTTP method routing handlers such as .get() and .post() using app.route() (e.g., app.route('/foo').all(...).get(...).post(...)) [EVIDENCE_1, EVIDENCE_3]. Additionally, HTTP requests hitting routes are matched based on the defined methods and paths, and unhandled errors or errors propagated via next(err) are handled by error handling mechanisms during request processing [EVIDENCE_2].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_014": {
+      "question_id": "express_014",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:10:25.225603+00:00",
+      "latency": 1.8425,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_4dcc241de8b34f1b",
+        "v1_5d80ed73764c7824",
+        "v1_87335bc59ad99454",
+        "v1_cc204c4ba2f08d1b",
+        "v1_f74917c3b7d7a68b"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.8425,
+      "prompt_length_chars": 13462,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence shows how req.ip uses this.app.get('trust proxy fn') combined with proxyaddr(this, trust) and how trust proxy can be enabled/configured via settings, but does not provide the full implementation of compileTrust or proxyaddr compilation details.\",\n  \"missing_information\": [\n    \"The implementation of compileTrust function and proxyaddr library usage.\",\n    \"Full source code of how application proxy settings are initially parsed and set into 'trust proxy fn'.\"\n  ],\n  \"answer\": \"The client IP address resolution for routes is handled via the request getter for req.ip, which retrieves the 'trust proxy fn' app setting and passes it along with the request instance to proxyaddr(this, trust) [EVIDENCE_2]. The proxy setting itself can be enabled, set to a numeric count, or configured via IP address lists as shown in tests [EVIDENCE_3, EVIDENCE_4, EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence shows how req.ip uses this.app.get('trust proxy fn') combined with proxyaddr(this, trust) and how trust proxy can be enabled/configured via settings, but does not provide the full implementation of compileTrust or proxyaddr compilation details.",
+        "missing_information": [
+          "The implementation of compileTrust function and proxyaddr library usage.",
+          "Full source code of how application proxy settings are initially parsed and set into 'trust proxy fn'."
+        ],
+        "answer": "The client IP address resolution for routes is handled via the request getter for req.ip, which retrieves the 'trust proxy fn' app setting and passes it along with the request instance to proxyaddr(this, trust) [EVIDENCE_2]. The proxy setting itself can be enabled, set to a numeric count, or configured via IP address lists as shown in tests [EVIDENCE_3, EVIDENCE_4, EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_2",
+          "EVIDENCE_3",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_015": {
+      "question_id": "express_015",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:29.201973+00:00",
+      "latency": 1.966,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_f8205575ad968e4b",
+        "v1_a62fea631080a20a",
+        "v1_685fe56745141928",
+        "v1_44a6d368cf98c6ab",
+        "v1_0d81ef96cd777c28"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.966,
+      "prompt_length_chars": 11722,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved code shows that compileETag maps 'weak' and true to exports.wetag and 'strong' to exports.etag, but the underlying implementation details of wetag and etag themselves are not fully present in the retrieved evidence blocks.\",\n  \"missing_information\": [\n    \"Implementation details of exports.wetag\",\n    \"Implementation details of exports.etag\"\n  ],\n  \"answer\": \"Based on the retrieved code, Express compiles the 'etag' setting via compileETag() [EVIDENCE_3]. When configured as 'strong', it uses exports.etag [EVIDENCE_3, EVIDENCE_4], and when configured as 'weak' or true, it uses exports.wetag [EVIDENCE_3]. However, the specific algorithms or underlying libraries used inside exports.etag and exports.wetag to calculate the entity tags are not present in the retrieved evidence.\",\n  \"citations\": [\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\"\n  ],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved code shows that compileETag maps 'weak' and true to exports.wetag and 'strong' to exports.etag, but the underlying implementation details of wetag and etag themselves are not fully present in the retrieved evidence blocks.",
+        "missing_information": [
+          "Implementation details of exports.wetag",
+          "Implementation details of exports.etag"
+        ],
+        "answer": "Based on the retrieved code, Express compiles the 'etag' setting via compileETag() [EVIDENCE_3]. When configured as 'strong', it uses exports.etag [EVIDENCE_3, EVIDENCE_4], and when configured as 'weak' or true, it uses exports.wetag [EVIDENCE_3]. However, the specific algorithms or underlying libraries used inside exports.etag and exports.wetag to calculate the entity tags are not present in the retrieved evidence.",
+        "citations": [
+          "EVIDENCE_3",
+          "EVIDENCE_4"
+        ],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "express_017": {
+      "question_id": "express_017",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:33.094110+00:00",
+      "latency": 1.8802,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_5b4315a80297dad1",
+        "v1_016b7f46956862dc",
+        "v1_0ca4f244faa6f19c",
+        "v1_396b1e78e19dbcdb",
+        "v1_d4ab7ce467a33a00"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.8802,
+      "prompt_length_chars": 13047,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"Retrieved evidence directly shows the definition of res.cookie in lib/response.js, detailing how options like signed, maxAge, and path are handled and how cookies are serialized using cookie.serialize.\",\n  \"missing_information\": [],\n  \"answer\": \"res.cookie is defined in lib/response.js [EVIDENCE_1, EVIDENCE_2]. It handles options and serialization as follows:\\n- It creates a shallow copy of the options and checks if the cookie should be signed; if signed is true and req.secret is missing, it throws an error [EVIDENCE_1].\\n- Objects passed as values are serialized with a 'j:' prefix followed by JSON.stringify, otherwise values are converted to strings [EVIDENCE_1].\\n- If signed is true, the value is prefixed with 's:' and signed using the secret [EVIDENCE_1].\\n- If maxAge is provided and not null, it calculates the expiration date (Date.now() + maxAge) and converts maxAge to seconds (floored) [EVIDENCE_1]. If maxAge is invalid (e.g., NaN), it results in an error [EVIDENCE_5].\\n- If path is not specified in the options, it defaults to '/' [EVIDENCE_1].\\n- Finally, it serializes and sets the cookie header by calling cookie.serialize(name, String(val), opts) and appending it to 'Set-Cookie' [EVIDENCE_2].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "Retrieved evidence directly shows the definition of res.cookie in lib/response.js, detailing how options like signed, maxAge, and path are handled and how cookies are serialized using cookie.serialize.",
+        "missing_information": [],
+        "answer": "res.cookie is defined in lib/response.js [EVIDENCE_1, EVIDENCE_2]. It handles options and serialization as follows:\n- It creates a shallow copy of the options and checks if the cookie should be signed; if signed is true and req.secret is missing, it throws an error [EVIDENCE_1].\n- Objects passed as values are serialized with a 'j:' prefix followed by JSON.stringify, otherwise values are converted to strings [EVIDENCE_1].\n- If signed is true, the value is prefixed with 's:' and signed using the secret [EVIDENCE_1].\n- If maxAge is provided and not null, it calculates the expiration date (Date.now() + maxAge) and converts maxAge to seconds (floored) [EVIDENCE_1]. If maxAge is invalid (e.g., NaN), it results in an error [EVIDENCE_5].\n- If path is not specified in the options, it defaults to '/' [EVIDENCE_1].\n- Finally, it serializes and sets the cookie header by calling cookie.serialize(name, String(val), opts) and appending it to 'Set-Cookie' [EVIDENCE_2].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "express_019": {
+      "question_id": "express_019",
+      "repository": "expressjs/express",
+      "commit_sha": "43fca52d28a422c8be48fd489cbd4f2d6152bab6",
+      "cohort": "cohort_c_unanswerable",
+      "answerable": false,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:36.800445+00:00",
+      "latency": 1.6879,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_94ac648f567b3168",
+        "v1_ac9b3f11e604d1ba",
+        "v1_e5fbbe9f19844228",
+        "v1_ddbfb765222c3bee",
+        "v1_6230391a1c9e051f"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.6879,
+      "prompt_length_chars": 11470,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved code evidence does not contain any implementation or reference to a built-in JWT (JSON Web Token) authentication verification middleware.\",\n  \"missing_information\": [\n    \"JWT authentication verification middleware implementation\",\n    \"Source code or test files referencing JWT functionality\"\n  ],\n  \"answer\": \"The retrieved evidence does not establish where or if a built-in JWT (JSON Web Token) authentication verification middleware is implemented in Express.\",\n  \"citations\": [],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved code evidence does not contain any implementation or reference to a built-in JWT (JSON Web Token) authentication verification middleware.",
+        "missing_information": [
+          "JWT authentication verification middleware implementation",
+          "Source code or test files referencing JWT functionality"
+        ],
+        "answer": "The retrieved evidence does not establish where or if a built-in JWT (JSON Web Token) authentication verification middleware is implemented in Express.",
+        "citations": [],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_001": {
+      "question_id": "fmt_001",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:40.827639+00:00",
+      "latency": 2.0079,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_e607d4a97f22f360",
+        "v1_98fa1bd144694b7c",
+        "v1_de92ef58945a1633",
+        "v1_0f3abd3f3bc2e19a",
+        "v1_4e199b8a07cbdd1a"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.0079,
+      "prompt_length_chars": 9765,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved code establishes that the `text_style` class is defined in include/fmt/color.h and stores a `style_` member of type uint64_t [EVIDENCE_1, EVIDENCE_3, EVIDENCE_4], which encodes emphasis (via get_emphasis shifting by 54) [EVIDENCE_2, EVIDENCE_3], background color via bg() [EVIDENCE_1], and foreground color via fg() [EVIDENCE_3]. However, the full bitwise layout details for foreground and background colors within style_ are only partially visible in the comments and operators.\",\n  \"missing_information\": [\n    \"Full details of how foreground and background colors are mapped into the uint64_t style_ bitfields beyond the described overflow bits and emphasis shift.\"\n  ],\n  \"answer\": \"The text_style class is defined in include/fmt/color.h [EVIDENCE_4]. It stores style attributes within a uint64_t member named style_ [EVIDENCE_1, EVIDENCE_3, EVIDENCE_4], which supports emphasis (retrieved via get_emphasis() by shifting style_ >> 54) [EVIDENCE_3], as well as foreground (fg) and background (bg) color specifications [EVIDENCE_1, EVIDENCE_3].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved code establishes that the `text_style` class is defined in include/fmt/color.h and stores a `style_` member of type uint64_t [EVIDENCE_1, EVIDENCE_3, EVIDENCE_4], which encodes emphasis (via get_emphasis shifting by 54) [EVIDENCE_2, EVIDENCE_3], background color via bg() [EVIDENCE_1], and foreground color via fg() [EVIDENCE_3]. However, the full bitwise layout details for foreground and background colors within style_ are only partially visible in the comments and operators.",
+        "missing_information": [
+          "Full details of how foreground and background colors are mapped into the uint64_t style_ bitfields beyond the described overflow bits and emphasis shift."
+        ],
+        "answer": "The text_style class is defined in include/fmt/color.h [EVIDENCE_4]. It stores style attributes within a uint64_t member named style_ [EVIDENCE_1, EVIDENCE_3, EVIDENCE_4], which supports emphasis (retrieved via get_emphasis() by shifting style_ >> 54) [EVIDENCE_3], as well as foreground (fg) and background (bg) color specifications [EVIDENCE_1, EVIDENCE_3].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_002": {
+      "question_id": "fmt_002",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:10:44.288891+00:00",
+      "latency": 1.442,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_4f43f012e697ac95",
+        "v1_6e05a2497bac1abb",
+        "v1_99f714f726d31e1b",
+        "v1_4bb5a8efe8b6cb2f",
+        "v1_d52e9b325fbeabdd"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.442,
+      "prompt_length_chars": 10075,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"The retrieved evidence defines the styled helper function and shows how it wraps a value with a text_style into a detail::styled_arg structure, but it does not show the full underlying implementation or how detail::styled_arg applies the style during formatting.\",\n  \"missing_information\": [\n    \"The complete implementation details of detail::styled_arg and how it integrates into formatting to emit the ANSI escape sequences.\"\n  ],\n  \"answer\": \"The styled helper function takes a value and a text_style (ts) and returns a detail::styled_arg<remove_cvref_t<T>> object wrapping both the value and the style [EVIDENCE_5]. This styled argument can then be used in formatting functions, such as fmt::print, to format the value using ANSI escape sequences [EVIDENCE_2].\",\n  \"citations\": [\n    \"EVIDENCE_2\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "The retrieved evidence defines the styled helper function and shows how it wraps a value with a text_style into a detail::styled_arg structure, but it does not show the full underlying implementation or how detail::styled_arg applies the style during formatting.",
+        "missing_information": [
+          "The complete implementation details of detail::styled_arg and how it integrates into formatting to emit the ANSI escape sequences."
+        ],
+        "answer": "The styled helper function takes a value and a text_style (ts) and returns a detail::styled_arg<remove_cvref_t<T>> object wrapping both the value and the style [EVIDENCE_5]. This styled argument can then be used in formatting functions, such as fmt::print, to format the value using ANSI escape sequences [EVIDENCE_2].",
+        "citations": [
+          "EVIDENCE_2",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_004": {
+      "question_id": "fmt_004",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:47.727522+00:00",
+      "latency": 1.4273,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_8c1cd3786aeb22a4",
+        "v1_dd7912ab22a3641c",
+        "v1_905d53b08ea9a8db",
+        "v1_34a2e81aaaf74266",
+        "v1_786b700496bedc02"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.4273,
+      "prompt_length_chars": 10705,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved code evidence blocks discuss compile-time format string compilation, static formatting, and runtime named fields (e.g., include/fmt/compile.h), but they do not provide the implementation details or mechanisms for how fmt constructs dynamic argument lists when format arguments are not known at compile time.\",\n  \"missing_information\": [\n    \"Implementation details of dynamic argument lists (such as dynamic format context, dynamic argument store, or dynamic format arg lists in args.h or format.h).\"\n  ],\n  \"answer\": \"The retrieved code context does not contain sufficient implementation details to explain how fmt constructs dynamic argument lists when format arguments are not known at compile time.\",\n  \"citations\": [],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved code evidence blocks discuss compile-time format string compilation, static formatting, and runtime named fields (e.g., include/fmt/compile.h), but they do not provide the implementation details or mechanisms for how fmt constructs dynamic argument lists when format arguments are not known at compile time.",
+        "missing_information": [
+          "Implementation details of dynamic argument lists (such as dynamic format context, dynamic argument store, or dynamic format arg lists in args.h or format.h)."
+        ],
+        "answer": "The retrieved code context does not contain sufficient implementation details to explain how fmt constructs dynamic argument lists when format arguments are not known at compile time.",
+        "citations": [],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_006": {
+      "question_id": "fmt_006",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:10:51.296434+00:00",
+      "latency": 1.5486,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_ddf6add7518fe5ea",
+        "v1_5bd54b940adf19f0",
+        "v1_e964658a50b82395",
+        "v1_612617574d5532f3",
+        "v1_d785a30dfb5463ce"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.5486,
+      "prompt_length_chars": 10442,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence details the `join` function template for iterator ranges and the underlying `join_view` structure taking a begin iterator, end sentinel, and separator string view, but does not provide the full formatting/parsing implementation for ranges.\",\n  \"missing_information\": [\n    \"The full parse and format member functions of the range/join_view formatter implementation.\"\n  ],\n  \"answer\": \"The `join` function for iterator ranges constructs and returns a `join_view` by taking a begin iterator, an end sentinel, and a separator (as a string view) [EVIDENCE_1, EVIDENCE_3]. The `join_view` struct stores these components (`begin`, `end`, and `sep`) and initializes them via its constexpr constructor [EVIDENCE_3].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence details the `join` function template for iterator ranges and the underlying `join_view` structure taking a begin iterator, end sentinel, and separator string view, but does not provide the full formatting/parsing implementation for ranges.",
+        "missing_information": [
+          "The full parse and format member functions of the range/join_view formatter implementation."
+        ],
+        "answer": "The `join` function for iterator ranges constructs and returns a `join_view` by taking a begin iterator, an end sentinel, and a separator (as a string view) [EVIDENCE_1, EVIDENCE_3]. The `join_view` struct stores these components (`begin`, `end`, and `sep`) and initializes them via its constexpr constructor [EVIDENCE_3].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_007": {
+      "question_id": "fmt_007",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:55.027040+00:00",
+      "latency": 1.7191,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_5037a46f8e8ce769",
+        "v1_fa58f187009ad63b",
+        "v1_53645b4827e7951c",
+        "v1_8ca35549a895fe6a",
+        "v1_22e516440b44d1d5"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.7191,
+      "prompt_length_chars": 10493,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"Retrieved evidence thoroughly demonstrates the different push_back overloads and internal storage strategies used by dynamic_format_arg_store for regular arguments, reference wrappers, and named arguments.\",\n  \"missing_information\": [],\n  \"answer\": \"The dynamic_format_arg_store handles storing typed values and named arguments through several push_back overloads: 1) For standard arguments, if need_copy<T>::value is true, it copies and stores the value dynamically via dynamic_args_.push<stored_t<T>>(arg); otherwise, it unwraps the argument using detail::unwrap(arg) [EVIDENCE_2, EVIDENCE_3]. 2) For std::reference_wrapper<T> arguments, it asserts that need_copy<T>::value is true (noting that built-in types and string views are always copied) and calls emplace_arg(arg.get()) [EVIDENCE_1]. 3) For named arguments (named_arg<T, char_type>), it pushes the argument name into the dynamic list as a basic_string, and then stores the underlying value either by copying it via dynamic_args_.push<stored_t<T>>(arg.value) or by using the raw value directly depending on need_copy<T>::value [EVIDENCE_5].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "Retrieved evidence thoroughly demonstrates the different push_back overloads and internal storage strategies used by dynamic_format_arg_store for regular arguments, reference wrappers, and named arguments.",
+        "missing_information": [],
+        "answer": "The dynamic_format_arg_store handles storing typed values and named arguments through several push_back overloads: 1) For standard arguments, if need_copy<T>::value is true, it copies and stores the value dynamically via dynamic_args_.push<stored_t<T>>(arg); otherwise, it unwraps the argument using detail::unwrap(arg) [EVIDENCE_2, EVIDENCE_3]. 2) For std::reference_wrapper<T> arguments, it asserts that need_copy<T>::value is true (noting that built-in types and string views are always copied) and calls emplace_arg(arg.get()) [EVIDENCE_1]. 3) For named arguments (named_arg<T, char_type>), it pushes the argument name into the dynamic list as a basic_string, and then stores the underlying value either by copying it via dynamic_args_.push<stored_t<T>>(arg.value) or by using the raw value directly depending on need_copy<T>::value [EVIDENCE_5].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_008": {
+      "question_id": "fmt_008",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:10:58.487822+00:00",
+      "latency": 1.4408,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_b012c98418b47297",
+        "v1_3ce36634be30c75a",
+        "v1_53b42ed54eac7329",
+        "v1_b1423747f669fdd2",
+        "v1_8711d50eff5905f4"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.4408,
+      "prompt_length_chars": 9849,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence shows that the ostream class inherits from detail::buffer<char>, contains a private file member, provides a move constructor, a destructor, a conversion operator to writer, and a close method, but detailed internal buffering/writing execution logic is partially absent from the retrieved blocks.\",\n  \"missing_information\": [\n    \"Full implementation details of the flush, write, and buffering loop mechanisms in ostream.\"\n  ],\n  \"answer\": \"The ostream class in fmt is a fast buffered output stream for writing from a single thread [EVIDENCE_2]. It inherits privately from detail::buffer<char> [EVIDENCE_1], manages a private file object [EVIDENCE_1], and provides a conversion operator to writer [EVIDENCE_1], a close method that flushes and closes the underlying file [EVIDENCE_5], as well as move semantics and destructor support [EVIDENCE_1].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence shows that the ostream class inherits from detail::buffer<char>, contains a private file member, provides a move constructor, a destructor, a conversion operator to writer, and a close method, but detailed internal buffering/writing execution logic is partially absent from the retrieved blocks.",
+        "missing_information": [
+          "Full implementation details of the flush, write, and buffering loop mechanisms in ostream."
+        ],
+        "answer": "The ostream class in fmt is a fast buffered output stream for writing from a single thread [EVIDENCE_2]. It inherits privately from detail::buffer<char> [EVIDENCE_1], manages a private file object [EVIDENCE_1], and provides a conversion operator to writer [EVIDENCE_1], a close method that flushes and closes the underlying file [EVIDENCE_5], as well as move semantics and destructor support [EVIDENCE_1].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_010": {
+      "question_id": "fmt_010",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:11:02.498181+00:00",
+      "latency": 1.9981,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_c0c0b9d0a57dc0ce",
+        "v1_7b91ffc557f9e46e",
+        "v1_382f1e7ef10681ee",
+        "v1_f69264fdd4504b11",
+        "v1_6217dd81e22239a1"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.9981,
+      "prompt_length_chars": 9069,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence establishes that the printf_arg_formatter class is defined in include/fmt/printf.h inheriting from arg_formatter<Char> [EVIDENCE_2], and shows some operator overloads (such as for handle [EVIDENCE_1], monostate [EVIDENCE_3], and const char* [EVIDENCE_4]) and write functions [EVIDENCE_3, EVIDENCE_5], but the retrieved code blocks do not show the complete list of format specifiers it parses.\",\n  \"missing_information\": [\n    \"The full list or details of all format specifiers parsed by printf_arg_formatter.\"\n  ],\n  \"answer\": \"The printf_arg_formatter class is defined in include/fmt/printf.h as a template class inheriting from arg_formatter<Char> [EVIDENCE_2]. The retrieved evidence does not contain the full set of format specifiers it parses, but it shows handling for various types including handles, monostates, and null-checked character pointers [EVIDENCE_1, EVIDENCE_3, EVIDENCE_4].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\",\n    \"EVIDENCE_4\",\n    \"EVIDENCE_5\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence establishes that the printf_arg_formatter class is defined in include/fmt/printf.h inheriting from arg_formatter<Char> [EVIDENCE_2], and shows some operator overloads (such as for handle [EVIDENCE_1], monostate [EVIDENCE_3], and const char* [EVIDENCE_4]) and write functions [EVIDENCE_3, EVIDENCE_5], but the retrieved code blocks do not show the complete list of format specifiers it parses.",
+        "missing_information": [
+          "The full list or details of all format specifiers parsed by printf_arg_formatter."
+        ],
+        "answer": "The printf_arg_formatter class is defined in include/fmt/printf.h as a template class inheriting from arg_formatter<Char> [EVIDENCE_2]. The retrieved evidence does not contain the full set of format specifiers it parses, but it shows handling for various types including handles, monostates, and null-checked character pointers [EVIDENCE_1, EVIDENCE_3, EVIDENCE_4].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3",
+          "EVIDENCE_4",
+          "EVIDENCE_5"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_012": {
+      "question_id": "fmt_012",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:11:06.379099+00:00",
+      "latency": 1.8694,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_75c203c723f50614",
+        "v1_612617574d5532f3",
+        "v1_72f899fff08fc00c",
+        "v1_54b00ce24316aa64",
+        "v1_29ee48ec8967ed6c"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.8694,
+      "prompt_length_chars": 9952,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence establishes that fmt provides a `join` function for tuple-like objects (such as `std::tuple`), and `do_format` recursively formats tuple elements and copies separator strings between them. However, detailed mechanics for `std::pair` specifically or the complete formatter definition are not fully present in the retrieved code blocks.\",\n  \"missing_information\": [\n    \"Full implementation details of std::pair joining and formatting\",\n    \"Complete formatter specialization definitions for tuple_join_view\"\n  ],\n  \"answer\": \"The fmt library formats tuple-like objects (such as `std::tuple`) with elements separated by a delimiter using the `join` function [EVIDENCE_1, EVIDENCE_2]. Specifically, `join` returns a `tuple_join_view` [EVIDENCE_2], and its formatting logic is handled recursively via `do_format` which formats each tuple element and copies the separator `value.sep` between them using `detail::copy` [EVIDENCE_3].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence establishes that fmt provides a `join` function for tuple-like objects (such as `std::tuple`), and `do_format` recursively formats tuple elements and copies separator strings between them. However, detailed mechanics for `std::pair` specifically or the complete formatter definition are not fully present in the retrieved code blocks.",
+        "missing_information": [
+          "Full implementation details of std::pair joining and formatting",
+          "Complete formatter specialization definitions for tuple_join_view"
+        ],
+        "answer": "The fmt library formats tuple-like objects (such as `std::tuple`) with elements separated by a delimiter using the `join` function [EVIDENCE_1, EVIDENCE_2]. Specifically, `join` returns a `tuple_join_view` [EVIDENCE_2], and its formatting logic is handled recursively via `do_format` which formats each tuple element and copies the separator `value.sep` between them using `detail::copy` [EVIDENCE_3].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_014": {
+      "question_id": "fmt_014",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 2,
+      "timestamp": "2026-11-27T15:11:10.387338+00:00",
+      "latency": 1.9884,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_372615ac292d073f",
+        "v1_96c2a04448405915",
+        "v1_8c1cd3786aeb22a4",
+        "v1_7f360ed5ce7147af",
+        "v1_6e05a2497bac1abb"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.9884,
+      "prompt_length_chars": 11139,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence demonstrates how format strings can be processed at compile time using macros like FMT_COMPILE and FMT_STATIC_FORMAT, but full parsing mechanics are not completely detailed.\",\n  \"missing_information\": [\n    \"Full implementation details of parser functions invoked by compile-time formatting macros.\"\n  ],\n  \"answer\": \"Format strings can be converted and parsed at compile time using macros such as FMT_COMPILE(s), which evaluates to FMT_STRING_IMPL(s, fmt::compiled_string) when C++17 constexpr if and return type deduction are supported, or falls back to FMT_STRING(s) [EVIDENCE_1, EVIDENCE_2]. Additionally, FMT_STATIC_FORMAT(fmt_str, ...) can be used to format arguments and produce a string at compile time [EVIDENCE_3].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_3\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence demonstrates how format strings can be processed at compile time using macros like FMT_COMPILE and FMT_STATIC_FORMAT, but full parsing mechanics are not completely detailed.",
+        "missing_information": [
+          "Full implementation details of parser functions invoked by compile-time formatting macros."
+        ],
+        "answer": "Format strings can be converted and parsed at compile time using macros such as FMT_COMPILE(s), which evaluates to FMT_STRING_IMPL(s, fmt::compiled_string) when C++17 constexpr if and return type deduction are supported, or falls back to FMT_STRING(s) [EVIDENCE_1, EVIDENCE_2]. Additionally, FMT_STATIC_FORMAT(fmt_str, ...) can be used to format arguments and produce a string at compile time [EVIDENCE_3].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_3"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_015": {
+      "question_id": "fmt_015",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:11:14.475341+00:00",
+      "latency": 2.0674,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_28ae6518d742d299",
+        "v1_798e22315354a805",
+        "v1_ea79cc01e9451443",
+        "v1_387bd9c985b8f9e9",
+        "v1_86f98dd91bd94b3b"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 2.0674,
+      "prompt_length_chars": 10394,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence documents functions and templates for constructing and reporting Windows errors (such as windows_error, vwindows_error, and report_windows_error), but does not show their full internal implementations.\",\n  \"missing_information\": [\n    \"The full function body implementation of vwindows_error and report_windows_error\",\n    \"Details of format_windows_error implementation\"\n  ],\n  \"answer\": \"The retrieved evidence shows that fmt constructs a std::system_error object for Windows errors using `vwindows_error` [EVIDENCE_1] and a variadic template `windows_error` that accepts an error code, a message string view, and formatting arguments [EVIDENCE_2]. It also provides `report_windows_error` to report a Windows error without throwing an exception [EVIDENCE_2], as well as a detail function `format_windows_error` for formatting error codes into buffers [EVIDENCE_4].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\",\n    \"EVIDENCE_4\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence documents functions and templates for constructing and reporting Windows errors (such as windows_error, vwindows_error, and report_windows_error), but does not show their full internal implementations.",
+        "missing_information": [
+          "The full function body implementation of vwindows_error and report_windows_error",
+          "Details of format_windows_error implementation"
+        ],
+        "answer": "The retrieved evidence shows that fmt constructs a std::system_error object for Windows errors using `vwindows_error` [EVIDENCE_1] and a variadic template `windows_error` that accepts an error code, a message string view, and formatting arguments [EVIDENCE_2]. It also provides `report_windows_error` to report a Windows error without throwing an exception [EVIDENCE_2], as well as a detail function `format_windows_error` for formatting error codes into buffers [EVIDENCE_4].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2",
+          "EVIDENCE_4"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_016": {
+      "question_id": "fmt_016",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_b_miss",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:11:17.909576+00:00",
+      "latency": 1.4121,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_f4750d2d7b5904e1",
+        "v1_5a475bcf2a63cbb8",
+        "v1_2b33e70f8e6d6004",
+        "v1_a44569ae94d44408",
+        "v1_a5c8c278a641f761"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.4121,
+      "prompt_length_chars": 10380,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence documents enum formatting behaviors such as formatting as an underlying value via `as_underlying`, but full conversion mechanics are partially present.\",\n  \"missing_information\": [\n    \"Full implementation details of the mapping and conversion functions for underlying types in enum.h.\"\n  ],\n  \"answer\": \"A value that does not match any enumerator is represented as its underlying value in decimal before applying string formatting [EVIDENCE_1]. Additionally, an enum can be annotated with `fmt::as_underlying` to make it format as its underlying value [EVIDENCE_1].\",\n  \"citations\": [\n    \"EVIDENCE_1\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence documents enum formatting behaviors such as formatting as an underlying value via `as_underlying`, but full conversion mechanics are partially present.",
+        "missing_information": [
+          "Full implementation details of the mapping and conversion functions for underlying types in enum.h."
+        ],
+        "answer": "A value that does not match any enumerator is represented as its underlying value in decimal before applying string formatting [EVIDENCE_1]. Additionally, an enum can be annotated with `fmt::as_underlying` to make it format as its underlying value [EVIDENCE_1].",
+        "citations": [
+          "EVIDENCE_1"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_017": {
+      "question_id": "fmt_017",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:11:21.859278+00:00",
+      "latency": 1.9287,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_f4750d2d7b5904e1",
+        "v1_78ac31e7704e54f8",
+        "v1_a44569ae94d44408",
+        "v1_4434474761ebbe69",
+        "v1_6394a95c37f63689"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.9287,
+      "prompt_length_chars": 10326,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"partial\",\n  \"reason\": \"Retrieved evidence demonstrates that fmt defines the annotation `as_underlying` as an instance of `as_underlying_t`, and `use_underlying()` checks whether an enum is annotated with `as_underlying_t` via `is_annotated<as_underlying_t, U>()`. However, the full formatter specialization class mapping for `as_underlying` is not completely contained within the retrieved blocks.\",\n  \"missing_information\": [\n    \"Full formatter specialization structure and details mapping `as_underlying` directly to its underlying type formatter implementation\"\n  ],\n  \"answer\": \"fmt implements `as_underlying` by defining an annotation structure `as_underlying_t` along with an inline constexpr instance `as_underlying` [EVIDENCE_1]. A helper function `use_underlying()` determines whether a type uses the underlying representation by checking `is_annotated<as_underlying_t, U>()` [EVIDENCE_2].\",\n  \"citations\": [\n    \"EVIDENCE_1\",\n    \"EVIDENCE_2\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "partial",
+        "reason": "Retrieved evidence demonstrates that fmt defines the annotation `as_underlying` as an instance of `as_underlying_t`, and `use_underlying()` checks whether an enum is annotated with `as_underlying_t` via `is_annotated<as_underlying_t, U>()`. However, the full formatter specialization class mapping for `as_underlying` is not completely contained within the retrieved blocks.",
+        "missing_information": [
+          "Full formatter specialization structure and details mapping `as_underlying` directly to its underlying type formatter implementation"
+        ],
+        "answer": "fmt implements `as_underlying` by defining an annotation structure `as_underlying_t` along with an inline constexpr instance `as_underlying` [EVIDENCE_1]. A helper function `use_underlying()` determines whether a type uses the underlying representation by checking `is_annotated<as_underlying_t, U>()` [EVIDENCE_2].",
+        "citations": [
+          "EVIDENCE_1",
+          "EVIDENCE_2"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_018": {
+      "question_id": "fmt_018",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_a_hit",
+      "answerable": true,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:11:25.313115+00:00",
+      "latency": 1.4325,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_97ee6acb752e90c4",
+        "v1_2e02a45f192051d3",
+        "v1_34d8ecc48ff1e708",
+        "v1_0f3abd3f3bc2e19a",
+        "v1_fdc4d86ddb4a5ab5"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.4325,
+      "prompt_length_chars": 10399,
+      "raw_response": "{\n  \"sufficient\": true,\n  \"confidence_tier\": \"strong\",\n  \"reason\": \"The retrieved evidence includes the full definition of the terminal_color enum class along with its exact underlying type and values.\",\n  \"missing_information\": [],\n  \"answer\": \"The terminal_color enum class is defined as a uint8_t type starting with black = 30, followed by red, green, yellow, blue, magenta, cyan, and white, and bright colors starting with bright_black = 90 through bright_white [EVIDENCE_1].\",\n  \"citations\": [\n    \"EVIDENCE_1\"\n  ],\n  \"abstained\": false\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": true,
+        "confidence_tier": "strong",
+        "reason": "The retrieved evidence includes the full definition of the terminal_color enum class along with its exact underlying type and values.",
+        "missing_information": [],
+        "answer": "The terminal_color enum class is defined as a uint8_t type starting with black = 30, followed by red, green, yellow, blue, magenta, cyan, and white, and bright colors starting with bright_black = 90 through bright_white [EVIDENCE_1].",
+        "citations": [
+          "EVIDENCE_1"
+        ],
+        "abstained": false
+      },
+      "safe_fallback_answer": null
+    },
+    "fmt_019": {
+      "question_id": "fmt_019",
+      "repository": "fmtlib/fmt",
+      "commit_sha": "3be6709f575a609620f5dd82a9ab2fa91bef6a5e",
+      "cohort": "cohort_c_unanswerable",
+      "answerable": false,
+      "turn_number": 1,
+      "timestamp": "2026-11-27T15:11:28.604251+00:00",
+      "latency": 1.2779,
+      "error_status": "ok",
+      "frozen_evidence_chunk_ids": [
+        "v1_3ce36634be30c75a",
+        "v1_8711d50eff5905f4",
+        "v1_25d5b2d550ad977b",
+        "v1_91d1f1b0796286ce",
+        "v1_b1423747f669fdd2"
+      ],
+      "experiment": "G3",
+      "prompt_version": "g3_full_structured_v1",
+      "model": "gemini-3.5-flash-lite",
+      "api_success": true,
+      "error": null,
+      "retry_count": 0,
+      "api_calls_made": 1,
+      "timeout_occurred": false,
+      "generation_latency_seconds": 1.2779,
+      "prompt_length_chars": 9296,
+      "raw_response": "{\n  \"sufficient\": false,\n  \"confidence_tier\": \"insufficient\",\n  \"reason\": \"The retrieved code evidence blocks do not contain any implementation, configuration, or references to a built-in asynchronous non-blocking thread-pool logging sink.\",\n  \"missing_information\": [\n    \"Asynchronous non-blocking thread-pool logging sink configuration details\"\n  ],\n  \"answer\": \"The retrieved code evidence does not establish where or how a built-in asynchronous non-blocking thread-pool logging sink is configured in fmt. The provided files contain definitions related to os file streams, buffered files, and chrono time handling, but do not mention thread-pool logging sinks.\",\n  \"citations\": [],\n  \"abstained\": true\n}",
+      "parse_success": true,
+      "parse_error": null,
+      "parsed_response": {
+        "sufficient": false,
+        "confidence_tier": "insufficient",
+        "reason": "The retrieved code evidence blocks do not contain any implementation, configuration, or references to a built-in asynchronous non-blocking thread-pool logging sink.",
+        "missing_information": [
+          "Asynchronous non-blocking thread-pool logging sink configuration details"
+        ],
+        "answer": "The retrieved code evidence does not establish where or how a built-in asynchronous non-blocking thread-pool logging sink is configured in fmt. The provided files contain definitions related to os file streams, buffered files, and chrono time handling, but do not mention thread-pool logging sinks.",
+        "citations": [],
+        "abstained": true
+      },
+      "safe_fallback_answer": null
+    }
+  }
+}

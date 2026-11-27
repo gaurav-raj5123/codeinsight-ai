@@ -1,0 +1,4132 @@
+{
+  "total_questions": 60,
+  "additional_live_api_calls": 0,
+  "by_validation_status": {
+    "valid": 54,
+    "valid_abstention_no_citations": 6
+  },
+  "entries": [
+    {
+      "question_id": "flask_001",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_2",
+        "EVIDENCE_5",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_58efeba1395b0679",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "Flask",
+          "start_line": 108,
+          "end_line": 126,
+          "rendered_ref": "`src/flask/app.py:108\u2013126`",
+          "display_label": "src/flask/app.py:108\u2013126",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_c6d5ea39804b8631",
+          "file_path": "src/flask/sansio/app.py",
+          "symbol_name": "make_config",
+          "start_line": 480,
+          "end_line": 494,
+          "rendered_ref": "`src/flask/sansio/app.py:480\u2013494`",
+          "display_label": "src/flask/sansio/app.py:480\u2013494",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_002",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_1d957d705288aa4d",
+          "file_path": "src/flask/config.py",
+          "symbol_name": "from_object",
+          "start_line": 234,
+          "end_line": 251,
+          "rendered_ref": "`src/flask/config.py:234\u2013251`",
+          "display_label": "src/flask/config.py:234\u2013251",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_3baebb7b8ec62664",
+          "file_path": "src/flask/config.py",
+          "symbol_name": "from_envvar",
+          "start_line": 102,
+          "end_line": 114,
+          "rendered_ref": "`src/flask/config.py:102\u2013114`",
+          "display_label": "src/flask/config.py:102\u2013114",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_671072709522e674",
+          "file_path": "src/flask/config.py",
+          "symbol_name": "Config",
+          "start_line": 50,
+          "end_line": 68,
+          "rendered_ref": "`src/flask/config.py:50\u201368`",
+          "display_label": "src/flask/config.py:50\u201368",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_95da8b9ed46c535e",
+          "file_path": "tests/test_config.py",
+          "symbol_name": "test_config_from_envvar_missing",
+          "start_line": 161,
+          "end_line": 171,
+          "rendered_ref": "`tests/test_config.py:161\u2013171`",
+          "display_label": "tests/test_config.py:161\u2013171",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_003",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_87e947c38c0bd50c",
+          "file_path": "src/flask/wrappers.py",
+          "symbol_name": "Request",
+          "start_line": 18,
+          "end_line": 36,
+          "rendered_ref": "`src/flask/wrappers.py:18\u201336`",
+          "display_label": "src/flask/wrappers.py:18\u201336",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_e28109d4708e1f08",
+          "file_path": "src/flask/wrappers.py",
+          "symbol_name": "annotations, t, BadRequest, HTTPException, RequestBase, ResponseBase",
+          "start_line": 1,
+          "end_line": 17,
+          "rendered_ref": "`src/flask/wrappers.py:1\u201317`",
+          "display_label": "src/flask/wrappers.py:1\u201317",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_004",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_4",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_4",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_fa6995700e06e88f",
+          "file_path": "src/flask/helpers.py",
+          "symbol_name": "url_for",
+          "start_line": 200,
+          "end_line": 219,
+          "rendered_ref": "`src/flask/helpers.py:200\u2013219`",
+          "display_label": "src/flask/helpers.py:200\u2013219",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_15fbe825560f3a69",
+          "file_path": "src/flask/helpers.py",
+          "symbol_name": "url_for",
+          "start_line": 218,
+          "end_line": 230,
+          "rendered_ref": "`src/flask/helpers.py:218\u2013230`",
+          "display_label": "src/flask/helpers.py:218\u2013230",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_6414b72aa6ae3b52",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "url_for",
+          "start_line": 1145,
+          "end_line": 1166,
+          "rendered_ref": "`src/flask/app.py:1145\u20131166`",
+          "display_label": "src/flask/app.py:1145\u20131166",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_1bd98ed986148d10",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "url_for",
+          "start_line": 1187,
+          "end_line": 1201,
+          "rendered_ref": "`src/flask/app.py:1187\u20131201`",
+          "display_label": "src/flask/app.py:1187\u20131201",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_005",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_2"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_2"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_3500bc2bc583923c",
+          "file_path": "src/flask/sansio/scaffold.py",
+          "symbol_name": "route",
+          "start_line": 343,
+          "end_line": 362,
+          "rendered_ref": "`src/flask/sansio/scaffold.py:343\u2013362`",
+          "display_label": "src/flask/sansio/scaffold.py:343\u2013362",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_be80851d4b83a9e8",
+          "file_path": "src/flask/sansio/scaffold.py",
+          "symbol_name": "endpoint",
+          "start_line": 443,
+          "end_line": 465,
+          "rendered_ref": "`src/flask/sansio/scaffold.py:443\u2013465`",
+          "display_label": "src/flask/sansio/scaffold.py:443\u2013465",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_8798ac309ec38195",
+          "file_path": "src/flask/sansio/scaffold.py",
+          "symbol_name": "add_url_rule",
+          "start_line": 401,
+          "end_line": 416,
+          "rendered_ref": "`src/flask/sansio/scaffold.py:401\u2013416`",
+          "display_label": "src/flask/sansio/scaffold.py:401\u2013416",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_006",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_3",
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_17c5392b27f40060",
+          "file_path": "src/flask/sansio/scaffold.py",
+          "symbol_name": "add_url_rule",
+          "start_line": 375,
+          "end_line": 402,
+          "rendered_ref": "`src/flask/sansio/scaffold.py:375\u2013402`",
+          "display_label": "src/flask/sansio/scaffold.py:375\u2013402",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_c544b52933ba1cbc",
+          "file_path": "src/flask/sansio/app.py",
+          "symbol_name": "__init__",
+          "start_line": 385,
+          "end_line": 397,
+          "rendered_ref": "`src/flask/sansio/app.py:385\u2013397`",
+          "display_label": "src/flask/sansio/app.py:385\u2013397",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_007",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_4",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_4",
+        "EVIDENCE_4",
+        "EVIDENCE_4"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_4"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_4",
+        "EVIDENCE_4",
+        "EVIDENCE_4"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_4"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_3a9dfb7a3e7b8cdf",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "dispatch_request",
+          "start_line": 993,
+          "end_line": 1011,
+          "rendered_ref": "`src/flask/app.py:993\u20131011`",
+          "display_label": "src/flask/app.py:993\u20131011",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_95ef208bef7ccfd3",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "dispatch_request",
+          "start_line": 1010,
+          "end_line": 1021,
+          "rendered_ref": "`src/flask/app.py:1010\u20131021`",
+          "display_label": "src/flask/app.py:1010\u20131021",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_008",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_5",
+        "EVIDENCE_2"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_5",
+        "EVIDENCE_2"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_6b055a43faa46b32",
+          "file_path": "src/flask/ctx.py",
+          "symbol_name": "push",
+          "start_line": 416,
+          "end_line": 434,
+          "rendered_ref": "`src/flask/ctx.py:416\u2013434`",
+          "display_label": "src/flask/ctx.py:416\u2013434",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_6d585b2408daa27e",
+          "file_path": "src/flask/testing.py",
+          "symbol_name": "open",
+          "start_line": 227,
+          "end_line": 247,
+          "rendered_ref": "`src/flask/testing.py:227\u2013247`",
+          "display_label": "src/flask/testing.py:227\u2013247",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_b8a64f975549593d",
+          "file_path": "src/flask/ctx.py",
+          "symbol_name": "push",
+          "start_line": 433,
+          "end_line": 444,
+          "rendered_ref": "`src/flask/ctx.py:433\u2013444`",
+          "display_label": "src/flask/ctx.py:433\u2013444",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_009",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_1478f5cbb83c188b",
+          "file_path": "src/flask/ctx.py",
+          "symbol_name": "AppContext",
+          "start_line": 273,
+          "end_line": 294,
+          "rendered_ref": "`src/flask/ctx.py:273\u2013294`",
+          "display_label": "src/flask/ctx.py:273\u2013294",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_d4d2856e79ea066f",
+          "file_path": "src/flask/ctx.py",
+          "symbol_name": "AppContext",
+          "start_line": 260,
+          "end_line": 274,
+          "rendered_ref": "`src/flask/ctx.py:260\u2013274`",
+          "display_label": "src/flask/ctx.py:260\u2013274",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_6b055a43faa46b32",
+          "file_path": "src/flask/ctx.py",
+          "symbol_name": "push",
+          "start_line": 416,
+          "end_line": 434,
+          "rendered_ref": "`src/flask/ctx.py:416\u2013434`",
+          "display_label": "src/flask/ctx.py:416\u2013434",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_010",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_1"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_1"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_b13412f9815c7f1a",
+          "file_path": "src/flask/sansio/blueprints.py",
+          "symbol_name": "Blueprint",
+          "start_line": 119,
+          "end_line": 139,
+          "rendered_ref": "`src/flask/sansio/blueprints.py:119\u2013139`",
+          "display_label": "src/flask/sansio/blueprints.py:119\u2013139",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_9a1ec6ea3391a098",
+          "file_path": "src/flask/blueprints.py",
+          "symbol_name": "Blueprint",
+          "start_line": 18,
+          "end_line": 18,
+          "rendered_ref": "`src/flask/blueprints.py:18\u201318`",
+          "display_label": "src/flask/blueprints.py:18\u201318",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_011",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_3",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_a525ce4f88b514ff",
+          "file_path": "src/flask/sansio/blueprints.py",
+          "symbol_name": "record_once",
+          "start_line": 232,
+          "end_line": 244,
+          "rendered_ref": "`src/flask/sansio/blueprints.py:232\u2013244`",
+          "display_label": "src/flask/sansio/blueprints.py:232\u2013244",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_6620f9fed2de77f9",
+          "file_path": "src/flask/sansio/blueprints.py",
+          "symbol_name": "record",
+          "start_line": 223,
+          "end_line": 230,
+          "rendered_ref": "`src/flask/sansio/blueprints.py:223\u2013230`",
+          "display_label": "src/flask/sansio/blueprints.py:223\u2013230",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_908c28017c7242a8",
+          "file_path": "src/flask/sansio/app.py",
+          "symbol_name": "register_blueprint",
+          "start_line": 570,
+          "end_line": 584,
+          "rendered_ref": "`src/flask/sansio/app.py:570\u2013584`",
+          "display_label": "src/flask/sansio/app.py:570\u2013584",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_bb5fd1c0e68605fb",
+          "file_path": "src/flask/sansio/blueprints.py",
+          "symbol_name": "register",
+          "start_line": 331,
+          "end_line": 347,
+          "rendered_ref": "`src/flask/sansio/blueprints.py:331\u2013347`",
+          "display_label": "src/flask/sansio/blueprints.py:331\u2013347",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_012",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_4",
+        "EVIDENCE_4"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_4",
+        "EVIDENCE_4"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_3764379190483b45",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "handle_exception",
+          "start_line": 929,
+          "end_line": 947,
+          "rendered_ref": "`src/flask/app.py:929\u2013947`",
+          "display_label": "src/flask/app.py:929\u2013947",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_89f6fdc091f65028",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "handle_exception",
+          "start_line": 916,
+          "end_line": 930,
+          "rendered_ref": "`src/flask/app.py:916\u2013930`",
+          "display_label": "src/flask/app.py:916\u2013930",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_05b21a97fab9d5d0",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "handle_exception",
+          "start_line": 964,
+          "end_line": 971,
+          "rendered_ref": "`src/flask/app.py:964\u2013971`",
+          "display_label": "src/flask/app.py:964\u2013971",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_013",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_4",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_3",
+        "EVIDENCE_5",
+        "EVIDENCE_5",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_4",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_3",
+        "EVIDENCE_5",
+        "EVIDENCE_5",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_4e2747e6f48630f9",
+          "file_path": "src/flask/sessions.py",
+          "symbol_name": "SessionInterface",
+          "start_line": 100,
+          "end_line": 118,
+          "rendered_ref": "`src/flask/sessions.py:100\u2013118`",
+          "display_label": "src/flask/sessions.py:100\u2013118",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_b368e54ac2e96825",
+          "file_path": "src/flask/sessions.py",
+          "symbol_name": "SecureCookieSessionInterface",
+          "start_line": 284,
+          "end_line": 302,
+          "rendered_ref": "`src/flask/sessions.py:284\u2013302`",
+          "display_label": "src/flask/sessions.py:284\u2013302",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_b33de95684436fbe",
+          "file_path": "src/flask/sessions.py",
+          "symbol_name": "save_session",
+          "start_line": 337,
+          "end_line": 350,
+          "rendered_ref": "`src/flask/sessions.py:337\u2013350`",
+          "display_label": "src/flask/sessions.py:337\u2013350",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_3304dff8156e0e14",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "Flask",
+          "start_line": 243,
+          "end_line": 250,
+          "rendered_ref": "`src/flask/app.py:243\u2013250`",
+          "display_label": "src/flask/app.py:243\u2013250",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_4b27f506ab15ae47",
+          "file_path": "src/flask/sessions.py",
+          "symbol_name": "save_session",
+          "start_line": 349,
+          "end_line": 373,
+          "rendered_ref": "`src/flask/sessions.py:349\u2013373`",
+          "display_label": "src/flask/sessions.py:349\u2013373",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_014",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_b33de95684436fbe",
+          "file_path": "src/flask/sessions.py",
+          "symbol_name": "save_session",
+          "start_line": 337,
+          "end_line": 350,
+          "rendered_ref": "`src/flask/sessions.py:337\u2013350`",
+          "display_label": "src/flask/sessions.py:337\u2013350",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_4b27f506ab15ae47",
+          "file_path": "src/flask/sessions.py",
+          "symbol_name": "save_session",
+          "start_line": 349,
+          "end_line": 373,
+          "rendered_ref": "`src/flask/sessions.py:349\u2013373`",
+          "display_label": "src/flask/sessions.py:349\u2013373",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_9b9e18bc50c184dd",
+          "file_path": "src/flask/sessions.py",
+          "symbol_name": "get_cookie_secure",
+          "start_line": 202,
+          "end_line": 206,
+          "rendered_ref": "`src/flask/sessions.py:202\u2013206`",
+          "display_label": "src/flask/sessions.py:202\u2013206",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_99f8af4640b20f1d",
+          "file_path": "src/flask/sessions.py",
+          "symbol_name": "save_session",
+          "start_line": 372,
+          "end_line": 385,
+          "rendered_ref": "`src/flask/sessions.py:372\u2013385`",
+          "display_label": "src/flask/sessions.py:372\u2013385",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_015",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_2"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_2"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_a043f9b44fa18a48",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "make_response",
+          "start_line": 1306,
+          "end_line": 1325,
+          "rendered_ref": "`src/flask/app.py:1306\u20131325`",
+          "display_label": "src/flask/app.py:1306\u20131325",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_7aea8d8cccf1beb1",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "make_response",
+          "start_line": 1373,
+          "end_line": 1390,
+          "rendered_ref": "`src/flask/app.py:1373\u20131390`",
+          "display_label": "src/flask/app.py:1373\u20131390",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_a086b71d213c46ee",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "make_response",
+          "start_line": 1291,
+          "end_line": 1307,
+          "rendered_ref": "`src/flask/app.py:1291\u20131307`",
+          "display_label": "src/flask/app.py:1291\u20131307",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_016",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_1d957d705288aa4d",
+          "file_path": "src/flask/config.py",
+          "symbol_name": "from_object",
+          "start_line": 234,
+          "end_line": 251,
+          "rendered_ref": "`src/flask/config.py:234\u2013251`",
+          "display_label": "src/flask/config.py:234\u2013251",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_61d1ed4abff60f80",
+          "file_path": "src/flask/config.py",
+          "symbol_name": "from_object",
+          "start_line": 218,
+          "end_line": 235,
+          "rendered_ref": "`src/flask/config.py:218\u2013235`",
+          "display_label": "src/flask/config.py:218\u2013235",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_017",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_2",
+        "EVIDENCE_5",
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_37ed92e405b6aa11",
+          "file_path": "src/flask/cli.py",
+          "symbol_name": "get_command",
+          "start_line": 625,
+          "end_line": 634,
+          "rendered_ref": "`src/flask/cli.py:625\u2013634`",
+          "display_label": "src/flask/cli.py:625\u2013634",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_55bb53ac6713f53c",
+          "file_path": "src/flask/cli.py",
+          "symbol_name": "shell_command",
+          "start_line": 998,
+          "end_line": 1019,
+          "rendered_ref": "`src/flask/cli.py:998\u20131019`",
+          "display_label": "src/flask/cli.py:998\u20131019",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_018",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_5",
+        "EVIDENCE_3",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "declared_citation_ids": [],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_5",
+        "EVIDENCE_3",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_5",
+        "EVIDENCE_3",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_444b55e0489d176f",
+          "file_path": "src/flask/helpers.py",
+          "symbol_name": "redirect",
+          "start_line": 254,
+          "end_line": 270,
+          "rendered_ref": "`src/flask/helpers.py:254\u2013270`",
+          "display_label": "src/flask/helpers.py:254\u2013270",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_edc3e0a1f70d49f9",
+          "file_path": "src/flask/sansio/app.py",
+          "symbol_name": "redirect",
+          "start_line": 940,
+          "end_line": 959,
+          "rendered_ref": "`src/flask/sansio/app.py:940\u2013959`",
+          "display_label": "src/flask/sansio/app.py:940\u2013959",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_94827a2147917afd",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "finalize_request",
+          "start_line": 1056,
+          "end_line": 1078,
+          "rendered_ref": "`src/flask/app.py:1056\u20131078`",
+          "display_label": "src/flask/app.py:1056\u20131078",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_9c38fc38b17e342c",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "do_teardown_request",
+          "start_line": 1471,
+          "end_line": 1488,
+          "rendered_ref": "`src/flask/app.py:1471\u20131488`",
+          "display_label": "src/flask/app.py:1471\u20131488",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_6d585b2408daa27e",
+          "file_path": "src/flask/testing.py",
+          "symbol_name": "open",
+          "start_line": 227,
+          "end_line": 247,
+          "rendered_ref": "`src/flask/testing.py:227\u2013247`",
+          "display_label": "src/flask/testing.py:227\u2013247",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_019",
+      "cohort": "cohort_c_unanswerable",
+      "validation_status": "valid",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_a9616c9595806186",
+          "file_path": "examples/tutorial/flaskr/db.py",
+          "symbol_name": "sqlite3, datetime, click, current_app, g, get_db",
+          "start_line": 1,
+          "end_line": 20,
+          "rendered_ref": "`examples/tutorial/flaskr/db.py:1\u201320`",
+          "display_label": "examples/tutorial/flaskr/db.py:1\u201320",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_f6c4ea1945eef07f",
+          "file_path": "examples/tutorial/flaskr/db.py",
+          "symbol_name": "init_app",
+          "start_line": 51,
+          "end_line": 56,
+          "rendered_ref": "`examples/tutorial/flaskr/db.py:51\u201356`",
+          "display_label": "examples/tutorial/flaskr/db.py:51\u201356",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_211055b4962f433f",
+          "file_path": "examples/tutorial/flaskr/db.py",
+          "symbol_name": "close_db",
+          "start_line": 23,
+          "end_line": 30,
+          "rendered_ref": "`examples/tutorial/flaskr/db.py:23\u201330`",
+          "display_label": "examples/tutorial/flaskr/db.py:23\u201330",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "flask_020",
+      "cohort": "cohort_c_unanswerable",
+      "validation_status": "valid",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_98aabe644574c972",
+          "file_path": "src/flask/logging.py",
+          "symbol_name": "create_logger",
+          "start_line": 58,
+          "end_line": 74,
+          "rendered_ref": "`src/flask/logging.py:58\u201374`",
+          "display_label": "src/flask/logging.py:58\u201374",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_b593c3f70e3ce039",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "url_for",
+          "start_line": 1225,
+          "end_line": 1243,
+          "rendered_ref": "`src/flask/app.py:1225\u20131243`",
+          "display_label": "src/flask/app.py:1225\u20131243",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_fad3927cb41a8003",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "run",
+          "start_line": 680,
+          "end_line": 691,
+          "rendered_ref": "`src/flask/app.py:680\u2013691`",
+          "display_label": "src/flask/app.py:680\u2013691",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_440bba408d407106",
+          "file_path": "src/flask/app.py",
+          "symbol_name": "Flask",
+          "start_line": 157,
+          "end_line": 178,
+          "rendered_ref": "`src/flask/app.py:157\u2013178`",
+          "display_label": "src/flask/app.py:157\u2013178",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_a9046a0cd93a0d01",
+          "file_path": "src/flask/sansio/app.py",
+          "symbol_name": "debug",
+          "start_line": 550,
+          "end_line": 561,
+          "rendered_ref": "`src/flask/sansio/app.py:550\u2013561`",
+          "display_label": "src/flask/sansio/app.py:550\u2013561",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_001",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_a2563a80cb24a1b8",
+          "file_path": "lib/express.js",
+          "symbol_name": "app, application, request",
+          "start_line": 37,
+          "end_line": 63,
+          "rendered_ref": "`lib/express.js:37\u201363`",
+          "display_label": "lib/express.js:37\u201363",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_5197a5e36b7e7a7c",
+          "file_path": "lib/express.js",
+          "symbol_name": "module.exports, createApplication",
+          "start_line": 27,
+          "end_line": 36,
+          "rendered_ref": "`lib/express.js:27\u201336`",
+          "display_label": "lib/express.js:27\u201336",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_fe0d0d2ecf8a29b7",
+          "file_path": "lib/express.js",
+          "symbol_name": "license_header",
+          "start_line": 1,
+          "end_line": 26,
+          "rendered_ref": "`lib/express.js:1\u201326`",
+          "display_label": "lib/express.js:1\u201326",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_002",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_008a5e54b12fb068",
+          "file_path": "lib/application.js",
+          "symbol_name": "app.defaultConfiguration",
+          "start_line": 90,
+          "end_line": 108,
+          "rendered_ref": "`lib/application.js:90\u2013108`",
+          "display_label": "lib/application.js:90\u2013108",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_c3fdbd1ebb2e7ace",
+          "file_path": "lib/application.js",
+          "symbol_name": "app.defaultConfiguration",
+          "start_line": 125,
+          "end_line": 151,
+          "rendered_ref": "`lib/application.js:125\u2013151`",
+          "display_label": "lib/application.js:125\u2013151",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_003",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_5",
+        "EVIDENCE_5",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_5",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_6be35a644ec60013",
+          "file_path": "lib/view.js",
+          "symbol_name": "View",
+          "start_line": 78,
+          "end_line": 109,
+          "rendered_ref": "`lib/view.js:78\u2013109`",
+          "display_label": "lib/view.js:78\u2013109",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_004",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_2"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_2"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_b32068b53b30e712",
+          "file_path": "lib/request.js",
+          "symbol_name": "module.exports",
+          "start_line": 37,
+          "end_line": 63,
+          "rendered_ref": "`lib/request.js:37\u201363`",
+          "display_label": "lib/request.js:37\u201363",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_62df5fe74c232b84",
+          "file_path": "lib/request.js",
+          "symbol_name": "req.header",
+          "start_line": 64,
+          "end_line": 91,
+          "rendered_ref": "`lib/request.js:64\u201391`",
+          "display_label": "lib/request.js:64\u201391",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_005",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_86fbdca8cf0c2e71",
+          "file_path": "lib/application.js",
+          "symbol_name": "app.use",
+          "start_line": 237,
+          "end_line": 255,
+          "rendered_ref": "`lib/application.js:237\u2013255`",
+          "display_label": "lib/application.js:237\u2013255",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_13297c46d4e97976",
+          "file_path": "lib/application.js",
+          "symbol_name": "app.handle",
+          "start_line": 178,
+          "end_line": 189,
+          "rendered_ref": "`lib/application.js:178\u2013189`",
+          "display_label": "lib/application.js:178\u2013189",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_42c234e4cf66175d",
+          "file_path": "examples/static-files/index.js",
+          "symbol_name": "index.js",
+          "start_line": 22,
+          "end_line": 34,
+          "rendered_ref": "`examples/static-files/index.js:22\u201334`",
+          "display_label": "examples/static-files/index.js:22\u201334",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_6bbc774fb3df79e8",
+          "file_path": "test/app.router.js",
+          "symbol_name": "describe",
+          "start_line": 463,
+          "end_line": 490,
+          "rendered_ref": "`test/app.router.js:463\u2013490`",
+          "display_label": "test/app.router.js:463\u2013490",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_91e759af56b05ebb",
+          "file_path": "test/app.router.js",
+          "symbol_name": "describe",
+          "start_line": 517,
+          "end_line": 546,
+          "rendered_ref": "`test/app.router.js:517\u2013546`",
+          "display_label": "test/app.router.js:517\u2013546",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_006",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_258b993d1c9441f7",
+          "file_path": "lib/application.js",
+          "symbol_name": "app.init",
+          "start_line": 59,
+          "end_line": 89,
+          "rendered_ref": "`lib/application.js:59\u201389`",
+          "display_label": "lib/application.js:59\u201389",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_007",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_83868f5639449b4f",
+          "file_path": "lib/response.js",
+          "symbol_name": "res.json",
+          "start_line": 236,
+          "end_line": 263,
+          "rendered_ref": "`lib/response.js:236\u2013263`",
+          "display_label": "lib/response.js:236\u2013263",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_008",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_5",
+        "EVIDENCE_2",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_4"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_5",
+        "EVIDENCE_2",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_4"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_10e501fce8f508c3",
+          "file_path": "test/express.static.js",
+          "symbol_name": "describe",
+          "start_line": 671,
+          "end_line": 691,
+          "rendered_ref": "`test/express.static.js:671\u2013691`",
+          "display_label": "test/express.static.js:671\u2013691",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_3da7035bd0e2391e",
+          "file_path": "test/express.static.js",
+          "symbol_name": "describe",
+          "start_line": 638,
+          "end_line": 655,
+          "rendered_ref": "`test/express.static.js:638\u2013655`",
+          "display_label": "test/express.static.js:638\u2013655",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_05e0becaaf1753a5",
+          "file_path": "lib/response.js",
+          "symbol_name": "onstream",
+          "start_line": 986,
+          "end_line": 1013,
+          "rendered_ref": "`lib/response.js:986\u20131013`",
+          "display_label": "lib/response.js:986\u20131013",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_2214957352bb7f03",
+          "file_path": "examples/static-files/index.js",
+          "symbol_name": "index.js",
+          "start_line": 1,
+          "end_line": 23,
+          "rendered_ref": "`examples/static-files/index.js:1\u201323`",
+          "display_label": "examples/static-files/index.js:1\u201323",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_009",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [
+        "EVIDENCE_2",
+        "EVIDENCE_2"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_2"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_2"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_2"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_5c97ffc842ce3629",
+          "file_path": "lib/response.js",
+          "symbol_name": "res.send",
+          "start_line": 178,
+          "end_line": 201,
+          "rendered_ref": "`lib/response.js:178\u2013201`",
+          "display_label": "lib/response.js:178\u2013201",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_010",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_3",
+        "EVIDENCE_5",
+        "EVIDENCE_3",
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_a2563a80cb24a1b8",
+          "file_path": "lib/express.js",
+          "symbol_name": "app, application, request",
+          "start_line": 37,
+          "end_line": 63,
+          "rendered_ref": "`lib/express.js:37\u201363`",
+          "display_label": "lib/express.js:37\u201363",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_c3fdbd1ebb2e7ace",
+          "file_path": "lib/application.js",
+          "symbol_name": "app.defaultConfiguration",
+          "start_line": 125,
+          "end_line": 151,
+          "rendered_ref": "`lib/application.js:125\u2013151`",
+          "display_label": "lib/application.js:125\u2013151",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_011",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_5d6997a8e083dbae",
+          "file_path": "test/app.render.js",
+          "symbol_name": "View",
+          "start_line": 154,
+          "end_line": 170,
+          "rendered_ref": "`test/app.render.js:154\u2013170`",
+          "display_label": "test/app.render.js:154\u2013170",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_ab713c7a18078e32",
+          "file_path": "test/app.render.js",
+          "symbol_name": "View",
+          "start_line": 302,
+          "end_line": 328,
+          "rendered_ref": "`test/app.render.js:302\u2013328`",
+          "display_label": "test/app.render.js:302\u2013328",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_ef54c485d5ca7d9d",
+          "file_path": "test/app.render.js",
+          "symbol_name": "View",
+          "start_line": 113,
+          "end_line": 133,
+          "rendered_ref": "`test/app.render.js:113\u2013133`",
+          "display_label": "test/app.render.js:113\u2013133",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_1693eaa9546416e5",
+          "file_path": "examples/view-constructor/index.js",
+          "symbol_name": "index.js",
+          "start_line": 27,
+          "end_line": 49,
+          "rendered_ref": "`examples/view-constructor/index.js:27\u201349`",
+          "display_label": "examples/view-constructor/index.js:27\u201349",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_cf030aab03c30808",
+          "file_path": "test/app.render.js",
+          "symbol_name": "View",
+          "start_line": 132,
+          "end_line": 155,
+          "rendered_ref": "`test/app.render.js:132\u2013155`",
+          "display_label": "test/app.render.js:132\u2013155",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_012",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_7a9f5407b1cb09cd",
+          "file_path": "lib/response.js",
+          "symbol_name": "res.render",
+          "start_line": 897,
+          "end_line": 923,
+          "rendered_ref": "`lib/response.js:897\u2013923`",
+          "display_label": "lib/response.js:897\u2013923",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_013",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_2"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_2"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_fecb72a33eae3911",
+          "file_path": "test/app.route.js",
+          "symbol_name": "it",
+          "start_line": 23,
+          "end_line": 41,
+          "rendered_ref": "`test/app.route.js:23\u201341`",
+          "display_label": "test/app.route.js:23\u201341",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_c58b08d61f869fa8",
+          "file_path": "test/app.routes.error.js",
+          "symbol_name": "describe",
+          "start_line": 8,
+          "end_line": 32,
+          "rendered_ref": "`test/app.routes.error.js:8\u201332`",
+          "display_label": "test/app.routes.error.js:8\u201332",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_c357f9f2c412e3be",
+          "file_path": "test/app.route.js",
+          "symbol_name": "imports_and_setup, it",
+          "start_line": 1,
+          "end_line": 22,
+          "rendered_ref": "`test/app.route.js:1\u201322`",
+          "display_label": "test/app.route.js:1\u201322",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_014",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_5d80ed73764c7824",
+          "file_path": "lib/request.js",
+          "symbol_name": "ip",
+          "start_line": 340,
+          "end_line": 356,
+          "rendered_ref": "`lib/request.js:340\u2013356`",
+          "display_label": "lib/request.js:340\u2013356",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_87335bc59ad99454",
+          "file_path": "test/req.ips.js",
+          "symbol_name": "describe",
+          "start_line": 7,
+          "end_line": 29,
+          "rendered_ref": "`test/req.ips.js:7\u201329`",
+          "display_label": "test/req.ips.js:7\u201329",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_cc204c4ba2f08d1b",
+          "file_path": "test/req.ip.js",
+          "symbol_name": "describe",
+          "start_line": 32,
+          "end_line": 51,
+          "rendered_ref": "`test/req.ip.js:32\u201351`",
+          "display_label": "test/req.ip.js:32\u201351",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_f74917c3b7d7a68b",
+          "file_path": "test/req.ip.js",
+          "symbol_name": "describe",
+          "start_line": 71,
+          "end_line": 93,
+          "rendered_ref": "`test/req.ip.js:71\u201393`",
+          "display_label": "test/req.ip.js:71\u201393",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_015",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_3",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_3"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_3"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_685fe56745141928",
+          "file_path": "lib/utils.js",
+          "symbol_name": "compileETag",
+          "start_line": 130,
+          "end_line": 161,
+          "rendered_ref": "`lib/utils.js:130\u2013161`",
+          "display_label": "lib/utils.js:130\u2013161",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_44a6d368cf98c6ab",
+          "file_path": "lib/utils.js",
+          "symbol_name": "etag",
+          "start_line": 40,
+          "end_line": 50,
+          "rendered_ref": "`lib/utils.js:40\u201350`",
+          "display_label": "lib/utils.js:40\u201350",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_016",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_3",
+        "EVIDENCE_1"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_3",
+        "EVIDENCE_1"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_87335bc59ad99454",
+          "file_path": "test/req.ips.js",
+          "symbol_name": "describe",
+          "start_line": 7,
+          "end_line": 29,
+          "rendered_ref": "`test/req.ips.js:7\u201329`",
+          "display_label": "test/req.ips.js:7\u201329",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_5d80ed73764c7824",
+          "file_path": "lib/request.js",
+          "symbol_name": "ip",
+          "start_line": 340,
+          "end_line": 356,
+          "rendered_ref": "`lib/request.js:340\u2013356`",
+          "display_label": "lib/request.js:340\u2013356",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_f74917c3b7d7a68b",
+          "file_path": "test/req.ip.js",
+          "symbol_name": "describe",
+          "start_line": 71,
+          "end_line": 93,
+          "rendered_ref": "`test/req.ip.js:71\u201393`",
+          "display_label": "test/req.ip.js:71\u201393",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_543a457167f33530",
+          "file_path": "test/req.ips.js",
+          "symbol_name": "describe",
+          "start_line": 28,
+          "end_line": 48,
+          "rendered_ref": "`test/req.ips.js:28\u201348`",
+          "display_label": "test/req.ips.js:28\u201348",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_017",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_2"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_2"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_5b4315a80297dad1",
+          "file_path": "lib/response.js",
+          "symbol_name": "res.cookie",
+          "start_line": 748,
+          "end_line": 777,
+          "rendered_ref": "`lib/response.js:748\u2013777`",
+          "display_label": "lib/response.js:748\u2013777",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_016b7f46956862dc",
+          "file_path": "lib/response.js",
+          "symbol_name": "res.cookie",
+          "start_line": 776,
+          "end_line": 796,
+          "rendered_ref": "`lib/response.js:776\u2013796`",
+          "display_label": "lib/response.js:776\u2013796",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_d4ab7ce467a33a00",
+          "file_path": "test/res.cookie.js",
+          "symbol_name": "describe",
+          "start_line": 175,
+          "end_line": 205,
+          "rendered_ref": "`test/res.cookie.js:175\u2013205`",
+          "display_label": "test/res.cookie.js:175\u2013205",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_018",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_59f13c29aa22d9ee",
+          "file_path": "lib/application.js",
+          "symbol_name": "app.route",
+          "start_line": 256,
+          "end_line": 277,
+          "rendered_ref": "`lib/application.js:256\u2013277`",
+          "display_label": "lib/application.js:256\u2013277",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_019",
+      "cohort": "cohort_c_unanswerable",
+      "validation_status": "valid_abstention_no_citations",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [],
+      "declared_citation_ids": [],
+      "inline_citation_ids": [],
+      "valid_citation_ids": [],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [],
+      "has_valid_citations": false,
+      "has_invalid_citations": false,
+      "citation_validity_rate": null,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "express_020",
+      "cohort": "cohort_c_unanswerable",
+      "validation_status": "valid_abstention_no_citations",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [],
+      "declared_citation_ids": [],
+      "inline_citation_ids": [],
+      "valid_citation_ids": [],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [],
+      "has_valid_citations": false,
+      "has_invalid_citations": false,
+      "citation_validity_rate": null,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_001",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_4",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_4",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_e607d4a97f22f360",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "bg",
+          "start_line": 341,
+          "end_line": 347,
+          "rendered_ref": "`include/fmt/color.h:341\u2013347`",
+          "display_label": "include/fmt/color.h:341\u2013347",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_98fa1bd144694b7c",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "style_",
+          "start_line": 307,
+          "end_line": 312,
+          "rendered_ref": "`include/fmt/color.h:307\u2013312`",
+          "display_label": "include/fmt/color.h:307\u2013312",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_de92ef58945a1633",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "get_emphasis, text_style, fg",
+          "start_line": 330,
+          "end_line": 340,
+          "rendered_ref": "`include/fmt/color.h:330\u2013340`",
+          "display_label": "include/fmt/color.h:330\u2013340",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_0f3abd3f3bc2e19a",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "text_style",
+          "start_line": 264,
+          "end_line": 281,
+          "rendered_ref": "`include/fmt/color.h:264\u2013281`",
+          "display_label": "include/fmt/color.h:264\u2013281",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_4e199b8a07cbdd1a",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "style_",
+          "start_line": 291,
+          "end_line": 308,
+          "rendered_ref": "`include/fmt/color.h:291\u2013308`",
+          "display_label": "include/fmt/color.h:291\u2013308",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_002",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_2",
+        "EVIDENCE_5",
+        "EVIDENCE_5",
+        "EVIDENCE_2"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_5",
+        "EVIDENCE_2"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_6e05a2497bac1abb",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "decltype",
+          "start_line": 652,
+          "end_line": 663,
+          "rendered_ref": "`include/fmt/color.h:652\u2013663`",
+          "display_label": "include/fmt/color.h:652\u2013663",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_d52e9b325fbeabdd",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "styled",
+          "start_line": 664,
+          "end_line": 674,
+          "rendered_ref": "`include/fmt/color.h:664\u2013674`",
+          "display_label": "include/fmt/color.h:664\u2013674",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_003",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid_abstention_no_citations",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [],
+      "declared_citation_ids": [],
+      "inline_citation_ids": [],
+      "valid_citation_ids": [],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [],
+      "has_valid_citations": false,
+      "has_invalid_citations": false,
+      "citation_validity_rate": null,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_004",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid_abstention_no_citations",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [],
+      "declared_citation_ids": [],
+      "inline_citation_ids": [],
+      "valid_citation_ids": [],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [],
+      "has_valid_citations": false,
+      "has_invalid_citations": false,
+      "citation_validity_rate": null,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_005",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_6cc5702cad38cf95",
+          "file_path": "include/fmt/ranges.h",
+          "symbol_name": "decltype",
+          "start_line": 364,
+          "end_line": 384,
+          "rendered_ref": "`include/fmt/ranges.h:364\u2013384`",
+          "display_label": "include/fmt/ranges.h:364\u2013384",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_d2f18bfe1ad0e471",
+          "file_path": "include/fmt/ranges.h",
+          "symbol_name": "is_range_",
+          "start_line": 126,
+          "end_line": 134,
+          "rendered_ref": "`include/fmt/ranges.h:126\u2013134`",
+          "display_label": "include/fmt/ranges.h:126\u2013134",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_006",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_3"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_3"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_ddf6add7518fe5ea",
+          "file_path": "include/fmt/ranges.h",
+          "symbol_name": "join",
+          "start_line": 847,
+          "end_line": 865,
+          "rendered_ref": "`include/fmt/ranges.h:847\u2013865`",
+          "display_label": "include/fmt/ranges.h:847\u2013865",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_e964658a50b82395",
+          "file_path": "include/fmt/ranges.h",
+          "symbol_name": "join_view, begin",
+          "start_line": 669,
+          "end_line": 678,
+          "rendered_ref": "`include/fmt/ranges.h:669\u2013678`",
+          "display_label": "include/fmt/ranges.h:669\u2013678",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_007",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_5",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_5"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_5"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_5037a46f8e8ce769",
+          "file_path": "include/fmt/args.h",
+          "symbol_name": "push_back, static_assert",
+          "start_line": 173,
+          "end_line": 184,
+          "rendered_ref": "`include/fmt/args.h:173\u2013184`",
+          "display_label": "include/fmt/args.h:173\u2013184",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_fa58f187009ad63b",
+          "file_path": "include/fmt/args.h",
+          "symbol_name": "push_back",
+          "start_line": 153,
+          "end_line": 170,
+          "rendered_ref": "`include/fmt/args.h:153\u2013170`",
+          "display_label": "include/fmt/args.h:153\u2013170",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_53645b4827e7951c",
+          "file_path": "include/fmt/args.h",
+          "symbol_name": "decltype",
+          "start_line": 136,
+          "end_line": 152,
+          "rendered_ref": "`include/fmt/args.h:136\u2013152`",
+          "display_label": "include/fmt/args.h:136\u2013152",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_22e516440b44d1d5",
+          "file_path": "include/fmt/args.h",
+          "symbol_name": "push_back",
+          "start_line": 185,
+          "end_line": 196,
+          "rendered_ref": "`include/fmt/args.h:185\u2013196`",
+          "display_label": "include/fmt/args.h:185\u2013196",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_008",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5",
+        "EVIDENCE_2",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_5",
+        "EVIDENCE_1"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_5",
+        "EVIDENCE_1"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_b012c98418b47297",
+          "file_path": "include/fmt/os.h",
+          "symbol_name": "ostream, writer",
+          "start_line": 361,
+          "end_line": 377,
+          "rendered_ref": "`include/fmt/os.h:361\u2013377`",
+          "display_label": "include/fmt/os.h:361\u2013377",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_3ce36634be30c75a",
+          "file_path": "include/fmt/os.h",
+          "symbol_name": "ostream_params",
+          "start_line": 351,
+          "end_line": 360,
+          "rendered_ref": "`include/fmt/os.h:351\u2013360`",
+          "display_label": "include/fmt/os.h:351\u2013360",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_8711d50eff5905f4",
+          "file_path": "include/fmt/os.h",
+          "symbol_name": "close",
+          "start_line": 393,
+          "end_line": 399,
+          "rendered_ref": "`include/fmt/os.h:393\u2013399`",
+          "display_label": "include/fmt/os.h:393\u2013399",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_009",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_5",
+        "EVIDENCE_5",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_f82f938e1454b978",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "vprint",
+          "start_line": 497,
+          "end_line": 511,
+          "rendered_ref": "`include/fmt/color.h:497\u2013511`",
+          "display_label": "include/fmt/color.h:497\u2013511",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_d9159ece72aea5c6",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "vprintln",
+          "start_line": 531,
+          "end_line": 547,
+          "rendered_ref": "`include/fmt/color.h:531\u2013547`",
+          "display_label": "include/fmt/color.h:531\u2013547",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_3ce36634be30c75a",
+          "file_path": "include/fmt/os.h",
+          "symbol_name": "ostream_params",
+          "start_line": 351,
+          "end_line": 360,
+          "rendered_ref": "`include/fmt/os.h:351\u2013360`",
+          "display_label": "include/fmt/os.h:351\u2013360",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_51b480e6b676fb2f",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "vformat_to",
+          "start_line": 477,
+          "end_line": 491,
+          "rendered_ref": "`include/fmt/color.h:477\u2013491`",
+          "display_label": "include/fmt/color.h:477\u2013491",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_010",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5",
+        "EVIDENCE_2",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_1",
+        "EVIDENCE_3",
+        "EVIDENCE_4"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_4",
+        "EVIDENCE_5"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_c0c0b9d0a57dc0ce",
+          "file_path": "include/fmt/printf.h",
+          "symbol_name": "operator",
+          "start_line": 304,
+          "end_line": 309,
+          "rendered_ref": "`include/fmt/printf.h:304\u2013309`",
+          "display_label": "include/fmt/printf.h:304\u2013309",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_7b91ffc557f9e46e",
+          "file_path": "include/fmt/printf.h",
+          "symbol_name": "printf_arg_formatter",
+          "start_line": 231,
+          "end_line": 238,
+          "rendered_ref": "`include/fmt/printf.h:231\u2013238`",
+          "display_label": "include/fmt/printf.h:231\u2013238",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_382f1e7ef10681ee",
+          "file_path": "include/fmt/printf.h",
+          "symbol_name": "write_zero_with_zero_precision, printf_arg_formatter, base, operator",
+          "start_line": 245,
+          "end_line": 258,
+          "rendered_ref": "`include/fmt/printf.h:245\u2013258`",
+          "display_label": "include/fmt/printf.h:245\u2013258",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_f69264fdd4504b11",
+          "file_path": "include/fmt/printf.h",
+          "symbol_name": "operator",
+          "start_line": 288,
+          "end_line": 293,
+          "rendered_ref": "`include/fmt/printf.h:288\u2013293`",
+          "display_label": "include/fmt/printf.h:288\u2013293",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_5",
+          "rank": 5,
+          "chunk_id": "v1_6217dd81e22239a1",
+          "file_path": "include/fmt/printf.h",
+          "symbol_name": "write",
+          "start_line": 239,
+          "end_line": 244,
+          "rendered_ref": "`include/fmt/printf.h:239\u2013244`",
+          "display_label": "include/fmt/printf.h:239\u2013244",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_011",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_caea70368554bd29",
+          "file_path": "include/fmt/printf.h",
+          "symbol_name": "vsprintf",
+          "start_line": 589,
+          "end_line": 605,
+          "rendered_ref": "`include/fmt/printf.h:589\u2013605`",
+          "display_label": "include/fmt/printf.h:589\u2013605",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_3cd177ba38372d19",
+          "file_path": "include/fmt/printf.h",
+          "symbol_name": "sprintf",
+          "start_line": 606,
+          "end_line": 609,
+          "rendered_ref": "`include/fmt/printf.h:606\u2013609`",
+          "display_label": "include/fmt/printf.h:606\u2013609",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_ea601ba8414d2bda",
+          "file_path": "include/fmt/printf.h",
+          "symbol_name": "sprintf",
+          "start_line": 610,
+          "end_line": 615,
+          "rendered_ref": "`include/fmt/printf.h:610\u2013615`",
+          "display_label": "include/fmt/printf.h:610\u2013615",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_012",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_75c203c723f50614",
+          "file_path": "include/fmt/ranges.h",
+          "symbol_name": "decltype",
+          "start_line": 869,
+          "end_line": 881,
+          "rendered_ref": "`include/fmt/ranges.h:869\u2013881`",
+          "display_label": "include/fmt/ranges.h:869\u2013881",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_612617574d5532f3",
+          "file_path": "include/fmt/ranges.h",
+          "symbol_name": "join",
+          "start_line": 882,
+          "end_line": 896,
+          "rendered_ref": "`include/fmt/ranges.h:882\u2013896`",
+          "display_label": "include/fmt/ranges.h:882\u2013896",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_72f899fff08fc00c",
+          "file_path": "include/fmt/ranges.h",
+          "symbol_name": "do_format",
+          "start_line": 785,
+          "end_line": 800,
+          "rendered_ref": "`include/fmt/ranges.h:785\u2013800`",
+          "display_label": "include/fmt/ranges.h:785\u2013800",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_013",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_9b1defa7ef0c76ea",
+          "file_path": "include/fmt/chrono.h",
+          "symbol_name": "get_milliseconds",
+          "start_line": 1599,
+          "end_line": 1609,
+          "rendered_ref": "`include/fmt/chrono.h:1599\u20131609`",
+          "display_label": "include/fmt/chrono.h:1599\u20131609",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_b4f43d2cb875ad68",
+          "file_path": "include/fmt/chrono.h",
+          "symbol_name": "get_milliseconds",
+          "start_line": 1608,
+          "end_line": 1619,
+          "rendered_ref": "`include/fmt/chrono.h:1608\u20131619`",
+          "display_label": "include/fmt/chrono.h:1608\u20131619",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_c49a140b437256c1",
+          "file_path": "include/fmt/chrono.h",
+          "symbol_name": "on_second",
+          "start_line": 1831,
+          "end_line": 1842,
+          "rendered_ref": "`include/fmt/chrono.h:1831\u20131842`",
+          "display_label": "include/fmt/chrono.h:1831\u20131842",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_014",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_3"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_372615ac292d073f",
+          "file_path": "include/fmt/compile.h",
+          "symbol_name": "license_header",
+          "start_line": 24,
+          "end_line": 37,
+          "rendered_ref": "`include/fmt/compile.h:24\u201337`",
+          "display_label": "include/fmt/compile.h:24\u201337",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_96c2a04448405915",
+          "file_path": "include/fmt/compile.h",
+          "symbol_name": "license_header",
+          "start_line": 36,
+          "end_line": 52,
+          "rendered_ref": "`include/fmt/compile.h:36\u201352`",
+          "display_label": "include/fmt/compile.h:36\u201352",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_3",
+          "rank": 3,
+          "chunk_id": "v1_8c1cd3786aeb22a4",
+          "file_path": "include/fmt/compile.h",
+          "symbol_name": "c_str",
+          "start_line": 581,
+          "end_line": 599,
+          "rendered_ref": "`include/fmt/compile.h:581\u2013599`",
+          "display_label": "include/fmt/compile.h:581\u2013599",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_015",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4",
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_4"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_28ae6518d742d299",
+          "file_path": "include/fmt/os.h",
+          "symbol_name": "vwindows_error",
+          "start_line": 124,
+          "end_line": 142,
+          "rendered_ref": "`include/fmt/os.h:124\u2013142`",
+          "display_label": "include/fmt/os.h:124\u2013142",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_798e22315354a805",
+          "file_path": "include/fmt/os.h",
+          "symbol_name": "windows_error",
+          "start_line": 151,
+          "end_line": 160,
+          "rendered_ref": "`include/fmt/os.h:151\u2013160`",
+          "display_label": "include/fmt/os.h:151\u2013160",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_4",
+          "rank": 4,
+          "chunk_id": "v1_387bd9c985b8f9e9",
+          "file_path": "include/fmt/os.h",
+          "symbol_name": "c_str, format_windows_error",
+          "start_line": 110,
+          "end_line": 123,
+          "rendered_ref": "`include/fmt/os.h:110\u2013123`",
+          "display_label": "include/fmt/os.h:110\u2013123",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_016",
+      "cohort": "cohort_b_miss",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_f4750d2d7b5904e1",
+          "file_path": "include/fmt/enum.h",
+          "symbol_name": "license_header",
+          "start_line": 45,
+          "end_line": 64,
+          "rendered_ref": "`include/fmt/enum.h:45\u201364`",
+          "display_label": "include/fmt/enum.h:45\u201364",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_017",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "partial",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_2",
+        "EVIDENCE_1",
+        "EVIDENCE_2"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1",
+        "EVIDENCE_2"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_f4750d2d7b5904e1",
+          "file_path": "include/fmt/enum.h",
+          "symbol_name": "license_header",
+          "start_line": 45,
+          "end_line": 64,
+          "rendered_ref": "`include/fmt/enum.h:45\u201364`",
+          "display_label": "include/fmt/enum.h:45\u201364",
+          "metadata_warnings": []
+        },
+        {
+          "evidence_id": "EVIDENCE_2",
+          "rank": 2,
+          "chunk_id": "v1_78ac31e7704e54f8",
+          "file_path": "include/fmt/enum.h",
+          "symbol_name": "use_underlying",
+          "start_line": 81,
+          "end_line": 95,
+          "rendered_ref": "`include/fmt/enum.h:81\u201395`",
+          "display_label": "include/fmt/enum.h:81\u201395",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_018",
+      "cohort": "cohort_a_hit",
+      "validation_status": "valid",
+      "abstained": false,
+      "confidence_tier": "strong",
+      "all_cited_ids_raw": [
+        "EVIDENCE_1",
+        "EVIDENCE_1"
+      ],
+      "declared_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "inline_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "valid_citation_ids": [
+        "EVIDENCE_1"
+      ],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [
+        {
+          "evidence_id": "EVIDENCE_1",
+          "rank": 1,
+          "chunk_id": "v1_97ee6acb752e90c4",
+          "file_path": "include/fmt/color.h",
+          "symbol_name": "terminal_color",
+          "start_line": 160,
+          "end_line": 178,
+          "rendered_ref": "`include/fmt/color.h:160\u2013178`",
+          "display_label": "include/fmt/color.h:160\u2013178",
+          "metadata_warnings": []
+        }
+      ],
+      "has_valid_citations": true,
+      "has_invalid_citations": false,
+      "citation_validity_rate": 1.0,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_019",
+      "cohort": "cohort_c_unanswerable",
+      "validation_status": "valid_abstention_no_citations",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [],
+      "declared_citation_ids": [],
+      "inline_citation_ids": [],
+      "valid_citation_ids": [],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [],
+      "has_valid_citations": false,
+      "has_invalid_citations": false,
+      "citation_validity_rate": null,
+      "unretrieved_file_mentions": []
+    },
+    {
+      "question_id": "fmt_020",
+      "cohort": "cohort_c_unanswerable",
+      "validation_status": "valid_abstention_no_citations",
+      "abstained": true,
+      "confidence_tier": "insufficient",
+      "all_cited_ids_raw": [],
+      "declared_citation_ids": [],
+      "inline_citation_ids": [],
+      "valid_citation_ids": [],
+      "invalid_citation_ids": [],
+      "duplicate_citation_ids": [],
+      "metadata_warnings": [],
+      "resolved_sources": [],
+      "has_valid_citations": false,
+      "has_invalid_citations": false,
+      "citation_validity_rate": null,
+      "unretrieved_file_mentions": []
+    }
+  ]
+}

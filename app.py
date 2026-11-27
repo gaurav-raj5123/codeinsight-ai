@@ -25,6 +25,7 @@ from dotenv import load_dotenv
 import repo_loader
 import chunker
 import embedder
+import generation
 import llm
 import telemetry
 
@@ -62,6 +63,10 @@ if "retrieval_mode" not in st.session_state:
     st.session_state.retrieval_mode = "hybrid_rerank"
 if "enable_query_rewrite" not in st.session_state:
     st.session_state.enable_query_rewrite = False
+if "grounded_generation" not in st.session_state:
+    st.session_state.grounded_generation = True
+if "repo_commit_sha" not in st.session_state:
+    st.session_state.repo_commit_sha = "unknown"
 
 # ══════════════════
 # PHASE 1: INDEXING (Sidebar)
@@ -108,6 +113,14 @@ with st.sidebar:
         help=(
             "Rewrites pronoun-dependent follow-up queries via Gemini before retrieval. "
             "Standalone queries bypass rewriting cleanly (0 API calls); falls back to original query on errors."
+        ),
+    )
+    st.session_state.grounded_generation = st.checkbox(
+        "Verified Grounded Citations & Abstention (Recommended)",
+        value=bool(st.session_state.grounded_generation),
+        help=(
+            "Restricts answers to retrieved code blocks, renders verified file:line citations, "
+            "flags partial evidence, and abstains honestly when evidence is insufficient."
         ),
     )
     
@@ -192,6 +205,7 @@ with st.sidebar:
                     )
                     telemetry.save_baseline_run(run_record)
                     st.session_state.baseline_run = run_record
+                    st.session_state.repo_commit_sha = repo_meta.get("commit_sha", "unknown")
                     st.session_state.indexing_diagnostics = {
                         "commit_sha": repo_meta.get("commit_sha", "unknown"),
                         "chunking_strategy": selected_strategy,
@@ -248,26 +262,97 @@ st.header("2️⃣ Chat with your Code")
 if not os.getenv("GEMINI_API_KEY"):
     st.warning("⚠️ GEMINI_API_KEY is not set. Please add it to your .env file or export it.")
 
+# Helper for rendering retrieved chunks with `[EVIDENCE_i]` mapping & code highlighting
+def _render_retrieved_chunks_panel(retrieved_chunks: list[dict], retrieved_meta: dict | None = None, expanded_sources: list[dict] | None = None) -> None:
+    if expanded_sources:
+        with st.expander("📚 Cited Source Navigation", expanded=False):
+            chunk_by_idx = {i: c for i, c in enumerate(retrieved_chunks, start=1)}
+            for src in expanded_sources:
+                eid = src.get("evidence_id", "")
+                label = src.get("display_label") or src.get("file_path") or "unknown"
+                sym = f" ({src['symbol_name']})" if src.get("symbol_name") else ""
+                rank = src.get("rank")
+                st.markdown(f"- **[{eid}]** `{label}`{sym}")
+                if isinstance(rank, int) and rank in chunk_by_idx:
+                    ch_txt = chunk_by_idx[rank].get("content", "")
+                    if ch_txt:
+                        fp = str(src.get("file_path", ""))
+                        src_lang = "python"
+                        if fp.endswith((".js", ".ts")):
+                            src_lang = "javascript"
+                        elif fp.endswith(".java"):
+                            src_lang = "java"
+                        elif fp.endswith((".cpp", ".c", ".h")):
+                            src_lang = "cpp"
+                        st.code(ch_txt, language=src_lang)
+
+    if retrieved_chunks:
+        with st.expander("📄 Retrieved Code Chunks"):
+            if retrieved_meta:
+                if retrieved_meta.get("query_rewritten"):
+                    st.caption(f"🔎 Rewritten retrieval query: `{retrieved_meta.get('effective_query')}`")
+                elif retrieved_meta.get("rewrite_failed"):
+                    st.caption("⚠️ Conversational query rewrite failed; retrieved with original query.")
+                if retrieved_meta.get("fallback_to_rrf_used"):
+                    st.caption("⚠️ Cross-encoder reranker unavailable; fell back to Hybrid RRF scores.")
+            for idx, chunk in enumerate(retrieved_chunks, start=1):
+                meta = chunk["metadata"]
+                lang = "python"
+                if meta.get("file_path", "").endswith((".js", ".ts")):
+                    lang = "javascript"
+                elif meta.get("file_path", "").endswith(".java"):
+                    lang = "java"
+                elif meta.get("file_path", "").endswith((".cpp", ".c", ".h")):
+                    lang = "cpp"
+
+                id_str = f" | ID: {chunk.get('id')}" if chunk.get("id") else ""
+                dist_str = f" | Distance: {chunk.get('distance'):.4f}" if chunk.get("distance") is not None else ""
+                logit_str = (
+                    f" | Rerank Logit: {chunk.get('reranker_raw_logit'):.3f}"
+                    if chunk.get("reranker_raw_logit") is not None
+                    else ""
+                )
+                st.code(
+                    f"// [EVIDENCE_{idx}] {meta.get('file_path')} | Lines {meta.get('start_line')}-{meta.get('end_line')}{id_str}{dist_str}{logit_str}\n"
+                    + chunk["content"],
+                    language=lang,
+                )
+
+
+def _render_grounding_banners(grounding_info: dict | None) -> None:
+    if not grounding_info:
+        return
+    if grounding_info.get("api_success") is False:
+        st.error("Generation API request failed safely; see message details below.")
+        return
+    if grounding_info.get("parse_success") is False:
+        st.warning("⚠️ Grounded response formatting could not be verified; showing unparsed model output safely.")
+        return
+    tier = grounding_info.get("confidence_tier")
+    abstained = bool(grounding_info.get("abstained"))
+    missing = grounding_info.get("missing_information") or []
+    reason = grounding_info.get("reason") or ""
+    if abstained:
+        msg = "ℹ️ **Insufficient Retrieved Evidence — Abstained:** " + (reason or "The retrieved code does not establish this behavior.")
+        if missing:
+            msg += "\n\n**Missing evidence:** " + "; ".join(str(m) for m in missing)
+        st.info(msg)
+    elif tier == "partial":
+        msg = "ℹ️ **Partial Evidence Support:** Answering only what is supported by retrieved code."
+        if missing:
+            msg += " **Not established:** " + "; ".join(str(m) for m in missing)
+        st.info(msg)
+
+
 # Re-draw the chat history on every rerun so previous messages stay visible
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
+        _render_grounding_banners(message.get("grounding"))
         st.markdown(message["content"])
-        # If this message was from the assistant, show the chunks it used as context
-        if "chunks" in message and message["chunks"]:
-            with st.expander("📄 Retrieved Code Chunks"):
-                for chunk in message["chunks"]:
-                    meta = chunk['metadata']
-                    
-                    # Determine formatting language based on file extension
-                    lang = "python"
-                    if meta.get('file_path', '').endswith(('.js', '.ts')): lang = "javascript"
-                    elif meta.get('file_path', '').endswith('.java'): lang = "java"
-                    elif meta.get('file_path', '').endswith(('.cpp', '.c', '.h')): lang = "cpp"
-                        
-                    id_str = f" | ID: {chunk.get('id')}" if chunk.get('id') else ""
-                    dist_str = f" | Distance: {chunk.get('distance'):.4f}" if chunk.get('distance') is not None else ""
-                    st.code(f"// {meta.get('file_path')} | Lines {meta.get('start_line')}-{meta.get('end_line')}{id_str}{dist_str}\n" + chunk['content'], language=lang)
-                    
+        _render_retrieved_chunks_panel(
+            message.get("chunks") or [],
+            expanded_sources=(message.get("grounding") or {}).get("resolved_sources"),
+        )
         if "diagnostics" in message and message["diagnostics"]:
             with st.expander("📊 Baseline Diagnostics", expanded=False):
                 diag = message["diagnostics"]
@@ -313,51 +398,87 @@ if prompt := st.chat_input("Ask a question about the code..."):
                     chat_history=st.session_state.messages[:-1],
                 )
             
-            # [5] Generation (llm)
-            # Combine the user's question, the retrieved code chunks, repo context,
-            # AND conversation history to build a comprehensive prompt.
-            # 📚 CONCEPT: Conversation Memory
-            # We pass the previous Q&A pairs so Gemini can understand follow-up 
-            # questions like "explain more" or "what about the auth module?"
+            # [5] Generation (llm / Day 6 Grounded Pipeline)
+            grounding_info: dict | None = None
+            generation_details: dict | None = None
             with st.spinner("Generating answer..."):
-                llm_prompt = llm.build_prompt(
-                    prompt, 
-                    retrieved_chunks, 
-                    st.session_state.directory_tree,
-                    chat_history=st.session_state.messages[:-1]  # Exclude current prompt so it appears only in QUESTION
-                )
-                response, gen_meta = llm.ask_gemini(llm_prompt, return_metadata=True)
+                if st.session_state.grounded_generation:
+                    gen_bundle = generation.generate_grounded_answer(
+                        question=prompt,
+                        retrieved_chunks=retrieved_chunks,
+                        directory_tree=st.session_state.directory_tree,
+                        chat_history=st.session_state.messages[:-1],
+                        repository_name=st.session_state.repo_name,
+                        model="gemini-3.5-flash-lite",
+                    )
+                    g3 = gen_bundle["g3"]
+                    g4 = gen_bundle["g4"]
+                    if not gen_bundle["api_success"]:
+                        response = gen_bundle["rendered_answer"]
+                    elif not g4.get("parse_success"):
+                        # Safe fallback: surface raw response instead of crashing or dropping content
+                        response = g4.get("raw_g3_response_preserved") or g4["rendered_answer"]
+                    else:
+                        response = g4["rendered_answer"]
+
+                    cit_rep = g4.get("citation_validation_report", {})
+                    grounding_info = {
+                        "api_success": gen_bundle["api_success"],
+                        "parse_success": bool(g4.get("parse_success")),
+                        "confidence_tier": g4.get("confidence_tier"),
+                        "abstained": bool(g4.get("abstained")) if g4.get("abstained") is not None else False,
+                        "reason": g4.get("reason", ""),
+                        "missing_information": g4.get("missing_information", []),
+                        "resolved_sources": cit_rep.get("resolved_sources", []),
+                        "validation_status": g4.get("validation_status"),
+                    }
+                    gen_meta = {
+                        "model": gen_bundle["model"],
+                        "latency_seconds": gen_bundle["generation_latency_seconds"],
+                        "success": gen_bundle["api_success"],
+                        "error": gen_bundle["error"],
+                        "prompt_length_chars": gen_bundle["prompt_length_chars"],
+                        "response_length_chars": len(response),
+                    }
+                    generation_details = {
+                        "prompt_version": gen_bundle["prompt_version"],
+                        "commit_sha": st.session_state.repo_commit_sha,
+                        "retrieval_config": retrieval_meta.get("distance_metric"),
+                        "frozen_retrieval_evidence_ids": [c.get("id") for c in retrieved_chunks],
+                        "evidence_sufficiency": g4.get("sufficient"),
+                        "confidence_tier": g4.get("confidence_tier"),
+                        "reason": g4.get("reason"),
+                        "missing_information": g4.get("missing_information"),
+                        "abstention_status": g4.get("abstained"),
+                        "raw_response": g3.get("raw_response"),
+                        "parsed_response": g3.get("parsed_response"),
+                        "citation_ids": cit_rep.get("all_cited_ids_raw", []),
+                        "valid_citation_ids": cit_rep.get("valid_citation_ids", []),
+                        "invalid_citation_ids": cit_rep.get("invalid_citation_ids", []),
+                        "validation_status": g4.get("validation_status"),
+                        "retry_count": gen_bundle.get("retry_count", 0),
+                    }
+                else:
+                    llm_prompt = llm.build_prompt(
+                        prompt,
+                        retrieved_chunks,
+                        st.session_state.directory_tree,
+                        chat_history=st.session_state.messages[:-1],  # Exclude current prompt so it appears only in QUESTION
+                    )
+                    response, gen_meta = llm.ask_gemini(llm_prompt, return_metadata=True)
                 
             total_turn_duration = time.perf_counter() - t_turn_start
             
-            # Render the final AI answer to the screen
+            # Render the final AI answer & grounding banners cleanly
+            _render_grounding_banners(grounding_info)
             st.markdown(response)
             
-            # Show the chunks that were used so the user can verify the context (transparency)
-            if retrieved_chunks:
-                with st.expander("📄 Retrieved Code Chunks"):
-                    if retrieval_meta.get("query_rewritten"):
-                        st.caption(f"🔎 Rewritten retrieval query: `{retrieval_meta.get('effective_query')}`")
-                    elif retrieval_meta.get("rewrite_failed"):
-                        st.caption("⚠️ Conversational query rewrite failed; retrieved with original query.")
-                    if retrieval_meta.get("fallback_to_rrf_used"):
-                        st.caption("⚠️ Cross-encoder reranker unavailable; fell back to Hybrid RRF scores.")
-                    for chunk in retrieved_chunks:
-                        meta = chunk['metadata']
-                        
-                        lang = "python"
-                        if meta.get('file_path', '').endswith(('.js', '.ts')): lang = "javascript"
-                        elif meta.get('file_path', '').endswith('.java'): lang = "java"
-                        elif meta.get('file_path', '').endswith(('.cpp', '.c', '.h')): lang = "cpp"
-                            
-                        id_str = f" | ID: {chunk.get('id')}" if chunk.get('id') else ""
-                        dist_str = f" | Distance: {chunk.get('distance'):.4f}" if chunk.get('distance') is not None else ""
-                        logit_str = (
-                            f" | Rerank Logit: {chunk.get('reranker_raw_logit'):.3f}"
-                            if chunk.get("reranker_raw_logit") is not None
-                            else ""
-                        )
-                        st.code(f"// {meta.get('file_path')} | Lines {meta.get('start_line')}-{meta.get('end_line')}{id_str}{dist_str}{logit_str}\n" + chunk['content'], language=lang)
+            # Show the retrieved code chunks & cited navigation so the user can verify context
+            _render_retrieved_chunks_panel(
+                retrieved_chunks,
+                retrieved_meta=retrieval_meta,
+                expanded_sources=(grounding_info or {}).get("resolved_sources"),
+            )
             
             # Show diagnostic metrics in expander
             with st.expander("📊 Baseline Diagnostics", expanded=False):
@@ -380,7 +501,7 @@ if prompt := st.chat_input("Ask a question about the code..."):
                         f"(`{retrieval_meta.get('rewrite_gate_reason')}`, {retrieval_meta.get('rewrite_latency_seconds', 0.0):.3f}s)"
                     )
             
-            # Record query event into baseline run if active
+            # Record query event into baseline run safely (telemetry failure must never crash chat)
             query_event = telemetry.create_query_record(
                 query_text=prompt,
                 repo_name=st.session_state.repo_name,
@@ -395,24 +516,30 @@ if prompt := st.chat_input("Ask a question about the code..."):
                 generation_error=gen_meta.get("error"),
                 prompt_length_chars=gen_meta.get("prompt_length_chars", 0),
                 response_length_chars=gen_meta.get("response_length_chars", 0),
-                total_turn_latency_seconds=total_turn_duration
+                total_turn_latency_seconds=total_turn_duration,
+                generation_details=generation_details,
             )
             
-            if st.session_state.baseline_run:
-                st.session_state.baseline_run["queries"].append(query_event)
-                telemetry.save_baseline_run(st.session_state.baseline_run)
-            else:
-                run_record = telemetry.create_baseline_run_record(
-                    repo_name=st.session_state.repo_name
-                )
-                run_record["queries"].append(query_event)
-                telemetry.save_baseline_run(run_record)
-                st.session_state.baseline_run = run_record
+            try:
+                if st.session_state.baseline_run:
+                    st.session_state.baseline_run["queries"].append(query_event)
+                    telemetry.save_baseline_run(st.session_state.baseline_run)
+                else:
+                    run_record = telemetry.create_baseline_run_record(
+                        repo_name=st.session_state.repo_name,
+                        commit_sha=st.session_state.repo_commit_sha,
+                    )
+                    run_record["queries"].append(query_event)
+                    telemetry.save_baseline_run(run_record)
+                    st.session_state.baseline_run = run_record
+            except Exception as tel_err:
+                st.caption(f"⚠️ Telemetry save skipped safely: {tel_err}")
             
         # Add the assistant's complete response to the session history
         st.session_state.messages.append({
             "role": "assistant", 
             "content": response,
             "chunks": retrieved_chunks,
+            "grounding": grounding_info,
             "diagnostics": query_event
         })
